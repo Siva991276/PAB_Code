@@ -57,8 +57,10 @@
 
 .container9 {
   margin-top: 40px;
+  
 
 }
+container9
 
 .btngroup1 {
   margin-top: 20px;
@@ -71,11 +73,14 @@
 
 .btn1 {
   color: #2c0264;
+  font-size: 13px;
 }
 
 .topsearch {
   color: #2c0264;
   font-weight: bold;
+  text-align: start;
+  margin-left: 80px;
 }
 
 .imgbutton {
@@ -91,7 +96,7 @@
 
 .searchlocate {
   color: #2c0264;
-  font-weight: 600px;
+  font-weight: bold ;
 }
 
 .bellicon {
@@ -118,6 +123,16 @@
 .getotppara {
   color: blue;
   font-size: small;
+}
+.subbutton1{
+  width: 100px;
+  margin-top: 30px;
+  background-color: #270750;
+}
+.parag2{
+  text-align: end;
+  color: #5608bb;
+  font-size: 15px;
 }
 
 
@@ -174,9 +189,10 @@
 
 .custom-btn {
   width: 130px;
+  
   height: 60px;
-  color: #0a0af6;
-  border-radius: 5px;
+  color: #070731;
+  border-radius: 15px;
   padding: 10px 25px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
@@ -192,8 +208,11 @@
 }
 
 .custom-btn:hover {
-  background-color: rgb(86, 162, 237);
-  color: rgb(10, 10, 10);
+  background-color: rgb(243, 245, 246);
+  color: rgb(7, 7, 7);
+}
+.card21{
+  margin-left: 14%;
 }
 
 /* 10 */
@@ -235,9 +254,9 @@
 
 
 
-
-
-
+ .par21{
+  font-size: 12px;
+ }
 
 
 
@@ -254,8 +273,21 @@
 }
 
 .logoCard {
-  width: 40px;
-  padding: 5px;
+  width: 35px;
+  padding: px;
+}
+.banking{
+  font-size: 15px;
+}
+.images2{
+  text-align: start;
+  /* margin-right: 10px; */
+  margin-left: 150px;
+}
+.images3{
+  text-align: start;
+  /* margin-right: 10px; */
+  margin-left: 270px;
 }
 
 .jobCard {
@@ -266,7 +298,7 @@
 }
 
 .jobCard:hover {
-  background-color: rgb(186, 182, 182);
+  background-color: rgb(141, 127, 127);
 }
 
 .secondContainer {
@@ -317,14 +349,28 @@
 }
 
 .skills {
-  background-color: #2c0264;
-  opacity: 0.5;
+  background-color: #37026b;
+  /* opacity: 0.5; */
 }
 
 .skills2 {
-  background-color: #2c0264;
+  background-color: #7009f5;
   align-items: center;
   border-radius: 5px;
+}
+.btn-32{
+  font-size: 14px;
+  border: none;
+  border-radius: 2px;
+  width: 120px;
+  /* width: 90px; */
+  height: 30px;
+  background-color: yellow;
+  margin-left: 0px;
+}
+.contact-page{
+  margin-left: 140px;
+
 }
 
 .skillHead {
@@ -489,10 +535,13 @@
 }
 
 .custom-btn {
-  background-color: white;
+  background-color: rgb(222, 221, 221);
+  
+  /* border-radius: 20px; */
+ 
 }
-
+skills
 .custom-btn1 {
-  background-color: white;
+  background-color: rgb(254, 254, 254);
   color: black;
 }

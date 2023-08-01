@@ -13,19 +13,21 @@ import LoginPage from './LoginPage';
 function App() {
   return (
     <div className="App">
-      <Header />
+      
       <Routes>
+       
 
         {/* <Route exact path='/' element={<Home />} />
         <Route exact path='/About' element={<About />} />
         <Route exact path='/Contact' element={<Contact />} /> */}
-        <Route exact path='/Registration' element={<Registration />} />
+        <Route exact path='/' element={<Registration />} />
+        <Route exact path='/Home' element={<Home />} />
         <Route exact path='/Recruiters' element={<Recruiters />} />
         <Route exact path='/LoginPage' element={<LoginPage />} />
 
 
       </Routes>
-      <Footer />
+      
 
 
 

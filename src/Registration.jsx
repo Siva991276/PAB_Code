@@ -1,6 +1,7 @@
 import './Registration.css'
 import logo2 from '../src/All Images/side-image.avif';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Registration() {
@@ -16,8 +17,8 @@ function Registration() {
                             <h2 class="heading1">Create an account</h2>
                             <p class="para2">It only takes a couple of minutes to get started!</p>
                             <div class="d-flex flex-row">
-                                <a href="./"> <button type="button" class="b2"> Login
-                                </button></a>
+                               <Link to ="/LoginPage"> <a href=""> <button type="button" class="b2"> Login
+                                </button></a></Link>
                                 <button type="button" class="b2" id="Jobbtn">Sign Up
                                     <input type="radio" name="type" id="" className='mx-2' />
                                 </button>
