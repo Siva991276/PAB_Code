@@ -1,141 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+import React from "react";
+// import { Route } from "react-router-dom";
+// import Header from "./Header";
+import Footer from "./Footer";
+import logo from "../src/All Images/pab bottom-logo (1).jpg";
+import { Link } from "react-router-dom";
+import "./home.css";
+import "./BrowserJobs.css";
+import "./Jobs.css";
+import ch1 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/charminar (1).png"
+import ch2 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/gateway-of-india.png"
+import ch3 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/chennai-central-railway-station.png"
+import ch4 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/surat-municipal-corporation.png"
+import ch5 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/vidhana-soudha.png"
+import ch6 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/gateway-of-india.png"
+import m1 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/harman.jpg"
+import m2 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/genpact.jpg"
+import m3 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/tcs.jpg"
+import m4 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/abb.jpg"
+import m5 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/cognizanr.jpg"
+import m6 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/harman.jpg"
+import m7 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/genpact.jpg"
+import m8 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/tcs.jpg"
+import m9 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/abb.jpg"
+import m10 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/cognizanr.jpg"
+import m11 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/genpact.jpg"
+import m12 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/tcs.jpg"
+import m13 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/abb.jpg"
+import m14 from "../src/Registration Page/Registrationpage Task-1/home10/jobImages/cognizanr.jpg"
 
-<head>
-    <title>PabJobs / Jobs</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
+function Jobs() {
+  return (
+    <div className="">
+      <nav class="navbar navbar-expand-sm">
+        <div class="container">
+          <img src={logo} alt="logo" width="200px" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+            style={{ backgroundcolor: "black" }}
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav logostyle">
+              <li class="nav-item">
+                <Link to="/Home">
+                  <a class="nav-link navstyle " href="">
+                    Home
+                  </a>
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link to = "./BrowserJobs"><a class="nav-link dropdown-toggle navstyle" href="">
+                  Browse Jobs
+                </a></Link>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link dropdown-toggle navstyle1" href=" ">
+                  Jobs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link dropdown-toggle navstyle" href="#">
+                  services
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link dropdown-toggle navstyle" href="./ ">
+                  payments
+                </a>
+              </li>
+              <li class="nav-item logosymbol">
+                <i class="fa-solid fa-bell bellicon"></i>
+              </li>
+              <li class="nav-item logosymbol">
+                <a href="profile.html">
+                  {" "}
+                  <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./jobs.css">
-    <style>
-
-
-    </style>
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-md navbar-light ">
-        <div class="col-1"></div>
-        <div class="container-fluid col-8">
-
-            <img src="./jobImages/pab bottom-logo.jpg" alt="logo" class="img-fluid pabLogo" />
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
+      <div class="container8">
+        <div class="row">
+          <div class="col-12">
+             
+            <h6 class="homepara1 mt-4">Home <i class="fa-solid fa-greater-than"></i>Jobs</h6>
+          </div>
+          <div class="col-12 homebutton">
+            <button class=" subhomebutton shadow w-25">
+              <i class="fa-solid fa-magnifying-glass p-3 "></i>job Title or
+              company<i class="fa-solid fa-sort-down p-3 "></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link" href="./home.html" id="dropdown2" aria-haspopup="true"
-                            aria-expanded="false">
-                            Home
-                        </a>
-
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./browse.html" id="dropdown2" aria-haspopup="true"
-                            aria-expanded="false">
-                            Browse Jobs
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown2">
-                            
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./jobs.html" id="jobsDropDown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Jobs
-                        </a>
-                        
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown2" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Services
-                        </a>
-                         
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="./payment.html" id="dropdown2" aria-haspopup="true"
-                            aria-expanded="false">
-                            Payment
-                        </a>
-                        
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="dropdown2" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class=" col-lg-1 fa-regular fa-bell" style="font-size: 20px;"></i>
-
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="dropdown2" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="fa-solid fa-circle-user dropdown-toggle"
-                                style="font-size: 30px; color:  #360379 ;"></i>
-                        </a>
-
-
-                    </li>
-
-                </ul>
-            </div>
+            <button class=" subhomebutton shadow w-25">
+              <i class="fa-solid fa-location-dot p-3"></i>city,province or
+              Region<i class="fa-solid fa-sort-down p-3 "></i>
+            </button>
+          </div>
+          <div class="homebutton1">
+            <button class="subbutton1">Search</button>
+          </div>
         </div>
-    </nav>
-
-
-
-</body>
-
-</html>
-
-
-
-
-
-
-<!-- Second container -->
-<div class="text-center align-items-center justify-content-center secondContainer p-4">
-    <span class="">Home > Jobs</span>
-    <div class="text-center align-items-center justify-content-center d-flex row m-2">
-        <div class="d-flex p-1 align-items-center seacrhMainContainer m-2 col-md-4">
-            <div class="">
-                <i class="fa-solid fa-magnifying-glass p-3"></i>
-                <input type="text" placeholder="Job title skills or company " class=" p-1 searchBox ">
-            </div>
-            <div>
-                <i class="fa-solid fa-sort-down p-2 "></i>
-            </div>
-        </div>
-        <div class="d-flex p-1 align-items-center seacrhMainContainer m-2 col-md-4">
-            <div class="">
-                <i class="fa-solid fa-location-dot p-3"></i>
-                <input type="text" placeholder="City, Province or region " class=" p-1 searchBox ">
-            </div>
-            <div>
-                <i class="fa-solid fa-sort-down p-2 "></i>
-            </div>
-        </div>
-
-
-    </div>
-    <button class=" registerButton">Search</button>
-
-</div>
-<!-- third container -->
-
-<div class="thirdContainer d-flex   p-4">
+      </div>
+      
+      {/* //Container3 */}
+      <div class="thirdContainer d-flex   p-4">
     <div class="col-2">
 
     </div>
@@ -152,21 +127,21 @@
         <div class="col-md-8 p-4 allJobsContainer">
             <div class="d-flex flex row ">
                 <div class="">
-                    <h6 class="indus">Jobs By Locations</h3>
+                    <h6 class="indus">Jobs By Locations</h6>
                 </div>
                 <div class="row">
                     <div class="col-md p-1 m-1">
-                        <!-- <button class="indBtn w-100 p-2 m-1"> ABAP Consultant</button> -->
-                        <button class="locationBtn  w-100 p-1 m-1"> <img src="./jobImages2/images/charminar (1).png"
-                                class="w-25 " alt=""> Hyderabad</button>
+                        {/* <!-- <button class="indBtn w-100 p-2 m-1"> ABAP Consultant</button> --> */}
+                        <button class="locationBtn  w-100 p-1 m-1"> <img src={ch1}
+                                class="w-25 " alt="" /> Hyderabad</button>
                     </div>
                     <div class="col-md p-1 m-1 ">
                         <button class="locationBtn locationBtn  w-100 p-1 m-1 "> <img
-                                src="./jobImages2/images/gateway-of-india.png" class="w-25 " alt="">Mumbai</button>
+                                src={ch2} class="w-25 " alt="" />Mumbai</button>
                     </div>
                     <div class="col-md p-1 m-1">
                         <button class="locationBtn locationBtn  w-100 p-1 m-1 "> <img
-                                src="./jobImages2/images/chennai-central-railway-station.png" class="w-25 " alt="">
+                                src={ch3} class="w-25 " alt="" />
                             Chennai</button>
                     </div>
 
@@ -174,16 +149,16 @@
                 <div class="row">
                     <div class="col-md p-1 m-1">
                         <button class="locationBtn locationBtn  w-100 p-1 m-1 "> <img
-                                src="./jobImages2/images/surat-municipal-corporation.png" class="w-25 " alt="">
+                                src= {ch4} class="w-25 " alt="" />
                             Pune</button>
                     </div>
                     <div class="col-md p-1 m-1">
                         <button class="locationBtn locationBtn  w-100 p-1 m-1 "> <img
-                                src="./jobImages2/images/vidhana-soudha.png" class="w-25 " alt=""> Bengaluru</button>
+                                src= {ch5}class="w-25 " alt="" /> Bengaluru</button>
                     </div>
                     <div class="col-md p-1 m-1">
                         <button class="locationBtn locationBtn  w-100 p-1 m-1 "> <img
-                                src="./jobImages2/images/india-gate.png" class="w-25 " alt=""> Delhi</button>
+                                src={ch6} class="w-25 " alt="" /> Delhi</button>
                     </div>
 
                 </div>
@@ -199,7 +174,7 @@
                 </div>
 
             </div>
-            <hr>
+            <hr />
             <section>
                 <div class="container">
                     <div class="row">
@@ -211,46 +186,46 @@
                                 </div>
                                 <marquee behavior="scroll" scrollamount="4" direction="left" class="m-2">
                                     <div class="logo">
-                                        <img src="./jobImages/harman.jpg" class="w-50" alt="Company 1">
+                                        <img src= {m1} class="w-50" alt="Company 1" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/genpact.jpg" class="w-50" alt="Company 2">
+                                        <img src= {m2} class="w-50" alt="Company 2" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/tcs.jpg" class="w-50" alt="Company 3">
+                                        <img src= {m3}  class="w-50" alt="Company 3" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/abb.jpg" class="w-50" alt="Company6">
+                                        <img src= {m4}class="w-50" alt="Company6" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/cognizanr.jpg" class="w-50" alt="Company5">
+                                        <img src= {m5} class="w-50" alt="Company5" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/harman.jpg" class="w-50" alt="Company 1">
+                                        <img src= {m6}  class="w-50" alt="Company 1" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/genpact.jpg" class="w-50" alt="Company 2">
+                                        <img src= {m7}  class="w-50" alt="Company 2" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/tcs.jpg" class="w-50" alt="Company 3">
+                                        <img src= {m8} class="w-50" alt="Company 3" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/abb.jpg" class="w-50" alt="Company6">
+                                        <img src= {m9}  class="w-50" alt="Company6" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/cognizanr.jpg" class="w-50" alt="Company5">
+                                        <img src= {m10}  class="w-50" alt="Company5" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/genpact.jpg" class="w-50" alt="Company 2">
+                                        <img src= {m11}  class="w-50" alt="Company 2" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/tcs.jpg" class="w-50" alt="Company 3">
+                                        <img src= {m12} class="w-50" alt="Company 3" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/abb.jpg" class="w-50" alt="Company6">
+                                        <img src= {m13}  class="w-50" alt="Company6" />
                                     </div>
                                     <div class="logo">
-                                        <img src="./jobImages/cognizanr.jpg" class="w-50" alt="Company5">
+                                        <img src= {m14} class="w-50" alt="Company5" />
                                     </div>
 
 
@@ -274,7 +249,7 @@
                     </div>
                 </div>
             </section>
-            <hr>
+            <hr />
 
             <div class="d-flex flex row">
                 <div>
@@ -338,7 +313,7 @@
                 </div>
 
             </div>
-            <hr>
+            <hr />
 
             <div class="d-flex flex row">
                 <div>
@@ -402,7 +377,7 @@
                 </div>
 
             </div>
-            <hr>
+            <hr />
 
             <div class="d-flex flex row">
                 <div>
@@ -471,144 +446,10 @@
         </div>
     </div>
 </div>
+      
 
-<!-- Footer Section -->
-
-
-<div class="footerSection">
-    <div class="container  row  firstFooterContainer">
-
-        <!-- FIRST COL -->
-        <div class="firstCol m-3 col-md-2 col-10 col-sm-4">
-
-            <div>
-
-
-                <img src="./jobImages/pab bottom-logo.jpg" class="pabLogo" id="bottomPabLogo" alt="logo">
-                <p class="footerText">we provide a direct access to the walk-in oppurtinites
-                    availabe on the site. Result can be filtered on work experience, venue,from location,
-                    employer
-                    type and date range</p>
-            </div>
-
-            <div>
-                <p class="m-0">Toll free Number:</p>
-                <i class="fa-solid fa-phone-flip iconphn"></i><span class="text-white"> 1800 833 9448</span>
-            </div>
-        </div>
-        <!-- SECOND COL -->
-        <div class="secondCol m-3 col-md-2 col-10 col-sm-4 ">
-            <div class="">
-                <h6>For Candidates</h6>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Candidate Profile</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr "></i><span>My resume</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Applied jobs</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Job Alert</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Change Password</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- third col -->
-        <div class="thirdCol m-3 col-md-2 col-10 col-sm-4 ">
-            <div>
-                <h6>Jobs</h6>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>All Jobs</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Company Jobs</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Category Jobs</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Locational Jobs</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Designation Jobs</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Skill Jobs</span>
-                </div>
-            </div>
-
-        </div>
-        <!-- fourth col -->
-        <div class="fourthCol m-3 col-md-2 col-10 col-sm-4 ">
-            <div>
-                <h5>Browse Jobs</h5>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Companies</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Browse Jobs</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Jobs</span>
-                </div>
-            </div>
-            <div class="my-4">
-                <h5>Information</h5>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Terms & conditions</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>privacy policy</span>
-                </div>
-                <div class="">
-                    <i class="fa-solid fa-angle-right iconarr"></i><span>Fraud Alert</span>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="container thick-horizontal-line my-4 mx-2 "></div>
-
+      <Footer />
     </div>
-
-
-
-
-
-    <div class="container secondFooterContainer row ">
-        <div class="text-white p-2 m-2 col-md-3  col-12">
-            <span>all rights reserved </span><i class="fa-solid fa-copyright"></i> 2022 PABjobs
-        </div>
-        <div class=" text-white p-2 m-2 col-sm-4 col-md-3  col-12">
-            Designed by <a href="https://www.perfextechnologies.com/" target="_blank">@perfex Technologies</a>
-        </div>
-        <div class="p-2 col-md-4 m-2  d-flex flex-row col-12 ">
-            <i class="fa-brands fa-linkedin mx-2 logos" id="linkedIn"></i>
-            <i class="fa-brands fa-instagram mx-2 logos" id="instagram"></i>
-            <i class="fa-brands fa-facebook mx-2 logos" id="facebook"></i>
-            <i class="fa-brands fa-twitter mx-2 logos" id="twitter"></i>
-        </div>
-    </div>
-</div>
-</div>
-
-
-
-
-
-
-
-<!-- Link Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-<script src="./jobs.js"></script>
-</body>
-
-</html>
+  );
+}
+export default Jobs;

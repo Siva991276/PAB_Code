@@ -34,7 +34,7 @@
 
 .maincontent {
     background-color: #f8f2f8;
-    height: 120vh;
+    
 
 }
 
@@ -104,18 +104,35 @@ button {
 
 .p1 {
     width: 85%;
-    border-radius: 10px;
-    font-size: 15px;
+    border-radius: 4px;
+    font-size: 20px;
     text-align: left;
     border-color: #e0d3f1;
     margin-left: 10px;
 }
-
+.p121{
+    width: 85%;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: left;
+    border-color: #e0d3f1;
+    margin-left: 10px;
+    height: 33px;
+}
+.pp1{
+    width: 72%;
+    margin-left: 10px;
+    height: 33px ;
+}
 .mobilebtn {
     width: 50px;
     margin-left: 10px;
 }
-
+.heading123{
+ margin-right: 70%;
+ margin-top: 10px;
+ margin-bottom: 5px;
+}
 .p2 {
     width: 75%;
     border-radius: 10px;
@@ -335,7 +352,9 @@ ul {
 }
 
 
-
+.navstyle{
+    text-decoration: none;
+}
 
 /* 2nd */
 .login-header-logo {
@@ -343,6 +362,7 @@ ul {
     height: 20vh;
 
 }
+ p1
 
 .login-navitem {
     display: flex;

@@ -372,6 +372,9 @@ container9
   margin-left: 140px;
 
 }
+.nav-link{
+ text-decoration-line: none;
+}
 
 .skillHead {
   color: aqua;
