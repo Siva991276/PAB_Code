@@ -199,18 +199,7 @@ function Registration() {
                 />
                 <br />
 
-                <div id="gender1">
-                  <label class="heading2">Gender</label>
-                  <br />
-                  <input type="radio" class="l1" name="gender" />
-                  Male
-                  <input type="radio" class="l1" name="gender" />
-                  Female
-                  <input type="radio" class="l1" name="gender" />
-                  prefex not to saybr
-                  <br />
-                  <br />
-                </div>
+                 
                 <p>
                   <i
                     class="fa-sharp fa-solid fa-circle-check"
