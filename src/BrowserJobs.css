@@ -128,6 +128,7 @@ input[type=text]:focus {
 .result {
     color: silver;
     font-size: 17px;
+    margin-left: 10%;
 }
 
 .card-container-item {
@@ -143,6 +144,7 @@ input[type=text]:focus {
 .package {
     float: right;
 }
+ 
 
 .graphics-item {
     font-weight: bold;
@@ -159,20 +161,22 @@ input[type=text]:focus {
 
 .publish {
     float: right;
-    font-size: 10px;
-    color: silver;
+    font-size: 13px;
+    color: rgb(133, 132, 132);
 }
 
-.active {
+.active1 {
     border: 2px solid #2c0264;
-    background-color: #f8f2f8;
+    background-color: white;
     border-radius: 15px;
     width: 100%;
-    height: 170px;
+    height: 190px;
     padding: 10px;
-    box-shadow: 1px 3px 5px rgb(229, 228, 228);
+    box-shadow: 1px 1px 1px 1px rgb(133, 125, 125);
+    margin-top: 20px;
 
 }
+ 
 
 .bg-element {
     background-color: rgb(255, 255, 255);
@@ -207,6 +211,7 @@ input[type=text]:focus {
     padding-right: 10px;
     font-size: 13px;
     color: #4805a0;
+    
 }
 
 .now-item {
@@ -278,6 +283,7 @@ input[type=text]:focus {
     }
 
 }
+ 
 
 @media (min-width:320px) and (max-width:567px) {
     .gender-item {
@@ -297,3 +303,7 @@ input[type=text]:focus {
         border-bottom: 1px solid black;
     }
 }
+.select{
+    background-color: rgb(242, 223, 223);
+}
+ 
