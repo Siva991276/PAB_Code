@@ -1,0 +1,14 @@
+GET  http://localhost:4005/
+###
+POST http://localhost:4005/register
+Content-Type: application/json
+
+{
+    "fullname": "Siva Kumar", 
+    "State": "Ap", 
+    "Currentlocation":"Kurnool", 
+    "mobile": "9658745124", 
+    "email": "Sivakumar@gmail.com"
+     
+}
+ 

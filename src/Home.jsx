@@ -28,14 +28,14 @@ function Home() {
                 </a>
               </li>
               <li class="nav-item">
-                <Link to="/BrowserJobs">
-                  <a class="nav-link dropdown-toggle navstyle"href="">
+                
+                  <a class="nav-link dropdown-toggle navstyle"href="/BrowserJobs">
                     Browse Jobs
                   </a>
-                </Link>
+                 
               </li>
               <li class="nav-item">
-              <Link></Link>  <a class="nav-link dropdown-toggle navstyle" href="">
+                 <a class="nav-link dropdown-toggle navstyle" href="/jobs">
                   Jobs
                 </a>
               </li>
@@ -53,10 +53,10 @@ function Home() {
                 <i class="fa-solid fa-bell bellicon"></i>
               </li>
               <li class="nav-item logosymbol">
-                <a href="profile.html">
+                <Link to = "/ProfileCode"><a href="">
                   {" "}
                   <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
-                </a>
+                </a></Link>
               </li>
             </ul>
           </div>

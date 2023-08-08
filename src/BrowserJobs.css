@@ -164,7 +164,7 @@ input[type=text]:focus {
     font-size: 13px;
     color: rgb(133, 132, 132);
 }
-
+ 
 .active1 {
     border: 2px solid #2c0264;
     background-color: white;

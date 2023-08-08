@@ -57,11 +57,11 @@ function BrowserJobs() {
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav logostyle">
               <li class="nav-item">
-                <Link to="/Home">
-                  <a class="nav-link navstyle " href="">
+                
+                  <a class="nav-link navstyle " href="/Home">
                     Home
                   </a>
-                </Link>
+             
               </li>
               <li class="nav-item">
                 <a class="nav-link dropdown-toggle navstyle1" href="">
@@ -69,12 +69,12 @@ function BrowserJobs() {
                 </a>
               </li>
               <li class="nav-item">
-                <Link to="/Jobs">
+                 
                   {" "}
-                  <a class="nav-link dropdown-toggle navstyle" href="">
+                  <a class="nav-link dropdown-toggle navstyle" href="/Jobs">
                     Jobs
                   </a>
-                </Link>
+               
               </li>
               <li class="nav-item">
                 <a class="nav-link dropdown-toggle navstyle" href="#">
@@ -90,10 +90,10 @@ function BrowserJobs() {
                 <i class="fa-solid fa-bell bellicon"></i>
               </li>
               <li class="nav-item logosymbol">
-                <a href="profile.html">
+              <Link to = "/ProfileCode"> <a href="">
                   {" "}
                   <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
-                </a>
+                </a></Link>
               </li>
             </ul>
           </div>
@@ -433,7 +433,8 @@ function BrowserJobs() {
           <div class="col-lg-11">
             <div class="row">
               <ul className="col-12 col-md-4">
-                {blogslist.map((blog) => (
+                {blogslist.map((blog) => 
+                (
                   <div
                     className={`active1 ${
                       selectedblog && selectedblog._id === blog._id

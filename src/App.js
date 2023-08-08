@@ -9,6 +9,9 @@ import Registration from './Registration';
 import LoginPage from './LoginPage';
 import BrowserJobs from './BrowserJobs';
 import Jobs from './Jobs';
+import ProfileCode from './Profile';
+import ResumeDetails from './Resume';
+ 
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route exact path='/BrowserJobs' element={<BrowserJobs />} />
         <Route exact path='/Jobs' element={<Jobs />} />
         <Route exact path='/Home' element={<Home />} />
+        <Route exact path='/ProfileCode' element={<ProfileCode />} />
+        <Route exact path='/ResumeDetails' element={<ResumeDetails />} />
+       
         
         <Route exact path='/LoginPage' element={<LoginPage />} />
 
