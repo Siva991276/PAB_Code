@@ -1451,7 +1451,14 @@ input[type=text]:focus {
     border-radius: 10px;
     width: 137px;
 }
- 
+.message-code{
+    color: green ;
+    margin-top: 20px;
+}
+.mes{
+    color: red;
+}
+
 .resumeh6{
     font-weight: bold;
    
@@ -1466,15 +1473,13 @@ input[type=text]:focus {
 
 .container15{
     color: white;
-    background-color:black ;
-    
-  
-   
- 
-    
-   
+    background-color:black ;   
 }
 .line1{
     text-decoration: none;
 }
  
+.images12{
+    border-radius: 2px solid black;
+    height: 80px;
+}

@@ -88,7 +88,7 @@ class Counter extends Component {
                 <h1 className="count">Count {count}</h1>
                 <button className="button" onClick={this.onIncrement}>
                     Increase
-                </button>
+                </button> 
 
                 <button className="button" onClick={this.Restart}>
                    Restart

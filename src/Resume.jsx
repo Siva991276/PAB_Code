@@ -1,8 +1,38 @@
-import React from "react";
 import logo from "../src/All Images/pab bottom-logo (1).jpg";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import "./Resume.css";
+// import React, { useState } from 'react';
 function ResumeDetails() {
+
+
+
+  
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const allowedFormats = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "text/rtf",
+      ];
+      const maxSize = 2 * 1024 * 1024; // 2MB
+
+      if (allowedFormats.includes(file.type) && file.size <= maxSize) {
+        setSelectedFile(file);
+        setErrorMessage("");
+      } else {
+        setSelectedFile(null);
+        setErrorMessage("Invalid file format or size exceeds 2MB.");
+      }
+    }
+  };
   return (
     <div>
       <nav class="navbar navbar-expand-sm navbar-dark shadow mb-3 mt-2 ">
@@ -86,10 +116,12 @@ function ResumeDetails() {
             <div class="card p-3 shadow">
               <div class="d-flex flex-row py-2">
                 <div>
-                  <Link to = "/ProfileCode"><i
-                    class=" fa-sharp fa-solid fa-circle-user profileicon px-3"
-                    style={{ fontSize: "120px" }}
-                  ></i></Link>
+                  <Link to="/ProfileCode">
+                    <i
+                      class=" fa-sharp fa-solid fa-circle-user profileicon px-3"
+                      style={{ fontSize: "120px" }}
+                    ></i>
+                  </Link>
                 </div>
                 <div>
                   <h5 class="resumeh5">B.Siva Koteswara Rao</h5>
@@ -127,288 +159,787 @@ function ResumeDetails() {
               </div>
             </div>
             <div class="mt-2 ">
-             <a href="#Resume"> <button class="w-100 p-2 mt-2 resumebtn shadow">Resume</button></a>
-             <a href="#ResumeHeadline"> <button class="w-100 p-2 mt-2 resumebtn shadow">
-                Resume Headline
-              </button></a>
-              <a href="#ProfileSummary"><button class="w-100 p-2 mt-2 resumebtn shadow">
-                Profile Summary
-              </button></a>
-             <a href="#KeySkills"> <button class="w-100 p-2 mt-2 resumebtn shadow">
-                Key skills
-              </button></a>
-             <a href="#Employment"> <button class="w-100 p-2 mt-2 resumebtn shadow">
-                Employment
-              </button></a>
-             <a href="#Education"> <button class="w-100 p-2 mt-2 resumebtn shadow">Education</button></a>
-             <a href="#Projects"> <button class="w-100 p-2 mt-2 resumebtn shadow">Projects</button></a>
-             <a href="#Accomplishment"> <button class="w-100 p-2 mt-2 resumebtn shadow">
-                Accomplishment
-              </button></a>
-             <a href="#DesiredcareerProfile"> <button class="w-100 p-2 mt-2 resumebtn shadow">
-                Desired career Profile
-              </button></a>
-             <a href="#Personaldetails"> <button class="w-100 p-2 mt-2 resumebtn shadow">
-                Personal Details
-              </button></a>
+              <a href="#Resume">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">Resume</button>
+              </a>
+              <a href="#ResumeHeadline">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Resume Headline
+                </button>
+              </a>
+              <a href="#ProfileSummary">
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Profile Summary
+                </button>
+              </a>
+              <a href="#KeySkills">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Key skills
+                </button>
+              </a>
+              <a href="#Employment">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Employment
+                </button>
+              </a>
+              <a href="#Education">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Education
+                </button>
+              </a>
+              <a href="#Projects">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Projects
+                </button>
+              </a>
+              <a href="#Accomplishment">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Accomplishment
+                </button>
+              </a>
+              <a href="#DesiredcareerProfile">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Desired career Profile
+                </button>
+              </a>
+              <a href="#Personaldetails">
+                {" "}
+                <button class="w-100 p-2 mt-2 resumebtn shadow">
+                  Personal Details
+                </button>
+              </a>
             </div>
           </div>
 
           {/* 2nd-card */}
           <div class="col-md-8 text-start mb-5   ">
-                <div class="card p-3 shadow" id="Resume">
-                    <p><b class="px-2">Resume</b> (Recruiters generally do not look at profiles without resumes.)</p>
-                    <hr />
-                    <div class="resumeUploadbtn">
-                        <button class="w-25 resumeUploadbtn1">Upload Resume <i
-                                class="fa-solid fa-upload text-white px-2"></i></button>
-                    </div>
-                    <p class="resumepara">Supported formates : doc,docx,rtf,pdf,upto 2mb </p>
-
-                </div>
-
-                <div class="card p-4 mt-3 shadow">
-                    <div id="ResumeHeadline">
-                        <div class="d-flex flex-row">
-                            <h5>Resume Headline</h5>
-                            <div style={{marginLeft: "auto"}}>
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <p>Software Developer currently living in Hyderabad</p>
-                    </div>
-
-                </div>
-
-                <div class="card p-4 mt-3 shadow">
-                    <div id="ProfileSummary">
-                        <div class="d-flex flex-row">
-                            <h5>Profile Summary</h5>
-                            <div style={{marginLeft: "auto"}}>
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <p>Software Developer specialist with 3+ years of experience in the management of th complete
-                            design process from conceptualization to delivery. Skilled with adobe creative suite
-                            (photoshop,illustrator,lightroom,aftereffects,charector Animator,adobeanimate).able to
-                            stretch the boundaries of digital story telling to support brands standout. </p>
-                    </div>
-
-                </div>
-                <div class="card p-4 mt-3 shadow">
-                    <div id="KeySkills">
-                        <div class="d-flex flex-row" >
-                            <h5>Key Skills</h5>
-                            <div style={{marginLeft: "auto"}}>
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="resumegroup  ">
-                            
-                            <button class="btnresume p-2 px-3 m-1 ">Photoshop</button>
-                            <button class="btnresume1 shadow p-2 px-3 m-1">aftereffects</button>
-                            <button class="btnresume shadow p-2 px-4 m-1">Editing</button>
-                            <button class="btnresume shadow p-2 px-2 m-1 ">Adobe XD</button>
-                            <button class="btnresume shadow p-2 px-2 m-1">Animation</button>
-                        </div>
-                        <div class="resunegroup">
-                            <button class="btnresume1 shadow p-2 px-3 m-1">Premire Pro</button>
-                            <button class="btnresume shadow p-2 px-4 m-1 ">Blender</button>
-                            <button class="btnresume shadow p-2 px-3 m-1 ">illustrator</button>
-                            <button class="btnresume shadow p-2 px-4 m-1 ">Canva</button>
-                            <button class="btnresume shadow p-2 px-4 m-1 ">Figma</button>
-                        </div>
-                    </div>
-
-                </div>
-                 <div class="card p-4 mt-3 shadow">
-                    <div id="Employment">
-                        <div class="d-flex flex-row">
-                            <h5>Employment <span style={{fontSize: "small"}}>(Enter your current and previous Employment
-                                    details)</span></h5>
-
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div style={{borderRight: "1px solid gray"}} class="px-5">
-                                <h6 class="resumeh6">Software Developer</h6>
-                                <p>PerfexTechnologies </p>
-                                <p>Fulltime|May 2022 to present (1 year 3 months) </p>
-                                <p>1 Month Notice Period</p>
-                            </div>
-                            <div style={{marginLeft: "auto"}} class="mt-5">
-                                <b class="resumeh7 ">+ Add Employment</b>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card p-4 mt-3 shadow">
-                    <div id="Education">
-                        <div class="d-flex flex-row" >
-                            <h5>Education <span style={{fontSize: "small"}}>(Enter your qualification details)</span></h5>
-
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div style={{borderRight: "1px solid gray"}} class="px-5">
-                                <p>Add class x | ADD class XII | Add graduation/Diploma</p>
-                                <p>Add masters/Post graduation | Add doctorate/PhD</p>
-                            </div>
-                            <div style={{marginLeft: "auto"}} class="mt-5">
-                                <b class="resumeh7 ">+ Add Education</b>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card p-4 mt-3 shadow">
-                    <div id="Projects">
-                        <div class="d-flex flex-row" >
-                            <h5>Projects</h5>
-
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div style={{borderRight: "1px solid gray"}} class="px-5">
-                                <p>(Add details about projects you have done )</p>
-
-                            </div>
-                            <div style={{marginLeft: "auto"}} class="mt-5">
-                                <b class="resumeh7 ">+ Add Projects</b>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card p-4 mt-3 shadow">
-                    <div>
-                        <div class="d-flex flex-row">
-                            <h5>Accomplishment</h5>
-                            <div style={{marginLeft: "auto"}} >
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div>
-                                <h6>Work Sample</h6>
-                                <p>Add links to your projects(e.g. github links etc.)</p>
-                            </div>
-                            <div style={{marginLeft: "auto"}} >
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div>
-                                <h6>White paper/Research publication </h6>
-                                <p>Add links to your online publications</p>
-                            </div>
-                            <div style={{marginLeft: "auto"}} >
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row"id="Accomplishment">
-                            <div>
-                                <h6>Presentation </h6>
-                                <p>Add links to your online presentations</p>
-                            </div>
-                            <div style={{marginLeft: "auto"}} >
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div>
-                                <h6>Patent </h6>
-                                <p>Add deatails of patents you have filed</p>
-                            </div>
-                            <div style={{marginLeft: "auto"}} >
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div>
-                                <h6>Certification</h6>
-                                <p>Add details of Certifications you have achieved/completed</p>
-                            </div>
-                            <div style={{marginLeft: "auto"}} >
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card p-4 mt-3 shadow">
-                    <div id="DesiredcareerProfile">
-                        <div class="d-flex flex-row">
-                            <h5>Desired career Profile</h5>
-                            <div style={{marginLeft: "auto"}} >
-                                <i class="fa-solid fa-pen-to-square iconedit"></i>
-                            </div>
-                        </div>
-
-
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div style={{borderRight: "1px solid gray"}} class="px-5">
-                                <h6 class="resumeh6">Desire Industry</h6>
-                                <p>IT services & conslting</p>
-                                <h6 class="resumeh6">designation</h6>
-                                <p>Software developer </p>
-                                <h6 class="resumeh6">Desired to shift</h6>
-                                <p>Day/night</p>
-                            </div>
-                            <div class=" px-5">
-                                <h6 class="resumeh6">Prefered location</h6>
-                                <p>Hyderabad</p>
-                                <h6 class="resumeh6">Expected ctc</h6>
-                                <p>5,00,000 - 7,00,000</p>
-                                <h6 class="resumeh6">Employment type</h6>
-                                <p>Full time</p>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card p-4 mt-3 shadow">
-                    <div id="Personaldetails">
-                        <div class="d-flex flex-row">
-                            <h5>Personal details</h5>
-
-                        </div>
-                        <hr />
-                        <div class="d-flex flex-row">
-                            <div style={{borderRight: "1px solid gray"}} class="px-5">
-                                <h6 class="resumeh6">Date Of Birth</h6>
-                                <p>06 December 1994</p>
-                                <h6 class="resumeh6">Age</h6>
-                                <p>25 </p>
-                                <h6 class="resumeh6">Gender</h6>
-                                <p>Male</p>
-                            </div>
-
-                            <div class=" px-5">
-                                <h6 class="resumeh6">Marital Status</h6>
-                                <p>Single</p>
-                                <h6 class="resumeh6">Languages</h6>
-                                <p>Telugu,Hindi,English</p>
-                                <h6 class="resumeh6">Address</h6>
-                                <p>201,plot 82,laxminagar colony,filmnaga<br />hyderabad,telangana-500008</p>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="card p-3 shadow" id="Resume">
+              <p>
+                <b class="px-2">Resume</b> (Recruiters generally do not look at
+                profiles without resumes.)
+              </p>
+              <hr />
+              <div class="resumeUploadbtn">
+                <input
+                  type="file"
+                  accept=".doc, .docx, .rtx, .pdf"
+                  onClick={handleFileChange}
+                />
+                {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+                {selectedFile && (
+                  <div>
+                    <p>Selected File: {selectedFile.name}</p>
+                  </div>
+                )}
+              </div>
+              <p class="resumepara">
+                Supported formates : doc,docx,rtf,pdf,upto 2mb{" "}
+              </p>
             </div>
+
+            <div class="card p-4 mt-3 shadow">
+              <div id="ResumeHeadline">
+                <div class="d-flex flex-row">
+                  <h5>Resume Headline</h5>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Resume Headline</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Resume Heading</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <p>Software Developer currently living in Hyderabad</p>
+              </div>
+            </div>
+
+            <div class="card p-4 mt-3 shadow">
+              <div id="ProfileSummary">
+                <div class="d-flex flex-row">
+                  <h5>Profile Summary</h5>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal1"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal1">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Profile Summary</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Profile Summary</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <p>
+                  Software Developer specialist with 3+ years of experience in
+                  the management of th complete design process from
+                  conceptualization to delivery. Skilled with adobe creative
+                  suite (photoshop,illustrator,lightroom,aftereffects,charector
+                  Animator,adobeanimate).able to stretch the boundaries of
+                  digital story telling to support brands standout.{" "}
+                </p>
+              </div>
+            </div>
+            <div class="card p-4 mt-3 shadow">
+              <div id="KeySkills">
+                <div class="d-flex flex-row">
+                  <h5>Key Skills</h5>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal2"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal2">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Key Skills</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Key Skills</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="resumegroup  ">
+                  <button class="btnresume p-2 px-3 m-1 ">Photoshop</button>
+                  <button class="btnresume1 shadow p-2 px-3 m-1">
+                    aftereffects
+                  </button>
+                  <button class="btnresume shadow p-2 px-4 m-1">Editing</button>
+                  <button class="btnresume shadow p-2 px-2 m-1 ">
+                    Adobe XD
+                  </button>
+                  <button class="btnresume shadow p-2 px-2 m-1">
+                    Animation
+                  </button>
+                </div>
+                <div class="resunegroup">
+                  <button class="btnresume1 shadow p-2 px-3 m-1">
+                    Premire Pro
+                  </button>
+                  <button class="btnresume shadow p-2 px-4 m-1 ">
+                    Blender
+                  </button>
+                  <button class="btnresume shadow p-2 px-3 m-1 ">
+                    illustrator
+                  </button>
+                  <button class="btnresume shadow p-2 px-4 m-1 ">Canva</button>
+                  <button class="btnresume shadow p-2 px-4 m-1 ">Figma</button>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4 mt-3 shadow">
+              <div id="Employment">
+                <div class="d-flex flex-row">
+                  <h5>
+                    Employment{" "}
+                    <span style={{ fontSize: "small" }}>
+                      (Enter your current and previous Employment details)
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                    <h6 class="resumeh6">Software Developer</h6>
+                    <p>PerfexTechnologies </p>
+                    <p>Fulltime|May 2022 to present (1 year 3 months) </p>
+                    <p>1 Month Notice Period</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }} class="mt-5">
+                    <b class="resumeh7 ">+ Add Employment</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4 mt-3 shadow">
+              <div id="Education">
+                <div class="d-flex flex-row">
+                  <h5>
+                    Education{" "}
+                    <span style={{ fontSize: "small" }}>
+                      (Enter your qualification details)
+                    </span>
+                  </h5>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                    <p>Add class x | ADD class XII | Add graduation/Diploma</p>
+                    <p>Add masters/Post graduation | Add doctorate/PhD</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }} class="mt-5">
+                    <b class="resumeh7 ">+ Add Education</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4 mt-3 shadow">
+              <div id="Projects">
+                <div class="d-flex flex-row">
+                  <h5>Projects</h5>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                    <p>(Add details about projects you have done )</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }} class="mt-5">
+                    <b class="resumeh7 ">+ Add Projects</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4 mt-3 shadow">
+              <div>
+                <div class="d-flex flex-row">
+                  <h5>Accomplishment</h5>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal3"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal3">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Accomplishment</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Accomplishment</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div>
+                    <h6>Work Sample</h6>
+                    <p>Add links to your projects(e.g. github links etc.)</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal4"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal4">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Work Sample</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Work Sample</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div>
+                    <h6>White paper/Research publication </h6>
+                    <p>Add links to your online publications</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal5"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal5">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Research publication</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Research publication</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex flex-row" id="Accomplishment">
+                  <div>
+                    <h6>Presentation </h6>
+                    <p>Add links to your online presentations</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal6"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal6">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Presentation</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Presentation</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div>
+                    <h6>Patent </h6>
+                    <p>Add deatails of patents you have filed</p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal7"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal7">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Patent</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Patent</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div>
+                    <h6>Certification</h6>
+                    <p>
+                      Add details of Certifications you have achieved/completed
+                    </p>
+                  </div>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal8"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal8">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Certification</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Certification</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4 mt-3 shadow">
+              <div id="DesiredcareerProfile">
+                <div class="d-flex flex-row">
+                  <h5>Desired career Profile</h5>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal9"
+                      >edit_square</i>
+                    </button>
+                    
+                    <div class="modal" id="myModal9">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Desired career Profile</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                            <form action="">
+                              <label>Desired career Profile</label><br />
+                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <hr />
+                <div class="d-flex flex-row">
+                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                    <h6 class="resumeh6">Desire Industry</h6>
+                    <p>IT services & conslting</p>
+                    <h6 class="resumeh6">designation</h6>
+                    <p>Software developer </p>
+                    <h6 class="resumeh6">Desired to shift</h6>
+                    <p>Day/night</p>
+                  </div>
+                  <div class=" px-5">
+                    <h6 class="resumeh6">Prefered location</h6>
+                    <p>Hyderabad</p>
+                    <h6 class="resumeh6">Expected ctc</h6>
+                    <p>5,00,000 - 7,00,000</p>
+                    <h6 class="resumeh6">Employment type</h6>
+                    <p>Full time</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card p-4 mt-3 shadow">
+              <div id="Personaldetails">
+                <div class="d-flex flex-row">
+                  <h5>Personal details</h5>
+                </div>
+                <hr />
+                <div class="d-flex flex-row">
+                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                    <h6 class="resumeh6">Date Of Birth</h6>
+                    <p>06 December 1994</p>
+                    <h6 class="resumeh6">Age</h6>
+                    <p>25 </p>
+                    <h6 class="resumeh6">Gender</h6>
+                    <p>Male</p>
+                  </div>
+
+                  <div class=" px-5">
+                    <h6 class="resumeh6">Marital Status</h6>
+                    <p>Single</p>
+                    <h6 class="resumeh6">Languages</h6>
+                    <p>Telugu,Hindi,English</p>
+                    <h6 class="resumeh6">Address</h6>
+                    <p>
+                      201,plot 82,laxminagar colony,filmnaga
+                      <br />
+                      hyderabad,telangana-500008
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />

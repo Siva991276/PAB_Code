@@ -11,6 +11,12 @@ import BrowserJobs from './BrowserJobs';
 import Jobs from './Jobs';
 import ProfileCode from './Profile';
 import ResumeDetails from './Resume';
+// import MainForm from './Empty';
+import AppliedJobs from './Applied';
+import JobAlert from './JobAlert';
+import SaveJobs from './SaveJobs';
+import ChangePassword from './ChangePassword';
+ 
  
 
 function App() {
@@ -30,6 +36,13 @@ function App() {
         <Route exact path='/Home' element={<Home />} />
         <Route exact path='/ProfileCode' element={<ProfileCode />} />
         <Route exact path='/ResumeDetails' element={<ResumeDetails />} />
+        <Route exact path='/AppliedJobs' element={<AppliedJobs />} />
+        <Route exact path='/JobAlert' element={<JobAlert />} />
+        <Route exact path='/SaveJobs' element={<SaveJobs />} />
+        <Route exact path='/ChangePassword' element={<ChangePassword />} />
+
+        {/* <Route exact path='/MainForm' element={<MainForm />} /> */}
+       
        
         
         <Route exact path='/LoginPage' element={<LoginPage />} />

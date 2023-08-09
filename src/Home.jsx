@@ -232,7 +232,7 @@ function Home() {
                       className="text-start pt-2 "
                       style={({ fontSize: "18px" }, { fontWeight: "700" })}
                     >
-                      MNC's>{" "}
+                      MNC's{" "}
                     </p>
                     <p
                       className="text-start par21"
@@ -279,7 +279,7 @@ function Home() {
                       className="text-start pt-2 banking "
                       style={{ fontWeight: "700" }}
                     >
-                      Banking&Finance>
+                      Banking&Finance
                     </p>
                     <p
                       className="text-start par21"
@@ -326,7 +326,7 @@ function Home() {
                       className="text-start pt-2 "
                       style={({ fontSize: "18px" }, { fontWeight: "700" })}
                     >
-                      FMCG&Retail >{" "}
+                      FMCG&Retail {" "}
                     </p>
                     <p
                       className="text-start par21"
@@ -373,7 +373,7 @@ function Home() {
                       className="text-start pt-2 "
                       style={({ fontSize: "18px" }, { fontWeight: "700" })}
                     >
-                      Healthcare >
+                      Healthcare 
                     </p>
                     <p
                       className="text-start par21"
@@ -553,83 +553,83 @@ function Home() {
                   <h3 class="indus">Browse Jobs By Designation</h3>
                 </div>
                 <div class="row">
-                  <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                  <div class="col-md p-1 m-1" >
+                    <button class="custom-btn21   w-100 p-2 m-1">
                       {" "}
                       ABAP Consultant
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       BPO Executive
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Chef
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       BPO Executive
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Chef
                     </button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Editor
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Finance Manager
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Game Designer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Finance Manager
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Game Designer
                     </button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       HR Assistant
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Industrial Engineer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       java Developer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Industrial Engineer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
-                    <button class="custom-btn btn-10 w-100 p-2 m-1">
+                    <button class="custom-btn21 btn-10 w-100 p-2 m-1">
                       Java Developer
                     </button>
                   </div>

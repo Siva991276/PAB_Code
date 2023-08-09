@@ -187,16 +187,13 @@ container9
   justify-content: space-around;
 }
 
-.custom-btn {
-  width: 130px;
-  
+/* .custom-btn {
   height: 60px;
   color: #070731;
   border-radius: 15px;
   padding: 10px 25px;
   font-family: 'Lato', sans-serif;
   font-weight: 500;
-
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -205,10 +202,24 @@ container9
     7px 7px 20px 0px rgba(0, 0, 0, .1),
     4px 4px 5px 0px rgba(0, 0, 0, .1);
   outline: none;
+} */
+.custom-btn21{
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 15px;
+  color: #070731;
+  box-shadow: inset 2px 2px 2px 0px rgba(242, 231, 231, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  
 }
 
-.custom-btn:hover {
-  background-color: rgb(243, 245, 246);
+.custom-btn21:hover {
+  background-color: rgb(120, 121, 121);
   color: rgb(7, 7, 7);
 }
 .card21{
@@ -375,6 +386,8 @@ container9
 .nav-link{
  text-decoration-line: none;
 }
+ 
+custom-btn
 
 .skillHead {
   color: aqua;
@@ -543,7 +556,7 @@ container9
   /* border-radius: 20px; */
  
 }
-skills
+ 
 .custom-btn1 {
   background-color: rgb(254, 254, 254);
   color: black;
