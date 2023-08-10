@@ -5,10 +5,7 @@ import logo from "../src/All Images/pab bottom-logo (1).jpg";
 import Footer from "./Footer";
 import React, { useState } from "react";
 
-// import React, { useState } from "react";
-// import Button from "react-bootstrap/Button";
-// import Form from "react-bootstrap/Form";
-// import "./Registration.css";
+
 import axios, { Axios } from "axios";
 import { useNavigate } from "react-router-dom";
 

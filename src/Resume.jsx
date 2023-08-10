@@ -5,10 +5,6 @@ import React, { useState } from "react";
 import "./Resume.css";
 // import React, { useState } from 'react';
 function ResumeDetails() {
-
-
-
-  
   const [selectedFile, setSelectedFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -258,9 +254,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -275,22 +273,34 @@ function ResumeDetails() {
                           </div>
 
                           {/* <!-- Modal body --> */}
-                          <div class="modal-body">
+                          <div class="modal-body ">
                             <form action="">
-                              <label>Resume Heading</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
-                            </form>
-                          </div>
+                              <label className="heading211">
+                                Resume Heading
+                              </label>
+                              <br />
+                              <p>
+                              Software Developer currently living in Hyderabad
+                              </p>
+                              <textarea
+                                name=""
+                                id=""
+                                cols="30"
+                                rows="2"
+                                placeholder="Describe here"
+                              ></textarea>
 
-                          {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
+                              {/* <!-- Modal footer --> */}
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -315,9 +325,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal1"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal1">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -334,8 +346,14 @@ function ResumeDetails() {
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
                             <form action="">
-                              <label>Profile Summary</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                              <label>Profile Summary</label>
+                              <br />
+                              <textarea
+                                name=""
+                                id=""
+                                cols="30"
+                                rows="2"
+                              ></textarea>
                             </form>
                           </div>
 
@@ -378,9 +396,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal2"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal2">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -397,8 +417,29 @@ function ResumeDetails() {
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
                             <form action="">
-                              <label>Key Skills</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                            <div class="resumegroup mb-5 ">
+                  <button class="btnresume p-2 px-3 m-1 ">Photoshop</button>
+                  <button class="btnresume1 shadow p-2 px-3 m-1">
+                    aftereffects
+                  </button>
+                  <button class="btnresume shadow p-2 px-4 m-1">Editing</button>
+                  <button class="btnresume shadow p-2 px-2 m-1 ">
+                    Adobe XD
+                  </button>
+                  <button class="btnresume shadow p-2 px-2 m-1">
+                    Animation
+                  </button>
+                </div>
+
+                              <label>Key Skills</label>
+                              <br />
+                              <textarea
+                                name=""
+                                id=""
+                                cols="30"
+                                rows="2"
+                                placeholder="Describe here"
+                              ></textarea>
                             </form>
                           </div>
 
@@ -450,7 +491,7 @@ function ResumeDetails() {
               <div id="Employment">
                 <div class="d-flex flex-row">
                   <h5>
-                    Employment{" "}
+                    Employment
                     <span style={{ fontSize: "small" }}>
                       (Enter your current and previous Employment details)
                     </span>
@@ -464,8 +505,136 @@ function ResumeDetails() {
                     <p>Fulltime|May 2022 to present (1 year 3 months) </p>
                     <p>1 Month Notice Period</p>
                   </div>
-                  <div style={{ marginLeft: "auto" }} class="mt-5">
-                    <b class="resumeh7 ">+ Add Employment</b>
+                  <div style={{ marginLeft: "auto" }} class="m-2 mx-5">
+                    {/* <b class="resumeh7 ">+ Add Employment</b> */}
+                    <div style={{ marginLeft: "auto" }}>
+                      {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                      <button className="model1">
+                        {" "}
+                        <i
+                          type="button"
+                          class="material-symbols-outlined text-start"
+                          data-bs-toggle="modal"
+                          data-bs-target="#myModal23"
+                        >
+                          edit_square
+                        </i>
+                        <b class="resumeh7 row">+Add</b>
+                      </button>
+
+                      <div class="modal" id="myModal23">
+                        <div class="modal-dialog ">
+                          <div class="modal-content">
+                            {/* <!-- Modal Header --> */}
+                            <div class="modal-header">
+                              <h4 class="modal-title">Employment</h4>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                              ></button>
+                            </div>
+
+                            {/* <!-- Modal body --> */}
+                            <div class="modal-body">
+                              <form action="">
+                                <div className="d-flex flex-row">
+                                  <div className="col-12 col-md-6">
+                                    <label>Total Experience</label>
+                                    <input
+                                      type="text"
+                                      className="etotal"
+                                      style={{ border: "1px solid black" }}
+                                      placeholder="Years"
+                                    />
+                                  </div>
+                                  <div className="col-12 col-md-6">
+                                    <label>Current CTC</label>
+                                    <input
+                                      type="text"
+                                      className="etotal"
+                                      style={{ border: "1px solid black" }}
+                                      placeholder="Current CTC"
+                                    />
+                                  </div>
+                                </div>
+
+                                <div className="d-flex flex-row mt-3">
+                                  <div className="col-12 col-md-6">
+                                    <label>Your Designation</label>
+                                    <select name="" id="">
+                                      <option value="">Finance</option>
+                                      <option value="">Accounting</option>
+                                      <option value="">Human Resources</option>
+                                      <option value="">Management</option>
+                                    </select>
+                                  </div>
+                                  <div className="col-12 col-md-6">
+                                    <label>Your Organization Category</label>
+                                    <select name="" id="">
+                                      <option value="">corporations</option>
+                                      <option value="">governments</option>
+                                      <option value="">armed forces</option>
+                                      <option value="">
+                                        {" "}
+                                        political organizations
+                                      </option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div className="col-12 mt-3">
+                                  <p>Is This Your Current Company ?</p>
+                                  <input
+                                    type="radio"
+                                    name="company"
+                                    value="no"
+                                  />{" "}
+                                  No
+                                  <input
+                                    type="radio"
+                                    name="company"
+                                    value="yes"
+                                    className="mx-3"
+                                  />{" "}
+                                  Yes
+                                </div>
+                                <div className="d-flex flex-row mt-3">
+                                  <div className="col-12 col-md-6">
+                                    <label>Started Working From</label>
+                                    <input type="date" />
+                                  </div>
+                                  <div className="col-12 col-md-6">
+                                    <label>Worked Till</label>
+                                    <input type="date" />
+                                  </div>
+                                </div>
+                                <div className="col-12">
+                                  <p>Describe Your Job Profile</p>
+                                  <textarea
+                                    name=""
+                                    id=""
+                                    cols="30"
+                                    rows="4"
+                                    placeholder="Describe here"
+                                  ></textarea>
+                                </div>
+                                <div class="modal-footer mt-3">
+                                  <button
+                                    type="button"
+                                    class="btn btn-danger"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Save
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+
+                            {/* <!-- Modal footer --> */}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -486,8 +655,78 @@ function ResumeDetails() {
                     <p>Add class x | ADD class XII | Add graduation/Diploma</p>
                     <p>Add masters/Post graduation | Add doctorate/PhD</p>
                   </div>
-                  <div style={{ marginLeft: "auto" }} class="mt-5">
-                    <b class="resumeh7 ">+ Add Education</b>
+                  <div style={{ marginLeft: "auto" }} class="m-2 mx-5">
+                    {/* <b class="resumeh7 ">+ Add Employment</b> */}
+                    <div style={{ marginLeft: "auto" }}>
+                      {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                      <button className="model1">
+                        {" "}
+                        <i
+                          type="button"
+                          class="material-symbols-outlined text-start"
+                          data-bs-toggle="modal"
+                          data-bs-target="#myModal22"
+                        >
+                          edit_square
+                        </i>
+                        <b class="resumeh7 row">+Add</b>
+                      </button>
+
+                      <div class="modal" id="myModal22">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            {/* <!-- Modal Header --> */}
+                            <div class="modal-header">
+                              <h4 class="modal-title">Education</h4>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                              ></button>
+                            </div>
+
+                            {/* <!-- Modal body --> */}
+                            <div class="modal-body">
+                              <form action="">
+                                <div>
+                                  <label>Degree :</label>
+                                  <input
+                                    type="text"
+                                    style={{ border: "1px solid black" }}
+                                    className="mx-3"
+                                  />
+                                </div>
+                                <div>
+                                  <label>University:</label>
+                                  <input
+                                    type="text"
+                                    style={{ border: "1px solid black" }}
+                                    className="mx-2 mt-3"
+                                  />
+                                </div>
+                                <div>
+                                  <label>Year:</label>
+                                  <input
+                                    type="text"
+                                    style={{ border: "1px solid black" }}
+                                    className="mx-2 mt-3"
+                                  />
+                                </div>
+                                <div class="modal-footer mt-3">
+                                  <button
+                                    type="button"
+                                    class="btn btn-danger"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Save
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -502,8 +741,81 @@ function ResumeDetails() {
                   <div style={{ borderRight: "1px solid gray" }} class="px-5">
                     <p>(Add details about projects you have done )</p>
                   </div>
-                  <div style={{ marginLeft: "auto" }} class="mt-5">
-                    <b class="resumeh7 ">+ Add Projects</b>
+                  <div style={{ marginLeft: "auto" }} class="m-2 mx-5">
+                    {/* <b class="resumeh7 ">+ Add Employment</b> */}
+                    <div style={{ marginLeft: "auto" }}>
+                      {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                      <button className="model1">
+                        {" "}
+                        <i
+                          type="button"
+                          class="material-symbols-outlined text-start"
+                          data-bs-toggle="modal"
+                          data-bs-target="#myModal21"
+                        >
+                          edit_square
+                        </i>
+                        <b class="resumeh7 row">+Add</b>
+                      </button>
+
+                      <div class="modal" id="myModal21">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            {/* <!-- Modal Header --> */}
+                            <div class="modal-header">
+                              <h4 class="modal-title">Projects</h4>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                              ></button>
+                            </div>
+
+                            {/* <!-- Modal body --> */}
+                            <div class="modal-body">
+                              <form action="">
+                                <div>
+                                  <label>Title :</label>
+                                  <input
+                                    type="text"
+                                    style={{ border: "1px solid black" }}
+                                    className="mx-3"
+                                  />
+                                </div>
+                                <div>
+                                  <label>Description :</label>
+                                  <input
+                                    type="text"
+                                    style={{ border: "1px solid black" }}
+                                    className="mx-3 mt-3"
+                                  />
+                                </div>
+
+                                <div>
+                                  <label>GitHub Link :</label>
+                                  <input
+                                    type="text"
+                                    style={{ border: "1px solid black" }}
+                                    className="mx-3 mt-3"
+                                  />
+                                </div>
+                                <div class="modal-footer mt-3">
+                                  <button
+                                    type="button"
+                                    class="btn btn-danger"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Save
+                                  </button>
+                                </div>
+                              </form>
+                            </div>
+
+                            {/* <!-- Modal footer --> */}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -521,9 +833,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal3"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal3">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -539,22 +853,46 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
-                              <label>Accomplishment</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                          <form action="">
+                              <div>
+                                <label>Title :</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3"
+                                />
+                              </div>
+                              <div>
+                                <label>Description :</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+
+                              <div>
+                                <label>Date :</label>
+                                <input
+                                  type="date"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+                              <div class="modal-footer mt-3">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
+                           
                         </div>
                       </div>
                     </div>
@@ -575,9 +913,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal4"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal4">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -594,8 +934,14 @@ function ResumeDetails() {
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
                             <form action="">
-                              <label>Work Sample</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                              <label>Work Sample</label>
+                              <br />
+                              <textarea
+                                name=""
+                                id=""
+                                cols="30"
+                                rows="2"
+                              ></textarea>
                             </form>
                           </div>
 
@@ -629,9 +975,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal5"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal5">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -647,22 +995,46 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
-                              <label>Research publication</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                          <form action="">
+                              <div>
+                                <label>Title :</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3"
+                                />
+                              </div>
+                              <div>
+                                <label>Authors :</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+
+                              <div>
+                                <label>Publication Date :</label>
+                                <input
+                                  type="date"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+                              <div class="modal-footer mt-3">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
+                           
                         </div>
                       </div>
                     </div>
@@ -683,9 +1055,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal6"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal6">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -702,21 +1076,44 @@ function ResumeDetails() {
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
                             <form action="">
-                              <label>Presentation</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                              <div>
+                                <label>Title :</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3"
+                                />
+                              </div>
+                              <div>
+                                <label>Speaker:</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+
+                              <div>
+                                <label>Date:</label>
+                                <input
+                                  type="date"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+                              <div class="modal-footer mt-3">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -737,9 +1134,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal7"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal7">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -756,8 +1155,14 @@ function ResumeDetails() {
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
                             <form action="">
-                              <label>Patent</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                              <label>Patent</label>
+                              <br />
+                              <textarea
+                                name=""
+                                id=""
+                                cols="30"
+                                rows="2"
+                              ></textarea>
                             </form>
                           </div>
 
@@ -793,9 +1198,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal8"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal8">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -812,21 +1219,43 @@ function ResumeDetails() {
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
                             <form action="">
-                              <label>Certification</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                              <div>
+                                <label>Name :</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3"
+                                />
+                              </div>
+                              <div>
+                                <label>Organization:</label>
+                                <input
+                                  type="text"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+
+                              <div>
+                                <label>Date:</label>
+                                <input
+                                  type="date"
+                                  style={{ border: "1px solid black" }}
+                                  className="mx-3 mt-3"
+                                />
+                              </div>
+                              <div class="modal-footer mt-3">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
-
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -847,9 +1276,11 @@ function ResumeDetails() {
                         class="material-symbols-outlined"
                         data-bs-toggle="modal"
                         data-bs-target="#myModal9"
-                      >edit_square</i>
+                      >
+                        edit_square
+                      </i>
                     </button>
-                    
+
                     <div class="modal" id="myModal9">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -866,8 +1297,66 @@ function ResumeDetails() {
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
                             <form action="">
-                              <label>Desired career Profile</label><br />
-                              <textarea name="" id="" cols="30" rows="2"></textarea>
+                              <div className="d-flex flex-row">
+                                <div className=" col-12 col-md-6">
+                                  <label>Desire Industry</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Desire Industry "
+                                  />
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <label>Prefered location</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Prefered location"
+                                  />
+                                </div>
+                              </div>
+                              <div className="d-flex flex-row mt-3">
+                                <div className=" col-12 col-md-6">
+                                  <label>designation</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter designation"
+                                  />
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <label>Expected ctc</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Expected ctc "
+                                  />
+                                </div>
+                              </div>
+                              <div className="d-flex flex-row mt-3">
+                                <div className=" col-12 col-md-6">
+                                  <label>Desired to shift</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder=" Enter Day/night"
+                                  />
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <label>Employment type</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Employment type "
+                                  />
+                                </div>
+                              </div>
                             </form>
                           </div>
 
@@ -911,8 +1400,111 @@ function ResumeDetails() {
             <div class="card p-4 mt-3 shadow">
               <div id="Personaldetails">
                 <div class="d-flex flex-row">
-                  <h5>Personal details</h5>
+                  <h5>Personal Details</h5>
+                  <div style={{ marginLeft: "auto" }}>
+                    {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
+                    <button className="model1">
+                      {" "}
+                      <i
+                        type="button"
+                        class="material-symbols-outlined"
+                        data-bs-toggle="modal"
+                        data-bs-target="#myModal91"
+                      >
+                        edit_square
+                      </i>
+                    </button>
+
+                    <div class="modal" id="myModal91">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          {/* <!-- Modal Header --> */}
+                          <div class="modal-header">
+                            <h4 class="modal-title">Personal Details</h4>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                            ></button>
+                          </div>
+
+                          {/* <!-- Modal body --> */}
+                          <div class="modal-body">
+                          <form action="">
+                              <div className="d-flex flex-row">
+                                <div className=" col-12 col-md-6">
+                                  <label>Date Of Birth</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Date Of Birth "
+                                  />
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <label>Marital Status</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Marital Status"
+                                  />
+                                </div>
+                              </div>
+                              <div className="d-flex flex-row mt-3">
+                                <div className=" col-12 col-md-6">
+                                  <label>Age</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Age"
+                                  />
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <label>Languages</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder="Enter Languages "
+                                  />
+                                </div>
+                              </div>
+                              <div className="d-flex flex-row mt-3">
+                                <div className=" col-12 col-md-6">
+                                  <label>Gender</label>
+                                  <input
+                                    type="text"
+                                    className="etotal"
+                                    style={{ border: "1px solid black" }}
+                                    placeholder=" Enter Gender"
+                                  />
+                                </div>
+                                <div className="col-12 col-md-6">
+                                  <label>Address</label>
+                                   <textarea name="" id="" cols="20" rows="2"></textarea>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+
+                          {/* <!-- Modal footer --> */}
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-danger"
+                              data-bs-dismiss="modal"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
                 <hr />
                 <div class="d-flex flex-row">
                   <div style={{ borderRight: "1px solid gray" }} class="px-5">

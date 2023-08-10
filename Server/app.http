@@ -11,4 +11,13 @@ Content-Type: application/json
     "email": "kiran@gmail.com"
      
 }
+###
+GET http://localhost:4005/alldevelopers
+###
+POST http://localhost:4005/resumeheding1
+Content-Type: application/json
+
+{
+    "resumeheading": "saikrishna"
+}
  

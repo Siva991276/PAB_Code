@@ -22,6 +22,13 @@ const userData = new mongoose.Schema({
         type :String,
         require:true,
     },
+   
+},
+ data1={
+    resumeheading : {
+        type :String,
+        require:true,
+    },
 })
 
-module.exports = mongoose.model("userData", userData)
+module.exports = mongoose.model("userData.data", userData)
