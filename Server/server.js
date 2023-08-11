@@ -5,13 +5,14 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const middleware = require("./Middlware");
 const userData = require("./Model/userData");
+
 // const resumeheading =require("./Model/userData");
 
 const app = express();
 const port = 4005;
 
 const mogoURL =
-  "mongodb+srv://badasiva22:Siva991276@cluster0.iis7lrd.mongodb.net/Resume?retryWrites=true&w=majority";
+  "mongodb+srv://badasiva22:Siva991276@cluster0.iis7lrd.mongodb.net/ResumeDetails?retryWrites=true&w=majority";
 
 app.use(express.json());
 app.use(cors({ origin: "*" }));
@@ -65,30 +66,82 @@ app.get("/alldevelopers", async (req, res) => {
 app.post("/resumeheding1", async (req, res) => {
   try {
     const { resumeheading } = req.body;
-     
-      let newUser = new userData({
-        resumeheading,
-      });
 
-      newUser.save(); //saving mongodb collections
-      return res.send("user Created Successfully");
-    
+    let newUser = new userData({
+      resumeheading: resumeheading,
+    });
+
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
   } catch (e) {
     console.log(e.message);
     res.send("Inernal server error");
   }
 });
 
+app.post("/profileSummaryDetails", async (req, res) => {
+  try {
+    const { profileSummary } = req.body;
 
+    let newUser = new userData({
+      profileSummary: profileSummary,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
 
+app.post("/keySkills", async (req, res) => {
+  try {
+    const { KeySkills } = req.body;
 
+    let newUser = new userData({
+      KeySkills: KeySkills,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
 
+app.post("/EmploymentDetails", async (req, res) => {
+  try {
+    const {
+      TotalExperience,
+      CurrentCTC,
+      YourDesignation,
+      YourOrganizationCategory,
+      Type,
+      StartedWorkingFrom,
+      WorkedTill,
+      Describe,
+    } = req.body;
 
+    let newUser = new userData({
+      TotalExperience: TotalExperience,
+      CurrentCTC: CurrentCTC,
+      YourDesignation: YourDesignation,
+      YourOrganizationCategory: YourOrganizationCategory,
+      Type: Type,
+      StartedWorkingFrom: StartedWorkingFrom,
+      WorkedTill: WorkedTill,
+      Describe: Describe,
+    });
 
-
-
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running at ${port}`);

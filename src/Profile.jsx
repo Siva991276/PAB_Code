@@ -5,9 +5,7 @@ import logo from "../src/All Images/pab bottom-logo (1).jpg";
 import Footer from "./Footer";
 import React, { useState } from "react";
 
-
 import axios, { Axios } from "axios";
-import { useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 
@@ -20,7 +18,6 @@ function ProfileCode() {
   const [mobile, setmobile] = useState("");
   const [email, setemail] = useState("");
 
-  let navigate = useNavigate();
   const [data, setdata] = useState([]);
   console.log(fullname);
 
@@ -94,9 +91,7 @@ function ProfileCode() {
               progress: undefined,
               theme: "colored",
             });
-            setTimeout(function () {
-              navigate();
-            }, 3000);
+            setTimeout(function () {}, 3000);
           }
         })
         .catch((error) => {
@@ -251,10 +246,10 @@ function ProfileCode() {
                     type="text"
                     placeholder="Enter your full name"
                     className="form-control w-75 mb-2"
-                    value={name}
-                    onChange={handleNameChange}
+                    // value={name}
+                    // onChange={handleNameChange}
                     style={{ border: "1px solid black" }}
-                    onSubmit={(e) => setfullname(e.target.value)}
+                    onChange={(e) => setfullname(e.target.value)}
                     value={fullname}
                   />
                   {nameError && <span className="error mes">{nameError}</span>}
@@ -312,12 +307,12 @@ function ProfileCode() {
                       <label className="profileh5 mb-1">Mobile Number:</label>
                       <input
                         type="text"
-                        value={mobileNumber}
-                        onChange={handleMobileNumberChange}
+                        // value={mobileNumber}
+                        // onChange={handleMobileNumberChange}
                         placeholder="Enter your mobile number"
                         className="form-control w-100 p-2 profileselect"
                         style={{ border: "1px solid black" }}
-                        onSubmit={(e) => setmobile(e.target.value)}
+                        onChange={(e) => setmobile(e.target.value)}
                         value={mobile}
                       />
                       {mobileNumberError && (

@@ -4,7 +4,166 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./Resume.css";
 // import React, { useState } from 'react';
+
+import axios, { Axios } from "axios";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function ResumeDetails() {
+  // resume heading
+  const [resumeheading, setresumeheading] = useState("");
+
+  const [data, setdata] = useState([]);
+  console.log(resumeheading);
+  const useData = {
+    resumeheading: resumeheading,
+  };
+  console.log(useData);
+  const onSubmitForm1 = (e) => {
+    e.preventDefault();
+    if (resumeheading !== "") {
+      axios
+        .post("http://localhost:4005/resumeheding1", useData)
+        .then((response) => {
+          setdata(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  // profilesummary
+  // const [profileSummary, setprofileSummary] = useState("");
+  // const [data2, setdata2] = useState([]);
+  // const useData1 = {
+  //   profileSummary: profileSummary,
+  // };
+  // console.log(useData1);
+  // const onSubmitForm = (e) => {
+  //   e.preventDefault();
+  //   if (profileSummary !== "") {
+  //     axios
+  //       .post("http://localhost:4005/profileSummaryDetails", useData1)
+  //       .then((response) => {
+  //         setdata2(response.data);
+
+  //         console.log(response.data);
+  //         if (response.status === 200) {
+  //           toast.success("Registration Successfull", {
+  //             position: "top-right",
+  //             autoClose: 1000,
+  //             hideProgressBar: false,
+  //             closeOnClick: true,
+  //             pauseOnHover: true,
+  //             draggable: true,
+  //             progress: undefined,
+  //             theme: "colored",
+  //           });
+  //           setTimeout(function () {}, 3000);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log(error.message);
+  //       });
+  //   } else {
+  //     toast.warning("Enter the Required Details");
+  //   }
+  // };
+  const [profileSummary, setprofileSummary] = useState("");
+
+  const [data1, setdata1] = useState([]);
+  console.log(profileSummary);
+  const profile = {
+    profileSummary: profileSummary,
+  };
+  console.log(profile);
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    if (profileSummary !== "") {
+      axios
+        .post("http://localhost:4005/profileSummaryDetails", profile)
+        .then((response) => {
+          setdata1(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  // Skills Profile
+  const [KeySkills, setKeySkills] = useState("");
+
+  const [data2, setdata2] = useState([]);
+  console.log(KeySkills);
+  const skills = {
+    KeySkills: KeySkills,
+  };
+  console.log(skills);
+  const onSubmitFormskills = (e) => {
+    e.preventDefault();
+    if (KeySkills !== "") {
+      axios
+        .post("http://localhost:4005/keySkills", skills)
+        .then((response) => {
+          setdata2(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+
   const [selectedFile, setSelectedFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -274,13 +433,25 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body ">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+                            <form action="" onSubmit={onSubmitForm1}>
                               <label className="heading211">
                                 Resume Heading
                               </label>
                               <br />
                               <p>
-                              Software Developer currently living in Hyderabad
+                                Software Developer currently living in Hyderabad
                               </p>
                               <textarea
                                 name=""
@@ -288,12 +459,16 @@ function ResumeDetails() {
                                 cols="30"
                                 rows="2"
                                 placeholder="Describe here"
+                                onChange={(e) =>
+                                  setresumeheading(e.target.value)
+                                }
+                                value={resumeheading}
                               ></textarea>
 
                               {/* <!-- Modal footer --> */}
                               <div class="modal-footer">
                                 <button
-                                  type="button"
+                                  type="submit"
                                   class="btn btn-danger"
                                   data-bs-dismiss="modal"
                                 >
@@ -345,7 +520,19 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+                            <form onSubmit={onSubmitForm}>
                               <label>Profile Summary</label>
                               <br />
                               <textarea
@@ -353,20 +540,24 @@ function ResumeDetails() {
                                 id=""
                                 cols="30"
                                 rows="2"
+                                onChange={(e) =>
+                                  setprofileSummary(e.target.value)
+                                }
+                                value={profileSummary}
                               ></textarea>
+                              <div class="modal-footer">
+                                <button
+                                  type="submit"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -416,20 +607,37 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
-                            <div class="resumegroup mb-5 ">
-                  <button class="btnresume p-2 px-3 m-1 ">Photoshop</button>
-                  <button class="btnresume1 shadow p-2 px-3 m-1">
-                    aftereffects
-                  </button>
-                  <button class="btnresume shadow p-2 px-4 m-1">Editing</button>
-                  <button class="btnresume shadow p-2 px-2 m-1 ">
-                    Adobe XD
-                  </button>
-                  <button class="btnresume shadow p-2 px-2 m-1">
-                    Animation
-                  </button>
-                </div>
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form action="" onSubmit={onSubmitFormskills}>
+                              <div class="resumegroup mb-5 ">
+                                <button class="btnresume p-2 px-3 m-1 ">
+                                  Photoshop
+                                </button>
+                                <button class="btnresume1 shadow p-2 px-3 m-1">
+                                  aftereffects
+                                </button>
+                                <button class="btnresume shadow p-2 px-4 m-1">
+                                  Editing
+                                </button>
+                                <button class="btnresume shadow p-2 px-2 m-1 ">
+                                  Adobe XD
+                                </button>
+                                <button class="btnresume shadow p-2 px-2 m-1">
+                                  Animation
+                                </button>
+                              </div>
 
                               <label>Key Skills</label>
                               <br />
@@ -439,20 +647,22 @@ function ResumeDetails() {
                                 cols="30"
                                 rows="2"
                                 placeholder="Describe here"
+                                onChange={(e) => setKeySkills(e.target.value)}
+                                value={KeySkills}
                               ></textarea>
+                              <div class="modal-footer">
+                                <button
+                                  type="submit"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -853,7 +1063,7 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                          <form action="">
+                            <form action="">
                               <div>
                                 <label>Title :</label>
                                 <input
@@ -892,7 +1102,6 @@ function ResumeDetails() {
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                           
                         </div>
                       </div>
                     </div>
@@ -995,7 +1204,7 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                          <form action="">
+                            <form action="">
                               <div>
                                 <label>Title :</label>
                                 <input
@@ -1034,7 +1243,6 @@ function ResumeDetails() {
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                           
                         </div>
                       </div>
                     </div>
@@ -1430,7 +1638,7 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                          <form action="">
+                            <form action="">
                               <div className="d-flex flex-row">
                                 <div className=" col-12 col-md-6">
                                   <label>Date Of Birth</label>
@@ -1483,7 +1691,12 @@ function ResumeDetails() {
                                 </div>
                                 <div className="col-12 col-md-6">
                                   <label>Address</label>
-                                   <textarea name="" id="" cols="20" rows="2"></textarea>
+                                  <textarea
+                                    name=""
+                                    id=""
+                                    cols="20"
+                                    rows="2"
+                                  ></textarea>
                                 </div>
                               </div>
                             </form>
