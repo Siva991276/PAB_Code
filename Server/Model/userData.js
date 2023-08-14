@@ -22,18 +22,22 @@ const userData = new mongoose.Schema({
     type: String,
     require: true,
   },
+  //resumeheading
   resumeheading: {
     type: String,
     require: true,
   },
+  //profileSummary
   profileSummary: {
     type: String,
     require: true,
   },
+  //Skills Details
   KeySkills: {
     type: String,
     require: true,
   },
+  //Employee Details
   TotalExperience: {
     type: String,
     require: true,
@@ -67,6 +71,135 @@ const userData = new mongoose.Schema({
     type: String,
     require: true,
   },
+//Education Details
+  Degree: {
+    type: String,
+    require: true,
+  },
+
+  University: {
+    type: String,
+    require: true,
+  },
+
+  Year: {
+    type: String,
+    require: true,
+  },
+  //Project Details
+  ProjectTitle: {
+    type: String,
+    require: true,
+  },
+  Description: {
+    type: String,
+    require: true,
+  },
+  GitHubLink: {
+    type: String,
+    require: true,
+  },
+  //Accomplishment
+  //WorkSample
+  WorkSample: {
+    type: String,
+    require: true,
+  },
+  //Research
+  ResearchTitle: {
+    type: String,
+    require: true,
+  },
+  Authors: {
+    type: String,
+    require: true,
+  },
+  PublicationDate: {
+    type: String,
+    require: true,
+  },
+  //Presentation
+  PresentationTittle: {
+    type: String,
+    require: true,
+  },
+   Speaker: {
+    type: String,
+    require: true,
+  },
+  PresentationDate: {
+    type: String,
+    require: true,
+  },
+  //Patent
+  Patent: {
+    type: String,
+    require: true,
+  },
+  //Certification
+  CertificationName: {
+    type: String,
+    require: true,
+  },
+  Organization: {
+    type: String,
+    require: true,
+  },
+  Date: {
+    type: String,
+    require: true,
+  },
+  //Desired career Profile
+  DesireIndustry: {
+    type: String,
+    require: true,
+  },
+  Preferedlocation: {
+    type: String,
+    require: true,
+  },
+  designation1: {
+    type: String,
+    require: true,
+  },
+  Expectedctcsalary: {
+    type: String,
+    require: true,
+  },
+  Desiredshift: {
+    type: String,
+    require: true,
+  },
+  Employmenttype: {
+    type: String,
+    require: true,
+  },
+  //Personal Details
+  DateOfBirth: {
+    type: String,
+    require: true,
+  },
+  MaritalStatus: {
+    type: String,
+    require: true,
+  },
+  Age: {
+    type: String,
+    require: true,
+  },
+  Languages: {
+    type: String,
+    require: true,
+  },
+  Gender: {
+    type: String,
+    require: true,
+  },
+  Address: {
+    type: String,
+    require: true,
+  },
+
 });
 
 module.exports = mongoose.model("userData.data", userData);

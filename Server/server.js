@@ -78,7 +78,7 @@ app.post("/resumeheding1", async (req, res) => {
     res.send("Inernal server error");
   }
 });
-
+//profileSummaryDetails
 app.post("/profileSummaryDetails", async (req, res) => {
   try {
     const { profileSummary } = req.body;
@@ -94,7 +94,7 @@ app.post("/profileSummaryDetails", async (req, res) => {
     res.send("Inernal server error");
   }
 });
-
+//keySkills
 app.post("/keySkills", async (req, res) => {
   try {
     const { KeySkills } = req.body;
@@ -110,7 +110,7 @@ app.post("/keySkills", async (req, res) => {
     res.send("Inernal server error");
   }
 });
-
+//EmploymentDetails
 app.post("/EmploymentDetails", async (req, res) => {
   try {
     const {
@@ -142,36 +142,182 @@ app.post("/EmploymentDetails", async (req, res) => {
     res.send("Inernal server error");
   }
 });
+//EducationDetails
+app.post("/EducationDetails", async (req, res) => {
+  try {
+    const { Degree, University, Year } = req.body;
 
+    let newUser = new userData({
+      Degree: Degree,
+      University: University,
+      Year: Year,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
+// Project Details
 
+app.post("/ProjectDetails", async (req, res) => {
+  try {
+    const { ProjectTitle, Description, GitHubLink } = req.body;
 
+    let newUser = new userData({
+      ProjectTitle: ProjectTitle,
+      Description: Description,
+      GitHubLink: GitHubLink,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
+//WorkSample
+app.post("/workSample", async (req, res) => {
+  try {
+    const { WorkSample } = req.body;
 
+    let newUser = new userData({
+      WorkSample: WorkSample,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
+//Research Details
 
+app.post("/ResearchDetails", async (req, res) => {
+  try {
+    const { ResearchTitle, Authors, PublicationDate } = req.body;
 
+    let newUser = new userData({
+      ResearchTitle: ResearchTitle,
+      Authors: Authors,
+      PublicationDate: PublicationDate,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
+//PresentationDetails
+app.post("/PresentationDetails", async (req, res) => {
+  try {
+    const { PresentationTittle, Speaker, PresentationDate } = req.body;
 
+    let newUser = new userData({
+      PresentationTittle: PresentationTittle,
+      Speaker: Speaker,
+      PresentationDate: PresentationDate,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
+//Patent
+app.post("/PatentDetails", async (req, res) => {
+  try {
+    const { Patent } = req.body;
 
+    let newUser = new userData({
+      Patent: Patent,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
+//Certification
+app.post("/CertificationDetails", async (req, res) => {
+  try {
+    const { CertificationName, Organization, Date } = req.body;
 
+    let newUser = new userData({
+      CertificationName: CertificationName,
+      Organization: Organization,
+      Date: Date,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
 
+//Desired career Profile
+app.post("/careerProfile", async (req, res) => {
+  try {
+    const {
+      DesireIndustry,
+      Preferedlocation,
+      designation1,
+      Expectedctcsalary,
+      Desiredshift,
+      Employmenttype,
+    } = req.body;
 
+    let newUser = new userData({
+      DesireIndustry: DesireIndustry,
+      Preferedlocation: Preferedlocation,
+      designation1: designation1,
+      Expectedctcsalary: Expectedctcsalary,
+      Desiredshift: Desiredshift,
+      Employmenttype: Employmenttype,
+    });
 
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
 
+//Personal Details
+app.post("/PersonalDetails", async (req, res) => {
+  try {
+    const { DateOfBirth, MaritalStatus, Age, Languages, Gender, Address } =
+      req.body;
 
+    let newUser = new userData({
+      DateOfBirth: DateOfBirth,
+      MaritalStatus: MaritalStatus,
+      Age: Age,
+      Languages: Languages,
+      Gender: Gender,
+      Address: Address,
+    });
 
-
-
-
-
-
-
-
-
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running at ${port}`);

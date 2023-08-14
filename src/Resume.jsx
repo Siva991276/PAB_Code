@@ -21,6 +21,7 @@ function ResumeDetails() {
   console.log(useData);
   const onSubmitForm1 = (e) => {
     e.preventDefault();
+    setTimeout(function () {}, 9000);
     if (resumeheading !== "") {
       axios
         .post("http://localhost:4005/resumeheding1", useData)
@@ -39,7 +40,6 @@ function ResumeDetails() {
               progress: undefined,
               theme: "colored",
             });
-            setTimeout(function () {}, 3000);
           }
         })
         .catch((error) => {
@@ -49,43 +49,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
-  // profilesummary
-  // const [profileSummary, setprofileSummary] = useState("");
-  // const [data2, setdata2] = useState([]);
-  // const useData1 = {
-  //   profileSummary: profileSummary,
-  // };
-  // console.log(useData1);
-  // const onSubmitForm = (e) => {
-  //   e.preventDefault();
-  //   if (profileSummary !== "") {
-  //     axios
-  //       .post("http://localhost:4005/profileSummaryDetails", useData1)
-  //       .then((response) => {
-  //         setdata2(response.data);
-
-  //         console.log(response.data);
-  //         if (response.status === 200) {
-  //           toast.success("Registration Successfull", {
-  //             position: "top-right",
-  //             autoClose: 1000,
-  //             hideProgressBar: false,
-  //             closeOnClick: true,
-  //             pauseOnHover: true,
-  //             draggable: true,
-  //             progress: undefined,
-  //             theme: "colored",
-  //           });
-  //           setTimeout(function () {}, 3000);
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         console.log(error.message);
-  //       });
-  //   } else {
-  //     toast.warning("Enter the Required Details");
-  //   }
-  // };
+  //profileSummary
   const [profileSummary, setprofileSummary] = useState("");
 
   const [data1, setdata1] = useState([]);
@@ -216,6 +180,411 @@ function ResumeDetails() {
               theme: "colored",
             });
             setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  //Eduction Details
+  const [Degree, setDegree] = useState("");
+  const [University, setUniversity] = useState("");
+  const [Year, setYear] = useState("");
+
+  const [data4, setdata4] = useState([]);
+  console.log(Degree);
+  const Eduction = {
+    Degree: Degree,
+    University: University,
+    Year: Year,
+  };
+  console.log(Eduction);
+  const onSubmitFormEduction = (e) => {
+    e.preventDefault();
+    if (Degree && University && Year !== "") {
+      axios
+        .post("http://localhost:4005/EducationDetails", Eduction)
+        .then((response) => {
+          setdata4(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+
+  //Project Details
+  const [ProjectTitle, setProjectTitle] = useState("");
+  const [Description, setDescription] = useState("");
+  const [GitHubLink, setGitHubLink] = useState("");
+
+  const [data5, setdata5] = useState([]);
+  console.log(ProjectTitle);
+  const Project = {
+    ProjectTitle: ProjectTitle,
+    Description: Description,
+    GitHubLink: GitHubLink,
+  };
+  console.log(Project);
+  const onSubmitFormProject = (e) => {
+    e.preventDefault();
+    if (ProjectTitle && Description && GitHubLink !== "") {
+      axios
+        .post("http://localhost:4005/ProjectDetails", Project)
+        .then((response) => {
+          setdata5(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  //Work Sample
+  const [WorkSample, setWorkSample] = useState("");
+
+  const [data6, setdata6] = useState([]);
+  console.log(WorkSample);
+  const work = {
+    WorkSample: WorkSample,
+  };
+  console.log(work);
+  const onSubmitFormWorksample = (e) => {
+    e.preventDefault();
+    if (WorkSample !== "") {
+      axios
+        .post("http://localhost:4005/workSample", work)
+        .then((response) => {
+          setdata6(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+
+  //Research Details
+  const [ResearchTitle, setResearchTitle] = useState("");
+  const [Authors, setAuthors] = useState("");
+  const [PublicationDate, setPublicationDate] = useState("");
+
+  const [data7, setdata7] = useState([]);
+  console.log(ResearchTitle);
+  const Research = {
+    ResearchTitle: ResearchTitle,
+    Authors: Authors,
+    PublicationDate: PublicationDate,
+  };
+  console.log(Research);
+  const onSubmitFormResearchDetails = (e) => {
+    e.preventDefault();
+    if (ResearchTitle && Authors && PublicationDate !== "") {
+      axios
+        .post("http://localhost:4005/ResearchDetails", Research)
+        .then((response) => {
+          setdata7(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  //Presentation Details
+  const [PresentationTittle, setPresentationTittle] = useState("");
+  const [Speaker, setSpeaker] = useState("");
+  const [PresentationDate, setPresentationDate] = useState("");
+
+  const [data8, setdata8] = useState([]);
+  console.log(PresentationTittle);
+  const Presentation = {
+    PresentationTittle: PresentationTittle,
+    Speaker: Speaker,
+    PresentationDate: PresentationDate,
+  };
+  console.log(Presentation);
+  const onSubmitFormPresentationDetails = (e) => {
+    e.preventDefault();
+    if (PresentationTittle && Speaker && PresentationDate !== "") {
+      axios
+        .post("http://localhost:4005/PresentationDetails", Presentation)
+        .then((response) => {
+          setdata8(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  //Patent
+  const [Patent, setPatent] = useState("");
+
+  const [data9, setdata9] = useState([]);
+  console.log(Patent);
+  const PatentDetails = {
+    Patent: Patent,
+  };
+  console.log(PatentDetails);
+  const onSubmitFormPatentDetails = (e) => {
+    e.preventDefault();
+    if (Patent !== "") {
+      axios
+        .post("http://localhost:4005/PatentDetails", PatentDetails)
+        .then((response) => {
+          setdata9(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  //CertificationDetails
+  const [CertificationName, setCertificationName] = useState("");
+  const [Organization, setOrganization] = useState("");
+  const [Date, setDate] = useState("");
+
+  const [data01, setdata01] = useState([]);
+  console.log(CertificationName);
+  const CertificationDetails = {
+    CertificationName: CertificationName,
+    Organization: Organization,
+    Date: Date,
+  };
+  console.log(CertificationDetails);
+  const onSubmitFormCertificationDetails = (e) => {
+    e.preventDefault();
+    if (CertificationName && Organization && Date !== "") {
+      axios
+        .post(
+          "http://localhost:4005/CertificationDetails",
+          CertificationDetails
+        )
+        .then((response) => {
+          setdata01(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  //Desired career Profile
+  const [DesireIndustry, setDesireIndustry] = useState("");
+  const [Preferedlocation, setPreferedlocation] = useState("");
+  const [designation1, setdesignation1] = useState("");
+  const [Expectedctcsalary, setExpectedctcsalary] = useState("");
+  const [Desiredshift, setDesiredshift] = useState("");
+  const [Employmenttype, setEmploymenttype] = useState("");
+
+  const [data02, setdata02] = useState([]);
+  console.log(DesireIndustry);
+  const careerProfileDetails = {
+    DesireIndustry: DesireIndustry,
+    Preferedlocation: Preferedlocation,
+    designation1: designation1,
+    Expectedctcsalary: Expectedctcsalary,
+    Desiredshift: Desiredshift,
+    Employmenttype: Employmenttype,
+  };
+  console.log(careerProfileDetails);
+  const onSubmitFormcareerProfileDetails = (e) => {
+    e.preventDefault();
+    if (
+      DesireIndustry &&
+      Preferedlocation &&
+      designation1 &&
+      Expectedctcsalary &&
+      Desiredshift &&
+      Employmenttype !== ""
+    ) {
+      axios
+        .post("http://localhost:4005/careerProfile", careerProfileDetails)
+        .then((response) => {
+          setdata02(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
+  //Personal Details
+  const [DateOfBirth, setDateOfBirth] = useState("");
+  const [MaritalStatus, setMaritalStatus] = useState("");
+  const [Age, setAge] = useState("");
+  const [Languages, setLanguages] = useState("");
+  const [Gender, setGender] = useState("");
+  const [Address, setAddress] = useState("");
+
+  const [data03, setdata03] = useState([]);
+  console.log(DateOfBirth);
+  const PersonalDetails = {
+    DateOfBirth: DateOfBirth,
+    MaritalStatus: MaritalStatus,
+    Age: Age,
+    Languages: Languages,
+    Gender: Gender,
+    Address: Address,
+  };
+  console.log(PersonalDetails);
+  const onSubmitFormpersonalDetails = (e) => {
+    e.preventDefault();
+
+    if (
+      DateOfBirth &&
+      MaritalStatus &&
+      Age &&
+      Languages &&
+      Gender &&
+      Address !== ""
+    ) {
+      axios
+        .post("http://localhost:4005/PersonalDetails", PersonalDetails)
+        .then((response) => {
+          setdata03(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
           }
         })
         .catch((error) => {
@@ -495,19 +864,19 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body ">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
                             <form action="" onSubmit={onSubmitForm1}>
+                              <ToastContainer
+                                position="top-right"
+                                autoClose={5000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="colored"
+                              />
                               <label className="heading211">
                                 Resume Heading
                               </label>
@@ -809,7 +1178,7 @@ function ResumeDetails() {
 
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
-                               <ToastContainer
+                              <ToastContainer
                                 position="top-right"
                                 autoClose={5000}
                                 hideProgressBar={false}
@@ -821,7 +1190,7 @@ function ResumeDetails() {
                                 pauseOnHover
                                 theme="colored"
                               />
-                            <form action="" onSubmit={onSubmitFormEmployee}>
+                              <form action="" onSubmit={onSubmitFormEmployee}>
                                 <div className="d-flex flex-row">
                                   <div className="col-12 col-md-6">
                                     <label>Total Experience</label>
@@ -1075,13 +1444,28 @@ function ResumeDetails() {
 
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
-                              <form action="">
+                              <ToastContainer
+                                position="top-right"
+                                autoClose={5000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="colored"
+                              />
+
+                              <form action="" onSubmit={onSubmitFormEduction}>
                                 <div>
                                   <label>Degree :</label>
                                   <input
                                     type="text"
                                     style={{ border: "1px solid black" }}
                                     className="mx-3"
+                                    onChange={(e) => setDegree(e.target.value)}
+                                    value={Degree}
                                   />
                                 </div>
                                 <div>
@@ -1090,6 +1474,10 @@ function ResumeDetails() {
                                     type="text"
                                     style={{ border: "1px solid black" }}
                                     className="mx-2 mt-3"
+                                    onChange={(e) =>
+                                      setUniversity(e.target.value)
+                                    }
+                                    value={University}
                                   />
                                 </div>
                                 <div>
@@ -1098,11 +1486,13 @@ function ResumeDetails() {
                                     type="text"
                                     style={{ border: "1px solid black" }}
                                     className="mx-2 mt-3"
+                                    onChange={(e) => setYear(e.target.value)}
+                                    value={Year}
                                   />
                                 </div>
                                 <div class="modal-footer mt-3">
                                   <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-danger"
                                     data-bs-dismiss="modal"
                                   >
@@ -1161,13 +1551,29 @@ function ResumeDetails() {
 
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
-                              <form action="">
+                              <ToastContainer
+                                position="top-right"
+                                autoClose={5000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="colored"
+                              />
+                              <form action="" onSubmit={onSubmitFormProject}>
                                 <div>
                                   <label>Title :</label>
                                   <input
                                     type="text"
                                     style={{ border: "1px solid black" }}
                                     className="mx-3"
+                                    onChange={(e) =>
+                                      setProjectTitle(e.target.value)
+                                    }
+                                    value={ProjectTitle}
                                   />
                                 </div>
                                 <div>
@@ -1176,6 +1582,10 @@ function ResumeDetails() {
                                     type="text"
                                     style={{ border: "1px solid black" }}
                                     className="mx-3 mt-3"
+                                    onChange={(e) =>
+                                      setDescription(e.target.value)
+                                    }
+                                    value={Description}
                                   />
                                 </div>
 
@@ -1185,11 +1595,15 @@ function ResumeDetails() {
                                     type="text"
                                     style={{ border: "1px solid black" }}
                                     className="mx-3 mt-3"
+                                    onChange={(e) =>
+                                      setGitHubLink(e.target.value)
+                                    }
+                                    value={GitHubLink}
                                   />
                                 </div>
                                 <div class="modal-footer mt-3">
                                   <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-danger"
                                     data-bs-dismiss="modal"
                                   >
@@ -1214,7 +1628,7 @@ function ResumeDetails() {
                   <h5>Accomplishment</h5>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    {/* <button className="model1">
                       {" "}
                       <i
                         type="button"
@@ -1224,7 +1638,7 @@ function ResumeDetails() {
                       >
                         edit_square
                       </i>
-                    </button>
+                    </button> */}
 
                     <div class="modal" id="myModal3">
                       <div class="modal-dialog">
@@ -1320,7 +1734,20 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form action="" onSubmit={onSubmitFormWorksample}>
                               <label>Work Sample</label>
                               <br />
                               <textarea
@@ -1328,20 +1755,22 @@ function ResumeDetails() {
                                 id=""
                                 cols="30"
                                 rows="2"
+                                onChange={(e) => setWorkSample(e.target.value)}
+                                value={WorkSample}
                               ></textarea>
+                              <div class="modal-footer">
+                                <button
+                                  type="submit"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1382,13 +1811,33 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form
+                              action=""
+                              onSubmit={onSubmitFormResearchDetails}
+                            >
                               <div>
                                 <label>Title :</label>
                                 <input
                                   type="text"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3"
+                                  onChange={(e) =>
+                                    setResearchTitle(e.target.value)
+                                  }
+                                  value={ResearchTitle}
                                 />
                               </div>
                               <div>
@@ -1397,6 +1846,8 @@ function ResumeDetails() {
                                   type="text"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3 mt-3"
+                                  onChange={(e) => setAuthors(e.target.value)}
+                                  value={Authors}
                                 />
                               </div>
 
@@ -1406,11 +1857,15 @@ function ResumeDetails() {
                                   type="date"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3 mt-3"
+                                  onChange={(e) =>
+                                    setPublicationDate(e.target.value)
+                                  }
+                                  value={PublicationDate}
                                 />
                               </div>
                               <div class="modal-footer mt-3">
                                 <button
-                                  type="button"
+                                  type="submit"
                                   class="btn btn-danger"
                                   data-bs-dismiss="modal"
                                 >
@@ -1461,13 +1916,33 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form
+                              action=""
+                              onSubmit={onSubmitFormPresentationDetails}
+                            >
                               <div>
                                 <label>Title :</label>
                                 <input
                                   type="text"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3"
+                                  onChange={(e) =>
+                                    setPresentationTittle(e.target.value)
+                                  }
+                                  value={PresentationTittle}
                                 />
                               </div>
                               <div>
@@ -1476,6 +1951,8 @@ function ResumeDetails() {
                                   type="text"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3 mt-3"
+                                  onChange={(e) => setSpeaker(e.target.value)}
+                                  value={Speaker}
                                 />
                               </div>
 
@@ -1485,11 +1962,15 @@ function ResumeDetails() {
                                   type="date"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3 mt-3"
+                                  onChange={(e) =>
+                                    setPresentationDate(e.target.value)
+                                  }
+                                  value={PresentationDate}
                                 />
                               </div>
                               <div class="modal-footer mt-3">
                                 <button
-                                  type="button"
+                                  type="submit"
                                   class="btn btn-danger"
                                   data-bs-dismiss="modal"
                                 >
@@ -1540,7 +2021,23 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form
+                              action=""
+                              onSubmit={onSubmitFormPatentDetails}
+                            >
                               <label>Patent</label>
                               <br />
                               <textarea
@@ -1548,20 +2045,22 @@ function ResumeDetails() {
                                 id=""
                                 cols="30"
                                 rows="2"
+                                onChange={(e) => setPatent(e.target.value)}
+                                value={Patent}
                               ></textarea>
+                              <div class="modal-footer">
+                                <button
+                                  type="submit"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
+                              </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1604,13 +2103,33 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form
+                              action=""
+                              onSubmit={onSubmitFormCertificationDetails}
+                            >
                               <div>
                                 <label>Name :</label>
                                 <input
                                   type="text"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3"
+                                  onChange={(e) =>
+                                    setCertificationName(e.target.value)
+                                  }
+                                  value={CertificationName}
                                 />
                               </div>
                               <div>
@@ -1619,6 +2138,10 @@ function ResumeDetails() {
                                   type="text"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3 mt-3"
+                                  onChange={(e) =>
+                                    setOrganization(e.target.value)
+                                  }
+                                  value={Organization}
                                 />
                               </div>
 
@@ -1628,11 +2151,13 @@ function ResumeDetails() {
                                   type="date"
                                   style={{ border: "1px solid black" }}
                                   className="mx-3 mt-3"
+                                  onChange={(e) => setDate(e.target.value)}
+                                  value={Date}
                                 />
                               </div>
                               <div class="modal-footer mt-3">
                                 <button
-                                  type="button"
+                                  type="submit"
                                   class="btn btn-danger"
                                   data-bs-dismiss="modal"
                                 >
@@ -1682,7 +2207,23 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form
+                              action=""
+                              onSubmit={onSubmitFormcareerProfileDetails}
+                            >
                               <div className="d-flex flex-row">
                                 <div className=" col-12 col-md-6">
                                   <label>Desire Industry</label>
@@ -1691,6 +2232,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Desire Industry "
+                                    onChange={(e) =>
+                                      setDesireIndustry(e.target.value)
+                                    }
+                                    value={DesireIndustry}
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
@@ -1700,6 +2245,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Prefered location"
+                                    onChange={(e) =>
+                                      setPreferedlocation(e.target.value)
+                                    }
+                                    value={Preferedlocation}
                                   />
                                 </div>
                               </div>
@@ -1711,6 +2260,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter designation"
+                                    onChange={(e) =>
+                                      setdesignation1(e.target.value)
+                                    }
+                                    value={designation1}
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
@@ -1720,6 +2273,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Expected ctc "
+                                    onChange={(e) =>
+                                      setExpectedctcsalary(e.target.value)
+                                    }
+                                    value={Expectedctcsalary}
                                   />
                                 </div>
                               </div>
@@ -1731,6 +2288,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder=" Enter Day/night"
+                                    onChange={(e) =>
+                                      setDesiredshift(e.target.value)
+                                    }
+                                    value={Desiredshift}
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
@@ -1740,22 +2301,26 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Employment type "
+                                    onChange={(e) =>
+                                      setEmploymenttype(e.target.value)
+                                    }
+                                    value={Employmenttype}
                                   />
                                 </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="submit"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
                               </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -1816,7 +2381,23 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <form action="">
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={5000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+
+                            <form
+                              action=""
+                              onSubmit={onSubmitFormpersonalDetails}
+                            >
                               <div className="d-flex flex-row">
                                 <div className=" col-12 col-md-6">
                                   <label>Date Of Birth</label>
@@ -1825,6 +2406,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Date Of Birth "
+                                    onChange={(e) =>
+                                      setDateOfBirth(e.target.value)
+                                    }
+                                    value={DateOfBirth}
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
@@ -1834,6 +2419,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Marital Status"
+                                    onChange={(e) =>
+                                      setMaritalStatus(e.target.value)
+                                    }
+                                    value={MaritalStatus}
                                   />
                                 </div>
                               </div>
@@ -1845,6 +2434,8 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Age"
+                                    onChange={(e) => setAge(e.target.value)}
+                                    value={Age}
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
@@ -1854,6 +2445,10 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Languages "
+                                    onChange={(e) =>
+                                      setLanguages(e.target.value)
+                                    }
+                                    value={Languages}
                                   />
                                 </div>
                               </div>
@@ -1865,6 +2460,8 @@ function ResumeDetails() {
                                     className="etotal"
                                     style={{ border: "1px solid black" }}
                                     placeholder=" Enter Gender"
+                                    onChange={(e) => setGender(e.target.value)}
+                                    value={Gender}
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
@@ -1874,22 +2471,24 @@ function ResumeDetails() {
                                     id=""
                                     cols="20"
                                     rows="2"
+                                    onChange={(e) => setAddress(e.target.value)}
+                                    value={Address}
                                   ></textarea>
                                 </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="submit"
+                                  class="btn btn-danger"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Save
+                                </button>
                               </div>
                             </form>
                           </div>
 
                           {/* <!-- Modal footer --> */}
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-danger"
-                              data-bs-dismiss="modal"
-                            >
-                              Save
-                            </button>
-                          </div>
                         </div>
                       </div>
                     </div>
