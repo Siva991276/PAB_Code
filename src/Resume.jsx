@@ -163,6 +163,68 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  //Employee Details
+  const [TotalExperience, setTotalExperience] = useState("");
+  const [CurrentCTC, setCurrentCTC] = useState("");
+  const [YourDesignation, setYourDesignation] = useState("");
+  const [YourOrganizationCategory, setYourOrganizationCategory] =
+    useState("corporations");
+  const [Type, setType] = useState("No");
+  const [StartedWorkingFrom, setStartedWorkingFrom] = useState("");
+  const [WorkedTill, setWorkedTill] = useState("");
+  const [Describe, setDescribe] = useState("");
+
+  const [data3, setdata3] = useState([]);
+  console.log(TotalExperience);
+  const Employee = {
+    TotalExperience: TotalExperience,
+    CurrentCTC: CurrentCTC,
+    YourDesignation: YourDesignation,
+    YourOrganizationCategory: YourOrganizationCategory,
+    Type: Type,
+    StartedWorkingFrom: StartedWorkingFrom,
+    WorkedTill: WorkedTill,
+    Describe: Describe,
+  };
+  console.log(Employee);
+  const onSubmitFormEmployee = (e) => {
+    e.preventDefault();
+    if (
+      TotalExperience &&
+      CurrentCTC &&
+      YourDesignation &&
+      YourOrganizationCategory &&
+      StartedWorkingFrom &&
+      WorkedTill &&
+      Describe !== ""
+    ) {
+      axios
+        .post("http://localhost:4005/EmploymentDetails", Employee)
+        .then((response) => {
+          setdata3(response.data);
+
+          console.log(response.data);
+          if (response.status === 200) {
+            toast.success("Registration Successfull", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            setTimeout(function () {}, 3000);
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    } else {
+      toast.warning("Enter the Required Details");
+    }
+  };
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -747,7 +809,19 @@ function ResumeDetails() {
 
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
-                              <form action="">
+                               <ToastContainer
+                                position="top-right"
+                                autoClose={5000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                                theme="colored"
+                              />
+                            <form action="" onSubmit={onSubmitFormEmployee}>
                                 <div className="d-flex flex-row">
                                   <div className="col-12 col-md-6">
                                     <label>Total Experience</label>
@@ -756,6 +830,10 @@ function ResumeDetails() {
                                       className="etotal"
                                       style={{ border: "1px solid black" }}
                                       placeholder="Years"
+                                      onChange={(e) =>
+                                        setTotalExperience(e.target.value)
+                                      }
+                                      value={TotalExperience}
                                     />
                                   </div>
                                   <div className="col-12 col-md-6">
@@ -765,6 +843,10 @@ function ResumeDetails() {
                                       className="etotal"
                                       style={{ border: "1px solid black" }}
                                       placeholder="Current CTC"
+                                      onChange={(e) =>
+                                        setCurrentCTC(e.target.value)
+                                      }
+                                      value={CurrentCTC}
                                     />
                                   </div>
                                 </div>
@@ -772,20 +854,98 @@ function ResumeDetails() {
                                 <div className="d-flex flex-row mt-3">
                                   <div className="col-12 col-md-6">
                                     <label>Your Designation</label>
-                                    <select name="" id="">
-                                      <option value="">Finance</option>
-                                      <option value="">Accounting</option>
-                                      <option value="">Human Resources</option>
-                                      <option value="">Management</option>
+                                    <select
+                                      name=""
+                                      id=""
+                                      onChange={(e) =>
+                                        setYourDesignation(e.target.value)
+                                      }
+                                      value={YourDesignation}
+                                    >
+                                      <option
+                                        value="Finance"
+                                        onChange={(e) =>
+                                          setYourDesignation(e.target.value)
+                                        }
+                                      >
+                                        Finance
+                                      </option>
+                                      <option
+                                        value="Accounting"
+                                        onChange={(e) =>
+                                          setYourDesignation(e.target.value)
+                                        }
+                                      >
+                                        Accounting
+                                      </option>
+                                      <option
+                                        value="Human Resources"
+                                        onChange={(e) =>
+                                          setYourDesignation(e.target.value)
+                                        }
+                                      >
+                                        Human Resources
+                                      </option>
+                                      <option
+                                        value="Management"
+                                        onChange={(e) =>
+                                          setYourDesignation(e.target.value)
+                                        }
+                                      >
+                                        Management
+                                      </option>
                                     </select>
                                   </div>
                                   <div className="col-12 col-md-6">
                                     <label>Your Organization Category</label>
-                                    <select name="" id="">
-                                      <option value="">corporations</option>
-                                      <option value="">governments</option>
-                                      <option value="">armed forces</option>
-                                      <option value="">
+                                    <select
+                                      name=""
+                                      id=""
+                                      onChange={(e) =>
+                                        setYourOrganizationCategory(
+                                          e.target.value
+                                        )
+                                      }
+                                      value={YourOrganizationCategory}
+                                    >
+                                      <option
+                                        value="corporations"
+                                        onChange={(e) =>
+                                          setYourOrganizationCategory(
+                                            e.target.value
+                                          )
+                                        }
+                                      >
+                                        corporations
+                                      </option>
+                                      <option
+                                        value="governments"
+                                        onChange={(e) =>
+                                          setYourOrganizationCategory(
+                                            e.target.value
+                                          )
+                                        }
+                                      >
+                                        governments
+                                      </option>
+                                      <option
+                                        value="armed forces"
+                                        onChange={(e) =>
+                                          setYourOrganizationCategory(
+                                            e.target.value
+                                          )
+                                        }
+                                      >
+                                        armed forces
+                                      </option>
+                                      <option
+                                        value="political organizations"
+                                        onChange={(e) =>
+                                          setYourOrganizationCategory(
+                                            e.target.value
+                                          )
+                                        }
+                                      >
                                         {" "}
                                         political organizations
                                       </option>
@@ -797,7 +957,8 @@ function ResumeDetails() {
                                   <input
                                     type="radio"
                                     name="company"
-                                    value="no"
+                                    value="No"
+                                    onChange={(e) => setType(e.target.value)}
                                   />{" "}
                                   No
                                   <input
@@ -805,17 +966,30 @@ function ResumeDetails() {
                                     name="company"
                                     value="yes"
                                     className="mx-3"
+                                    onChange={(e) => setType(e.target.value)}
                                   />{" "}
                                   Yes
                                 </div>
                                 <div className="d-flex flex-row mt-3">
                                   <div className="col-12 col-md-6">
                                     <label>Started Working From</label>
-                                    <input type="date" />
+                                    <input
+                                      type="date"
+                                      onChange={(e) =>
+                                        setStartedWorkingFrom(e.target.value)
+                                      }
+                                      value={StartedWorkingFrom}
+                                    />
                                   </div>
                                   <div className="col-12 col-md-6">
                                     <label>Worked Till</label>
-                                    <input type="date" />
+                                    <input
+                                      type="date"
+                                      onChange={(e) =>
+                                        setWorkedTill(e.target.value)
+                                      }
+                                      value={WorkedTill}
+                                    />
                                   </div>
                                 </div>
                                 <div className="col-12">
@@ -826,11 +1000,15 @@ function ResumeDetails() {
                                     cols="30"
                                     rows="4"
                                     placeholder="Describe here"
+                                    onChange={(e) =>
+                                      setDescribe(e.target.value)
+                                    }
+                                    value={Describe}
                                   ></textarea>
                                 </div>
                                 <div class="modal-footer mt-3">
                                   <button
-                                    type="button"
+                                    type="submit"
                                     class="btn btn-danger"
                                     data-bs-dismiss="modal"
                                   >
