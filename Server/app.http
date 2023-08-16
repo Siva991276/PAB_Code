@@ -135,3 +135,27 @@ Content-Type: application/json
      "Address":"Guntur"
      
 }
+###
+POST http://localhost:4005/RegistrationDetails
+Content-Type: application/json
+
+
+{
+    "Typesection":"recruiter",
+    "name":"tamanna",
+    "email":"tamanna@gmail.com",
+    "contactNumber":"9652854785",
+    "password":"1234",
+    "originalPassword":"1234"   
+}
+###
+POST http://localhost:4005/login
+Content-Type: application/json
+
+
+{
+      "email":"tamanna@gmail.com",
+       "password":"1234"
+}
+
+

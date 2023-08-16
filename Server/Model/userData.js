@@ -71,7 +71,7 @@ const userData = new mongoose.Schema({
     type: String,
     require: true,
   },
-//Education Details
+  //Education Details
   Degree: {
     type: String,
     require: true,
@@ -123,7 +123,7 @@ const userData = new mongoose.Schema({
     type: String,
     require: true,
   },
-   Speaker: {
+  Speaker: {
     type: String,
     require: true,
   },
@@ -199,7 +199,32 @@ const userData = new mongoose.Schema({
     type: String,
     require: true,
   },
-
+  //Registration Form
+  Typesection: {
+    type: String,
+    enum: ["applicant", "recruiter"],
+    require: true,
+  },
+  name: {
+    type: String,
+    require: true,
+  },
+  email: {
+    type: String,
+    require: true,
+  },
+  contactNumber: {
+    type: String,
+    require: true,
+  },
+  password: {
+    type: String,
+    require: true,
+  },
+  originalPassword: {
+    type: String,
+    require: true,
+  },
 });
 
 module.exports = mongoose.model("userData.data", userData);

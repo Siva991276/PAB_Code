@@ -21,7 +21,7 @@ function ResumeDetails() {
   console.log(useData);
   const onSubmitForm1 = (e) => {
     e.preventDefault();
-    setTimeout(function () {}, 9000);
+
     if (resumeheading !== "") {
       axios
         .post("http://localhost:4005/resumeheding1", useData)
@@ -29,18 +29,7 @@ function ResumeDetails() {
           setdata(response.data);
 
           console.log(response.data);
-          if (response.status === 200) {
-            toast.success("Registration Successfull", {
-              position: "top-right",
-              autoClose: 1000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
-          }
+          toast.success("Sucess");
         })
         .catch((error) => {
           console.log(error.message);
@@ -864,19 +853,19 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body ">
-                            <form action="" onSubmit={onSubmitForm1}>
-                              <ToastContainer
-                                position="top-right"
-                                autoClose={5000}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick
-                                rtl={false}
-                                pauseOnFocusLoss
-                                draggable
-                                pauseOnHover
-                                theme="colored"
-                              />
+                            <ToastContainer
+                              position="top-right"
+                              autoClose={1000}
+                              hideProgressBar={false}
+                              newestOnTop={false}
+                              closeOnClick
+                              rtl={false}
+                              pauseOnFocusLoss
+                              draggable
+                              pauseOnHover
+                              theme="colored"
+                            />
+                            <div>
                               <label className="heading211">
                                 Resume Heading
                               </label>
@@ -902,11 +891,12 @@ function ResumeDetails() {
                                   type="submit"
                                   class="btn btn-danger"
                                   data-bs-dismiss="modal"
+                                  onClick={(e) => onSubmitForm1(e)}
                                 >
                                   Save
                                 </button>
                               </div>
-                            </form>
+                            </div>
                           </div>
                         </div>
                       </div>

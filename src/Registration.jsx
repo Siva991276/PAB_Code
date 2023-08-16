@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Registration() {
-  const [type, settype] = useState("applicant");
+  const [Typesection, settype] = useState("applicant");
 
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
@@ -22,7 +22,7 @@ function Registration() {
   console.log(name);
 
   const usersData = {
-    type: type,
+    Typesection: Typesection,
     name: name,
     email: email,
     contactNumber: phone,
@@ -34,9 +34,16 @@ function Registration() {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    if (name && email && phone && password && confirmpassword !== "") {
+    if (
+      Typesection &&
+      name &&
+      email &&
+      phone &&
+      password &&
+      confirmpassword !== ""
+    ) {
       axios
-        .post("https://pab-server.onrender.com/auth/signup", usersData)
+        .post("http://localhost:4005/RegistrationDetails", usersData)
         .then((response) => {
           setdata(response.data);
 
@@ -66,7 +73,7 @@ function Registration() {
     }
   };
 
-  console.log(type);
+  console.log(Typesection);
 
   return (
     <div>
@@ -133,7 +140,7 @@ function Registration() {
 
               <form className="forms2" onSubmit={onSubmitForm}>
                 <label className="heading2">
-                  {type === "applicant" ? "Fullname" : "Company Name"}
+                  {Typesection === "applicant" ? "Fullname" : "Company Name"}
                 </label>
                 <br />
 
@@ -141,7 +148,7 @@ function Registration() {
                   type="text"
                   className="p121"
                   placeholder={
-                    type === "applicant"
+                    Typesection === "applicant"
                       ? "Enter your full name"
                       : "Enter Company Name"
                   }
@@ -199,7 +206,6 @@ function Registration() {
                 />
                 <br />
 
-                 
                 <p>
                   <i
                     class="fa-sharp fa-solid fa-circle-check"
