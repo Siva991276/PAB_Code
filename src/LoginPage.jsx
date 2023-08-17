@@ -30,7 +30,7 @@ function LoginPage() {
     e.preventDefault();
     if (email && password !== "") {
       axios
-        .post("https://pab-server.onrender.com/auth/login", usersData)
+        .post("http://localhost:4005/login", usersData)
         .then((response) => {
           if (response.status === 200) {
             let jwtToken = response.data.token;

@@ -28,11 +28,11 @@ app.get("/", (req, res) => {
 });
 
 // Register API
-app.post("/register", async (req, res) => {
+app.post("/register",middleware, async (req, res) => {
   try {
-    const { fullname, State, Currentlocation, mobile, email } = req.body;
+    const { fullname, State, Currentlocation, mobile, emailE1 } = req.body;
     //checking user whether it is exits or not
-    const isUserExist = await userData.findOne({ email: email });
+    const isUserExist = await userData.findOne({ emailE1: emailE1 });
 
     if (isUserExist) {
       return res.send("User Already Registered");
@@ -43,7 +43,7 @@ app.post("/register", async (req, res) => {
         State,
         Currentlocation,
         mobile,
-        email,
+        emailE1,
       });
 
       newUser.save(); //saving mongodb collections
@@ -56,14 +56,14 @@ app.post("/register", async (req, res) => {
 });
 
 // get all developers data
-app.get("/alldevelopers", async (req, res) => {
+app.get("/alldevelopers",middleware, async (req, res) => {
   const alldevelopers = await userData.find({});
 
   return res.json(alldevelopers);
 });
 
 //resume heading post
-app.post("/resumeheding1", async (req, res) => {
+app.post("/resumeheding1",middleware, async (req, res) => {
   try {
     const { resumeheading } = req.body;
 
@@ -79,7 +79,7 @@ app.post("/resumeheding1", async (req, res) => {
   }
 });
 //profileSummaryDetails
-app.post("/profileSummaryDetails", async (req, res) => {
+app.post("/profileSummaryDetails",middleware, async (req, res) => {
   try {
     const { profileSummary } = req.body;
 
@@ -95,7 +95,7 @@ app.post("/profileSummaryDetails", async (req, res) => {
   }
 });
 //keySkills
-app.post("/keySkills", async (req, res) => {
+app.post("/keySkills",middleware, async (req, res) => {
   try {
     const { KeySkills } = req.body;
 
@@ -111,7 +111,7 @@ app.post("/keySkills", async (req, res) => {
   }
 });
 //EmploymentDetails
-app.post("/EmploymentDetails", async (req, res) => {
+app.post("/EmploymentDetails",middleware, async (req, res) => {
   try {
     const {
       TotalExperience,
@@ -143,7 +143,7 @@ app.post("/EmploymentDetails", async (req, res) => {
   }
 });
 //EducationDetails
-app.post("/EducationDetails", async (req, res) => {
+app.post("/EducationDetails",middleware, async (req, res) => {
   try {
     const { Degree, University, Year } = req.body;
 
@@ -162,7 +162,7 @@ app.post("/EducationDetails", async (req, res) => {
 });
 // Project Details
 
-app.post("/ProjectDetails", async (req, res) => {
+app.post("/ProjectDetails",middleware, async (req, res) => {
   try {
     const { ProjectTitle, Description, GitHubLink } = req.body;
 
@@ -180,7 +180,7 @@ app.post("/ProjectDetails", async (req, res) => {
   }
 });
 //WorkSample
-app.post("/workSample", async (req, res) => {
+app.post("/workSample",middleware, async (req, res) => {
   try {
     const { WorkSample } = req.body;
 
@@ -197,7 +197,7 @@ app.post("/workSample", async (req, res) => {
 });
 //Research Details
 
-app.post("/ResearchDetails", async (req, res) => {
+app.post("/ResearchDetails",middleware, async (req, res) => {
   try {
     const { ResearchTitle, Authors, PublicationDate } = req.body;
 
@@ -215,7 +215,7 @@ app.post("/ResearchDetails", async (req, res) => {
   }
 });
 //PresentationDetails
-app.post("/PresentationDetails", async (req, res) => {
+app.post("/PresentationDetails",middleware, async (req, res) => {
   try {
     const { PresentationTittle, Speaker, PresentationDate } = req.body;
 
@@ -233,7 +233,7 @@ app.post("/PresentationDetails", async (req, res) => {
   }
 });
 //Patent
-app.post("/PatentDetails", async (req, res) => {
+app.post("/PatentDetails",middleware, async (req, res) => {
   try {
     const { Patent } = req.body;
 
@@ -249,7 +249,7 @@ app.post("/PatentDetails", async (req, res) => {
   }
 });
 //Certification
-app.post("/CertificationDetails", async (req, res) => {
+app.post("/CertificationDetails",middleware, async (req, res) => {
   try {
     const { CertificationName, Organization, Date } = req.body;
 
@@ -268,7 +268,7 @@ app.post("/CertificationDetails", async (req, res) => {
 });
 
 //Desired career Profile
-app.post("/careerProfile", async (req, res) => {
+app.post("/careerProfile",middleware, async (req, res) => {
   try {
     const {
       DesireIndustry,
@@ -297,7 +297,7 @@ app.post("/careerProfile", async (req, res) => {
 });
 
 //Personal Details
-app.post("/PersonalDetails", async (req, res) => {
+app.post("/PersonalDetails",middleware, async (req, res) => {
   try {
     const { DateOfBirth, MaritalStatus, Age, Languages, Gender, Address } =
       req.body;
@@ -335,19 +335,19 @@ app.post("/RegistrationDetails", async (req, res) => {
     }
     if (password !== originalPassword) {
       return res.send("password not matched");
-    } else {
-      let newUser = new userData({
-        Typesection: Typesection,
-        name: name,
-        email: email,
-        contactNumber: contactNumber,
-        password: password,
-        originalPassword: originalPassword,
-      });
-
-      newUser.save(); //saving mongodb collections
-      return res.send("user Created Successfully");
     }
+    const Hashedpassword = await bcrypt.hash(password, 10);
+    let newUser = new userData({
+      Typesection,
+      name,
+      email,
+      contactNumber,
+      password: Hashedpassword,
+      originalPassword: Hashedpassword,
+    });
+
+    newUser.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
   } catch (e) {
     console.log(e.message);
     res.send("Inernal server error");
@@ -355,7 +355,7 @@ app.post("/RegistrationDetails", async (req, res) => {
 });
 //login
 app.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { email: email, password: password } = req.body;
   const isUserExist = await userData.findOne({ email });
 
   if (isUserExist) {

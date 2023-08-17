@@ -16,7 +16,7 @@ function ProfileCode() {
   const [State, setState] = useState("");
   const [Currentlocation, setCurrentlocation] = useState("");
   const [mobile, setmobile] = useState("");
-  const [email, setemail] = useState("");
+  const [emailE1, setemail] = useState("");
 
   const [data, setdata] = useState([]);
   console.log(fullname);
@@ -26,7 +26,7 @@ function ProfileCode() {
     State: State,
     Currentlocation: Currentlocation,
     mobile: mobile,
-    email: email,
+    emailE1: emailE1,
   };
   console.log(useData);
 
@@ -73,9 +73,13 @@ function ProfileCode() {
       setErrorMessage("Form submission failed. Please check errors.");
     }
 
-    if (fullname && State && Currentlocation && mobile && email !== "") {
+    if (fullname && State && Currentlocation && mobile && emailE1 !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/register", useData)
+        .post("http://localhost:4005/register", useData, { headers })
         .then((response) => {
           setdata(response.data);
 
@@ -334,7 +338,7 @@ function ProfileCode() {
                       class="form-control w-100 p-2 profileselect "
                       style={{ border: "1px solid black" }}
                       onChange={(e) => setemail(e.target.value)}
-                      value={email}
+                      value={emailE1}
                     />
                   </div>
                 </div>

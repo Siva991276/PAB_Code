@@ -23,8 +23,12 @@ function ResumeDetails() {
     e.preventDefault();
 
     if (resumeheading !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/resumeheding1", useData)
+        .post("http://localhost:4005/resumeheding1", useData, { headers })
         .then((response) => {
           setdata(response.data);
 
@@ -50,8 +54,14 @@ function ResumeDetails() {
   const onSubmitForm = (e) => {
     e.preventDefault();
     if (profileSummary !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/profileSummaryDetails", profile)
+        .post("http://localhost:4005/profileSummaryDetails", profile, {
+          headers,
+        })
         .then((response) => {
           setdata1(response.data);
 
@@ -89,8 +99,12 @@ function ResumeDetails() {
   const onSubmitFormskills = (e) => {
     e.preventDefault();
     if (KeySkills !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/keySkills", skills)
+        .post("http://localhost:4005/keySkills", skills, { headers })
         .then((response) => {
           setdata2(response.data);
 
@@ -151,8 +165,12 @@ function ResumeDetails() {
       WorkedTill &&
       Describe !== ""
     ) {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/EmploymentDetails", Employee)
+        .post("http://localhost:4005/EmploymentDetails", Employee, { headers })
         .then((response) => {
           setdata3(response.data);
 
@@ -194,8 +212,12 @@ function ResumeDetails() {
   const onSubmitFormEduction = (e) => {
     e.preventDefault();
     if (Degree && University && Year !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/EducationDetails", Eduction)
+        .post("http://localhost:4005/EducationDetails", Eduction, { headers })
         .then((response) => {
           setdata4(response.data);
 
@@ -238,8 +260,12 @@ function ResumeDetails() {
   const onSubmitFormProject = (e) => {
     e.preventDefault();
     if (ProjectTitle && Description && GitHubLink !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/ProjectDetails", Project)
+        .post("http://localhost:4005/ProjectDetails", Project, { headers })
         .then((response) => {
           setdata5(response.data);
 
@@ -277,8 +303,12 @@ function ResumeDetails() {
   const onSubmitFormWorksample = (e) => {
     e.preventDefault();
     if (WorkSample !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/workSample", work)
+        .post("http://localhost:4005/workSample", work, { headers })
         .then((response) => {
           setdata6(response.data);
 
@@ -321,8 +351,12 @@ function ResumeDetails() {
   const onSubmitFormResearchDetails = (e) => {
     e.preventDefault();
     if (ResearchTitle && Authors && PublicationDate !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/ResearchDetails", Research)
+        .post("http://localhost:4005/ResearchDetails", Research, { headers })
         .then((response) => {
           setdata7(response.data);
 
@@ -363,8 +397,14 @@ function ResumeDetails() {
   const onSubmitFormPresentationDetails = (e) => {
     e.preventDefault();
     if (PresentationTittle && Speaker && PresentationDate !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/PresentationDetails", Presentation)
+        .post("http://localhost:4005/PresentationDetails", Presentation, {
+          headers,
+        })
         .then((response) => {
           setdata8(response.data);
 
@@ -401,8 +441,12 @@ function ResumeDetails() {
   const onSubmitFormPatentDetails = (e) => {
     e.preventDefault();
     if (Patent !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/PatentDetails", PatentDetails)
+        .post("http://localhost:4005/PatentDetails", PatentDetails, { headers })
         .then((response) => {
           setdata9(response.data);
 
@@ -443,10 +487,15 @@ function ResumeDetails() {
   const onSubmitFormCertificationDetails = (e) => {
     e.preventDefault();
     if (CertificationName && Organization && Date !== "") {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
         .post(
           "http://localhost:4005/CertificationDetails",
-          CertificationDetails
+          CertificationDetails,
+          { headers }
         )
         .then((response) => {
           setdata01(response.data);
@@ -501,8 +550,14 @@ function ResumeDetails() {
       Desiredshift &&
       Employmenttype !== ""
     ) {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/careerProfile", careerProfileDetails)
+        .post("http://localhost:4005/careerProfile", careerProfileDetails, {
+          headers,
+        })
         .then((response) => {
           setdata02(response.data);
 
@@ -557,8 +612,14 @@ function ResumeDetails() {
       Gender &&
       Address !== ""
     ) {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       axios
-        .post("http://localhost:4005/PersonalDetails", PersonalDetails)
+        .post("http://localhost:4005/PersonalDetails", PersonalDetails, {
+          headers,
+        })
         .then((response) => {
           setdata03(response.data);
 

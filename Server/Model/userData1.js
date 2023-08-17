@@ -18,7 +18,7 @@ const userData = new mongoose.Schema({
     require: true,
   },
 
-  emailE1: {
+  email: {
     type: String,
     require: true,
   },

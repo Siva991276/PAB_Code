@@ -2,20 +2,23 @@ GET  http://localhost:4005/
 ###
 POST http://localhost:4005/register
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
-    "fullname": "kiran", 
+    "fullname": "vamsi Krishna", 
     "State": "Ap", 
     "Currentlocation":"kadapa", 
     "mobile": "9654785478", 
-    "email": "kiran@gmail.com"
+    "emailE1": "vamsi@gmail.com"
      
 }
 ###
 GET http://localhost:4005/alldevelopers
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 ###
 POST http://localhost:4005/resumeheding1
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
     "resumeheading": "suneel123"
@@ -23,6 +26,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/profileSummaryDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
     "profileSummary": "java121"
@@ -30,6 +34,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/keySkills
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
     "KeySkills": "spring"
@@ -37,6 +42,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/EmploymentDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
     "TotalExperience":"3-years",
@@ -51,6 +57,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/EducationDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
     "Degree":"B-Tech",
@@ -60,6 +67,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/ProjectDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
     "ProjectTitle":"Solar Energy",
@@ -69,6 +77,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/workSample
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
     "WorkSample": "A work sample is a product (such as an example of writing/editing) that applicants are requested to bring to the job interview."
@@ -76,6 +85,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/ResearchDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
      "ResearchTitle":"Light Energy",
@@ -85,6 +95,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/PresentationDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
      "PresentationTittle":"Energy",
@@ -94,6 +105,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/PatentDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
      "Patent":"U.S. Patent [patent number], [patent title], [date issued]"
@@ -102,6 +114,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/CertificationDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
      "CertificationName":"Yoga",
@@ -112,6 +125,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/careerProfile
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
      "DesireIndustry":"IT services & conslting",
@@ -125,6 +139,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4005/PersonalDetails
 Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
      "DateOfBirth":"22-09-2000",
@@ -142,11 +157,11 @@ Content-Type: application/json
 
 {
     "Typesection":"recruiter",
-    "name":"tamanna",
-    "email":"tamanna@gmail.com",
+    "name":"sivakoti",
+    "email":"sivakoti@gmail.com",
     "contactNumber":"9652854785",
-    "password":"1234",
-    "originalPassword":"1234"   
+    "password":"123",
+    "originalPassword":"123"   
 }
 ###
 POST http://localhost:4005/login
@@ -154,8 +169,8 @@ Content-Type: application/json
 
 
 {
-      "email":"tamanna@gmail.com",
-       "password":"1234"
+      "email":"sivakoti@gmail.com",
+       "password":"123"
 }
 
 
