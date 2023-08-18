@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../src/All Images/pab bottom-logo (1).jpg";
 import Footer from "./Footer";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import axios, { Axios } from "axios";
 
@@ -20,6 +21,7 @@ function ProfileCode() {
 
   const [data, setdata] = useState([]);
   console.log(fullname);
+  let navigat = useNavigate();
 
   const useData = {
     fullname: fullname,
@@ -95,7 +97,9 @@ function ProfileCode() {
               progress: undefined,
               theme: "colored",
             });
-            setTimeout(function () {}, 3000);
+            setTimeout(function () {
+               
+            }, 3000);
           }
         })
         .catch((error) => {
@@ -343,7 +347,7 @@ function ProfileCode() {
                   </div>
                 </div>
 
-                <h5 className="message-code">{error}</h5>
+                {/* <h5 className="message-code">{error}</h5> */}
                 <button type="submit" className="w-25 mt-4 p-2 profilebutton1">
                   Update Details
                 </button>

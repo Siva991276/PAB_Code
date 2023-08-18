@@ -172,5 +172,24 @@ Content-Type: application/json
       "email":"sivakoti@gmail.com",
        "password":"123"
 }
+###
+POST http://localhost:4005/browsejobs123
+Content-Type: application/json
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 
+{
+       "companynameE2": "Apple",
+    "contactnumberE2": "9848032285",
+    "emailE2": "apple@gmail.com",
+    "descriptionE2": "The apple is one of the pome (fleshy) fruits. Apples at harvest vary widely in size, shape, colour, and acidity, but most are fairly round and some shade of red or yellow. The thousands of varieties fall into three broad classes: cider, cooking, and dessert varieties.",
+    "stateE2": "Telagana",
+    "countryE2": "India",
+    "experienceE2": "4-5years",
+    "salaryE2": "12-16 LPA",
+    "roleE2": "Web Designer",
+    "no_of_applicationsE2": "90",
+    "ImageE2": "https://res.cloudinary.com/dzvqo0oeu/image/upload/v1692354169/Apple_logo_black_rib8jx.svg"
+}
+###
+GET http://localhost:4005/allusers

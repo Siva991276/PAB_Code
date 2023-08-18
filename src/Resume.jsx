@@ -33,7 +33,7 @@ function ResumeDetails() {
           setdata(response.data);
 
           console.log(response.data);
-          toast.success("Sucess");
+          toast.success("Registration Successfull");
         })
         .catch((error) => {
           console.log(error.message);
@@ -898,6 +898,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal">
                       <div class="modal-dialog">
@@ -914,18 +926,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body ">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={1000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
                             <div>
                               <label className="heading211">
                                 Resume Heading
@@ -986,6 +986,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal1">
                       <div class="modal-dialog">
@@ -1002,18 +1014,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
                             <form onSubmit={onSubmitForm}>
                               <label>Profile Summary</label>
                               <br />
@@ -1073,6 +1073,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal2">
                       <div class="modal-dialog">
@@ -1089,19 +1101,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form action="" onSubmit={onSubmitFormskills}>
                               <div class="resumegroup mb-5 ">
                                 <button class="btnresume p-2 px-3 m-1 ">
@@ -1213,6 +1212,18 @@ function ResumeDetails() {
                         </i>
                         <b class="resumeh7 row">+Add</b>
                       </button>
+                      <ToastContainer
+                        position="top-right"
+                        autoClose={1000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="colored"
+                      />
 
                       <div class="modal" id="myModal23">
                         <div class="modal-dialog ">
@@ -1229,18 +1240,6 @@ function ResumeDetails() {
 
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
-                              <ToastContainer
-                                position="top-right"
-                                autoClose={5000}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick
-                                rtl={false}
-                                pauseOnFocusLoss
-                                draggable
-                                pauseOnHover
-                                theme="colored"
-                              />
                               <form action="" onSubmit={onSubmitFormEmployee}>
                                 <div className="d-flex flex-row">
                                   <div className="col-12 col-md-6">
@@ -1479,6 +1478,18 @@ function ResumeDetails() {
                         </i>
                         <b class="resumeh7 row">+Add</b>
                       </button>
+                      <ToastContainer
+                        position="top-right"
+                        autoClose={1000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="colored"
+                      />
 
                       <div class="modal" id="myModal22">
                         <div class="modal-dialog">
@@ -1495,19 +1506,6 @@ function ResumeDetails() {
 
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
-                              <ToastContainer
-                                position="top-right"
-                                autoClose={5000}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick
-                                rtl={false}
-                                pauseOnFocusLoss
-                                draggable
-                                pauseOnHover
-                                theme="colored"
-                              />
-
                               <form action="" onSubmit={onSubmitFormEduction}>
                                 <div>
                                   <label>Degree :</label>
@@ -1586,6 +1584,18 @@ function ResumeDetails() {
                         </i>
                         <b class="resumeh7 row">+Add</b>
                       </button>
+                      <ToastContainer
+                        position="top-right"
+                        autoClose={1000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="colored"
+                      />
 
                       <div class="modal" id="myModal21">
                         <div class="modal-dialog">
@@ -1602,18 +1612,6 @@ function ResumeDetails() {
 
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
-                              <ToastContainer
-                                position="top-right"
-                                autoClose={5000}
-                                hideProgressBar={false}
-                                newestOnTop={false}
-                                closeOnClick
-                                rtl={false}
-                                pauseOnFocusLoss
-                                draggable
-                                pauseOnHover
-                                theme="colored"
-                              />
                               <form action="" onSubmit={onSubmitFormProject}>
                                 <div>
                                   <label>Title :</label>
@@ -1769,6 +1767,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal4">
                       <div class="modal-dialog">
@@ -1785,19 +1795,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form action="" onSubmit={onSubmitFormWorksample}>
                               <label>Work Sample</label>
                               <br />
@@ -1846,6 +1843,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal5">
                       <div class="modal-dialog">
@@ -1862,19 +1871,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form
                               action=""
                               onSubmit={onSubmitFormResearchDetails}
@@ -1951,6 +1947,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal6">
                       <div class="modal-dialog">
@@ -1967,19 +1975,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form
                               action=""
                               onSubmit={onSubmitFormPresentationDetails}
@@ -2056,6 +2051,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal7">
                       <div class="modal-dialog">
@@ -2072,19 +2079,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form
                               action=""
                               onSubmit={onSubmitFormPatentDetails}
@@ -2138,6 +2132,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal8">
                       <div class="modal-dialog">
@@ -2154,19 +2160,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form
                               action=""
                               onSubmit={onSubmitFormCertificationDetails}
@@ -2242,6 +2235,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal9">
                       <div class="modal-dialog">
@@ -2258,19 +2263,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form
                               action=""
                               onSubmit={onSubmitFormcareerProfileDetails}
@@ -2416,6 +2408,18 @@ function ResumeDetails() {
                         edit_square
                       </i>
                     </button>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
 
                     <div class="modal" id="myModal91">
                       <div class="modal-dialog">
@@ -2432,19 +2436,6 @@ function ResumeDetails() {
 
                           {/* <!-- Modal body --> */}
                           <div class="modal-body">
-                            <ToastContainer
-                              position="top-right"
-                              autoClose={5000}
-                              hideProgressBar={false}
-                              newestOnTop={false}
-                              closeOnClick
-                              rtl={false}
-                              pauseOnFocusLoss
-                              draggable
-                              pauseOnHover
-                              theme="colored"
-                            />
-
                             <form
                               action=""
                               onSubmit={onSubmitFormpersonalDetails}

@@ -16,13 +16,13 @@ function BrowserJobs() {
   }, []);
 
   const fetchblogs = async () => {
-    const api = "https://pab-server.onrender.com/api/jobs";
+    const api = " http://localhost:4005/allusers";
     const authToken =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGQwNzYzMzAyZjc5ZDk0Y2MyMTBjM2IiLCJpYXQiOjE2OTEzODM3NTF9.tbp-vBQFDhcR02FR3CfIs-KTscKUfqmGrQ0VSoOe80I";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk";
     try {
       const response = await axios.get(api, {
         headers: {
-          Authorization: `Bearer ${authToken}`,
+          token: `${authToken}`,
         },
       });
       setblogslist(response.data);
@@ -57,11 +57,9 @@ function BrowserJobs() {
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav logostyle">
               <li class="nav-item">
-                
-                  <a class="nav-link navstyle " href="/Home">
-                    Home
-                  </a>
-             
+                <a class="nav-link navstyle " href="/Home">
+                  Home
+                </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link dropdown-toggle navstyle1" href="">
@@ -69,12 +67,10 @@ function BrowserJobs() {
                 </a>
               </li>
               <li class="nav-item">
-                 
-                  {" "}
-                  <a class="nav-link dropdown-toggle navstyle" href="/Jobs">
-                    Jobs
-                  </a>
-               
+                {" "}
+                <a class="nav-link dropdown-toggle navstyle" href="/Jobs">
+                  Jobs
+                </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link dropdown-toggle navstyle" href="#">
@@ -90,10 +86,13 @@ function BrowserJobs() {
                 <i class="fa-solid fa-bell bellicon"></i>
               </li>
               <li class="nav-item logosymbol">
-              <Link to = "/ProfileCode"> <a href="">
+                <Link to="/ProfileCode">
                   {" "}
-                  <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
-                </a></Link>
+                  <a href="">
+                    {" "}
+                    <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -433,24 +432,25 @@ function BrowserJobs() {
           <div class="col-lg-11">
             <div class="row">
               <ul className="col-12 col-md-4">
-                {blogslist.map((blog) => 
-                (
+                {blogslist.map((blog) => (
                   <div
                     className={`active1 ${
                       selectedblog && selectedblog._id === blog._id
                         ? "select"
                         : ""
                     }`}
-                    onClick={((e) => onclickblogdetails(blog._id))}
+                    onClick={(e) => onclickblogdetails(blog._id)}
                   >
                     <div>
                       <p class="graphics-item m-0">
-                        {blog.title} <span class="package">{blog.salary}</span>
+                        {blog.companynameE2}
+                        <span class="package">{blog.salaryE2}</span>
                       </p>
-                      <p class="angel">{blog.recruiter.companyname} </p>
-                      <p class="m-0">{blog.jobType} </p>
-                      <p class="m-0">{blog.cities} </p>
-                      <p class="m-0">{blog.education}</p>
+                      <p class="angel">{blog.stateE2} </p>
+                      <p>Angel Broking</p>
+                      <p class="m-0">{blog.roleE2} </p>
+                      <p class="m-0">{blog.experienceE2} </p>
+
                       <span class=" publish">Published one day ago</span>
                     </div>
                   </div>
@@ -468,7 +468,7 @@ function BrowserJobs() {
                               <div class="row">
                                 <div class="col-lg-3">
                                   <img
-                                    src={selectedblog.recruiter.profileImage}
+                                    src={selectedblog.ImageE2}
                                     alt="img"
                                     class=" angel-img"
                                     id="imgElement"
@@ -480,10 +480,10 @@ function BrowserJobs() {
                                     class="graphics-item m-0"
                                     style={{ fontSize: "17px" }}
                                   >
-                                    {selectedblog.title}
+                                    {selectedblog.companynameE2}
                                   </p>
                                   <p class="m-0" id="angelItem">
-                                    {selectedblog.recruiter.companyname}
+                                    {selectedblog.companynameE2}
                                   </p>
                                   <p class="m-0 Show">
                                     Show more jobs in the company
@@ -497,7 +497,7 @@ function BrowserJobs() {
                                   class="graphics-item m-0"
                                   style={{ fontSize: "20px" }}
                                 >
-                                  {selectedblog.salary}
+                                  {selectedblog.salaryE2}
                                   <span class="bookmark">
                                     <i
                                       class="fa-solid fa-bookmark book"
@@ -507,11 +507,11 @@ function BrowserJobs() {
                                 </p>
                                 <p class="m-0">
                                   <i class="fa-solid fa-location-dot"></i>{" "}
-                                  {selectedblog.cities}
+                                  {selectedblog.stateE2}
                                 </p>
                                 <p class="m-0">
                                   <i class="fa-solid fa-briefcase"></i>{" "}
-                                  {selectedblog.experience}
+                                  {selectedblog.experienceE2}
                                 </p>
                               </div>
                             </div>
@@ -521,14 +521,14 @@ function BrowserJobs() {
                             <div class="col-md-1"></div>
                             <div class="post col-md-8">
                               <p class="m-0">
-                                dateOfPosting:{selectedblog.dateOfPosting}
+                                dateOfPosting:07-11-2001
                               </p>
                               <p class="m-0">
-                                Openings:{selectedblog.maxPositions}
+                                Openings:34
                               </p>
-                              <p class="m-0">Job Application:580</p>
+                              <p class="m-0">Job Application:{selectedblog.no_of_applicationsE2}</p>
                               <p class="m-0">
-                                deadline:{selectedblog.deadline}
+                                deadline:18-08-2023
                               </p>
                             </div>
                             <div class="col-md-3">
@@ -545,19 +545,14 @@ function BrowserJobs() {
                       </div>
                     </div>
                     <div class="row">
-                             
-                             <div class="bg-element scroll-item p-4 my-5">
-                                 <h5>Job Description</h5>
-                                 <h6>Roles and Responsibilities</h6>
-                                 <p>{selectedblog.description}</p>
-                                 
-                                 
-                             </div>
-                         </div>
+                      <div class="bg-element scroll-item p-4 my-5">
+                        <h5>Job Description</h5>
+                        <h6>Roles and Responsibilities</h6>
+                        <p>{selectedblog.descriptionE2}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                
               )}
             </div>
           </div>
