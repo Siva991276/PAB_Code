@@ -9,7 +9,7 @@ token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI
     "State": "Ap", 
     "Currentlocation":"kadapa", 
     "mobile": "9654785478", 
-    "emailE1": "vamsi@gmail.com"
+    "emailE1": "vamsi123@gmail.com"
      
 }
 ###
@@ -157,8 +157,8 @@ Content-Type: application/json
 
 {
     "Typesection":"recruiter",
-    "name":"sivakoti",
-    "email":"sivakoti@gmail.com",
+    "name":"suneel",
+    "email":"suneel121@gmail.com",
     "contactNumber":"9652854785",
     "password":"123",
     "originalPassword":"123"   
@@ -177,19 +177,18 @@ POST http://localhost:4005/browsejobs123
 Content-Type: application/json
 token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
-
 {
-       "companynameE2": "Apple",
+    "companynameE2": "cadsys",
     "contactnumberE2": "9848032285",
-    "emailE2": "apple@gmail.com",
-    "descriptionE2": "The apple is one of the pome (fleshy) fruits. Apples at harvest vary widely in size, shape, colour, and acidity, but most are fairly round and some shade of red or yellow. The thousands of varieties fall into three broad classes: cider, cooking, and dessert varieties.",
+    "emailE2": "cadsys@gmail.com",
+    "descriptionE2": "Cadsys is founded in 1989, to provide innovative cost effective knowledge services, Cadsys has a distinction of achieving many break throughs with its innovative solutions, fearless approach and ethical business practices.At Cadsys we strive to provide our clients with high-quality, high-value products and services that exceed their expectations. This is evident from the fact that Cadsys has a distinct record of getting a repeat order from every single customer to whom we have provided any solution. The solutions developed by Cadsys in partnership with our clients have generated huge employment opportunities all over the world.",
     "stateE2": "Telagana",
     "countryE2": "India",
-    "experienceE2": "4-5years",
+    "experienceE2": "15-16 years",
     "salaryE2": "12-16 LPA",
-    "roleE2": "Web Designer",
+    "roleE2": "CNC Operator",
     "no_of_applicationsE2": "90",
-    "ImageE2": "https://res.cloudinary.com/dzvqo0oeu/image/upload/v1692354169/Apple_logo_black_rib8jx.svg"
+    "ImageE2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROnnWX3J-nJZ6dvnkeLmBIqVnqxp41tW5uJNkK2W52Bf8CSG3FVRl8SyacutLTGcb-9Pw&usqp=CAU"
 }
 ###
 GET http://localhost:4005/allusers

@@ -10,6 +10,11 @@ import axios from "axios";
 function BrowserJobs() {
   const [blogslist, setblogslist] = useState([]);
   const [selectedblog, setselectedblog] = useState(null);
+  const [userState, setuserState] = useState("");
+  const [userlocation, setUserLocation] = useState("");
+  const [usereperience, setusereperience] = useState("");
+  const [userlocation1, setuserlocation1] = useState("");
+  const [usersalary, setusersalary] = useState("");
 
   useEffect(() => {
     fetchblogs();
@@ -39,6 +44,38 @@ function BrowserJobs() {
 
   console.log(blogslist);
   console.log(selectedblog);
+
+  const searchBySkills = () => {
+    const filteredJobs = blogslist.filter(
+      (blog) =>
+        blog.companynameE2 &&
+        blog.companynameE2
+          .toLowerCase()
+          .includes(userlocation.toLowerCase().trim()) &&
+        blog.stateE2 &&
+        blog.stateE2.toLowerCase().includes(userState.toLowerCase().trim())
+    );
+    setblogslist(filteredJobs);
+  };
+  const userExperience = (e) => {
+    const fillter = blogslist.filter((blog) => blog.experienceE2.includes(e));
+    setblogslist(fillter);
+    setusereperience(fillter);
+  };
+
+  const userLocation12 = (e) => {
+    const filterlocation = blogslist.filter((blog) => blog.stateE2.includes(e));
+    setblogslist(filterlocation);
+    setuserlocation1(filterlocation);
+  };
+
+  const userSalary = (e)=>{
+    const fillterSalary = blogslist.filter((blog)=> blog.salaryE2.includes(e))
+    setblogslist(fillterSalary);
+    setusersalary(fillterSalary);
+  }
+
+
 
   return (
     <div className="">
@@ -107,17 +144,55 @@ function BrowserJobs() {
             </h6>
           </div>
           <div class="col-12 homebutton">
-            <button class=" subhomebutton shadow w-25">
+            <div class="text-center align-items-center justify-content-center d-flex row m-2">
+              <div class="d-flex p-1 align-items-center seacrhMainContainer m-2 col-md-4">
+                <div class="">
+                  <i class="fa-solid fa-magnifying-glass p-3"></i>
+                  <input
+                    type="text"
+                    placeholder="Job title skills or company"
+                    class=" p-1 searchBox "
+                    style={{ fontWeight: "bold" }}
+                    value={userlocation}
+                    onChange={(e) => setUserLocation(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <i class="fa-solid fa-sort-down p-2 "></i>
+                </div>
+              </div>
+              <div class="d-flex p-1 align-items-center seacrhMainContainer m-2 col-md-4">
+                <div class="">
+                  <i class="fa-solid fa-location-dot p-3"></i>
+                  <input
+                    type="text"
+                    placeholder="City, Province or region "
+                    class=" p-1 searchBox "
+                    style={{ fontWeight: "bold" }}
+                    value={userState}
+                    onChange={(e) => setuserState(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <i class="fa-solid fa-sort-down p-2 "></i>
+                </div>
+              </div>
+            </div>
+
+            {/* <button class=" subhomebutton shadow w-25">
               <i class="fa-solid fa-magnifying-glass p-3 "></i>job Title or
               company<i class="fa-solid fa-sort-down p-3 "></i>
-            </button>
-            <button class=" subhomebutton shadow w-25">
+            </button> */}
+
+            {/* <button class=" subhomebutton shadow w-25">
               <i class="fa-solid fa-location-dot p-3"></i>city,province or
               Region<i class="fa-solid fa-sort-down p-3 "></i>
-            </button>
+            </button> */}
           </div>
           <div class="homebutton1">
-            <button class="subbutton1">Search</button>
+            <button class="subbutton1" onClick={searchBySkills}>
+              Search
+            </button>
           </div>
         </div>
       </div>
@@ -138,28 +213,82 @@ function BrowserJobs() {
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">
-                        0 years
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userExperience("2-3");
+                        }}
+                      >
+                        2-3 years
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        1 year
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        2 year
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userExperience("3");
+                        }}
+                      >
                         3 year
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userExperience("4");
+                        }}
+                      >
                         4 year
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userExperience("4-5");
+                        }}
+                      >
+                        4-5 year
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userExperience("5");
+                        }}
+                      >
+                        5 year
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userExperience("6-7");
+                        }}
+                      >
+                        6-7 year
+                      </a>
+                    </li>
+
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userExperience("15-16");
+                        }}
+                      >
+                        15-16 year
                       </a>
                     </li>
                   </ul>
@@ -177,30 +306,34 @@ function BrowserJobs() {
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">
-                        Hyderabad
+                      <a class="dropdown-item" href="#" onClick={()=> {
+                        userLocation12("Maharashtra")
+                      }}>
+                       Maharashtra
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        Bengaluru
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userLocation12("Tamilnadu")
+                      }}>
+                      Tamilnadu
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        Chennai
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userLocation12("Telagana")
+                      }}>
+                      Telagana
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        Tirupati
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userLocation12("Bangalore")
+                      }}>
+                      Bangalore
                       </a>
                     </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        Mumbai
-                      </a>
-                    </li>
+                     
                   </ul>
                 </div>
               </li>
@@ -216,28 +349,45 @@ function BrowserJobs() {
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">
-                        2.5-3 LPA
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userSalary("9-4")
+                      }}>
+                      9-4 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        3.5-4 LPA
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                      userSalary("10-15")
+                      }}>
+                      10-15 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        4.5-7 LPA
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userSalary("12-16")
+                      }}>
+                      12-16 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        7.5-10 LPA
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userSalary("13-15")
+                      }}>
+                      13-15 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        10.5-15 LPA
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userSalary("15-20")
+                      }}>
+                      15-20 LPA
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#" onClick={()=>{
+                        userSalary("20-25")
+                      }}>
+                      20-25 LPA
                       </a>
                     </li>
                   </ul>
@@ -520,16 +670,13 @@ function BrowserJobs() {
                           <div class="d-flex flex-row row">
                             <div class="col-md-1"></div>
                             <div class="post col-md-8">
+                              <p class="m-0">dateOfPosting:07-11-2001</p>
+                              <p class="m-0">Openings:34</p>
                               <p class="m-0">
-                                dateOfPosting:07-11-2001
+                                Job Application:
+                                {selectedblog.no_of_applicationsE2}
                               </p>
-                              <p class="m-0">
-                                Openings:34
-                              </p>
-                              <p class="m-0">Job Application:{selectedblog.no_of_applicationsE2}</p>
-                              <p class="m-0">
-                                deadline:18-08-2023
-                              </p>
+                              <p class="m-0">deadline:18-08-2023</p>
                             </div>
                             <div class="col-md-3">
                               <button

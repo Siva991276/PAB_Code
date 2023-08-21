@@ -49,7 +49,7 @@ const BrowseData = new mongoose.Schema({
   ImageE2: {
     type: String,
     required: true,
-  },
+  }
 });
 
 module.exports = mongoose.model("BrowseData.data", BrowseData);

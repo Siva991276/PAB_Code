@@ -396,9 +396,9 @@ app.post("/browsejobs123", middleware, async (req, res) => {
       descriptionE2,
       stateE2,
       countryE2,
+      experienceE2,
       salaryE2,
       roleE2,
-      experienceE2,
       no_of_applicationsE2,
       ImageE2,
     } = req.body;
@@ -409,9 +409,10 @@ app.post("/browsejobs123", middleware, async (req, res) => {
       descriptionE2: descriptionE2,
       stateE2: stateE2,
       countryE2: countryE2,
+      experienceE2: experienceE2,
       salaryE2: salaryE2,
       roleE2: roleE2,
-      experienceE2: experienceE2,
+
       no_of_applicationsE2: no_of_applicationsE2,
       ImageE2: ImageE2,
     });
