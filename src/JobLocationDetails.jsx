@@ -17,6 +17,8 @@ function JobLocationDetails() {
     const [filteredButtons, setFilteredButtons] = useState('');
     const [filter, setFilter] = useState([]);
 
+    
+
     const allButtons = [
         'Adoni', 'Amaravati', 'Anantapur', 'Chandragiri', 'Chittoor',
         'Dowlaiswaram', 'Guntur', 'Eluru', 'Kadapa', 'Kakinada', 'Kurnool',

@@ -69,13 +69,11 @@ function BrowserJobs() {
     setuserlocation1(filterlocation);
   };
 
-  const userSalary = (e)=>{
-    const fillterSalary = blogslist.filter((blog)=> blog.salaryE2.includes(e))
+  const userSalary = (e) => {
+    const fillterSalary = blogslist.filter((blog) => blog.salaryE2.includes(e));
     setblogslist(fillterSalary);
     setusersalary(fillterSalary);
-  }
-
-
+  };
 
   return (
     <div className="">
@@ -306,34 +304,49 @@ function BrowserJobs() {
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=> {
-                        userLocation12("Maharashtra")
-                      }}>
-                       Maharashtra
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userLocation12("Maharashtra");
+                        }}
+                      >
+                        Maharashtra
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userLocation12("Tamilnadu")
-                      }}>
-                      Tamilnadu
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userLocation12("Tamilnadu");
+                        }}
+                      >
+                        Tamilnadu
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userLocation12("Telagana")
-                      }}>
-                      Telagana
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userLocation12("Telagana");
+                        }}
+                      >
+                        Telagana
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userLocation12("Bangalore")
-                      }}>
-                      Bangalore
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userLocation12("Bangalore");
+                        }}
+                      >
+                        Bangalore
                       </a>
                     </li>
-                     
                   </ul>
                 </div>
               </li>
@@ -349,45 +362,69 @@ function BrowserJobs() {
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userSalary("9-4")
-                      }}>
-                      9-4 LPA
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userSalary("9-4");
+                        }}
+                      >
+                        9-4 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                      userSalary("10-15")
-                      }}>
-                      10-15 LPA
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userSalary("10-15");
+                        }}
+                      >
+                        10-15 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userSalary("12-16")
-                      }}>
-                      12-16 LPA
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userSalary("12-16");
+                        }}
+                      >
+                        12-16 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userSalary("13-15")
-                      }}>
-                      13-15 LPA
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userSalary("13-15");
+                        }}
+                      >
+                        13-15 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userSalary("15-20")
-                      }}>
-                      15-20 LPA
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userSalary("15-20");
+                        }}
+                      >
+                        15-20 LPA
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#" onClick={()=>{
-                        userSalary("20-25")
-                      }}>
-                      20-25 LPA
+                      <a
+                        class="dropdown-item"
+                        href="#"
+                        onClick={() => {
+                          userSalary("20-25");
+                        }}
+                      >
+                        20-25 LPA
                       </a>
                     </li>
                   </ul>
