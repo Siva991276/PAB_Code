@@ -5,11 +5,12 @@ Content-Type: application/json
 token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
 
 {
-    "fullname": "vamsi Krishna", 
+    "fullname": "Krishna", 
+    "radioSection": "Fresher", 
     "State": "Ap", 
     "Currentlocation":"kadapa", 
     "mobile": "9654785478", 
-    "emailE1": "vamsi123@gmail.com"
+    "emailE1": "krishna@gmail.com"
      
 }
 ###

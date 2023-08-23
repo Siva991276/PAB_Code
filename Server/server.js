@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 // Register API
 app.post("/register", middleware, async (req, res) => {
   try {
-    const { fullname, State, Currentlocation, mobile, emailE1 } = req.body;
+    const { fullname, radioSection, State, Currentlocation, mobile, emailE1 } = req.body;
     //checking user whether it is exits or not
     const isUserExist = await userData.findOne({ emailE1: emailE1 });
 
@@ -41,6 +41,7 @@ app.post("/register", middleware, async (req, res) => {
       //generating encrypted password for user
       let newUser = new userData({
         fullname,
+        radioSection : radioSection,
         State,
         Currentlocation,
         mobile,

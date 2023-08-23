@@ -14,6 +14,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function ProfileCode() {
   const [fullname, setfullname] = useState("");
+  const [radioSection, setradioSection] = useState("Fresher");
   const [State, setState] = useState("");
   const [Currentlocation, setCurrentlocation] = useState("");
   const [mobile, setmobile] = useState("");
@@ -25,6 +26,7 @@ function ProfileCode() {
 
   const useData = {
     fullname: fullname,
+    radioSection: radioSection,
     State: State,
     Currentlocation: Currentlocation,
     mobile: mobile,
@@ -75,7 +77,14 @@ function ProfileCode() {
       setErrorMessage("Form submission failed. Please check errors.");
     }
 
-    if (fullname && State && Currentlocation && mobile && emailE1 !== "") {
+    if (
+      fullname &&
+      radioSection &&
+      State &&
+      Currentlocation &&
+      mobile &&
+      emailE1 !== ""
+    ) {
       const headers = {
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
@@ -97,9 +106,7 @@ function ProfileCode() {
               progress: undefined,
               theme: "colored",
             });
-            setTimeout(function () {
-               
-            }, 3000);
+            setTimeout(function () {}, 3000);
           }
         })
         .catch((error) => {
@@ -109,6 +116,7 @@ function ProfileCode() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(radioSection);
 
   return (
     <div>
@@ -253,7 +261,7 @@ function ProfileCode() {
                   <input
                     type="text"
                     placeholder="Enter your full name"
-                    className="form-control w-75 mb-2"
+                    className="form-control w-75 mb-2 m-0  "
                     // value={name}
                     // onChange={handleNameChange}
                     style={{ border: "1px solid black" }}
@@ -264,11 +272,21 @@ function ProfileCode() {
                 </div>
                 <div>
                   <p class="profileh5">Experience</p>
-                  <input type="radio" />
+                  <input
+                    type="radio"
+                    name="select"
+                    value="Fresher"
+                    onChange={(e) => setradioSection(e.target.value)}
+                  />
                   <label for="" class="m-2">
                     Fresher
                   </label>
-                  <input type="radio" />
+                  <input
+                    type="radio"
+                    name="select"
+                    value="Experienced"
+                    onChange={(e) => setradioSection(e.target.value)}
+                  />
                   <label for="" class="m-2">
                     Experienced
                   </label>
@@ -285,7 +303,7 @@ function ProfileCode() {
                       name=""
                       id=""
                       placeholder="Enter your State"
-                      class="form-control w-100 p-2 profileselect"
+                      class="form-control w-100 p-2 profileselect m-0"
                       style={{ border: "1px solid black" }}
                       onChange={(e) => setState(e.target.value)}
                       value={State}
@@ -302,7 +320,7 @@ function ProfileCode() {
                       name=""
                       id=""
                       placeholder="Enter your Location"
-                      class="form-control w-100 p-2 profileselect"
+                      class="form-control w-100 p-2 profileselect m-0"
                       style={{ border: "1px solid black" }}
                       onChange={(e) => setCurrentlocation(e.target.value)}
                       value={Currentlocation}
@@ -318,7 +336,7 @@ function ProfileCode() {
                         // value={mobileNumber}
                         // onChange={handleMobileNumberChange}
                         placeholder="Enter your mobile number"
-                        className="form-control w-100 p-2 profileselect"
+                        className="form-control w-100 p-2 profileselect m-0"
                         style={{ border: "1px solid black" }}
                         onChange={(e) => setmobile(e.target.value)}
                         value={mobile}
@@ -339,7 +357,7 @@ function ProfileCode() {
                       name=""
                       id=""
                       placeholder="Enter your Email Address"
-                      class="form-control w-100 p-2 profileselect "
+                      class="form-control w-100 p-2 profileselect m-0 "
                       style={{ border: "1px solid black" }}
                       onChange={(e) => setemail(e.target.value)}
                       value={emailE1}

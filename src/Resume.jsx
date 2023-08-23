@@ -3,8 +3,7 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./Resume.css";
-// import React, { useState } from 'react';
-
+ 
 import axios, { Axios } from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -1106,7 +1105,7 @@ function ResumeDetails() {
                                 <button class="btnresume p-2 px-3 m-1 ">
                                   Photoshop
                                 </button>
-                                <button class="btnresume1 shadow p-2 px-3 m-1">
+                                <button class="btnresume1  shadow p-2 px-3 m-1">
                                   aftereffects
                                 </button>
                                 <button class="btnresume shadow p-2 px-4 m-1">
@@ -2426,7 +2425,7 @@ function ResumeDetails() {
                         <div class="modal-content">
                           {/* <!-- Modal Header --> */}
                           <div class="modal-header">
-                            <h4 class="modal-title">Personal Details</h4>
+                            <h4 class="modal-title">Personal Details :</h4>
                             <button
                               type="button"
                               class="btn-close"
@@ -2442,7 +2441,7 @@ function ResumeDetails() {
                             >
                               <div className="d-flex flex-row">
                                 <div className=" col-12 col-md-6">
-                                  <label>Date Of Birth</label>
+                                  <label>Date Of Birth :</label>
                                   <input
                                     type="text"
                                     className="etotal"
@@ -2455,7 +2454,7 @@ function ResumeDetails() {
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
-                                  <label>Marital Status</label>
+                                  <label>Marital Status :</label>
                                   <input
                                     type="text"
                                     className="etotal"
@@ -2470,10 +2469,10 @@ function ResumeDetails() {
                               </div>
                               <div className="d-flex flex-row mt-3">
                                 <div className=" col-12 col-md-6">
-                                  <label>Age</label>
+                                  <label>Age :</label>
                                   <input
                                     type="text"
-                                    className="etotal"
+                                    className="etotal "
                                     style={{ border: "1px solid black" }}
                                     placeholder="Enter Age"
                                     onChange={(e) => setAge(e.target.value)}
@@ -2481,7 +2480,7 @@ function ResumeDetails() {
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
-                                  <label>Languages</label>
+                                  <label>Languages :</label>
                                   <input
                                     type="text"
                                     className="etotal"
@@ -2496,7 +2495,7 @@ function ResumeDetails() {
                               </div>
                               <div className="d-flex flex-row mt-3">
                                 <div className=" col-12 col-md-6">
-                                  <label>Gender</label>
+                                  <label>Gender :</label>
                                   <input
                                     type="text"
                                     className="etotal"
@@ -2507,7 +2506,7 @@ function ResumeDetails() {
                                   />
                                 </div>
                                 <div className="col-12 col-md-6">
-                                  <label>Address</label>
+                                  <label>Address Details :</label>
                                   <textarea
                                     name=""
                                     id=""

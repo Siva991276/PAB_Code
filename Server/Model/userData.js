@@ -5,6 +5,11 @@ const userData = new mongoose.Schema({
     type: String,
     require: true,
   },
+  radioSection: {
+    type: String,
+    enum: ["Fresher", "Experienced"],
+    require: true,
+  },
   State: {
     type: String,
     require: true,

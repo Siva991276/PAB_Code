@@ -104,10 +104,10 @@ function Footer() {
                             </p>
                         </div>
                         <div class="col-lg-4 col-md-4 text-white">
-                            <i class="fa-brands fa-linkedin socail p-1"></i>
-                            <i class="fa-brands fa-instagram socail p-1"></i>
-                            <i class="fa-brands fa-facebook socail p-1"></i>
-                            <i class="fa-brands fa-twitter socail p-1"></i>
+                            <i class="fa-brands fa-linkedin socail p-2 mx-3"></i>
+                            <i class="fa-brands fa-instagram socail p-2 mx-3"></i>
+                            <i class="fa-brands fa-facebook socail p-2 mx-3"></i>
+                            <i class="fa-brands fa-twitter socail p-2 mx-3"></i>
                         </div>
                     </div>
                 </div>

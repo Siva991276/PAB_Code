@@ -220,7 +220,7 @@ function JobSkillsDetails() {
                   className="col-md-2 searchpara"
                   ref={(el) => (elementRefs[allButtons.buttonName] = el)}
                 >
-                  <p className="para61623 mt-5"> {filter}</p>
+                  <p className="para61623 mt-5 "> {filter} </p>
                 </div>
 
                 <div>

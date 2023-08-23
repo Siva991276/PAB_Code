@@ -41,6 +41,7 @@ function JobCompanyDetails() {
     setselectedblog(selectedJobDetails);
     setShowContent(false);
   };
+
   return (
     <div className="">
       <nav class="navbar navbar-expand-sm">
@@ -211,12 +212,15 @@ function JobCompanyDetails() {
             <div className="">
               <div className="d-flex flex-row">
                 <div className="col-md-2 searchpara">
-                  <p className="para616 mt-5">{selectedblog.companynameE2}</p>
+                  <p className="para61623 mt-5">
+                    {" "}
+                    {selectedblog.companynameE2}
+                  </p>
                 </div>
                 <div>
                   <button
                     onClick={onclickblogdetails}
-                    className="cross mt-5 btn btn-primary"
+                    className="cross12 mt-5 btn btn-primary"
                   >
                     ✖
                   </button>

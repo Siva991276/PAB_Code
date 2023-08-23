@@ -745,6 +745,7 @@ color: #2c0264;
       box-shadow: none;
       color: none;
       border-color: black;
+   
   }
 
   /* payment */
@@ -893,9 +894,7 @@ input[type=text]:focus {
     box-shadow: none;
 }
 
-.form-control {
-    width: 100%;
-}
+ 
 
 .fa-magnifying-glass {
     padding: 16px;
@@ -1483,3 +1482,4 @@ input[type=text]:focus {
     border-radius: 2px solid black;
     height: 80px;
 }
+ 
