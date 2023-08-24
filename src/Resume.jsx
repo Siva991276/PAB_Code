@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./Resume.css";
- 
+
 import axios, { Axios } from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -896,6 +896,7 @@ function ResumeDetails() {
                       >
                         edit_square
                       </i>
+ 
                     </button>
                     <ToastContainer
                       position="top-right"
@@ -1400,7 +1401,7 @@ function ResumeDetails() {
                                     />
                                   </div>
                                   <div className="col-12 col-md-6">
-                                    <label>Worked Till</label>
+                                    <label>Worked Til Now:</label>
                                     <input
                                       type="date"
                                       onChange={(e) =>

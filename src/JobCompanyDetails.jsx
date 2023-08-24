@@ -3,17 +3,24 @@ import React from "react";
 // import Header from "./Header";
 import Footer from "./Footer";
 import logo from "../src/All Images/pab bottom-logo (1).jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./home.css";
 import "./BrowserJobs.css";
 import "./Jobs.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+ 
+
+
 
 function JobCompanyDetails() {
   const [blogslist, setblogslist] = useState([]);
   const [selectedblog, setselectedblog] = useState(null);
   const [showContent, setShowContent] = useState(true);
+
+  const [selectCompany, setselectCompany] = useState([]);
+
+  const Navigate = useNavigate();
 
   useEffect(() => {
     fetchblogs();
@@ -41,6 +48,26 @@ function JobCompanyDetails() {
     setselectedblog(selectedJobDetails);
     setShowContent(false);
   };
+
+  const handlecompany = (company)=>{
+    if(selectCompany.includes(company)){
+      setselectCompany((blogslist)=> blogslist.filter((item)=> item!== company));
+
+    }else{
+      setselectCompany((blogslist) =>[...blogslist,company]);
+
+    }
+  };
+
+  const removeitem = (_id)=>{
+    const updateditem = [...selectCompany];
+    updateditem.splice(_id , 1);
+    setselectCompany(updateditem)
+
+  }
+  const handleClick = ()=>{
+    Navigate("/BrowserJobs",{state:{location:selectCompany}})
+  }
 
   return (
     <div className="">
@@ -207,7 +234,7 @@ function JobCompanyDetails() {
       </div>
 
       <div className="container">
-        <div className="row">
+        {/* <div className="row">
           {selectedblog && (
             <div className="">
               <div className="d-flex flex-row">
@@ -233,13 +260,31 @@ function JobCompanyDetails() {
               </Link>
             </div>
           )}
+        </div> */}
+        <div className="row">
+          {
+            selectCompany.length > 0 ?(
+              selectCompany.map((location,index)=>(
+                <div className="" key={index}>
+                  <h2>{location}</h2>
+                  <button onClick={handleClick}>Filter Array</button>
+
+                </div>
+              ))
+            ) :(
+              <div className="notFound">
+
+              </div>
+            )
+          }
+
         </div>
       </div>
       <div className="mt-5">
         {blogslist.map((blog) => (
-          <div
+          <div key={blog._id}
             className="container"
-            onClick={(e) => onclickblogdetails(blog._id)}
+            onClick={(e) => handlecompany(blog.companynameE2)}
           >
             <div className="row">
               <div className="col-12 col-md-3 mb-3">

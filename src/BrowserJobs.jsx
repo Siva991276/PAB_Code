@@ -4,6 +4,7 @@ import logo from "../src/All Images/pab bottom-logo (1).jpg";
 import { Link } from "react-router-dom";
 import "./home.css";
 import "./BrowserJobs.css";
+import { useLocation } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -15,6 +16,9 @@ function BrowserJobs() {
   const [usereperience, setusereperience] = useState("");
   const [userlocation1, setuserlocation1] = useState("");
   const [usersalary, setusersalary] = useState("");
+
+  const {state} = useLocation();
+  console.log("siva", state);
 
   useEffect(() => {
     fetchblogs();
@@ -31,6 +35,10 @@ function BrowserJobs() {
         },
       });
       setblogslist(response.data);
+      if(state ?.location)
+      {
+        handleFilter(state?.location, response.data)
+      }
     } catch (error) {
       console.error("Error fetching blogs:", error);
     }
@@ -47,13 +55,8 @@ function BrowserJobs() {
 
   const searchBySkills = () => {
     const filteredJobs = blogslist.filter(
-      (blog) =>
-        blog.companynameE2 &&
-        blog.companynameE2
-          .toLowerCase()
-          .includes(userlocation.toLowerCase().trim()) &&
-        blog.stateE2 &&
-        blog.stateE2.toLowerCase().includes(userState.toLowerCase().trim())
+      (blog) =>blog.companynameE2 && blog.companynameE2.toLowerCase().includes(userlocation.toLowerCase().trim()) &&
+        blog.stateE2 && blog.stateE2.toLowerCase().includes(userState.toLowerCase().trim())
     );
     setblogslist(filteredJobs);
   };
@@ -74,6 +77,15 @@ function BrowserJobs() {
     setblogslist(fillterSalary);
     setusersalary(fillterSalary);
   };
+
+  const handleFilter = (company , alljobs = blogslist)=>{
+    company = Array.isArray(company) ? company : [company];
+    const filter = alljobs.filter ((job)=>{
+      return company.includes(job.companynameE2)
+    })
+    console.log(filter);
+    setblogslist (filter);
+  }
 
   return (
     <div className="">
@@ -176,16 +188,6 @@ function BrowserJobs() {
                 </div>
               </div>
             </div>
-
-            {/* <button class=" subhomebutton shadow w-25">
-              <i class="fa-solid fa-magnifying-glass p-3 "></i>job Title or
-              company<i class="fa-solid fa-sort-down p-3 "></i>
-            </button> */}
-
-            {/* <button class=" subhomebutton shadow w-25">
-              <i class="fa-solid fa-location-dot p-3"></i>city,province or
-              Region<i class="fa-solid fa-sort-down p-3 "></i>
-            </button> */}
           </div>
           <div class="homebutton1">
             <button class="subbutton1" onClick={searchBySkills}>
