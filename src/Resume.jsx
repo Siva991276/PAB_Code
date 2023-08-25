@@ -8,6 +8,7 @@ import axios, { Axios } from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import image from "./All Images/sivapic.jpg";
 function ResumeDetails() {
   // resume heading
   const [resumeheading, setresumeheading] = useState("");
@@ -748,18 +749,29 @@ function ResumeDetails() {
       <div class="container">
         <div class="row">
           <div class="col-md-4 text-start">
-            <div class="card p-3 shadow">
-              <div class="d-flex flex-row py-2">
+            <div class="card p-2">
+              {/* <div class="d-flex flex-row py-2">
                 <div>
                   <Link to="/ProfileCode">
-                    <i
-                      class=" fa-sharp fa-solid fa-circle-user profileicon px-3"
-                      style={{ fontSize: "120px" }}
-                    ></i>
+                    
+                    <img src={image}alt="" className="profileicon w-50"style={{borderRadius : "100px"}} />
                   </Link>
                 </div>
+                 
+                <div className="text-start m-0">
+                  
+                 
+                </div>
+              </div> */}
+              <div className="d-flex flex-row ">
                 <div>
-                  <h5 class="resumeh5">B.Siva Koteswara Rao</h5>
+                <Link to="/ProfileCode">
+                    
+                  <img src={image} alt="" className="w-75 image123" />
+                  </Link>
+                </div>
+                <div className="content12">
+                  <h4 class="resumeh5">B.Siva Koteswara Rao</h4>
                   <p>Software Developer</p>
                   <p>at Perfex Technologies</p>
                 </div>
@@ -896,7 +908,6 @@ function ResumeDetails() {
                       >
                         edit_square
                       </i>
- 
                     </button>
                     <ToastContainer
                       position="top-right"

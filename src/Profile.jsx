@@ -11,6 +11,7 @@ import axios, { Axios } from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import image from "./All Images/sivapic.jpg"
 
 function ProfileCode() {
   const [fullname, setfullname] = useState("");
@@ -200,10 +201,11 @@ function ProfileCode() {
         <div class="row">
           <div class="col-md-3 mb-5">
             <div class="card ">
-              <i
+              {/* <i
                 class=" fa-sharp fa-solid fa-circle-user profileicon mb-4 mt-3"
                 style={{ fontSize: "200px" }}
-              ></i>
+              ></i> */}
+              <img src={image}alt="" className="images123" />
               
 
               <a href="">

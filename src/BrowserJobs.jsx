@@ -38,6 +38,8 @@ function BrowserJobs() {
       if(state ?.location)
       {
         handleFilter(state?.location, response.data)
+        // handleFilter1(state?.location, response.data) 
+        
       }
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -82,6 +84,15 @@ function BrowserJobs() {
     company = Array.isArray(company) ? company : [company];
     const filter = alljobs.filter ((job)=>{
       return company.includes(job.companynameE2)
+    })
+    console.log(filter);
+    setblogslist (filter);
+  }
+
+  const handleFilter1 = (company , alljobs = blogslist)=>{
+    company = Array.isArray(company) ? company : [company];
+    const filter = alljobs.filter ((job)=>{
+      return company.includes(job.salaryE2)
     })
     console.log(filter);
     setblogslist (filter);

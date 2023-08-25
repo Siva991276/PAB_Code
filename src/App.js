@@ -20,9 +20,11 @@ import JobCategoryDetails from "./JobCategoryDetails";
 import JobDesignationDetails from "./JobDesignationDetails";
 import JobSkillsDetails from "./JobSkillsDetails";
 
+
 function App() {
   return (
     <div className="App">
+      
       <Routes>
         {/* <Route exact path='/' element={<Home />} />
         <Route exact path='/About' element={<About />} />
@@ -35,6 +37,7 @@ function App() {
         <Route exact path="/ResumeDetails" element={<ResumeDetails />} />
         <Route exact path="/AppliedJobs" element={<AppliedJobs />} />
         <Route exact path="/JobAlert" element={<JobAlert />} />
+        
         <Route exact path="/SaveJobs" element={<SaveJobs />} />
         <Route exact path="/ChangePassword" element={<ChangePassword />} />
         <Route exact path="/JobCategoryDetails" element={<JobCategoryDetails />} />
