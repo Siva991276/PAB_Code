@@ -273,7 +273,11 @@ container9
 
 
 
-
+.loginlabel{
+   display: flex;
+    
+}
+form-control
 
 
 
@@ -387,7 +391,7 @@ container9
  text-decoration-line: none;
 }
  
-custom-btn
+ 
 
 .skillHead {
   color: aqua;
@@ -561,3 +565,4 @@ custom-btn
   background-color: rgb(254, 254, 254);
   color: black;
 }
+ 

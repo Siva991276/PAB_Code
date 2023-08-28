@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const middleware = require("./Middlware");
 const userData = require("./Model/userData");
 const BrowseData = require("./Model/browswedata");
+const ApplyNow = require("./Model/ApplyNow");
 
 // const resumeheading =require("./Model/userData");
 
@@ -420,6 +421,49 @@ app.post("/browsejobs123", middleware, async (req, res) => {
     });
 
     const isUserExist = await BrowseData.findOne({ emailE2: emailE2 });
+    if (isUserExist) {
+      return res.send("user already registered");
+    }
+
+    newUser1.save(); //saving to mongodb collections
+    res.send("user created succesfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("internal server error");
+  }
+});
+
+app.post("/ApplyNow", middleware, async (req, res) => {
+  try {
+    const {
+      companynameE2,
+      contactnumberE2,
+      emailE2,
+      descriptionE2,
+      stateE2,
+      countryE2,
+      experienceE2,
+      salaryE2,
+      roleE2,
+      no_of_applicationsE2,
+      ImageE2,
+    } = req.body;
+    let newUser1 = new ApplyNow({
+      companynameE2: companynameE2,
+      contactnumberE2: contactnumberE2,
+      emailE2: emailE2,
+      descriptionE2: descriptionE2,
+      stateE2: stateE2,
+      countryE2: countryE2,
+      experienceE2: experienceE2,
+      salaryE2: salaryE2,
+      roleE2: roleE2,
+
+      no_of_applicationsE2: no_of_applicationsE2,
+      ImageE2: ImageE2,
+    });
+
+    const isUserExist = await ApplyNow.findOne({ emailE2: emailE2 });
     if (isUserExist) {
       return res.send("user already registered");
     }

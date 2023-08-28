@@ -17,7 +17,7 @@ function BrowserJobs() {
   const [userlocation1, setuserlocation1] = useState("");
   const [usersalary, setusersalary] = useState("");
 
-  const {state} = useLocation();
+  const { state } = useLocation();
   console.log("siva", state);
 
   useEffect(() => {
@@ -35,11 +35,9 @@ function BrowserJobs() {
         },
       });
       setblogslist(response.data);
-      if(state ?.location)
-      {
-        handleFilter(state?.location, response.data)
-        // handleFilter1(state?.location, response.data) 
-        
+      if (state?.location) {
+        handleFilter(state?.location, response.data);
+        // handleFilter1(state?.location, response.data)
       }
     } catch (error) {
       console.error("Error fetching blogs:", error);
@@ -57,8 +55,13 @@ function BrowserJobs() {
 
   const searchBySkills = () => {
     const filteredJobs = blogslist.filter(
-      (blog) =>blog.companynameE2 && blog.companynameE2.toLowerCase().includes(userlocation.toLowerCase().trim()) &&
-        blog.stateE2 && blog.stateE2.toLowerCase().includes(userState.toLowerCase().trim())
+      (blog) =>
+        blog.companynameE2 &&
+        blog.companynameE2
+          .toLowerCase()
+          .includes(userlocation.toLowerCase().trim()) &&
+        blog.stateE2 &&
+        blog.stateE2.toLowerCase().includes(userState.toLowerCase().trim())
     );
     setblogslist(filteredJobs);
   };
@@ -80,23 +83,23 @@ function BrowserJobs() {
     setusersalary(fillterSalary);
   };
 
-  const handleFilter = (company , alljobs = blogslist)=>{
+  const handleFilter = (company, alljobs = blogslist) => {
     company = Array.isArray(company) ? company : [company];
-    const filter = alljobs.filter ((job)=>{
-      return company.includes(job.companynameE2)
-    })
+    const filter = alljobs.filter((job) => {
+      return company.includes(job.companynameE2);
+    });
     console.log(filter);
-    setblogslist (filter);
-  }
+    setblogslist(filter);
+  };
 
-  const handleFilter1 = (company , alljobs = blogslist)=>{
+  const handleFilter1 = (company, alljobs = blogslist) => {
     company = Array.isArray(company) ? company : [company];
-    const filter = alljobs.filter ((job)=>{
-      return company.includes(job.salaryE2)
-    })
+    const filter = alljobs.filter((job) => {
+      return company.includes(job.salaryE2);
+    });
     console.log(filter);
-    setblogslist (filter);
-  }
+    setblogslist(filter);
+  };
 
   return (
     <div className="">
@@ -136,7 +139,10 @@ function BrowserJobs() {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link dropdown-toggle navstyle" href="./ ">
+                <a
+                  class="nav-link dropdown-toggle navstyle"
+                  href="/PaymentMethod "
+                >
                   payments
                 </a>
               </li>
@@ -680,11 +686,15 @@ function BrowserJobs() {
                                     class="graphics-item m-0"
                                     style={{ fontSize: "17px" }}
                                   >
+                                    {selectedblog.roleE2}
+                                  </p>
+                                  <p
+                                    class="graphics1-item m-0"
+                                    style={{ fontSize: "17px" }}
+                                  >
                                     {selectedblog.companynameE2}
                                   </p>
-                                  <p class="m-0" id="angelItem">
-                                    {selectedblog.companynameE2}
-                                  </p>
+
                                   <p class="m-0 Show">
                                     Show more jobs in the company
                                   </p>
@@ -710,9 +720,20 @@ function BrowserJobs() {
                                   {selectedblog.stateE2}
                                 </p>
                                 <p class="m-0">
+                                  <i class="fa-solid fa-location-dot"></i>{" "}
+                                  {selectedblog.countryE2}
+                                </p>
+                                <p class="m-0">
                                   <i class="fa-solid fa-briefcase"></i>{" "}
                                   {selectedblog.experienceE2}
                                 </p>
+                                <div className="d-flex flex-row">
+                                  <span class="material-symbols-outlined mt-1">
+                                    outgoing_mail
+                                  </span>
+                                  <span className="mx-1">  {selectedblog.emailE2}</span>
+                                </div>
+                                <div></div>
                               </div>
                             </div>
                           </div>
@@ -727,6 +748,10 @@ function BrowserJobs() {
                                 {selectedblog.no_of_applicationsE2}
                               </p>
                               <p class="m-0">deadline:18-08-2023</p>
+                              <p>
+                                {" "}
+                                contact number :{selectedblog.contactnumberE2}
+                              </p>
                             </div>
                             <div class="col-md-3">
                               <button

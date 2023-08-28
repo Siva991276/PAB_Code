@@ -33,7 +33,7 @@ function ResumeDetails() {
           setdata(response.data);
 
           console.log(response.data);
-          toast.success("Registration Successfull");
+          toast.success("Save Data Successfull");
         })
         .catch((error) => {
           console.log(error.message);
@@ -67,7 +67,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -110,7 +110,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -176,7 +176,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -223,7 +223,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -271,7 +271,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -314,7 +314,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -362,7 +362,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -410,7 +410,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -452,7 +452,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -502,7 +502,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -563,7 +563,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -625,7 +625,7 @@ function ResumeDetails() {
 
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Save Data Successfull", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -765,9 +765,8 @@ function ResumeDetails() {
               </div> */}
               <div className="d-flex flex-row ">
                 <div>
-                <Link to="/ProfileCode">
-                    
-                  <img src={image} alt="" className="w-75 image123" />
+                  <Link to="/ProfileCode">
+                    <img src={image} alt="" className="w-75 image123" />
                   </Link>
                 </div>
                 <div className="content12">

@@ -109,7 +109,7 @@ function JobCompanyDetails() {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link dropdown-toggle navstyle" href="./ ">
+                <a class="nav-link dropdown-toggle navstyle" href="/PaymentMethod ">
                   payments
                 </a>
               </li>

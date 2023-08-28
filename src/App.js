@@ -19,6 +19,7 @@ import JobLocationDetails from "./JobLocationDetails";
 import JobCategoryDetails from "./JobCategoryDetails";
 import JobDesignationDetails from "./JobDesignationDetails";
 import JobSkillsDetails from "./JobSkillsDetails";
+import PaymentMethod from "./PaymentMethod";
 
 
 function App() {
@@ -43,8 +44,9 @@ function App() {
         <Route exact path="/JobCategoryDetails" element={<JobCategoryDetails />} />
         <Route exact path="/JobDesignationDetails" element={<JobDesignationDetails />} />
         <Route exact path="/JobSkillsDetails" element={<JobSkillsDetails />} />
-        <Route
-          exact
+       <Route exact path="/PaymentMethod" element = {<PaymentMethod />} />
+
+        <Route exact
           path="/JobCompanyDetails"
           element={<JobCompanyDetails />}
         />

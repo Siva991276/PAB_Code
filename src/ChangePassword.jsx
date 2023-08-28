@@ -136,18 +136,18 @@ function ChangePassword() {
                <h5 class="profileh5">Change Password</h5>
                <hr />
                <label for="" class="profilename mb-1">Old Password</label>
-               <input type="text" placeholder="Enter your Old password" class="form-control w-75 mb-2" style={{border: "1px solid black"}}/>
+               <input type="text" placeholder="Enter your Old password" class="form-control w-75 m-0" style={{border: "1px solid black"}}/>
                <div class="d-flex flex-row mt-2">
                 <div class="col-md-4">
                 <label for="" class="profileh5 mb-1">New Password</label><br />
-                    <input type="text" name="" id="" placeholder="Enter your new Password" class="form-control w-100 p-2 profileselect " style={{border: "1px solid black"}}/>
+                    <input type="text" name="" id="" placeholder="Enter your new Password" class="form-control w-100 p-2 profileselect m-0 " style={{border: "1px solid black"}}/>
             </div>
             <div class="col-md-1">
                  
             </div>
             <div class="col-md-4">
                 <label for="" class="profileh5 mb-1">Confirm Password</label><br />
-                <input type="text" name="" id="" placeholder="Confirm Password" class="form-control w-100 p-2 profileselect " style={{border: "1px solid black"}} />
+                <input type="text" name="" id="" placeholder="Confirm Password" class="form-control w-100 p-2 profileselect m-0 " style={{border: "1px solid black"}} />
             </div>
                </div>
                <button class=" mt-4 profilebutton1">Update Password</button>

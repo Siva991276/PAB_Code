@@ -11,9 +11,16 @@ import axios, { Axios } from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import image from "./All Images/sivapic.jpg"
+import image from "./All Images/sivapic.jpg";
 
 function ProfileCode() {
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+  };
+
   const [fullname, setfullname] = useState("");
   const [radioSection, setradioSection] = useState("Fresher");
   const [State, setState] = useState("");
@@ -174,7 +181,7 @@ function ProfileCode() {
               <li class="nav-item">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="payment.html"
+                  href="/PaymentMethod"
                   style={{ color: "black" }}
                 >
                   payments
@@ -205,8 +212,7 @@ function ProfileCode() {
                 class=" fa-sharp fa-solid fa-circle-user profileicon mb-4 mt-3"
                 style={{ fontSize: "200px" }}
               ></i> */}
-              <img src={image}alt="" className="images123" />
-              
+              <img src={image} alt="" className="images123" />
 
               <a href="">
                 <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
@@ -236,9 +242,19 @@ function ProfileCode() {
                   Change Password
                 </button>
               </a>
-              <a href="/LoginPage">
+              {/* <a href="/LoginPage">
                 <button class="p-2 mb-1 profilebutton ">Log Out</button>
-              </a>
+              </a> */}
+
+              {token ? (
+                <div>
+                  <a href="/LoginPage">
+                    <button onClick={handleLogout}>Logout</button>
+                  </a>
+                </div>
+              ) : (
+                <p>Please log in</p>
+              )}
             </div>
           </div>
           <div class="col-md-8 text-start">
