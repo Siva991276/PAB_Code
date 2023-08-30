@@ -70,7 +70,6 @@ function JobCategoryDetails() {
   };
 
   const handleButtonOnClick = (buttonName) => {
-    // Handle the click event for each button here
     setFilter(`${buttonName}`);
     setSearchTerm(`${buttonName}`);
     if (elementRefs[buttonName]) {

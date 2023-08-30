@@ -193,3 +193,22 @@ token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI
 }
 ###
 GET http://localhost:4005/allusers
+###
+POST http://localhost:4005/ApplyNow
+Content-Type: application/json
+# token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
+
+{
+    "companynameE2": "Wipro",
+    "contactnumberE2": "9845321345",
+    "emailE2": "Wipro123@gmail.com",
+    "stateE2": "Telagana",
+    "countryE2": "India",
+    "experienceE2": "9-12 years",
+    "salaryE2": "12-16 LPA",
+    "roleE2": "Software Developer",
+    "no_of_applicationsE2": "84",
+    "ImageE2": "https://res.cloudinary.com/dxyifvqon/image/upload/v1693284801/wipro-logo-sustainability-1100x560_z7zqb2.png"
+}
+###
+GET http://localhost:4005/ApplyNowData

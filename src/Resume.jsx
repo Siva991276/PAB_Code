@@ -766,13 +766,13 @@ function ResumeDetails() {
               <div className="d-flex flex-row ">
                 <div>
                   <Link to="/ProfileCode">
-                    <img src={image} alt="" className="w-75 image123" />
+                    <img src={image} alt="" className="w-100 image123" />
                   </Link>
                 </div>
-                <div className="content12">
+                <div className="content12 mx-2">
                   <h4 class="resumeh5">B.Siva Koteswara Rao</h4>
-                  <p>Software Developer</p>
-                  <p>at Perfex Technologies</p>
+                  <p>Software Developer <br /><span className="text-primary" >at Perfex Technologies</span></p>
+                  
                 </div>
               </div>
               <div class="p-2">

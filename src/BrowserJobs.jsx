@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 import "./home.css";
 import "./BrowserJobs.css";
 import { useLocation } from "react-router-dom";
-
 import { useEffect, useState } from "react";
 import axios from "axios";
+ import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function BrowserJobs() {
   const [blogslist, setblogslist] = useState([]);
-  const [selectedblog, setselectedblog] = useState(null);
+  const [selectedblog, setselectedblog] = useState("");
   const [userState, setuserState] = useState("");
   const [userlocation, setUserLocation] = useState("");
   const [usereperience, setusereperience] = useState("");
   const [userlocation1, setuserlocation1] = useState("");
   const [usersalary, setusersalary] = useState("");
-
   const { state } = useLocation();
   console.log("siva", state);
 
@@ -39,8 +39,43 @@ function BrowserJobs() {
         handleFilter(state?.location, response.data);
         // handleFilter1(state?.location, response.data)
       }
+      if (response.data.length > 0) {
+        setselectedblog(response.data[0]);
+      }
     } catch (error) {
       console.error("Error fetching blogs:", error);
+    }
+  };
+
+  const handleApply = async (blog) => {
+    try {
+      const {
+        companynameE2,
+        contactnumberE2,
+        emailE2,
+        stateE2,
+        countryE2,
+        experienceE2,
+        salaryE2,
+        roleE2,
+        no_of_applicationsE2,
+        ImageE2,
+      } = blog;
+      await axios.post("http://localhost:4005/ApplyNow", {
+        companynameE2,
+        contactnumberE2,
+        emailE2,
+        stateE2,
+        countryE2,
+        experienceE2,
+        salaryE2,
+        roleE2,
+        no_of_applicationsE2,
+        ImageE2,
+      });
+      toast.success("Data stored successfully");
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -69,33 +104,27 @@ function BrowserJobs() {
     const fillter = blogslist.filter((blog) => blog.experienceE2.includes(e));
     setblogslist(fillter);
     setusereperience(fillter);
+    setselectedblog(fillter[0]);
   };
 
   const userLocation12 = (e) => {
     const filterlocation = blogslist.filter((blog) => blog.stateE2.includes(e));
     setblogslist(filterlocation);
     setuserlocation1(filterlocation);
+    setselectedblog(filterlocation[0]);
   };
 
   const userSalary = (e) => {
     const fillterSalary = blogslist.filter((blog) => blog.salaryE2.includes(e));
     setblogslist(fillterSalary);
     setusersalary(fillterSalary);
+    setselectedblog(fillterSalary[0]);
   };
 
   const handleFilter = (company, alljobs = blogslist) => {
     company = Array.isArray(company) ? company : [company];
     const filter = alljobs.filter((job) => {
       return company.includes(job.companynameE2);
-    });
-    console.log(filter);
-    setblogslist(filter);
-  };
-
-  const handleFilter1 = (company, alljobs = blogslist) => {
-    company = Array.isArray(company) ? company : [company];
-    const filter = alljobs.filter((job) => {
-      return company.includes(job.salaryE2);
     });
     console.log(filter);
     setblogslist(filter);
@@ -630,8 +659,33 @@ function BrowserJobs() {
           {/* <!-- <div class="col-md"></div> --> */}
         </div>
         {/* <!-- Card Section --> */}
-        <p class="result my-3 text-start">
-          Showing 69 results for "Graphics Designing"
+        <ToastContainer
+                      position="top-right"
+                      autoClose={1000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="colored"
+                    />
+        {blogslist.length > 0 ? (
+          <>
+            {" "}
+            <div></div>
+          </>
+        ) : (
+          <div>
+            <img
+              src="https://res.cloudinary.com/dxyifvqon/image/upload/v1693288888/file-not-found-illustration-with-confused-people-holding-big-magnifier-search-no-result-data-not-found-concept-can-be-used-for-website-landing-page-animation-etc-vector_h5ojsb.jpg"
+              className="w-50 mx-5"
+            ></img>
+          </div>
+        )}
+        <p class="result my-3 text-start text-black">
+          Showing no of cards <span className="text-danger" style={{fontWeight:"bold"}}>{blogslist.length}</span>
         </p>
         <div class="row text-start">
           <div class="col-lg-1"></div>
@@ -662,9 +716,8 @@ function BrowserJobs() {
                   </div>
                 ))}
               </ul>
-
               {selectedblog && (
-                <div class="col-lg-7 col-md-12">
+                <div class="col-lg-7 col-md-12" key={selectedblog.id}>
                   <div class="container">
                     <div class="row">
                       <div class="">
@@ -731,7 +784,10 @@ function BrowserJobs() {
                                   <span class="material-symbols-outlined mt-1">
                                     outgoing_mail
                                   </span>
-                                  <span className="mx-1">  {selectedblog.emailE2}</span>
+                                  <span className="mx-1">
+                                    {" "}
+                                    {selectedblog.emailE2}
+                                  </span>
                                 </div>
                                 <div></div>
                               </div>
@@ -757,7 +813,7 @@ function BrowserJobs() {
                               <button
                                 class="now-item"
                                 id="applyItem"
-                                onclick="applyBtn()"
+                                onClick={() => handleApply(selectedblog)}
                               >
                                 Apply Now
                               </button>

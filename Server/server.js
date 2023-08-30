@@ -389,7 +389,7 @@ app.post("/PersonalDetails", middleware, async (req, res) => {
   }
 });
 
-//dd
+//browse job api
 app.post("/browsejobs123", middleware, async (req, res) => {
   try {
     const {
@@ -432,14 +432,13 @@ app.post("/browsejobs123", middleware, async (req, res) => {
     res.send("internal server error");
   }
 });
-
-app.post("/ApplyNow", middleware, async (req, res) => {
+//Applynow button
+app.post("/ApplyNow", async (req, res) => {
   try {
     const {
       companynameE2,
       contactnumberE2,
       emailE2,
-      descriptionE2,
       stateE2,
       countryE2,
       experienceE2,
@@ -452,13 +451,11 @@ app.post("/ApplyNow", middleware, async (req, res) => {
       companynameE2: companynameE2,
       contactnumberE2: contactnumberE2,
       emailE2: emailE2,
-      descriptionE2: descriptionE2,
       stateE2: stateE2,
       countryE2: countryE2,
       experienceE2: experienceE2,
       salaryE2: salaryE2,
       roleE2: roleE2,
-
       no_of_applicationsE2: no_of_applicationsE2,
       ImageE2: ImageE2,
     });
@@ -480,6 +477,15 @@ app.get("/allusers", async (req, res) => {
   const allusers = await BrowseData.find({});
   res.status(200).send(allusers);
 });
+
+
+app.get("/ApplyNowData", async (req, res) => {
+  const Apply = await ApplyNow.find({});
+  res.status(200).send(Apply);
+});
+
+
+
 app.listen(port, () => {
   console.log(`Server running at ${port}`);
 });

@@ -249,7 +249,7 @@ function ProfileCode() {
               {token ? (
                 <div>
                   <a href="/LoginPage">
-                    <button onClick={handleLogout}>Logout</button>
+                    <button onClick={handleLogout} class="p-2 mb-1 profilebutton ">Logout</button>
                   </a>
                 </div>
               ) : (

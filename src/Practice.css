@@ -1,0 +1,16 @@
+.nameh1{
+    font-size: 30px;
+     text-align: left;
+     margin-left: 10px;
+}
+.roll1{
+    font-size: 20px;
+}
+.cardcontainer1{
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap :6px;
+    padding:8px;
+    
+}

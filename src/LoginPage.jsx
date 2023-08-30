@@ -3,6 +3,7 @@ import "./Registration.css";
 import { Link } from "react-router-dom";
 
 import React from "react";
+import logo from "../src/All Images/pab bottom-logo (1).jpg";
 
 import { useState } from "react";
 import axios from "axios";
@@ -62,11 +63,20 @@ function LoginPage() {
   };
   return (
     <div>
+      <nav class="navbar navbar-expand-sm">
+        <div class="container">
+          <img src={logo} alt="logo" width="200px" />
+           
+            
+          
+           
+        </div>
+      </nav>
       <div className="container5">
         <div class="container">
           <div class="row">
             <div class="col-12 col-md-6">
-              <div class="card shadow logincard1">
+              <div class="card shadow logincard1 ">
                 <div class="loginheader">
                   <h2 class="loginheader1">Login</h2>
                   <p class="loginpara">
@@ -111,12 +121,9 @@ function LoginPage() {
                   <br />
 
                   <button class="Registerbtn">Login</button>
-                </form>
-                <a href="" style={{ color: "white" }}>
-                  <h6 class="loginh4 text-center">Login via OTP</h6>
-                </a>
-                <span class="logingoogle">
-                  <button class="loginbutton2 shadow">
+                  <h6 class="text-center " style={{color: "blue"}}>Login via OTP</h6>
+                  <span class="logingoogle">
+                  <button class="loginbutton2 shadow w-50">
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVDA2e7vaSAfhljLBVppf2X0b0OuAxTQZqjYZcemxu6Umeik13cJI3HYISVRfEz9SMQA&usqp=CAU"
                       alt=""
@@ -125,6 +132,11 @@ function LoginPage() {
                     Sign in with Google
                   </button>
                 </span>
+                </form>
+                 
+                 
+              
+                
               </div>
               <a href="">
                 <button class="Register shadow  d-md-none">
@@ -143,7 +155,7 @@ function LoginPage() {
                   alt=""
                 />
               </div>
-              <div class="loginspan1 col-md-10">
+              <div class="loginspan1 col-md-10 w-100 text-start">
                 <i class="fa-solid fa-circle-check janlogin text-center"></i>{" "}
                 <span class="loginspan">
                   Build your profile and let recruitrs find you

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios, { Axios } from "axios";
+import logo from "../src/All Images/pab bottom-logo (1).jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -77,6 +78,15 @@ function Registration() {
 
   return (
     <div>
+      <nav class="navbar navbar-expand-sm">
+        <div class="container">
+          <img src={logo} alt="logo" width="200px" />
+           
+            
+          
+           
+        </div>
+      </nav>
       <div class=" card container maincontent text-start">
         <div class="row">
           <div class="d-flex flex-row col-12 col-md-7">
@@ -138,7 +148,7 @@ function Registration() {
               {/* Same as */}
               <ToastContainer />
 
-              <form className="forms2" onSubmit={onSubmitForm}>
+              <form className="forms2 px-3" onSubmit={onSubmitForm}>
                 <label className="heading2">
                   {Typesection === "applicant" ? "Fullname" : "Company Name"}
                 </label>

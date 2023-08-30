@@ -20,6 +20,7 @@ import JobCategoryDetails from "./JobCategoryDetails";
 import JobDesignationDetails from "./JobDesignationDetails";
 import JobSkillsDetails from "./JobSkillsDetails";
 import PaymentMethod from "./PaymentMethod";
+import PracticeSection from "./Practice";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route exact path="/ResumeDetails" element={<ResumeDetails />} />
         <Route exact path="/AppliedJobs" element={<AppliedJobs />} />
         <Route exact path="/JobAlert" element={<JobAlert />} />
+        <Route exact path="/PracticeSection" element={<PracticeSection />} />
         
         <Route exact path="/SaveJobs" element={<SaveJobs />} />
         <Route exact path="/ChangePassword" element={<ChangePassword />} />
