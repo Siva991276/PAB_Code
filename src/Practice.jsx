@@ -69,16 +69,21 @@ function PracticeSection() {
     <div className="container">
         <div className="row">
         <h1>Student Details</h1>
-            <div className="col-12 col-md-5">
+        <div className="col-md-2"></div>
+            <div className="col-12 col-md-7 mt-5">
                 
-            <div className=" ">
+            <div className="row">
 
                 {studentDetails.map((blog)=>
-               <div className="card mb-4 cardcontainer1">
+                
+               <div className="card mb-4 cardcontainer1 mx-3 px-3" style={{width : "300px"}}>
+                 <img src={blog.CollegeImage} alt="" className="mt-2"/>
+
                 <h1 className="nameh1">{blog.Name}</h1>
                 <h4 className="text-start mx-2 roll1">{blog.RollNo}</h4>
                 <h4 className="text-start mx-2 roll1">{blog.CollegeName}</h4>
                 <h4 className="text-start mx-2 roll1">{blog.Address}</h4>
+               
                </div>
                 )}
                

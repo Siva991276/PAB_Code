@@ -7,7 +7,7 @@ import "./BrowserJobs.css";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
- import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function BrowserJobs() {
   const [blogslist, setblogslist] = useState([]);
@@ -17,6 +17,7 @@ function BrowserJobs() {
   const [usereperience, setusereperience] = useState("");
   const [userlocation1, setuserlocation1] = useState("");
   const [usersalary, setusersalary] = useState("");
+  
   const { state } = useLocation();
   console.log("siva", state);
 
@@ -269,6 +270,14 @@ function BrowserJobs() {
                         2-3 years
                       </a>
                     </li>
+                    {/* <label>
+        <input
+          type="checkbox"
+          
+          onChange={userExperience}
+        />
+         2-3 years
+      </label> */}
                     <li>
                       <a
                         class="dropdown-item"
@@ -660,17 +669,17 @@ function BrowserJobs() {
         </div>
         {/* <!-- Card Section --> */}
         <ToastContainer
-                      position="top-right"
-                      autoClose={1000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="colored"
-                    />
+          position="top-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
         {blogslist.length > 0 ? (
           <>
             {" "}
@@ -685,7 +694,10 @@ function BrowserJobs() {
           </div>
         )}
         <p class="result my-3 text-start text-black">
-          Showing no of cards <span className="text-danger" style={{fontWeight:"bold"}}>{blogslist.length}</span>
+          Showing no of cards{" "}
+          <span className="text-danger" style={{ fontWeight: "bold" }}>
+            {blogslist.length}
+          </span>
         </p>
         <div class="row text-start">
           <div class="col-lg-1"></div>

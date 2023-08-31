@@ -546,8 +546,8 @@ function Home() {
       <section class="industry p-5 container">
         <div class="container m-4">
           <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-8 card21">
+            <div class=" col-12 col-md-2"></div>
+            <div class="col-md-10 card21">
               <div class="d-flex flex row">
                 <div>
                   <h3 class="indus">Browse Jobs By Designation</h3>
@@ -610,30 +610,31 @@ function Home() {
                 <div class="row">
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                      HR Assistant
+                    HR Assistant
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                      Industrial Engineer
+                    IndustrialEngineer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                      java Developer
+                    java Developer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                      Industrial Engineer
+                    FinanceManager
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                      Java Developer
+                    Java Developer
                     </button>
                   </div>
                 </div>
+                 
                 <div class="row  m-2">
                   <div class="col-8"></div>
                   <div class="col-4 ">
