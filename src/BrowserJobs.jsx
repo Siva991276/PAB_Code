@@ -10,20 +10,23 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 function BrowserJobs() {
+  const [selectedExperiences, setSelectedExperiences] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState([]);
+  const [selectedSalary, setSelectedSalary] = useState([]);
   const [blogslist, setblogslist] = useState([]);
   const [selectedblog, setselectedblog] = useState("");
   const [userState, setuserState] = useState("");
   const [userlocation, setUserLocation] = useState("");
-  const [usereperience, setusereperience] = useState("");
-  const [userlocation1, setuserlocation1] = useState("");
-  const [usersalary, setusersalary] = useState("");
-  
+  // const [usereperience, setusereperience] = useState("");
+  // const [userlocation1, setuserlocation1] = useState("");
+  // const [usersalary, setusersalary] = useState("");
+
   const { state } = useLocation();
   console.log("siva", state);
 
   useEffect(() => {
     fetchblogs();
-  }, []);
+  }, [selectedExperiences, selectedSalary]);
 
   const fetchblogs = async () => {
     const api = " http://localhost:4005/allusers";
@@ -101,25 +104,89 @@ function BrowserJobs() {
     );
     setblogslist(filteredJobs);
   };
+  // const userExperience = (e) => {
+  //   const fillter = blogslist.filter((blog) => blog.experienceE2.includes(e));
+  //   setblogslist(fillter);
+  //   setusereperience(fillter);
+  //   setselectedblog(fillter[0]);
+  // };
   const userExperience = (e) => {
-    const fillter = blogslist.filter((blog) => blog.experienceE2.includes(e));
-    setblogslist(fillter);
-    setusereperience(fillter);
-    setselectedblog(fillter[0]);
+    if (e.target.checked) {
+      setSelectedExperiences([...selectedExperiences, e.target.value]);
+    } else {
+      setSelectedExperiences(
+        selectedExperiences.filter((exp) => exp !== e.target.value)
+      );
+    }
   };
 
-  const userLocation12 = (e) => {
-    const filterlocation = blogslist.filter((blog) => blog.stateE2.includes(e));
-    setblogslist(filterlocation);
-    setuserlocation1(filterlocation);
-    setselectedblog(filterlocation[0]);
+  const filterJobsByExperience = () => {
+    if (selectedExperiences.length === 0) {
+      setblogslist(blogslist);
+      setselectedblog(blogslist[0]);
+    } else {
+      const filteredBlogs = blogslist.filter((blog) =>
+        selectedExperiences.includes(blog.experienceE2)
+      );
+      setblogslist(filteredBlogs);
+      setselectedblog(filteredBlogs[0]);
+    }
   };
 
-  const userSalary = (e) => {
-    const fillterSalary = blogslist.filter((blog) => blog.salaryE2.includes(e));
-    setblogslist(fillterSalary);
-    setusersalary(fillterSalary);
-    setselectedblog(fillterSalary[0]);
+  // const userLocation12 = (e) => {
+  //   const filterlocation = blogslist.filter((blog) => blog.stateE2.includes(e));
+  //   setblogslist(filterlocation);
+  //   setuserlocation1(filterlocation);
+  //   setselectedblog(filterlocation[0]);
+  // };
+  const userLocation122 = (el) => {
+    if (el.target.checked) {
+      setSelectedLocation([...selectedLocation, el.target.value]);
+    } else {
+      setSelectedLocation(
+        selectedLocation.filter((Loc) => Loc !== el.target.value)
+      );
+    }
+  };
+
+  const filterJobsByLocation = () => {
+    if (selectedLocation.length === 0) {
+      setblogslist(blogslist);
+      setselectedblog(blogslist[0]);
+    } else {
+      const filteredBlogs1 = blogslist.filter((blog) =>
+        selectedLocation.includes(blog.stateE2)
+      );
+      setblogslist(filteredBlogs1);
+      setselectedblog(filteredBlogs1[0]);
+    }
+  };
+
+  // const userSalary = (e) => {
+  //   const fillterSalary = blogslist.filter((blog) => blog.salaryE2.includes(e));
+  //   setblogslist(fillterSalary);
+  //   setusersalary(fillterSalary);
+  //   setselectedblog(fillterSalary[0]);
+  // };
+  const userSalary122 = (es) => {
+    if (es.target.checked) {
+      setSelectedSalary([...selectedSalary, es.target.value]);
+    } else {
+      setSelectedSalary(selectedSalary.filter((sal) => sal !== es.target.value));
+    }
+  };
+
+  const filterJobsBySalary = () => {
+    if (selectedSalary.length === 0) {
+      setblogslist(blogslist);
+      setselectedblog(blogslist[0]);
+    } else {
+      const filteredBlogs2 = blogslist.filter((blog) =>
+        selectedSalary.includes(blog.salaryE2)
+      );
+      setblogslist(filteredBlogs2);
+      setselectedblog(filteredBlogs2[0]);
+    }
   };
 
   const handleFilter = (company, alljobs = blogslist) => {
@@ -254,103 +321,96 @@ function BrowserJobs() {
                   <button
                     class="dropdown-toggle location21"
                     data-bs-toggle="dropdown"
-                    id="browseItem"
+                    id="experienceDropdown"
                   >
                     Experience
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={() => {
-                          userExperience("2-3");
-                        }}
-                      >
-                        2-3 years
-                      </a>
-                    </li>
-                    {/* <label>
-        <input
-          type="checkbox"
-          
-          onChange={userExperience}
-        />
-         2-3 years
-      </label> */}
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={() => {
-                          userExperience("3");
-                        }}
-                      >
-                        3 year
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={() => {
-                          userExperience("4");
-                        }}
-                      >
-                        4 year
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={() => {
-                          userExperience("4-5");
-                        }}
-                      >
-                        4-5 year
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={() => {
-                          userExperience("5");
-                        }}
-                      >
-                        5 year
-                      </a>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="2-3years"
+                          onChange={userExperience}
+                        />
+                        2-3years
+                      </label>
                     </li>
 
                     <li>
-                      <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={() => {
-                          userExperience("6-7");
-                        }}
-                      >
-                        6-7 year
-                      </a>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="3 years"
+                          onChange={userExperience}
+                        />
+                        3 years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="4 years"
+                          onChange={userExperience}
+                        />
+                        4 years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="4-5years"
+                          onChange={userExperience}
+                        />
+                        4-5years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="5 years"
+                          onChange={userExperience}
+                        />
+                        5 years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="6-7years"
+                          onChange={userExperience}
+                        />
+                        6-7years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="15-16 years"
+                          onChange={userExperience}
+                        />
+                        15-16 years
+                      </label>
                     </li>
 
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="#"
-                        onClick={() => {
-                          userExperience("15-16");
-                        }}
+                    <div class="homebutton1">
+                      <button
+                        class="subbutton1"
+                        onClick={filterJobsByExperience}
                       >
-                        15-16 year
-                      </a>
-                    </li>
+                        Search
+                      </button>
+                    </div>
                   </ul>
                 </div>
               </li>
 
-              <li class="col-md-3 col-lg nav-item">
+              {/* <li class="col-md-3 col-lg nav-item">
                 <div>
                   <button
                     class="dropdown-toggle location21"
@@ -406,9 +466,69 @@ function BrowserJobs() {
                     </li>
                   </ul>
                 </div>
+              </li> */}
+              <li class="col-md-3 col-lg nav-item">
+                <div>
+                  <button
+                    class="dropdown-toggle location21"
+                    data-bs-toggle="dropdown"
+                    id="experienceDropdown"
+                  >
+                   Location
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="Maharashtra"
+                          onChange={userLocation122}
+                        />
+                        Maharashtra
+                      </label>
+                    </li>
+
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="Tamilnadu"
+                          onChange={userLocation122}
+                        />
+                        Tamilnadu
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="Telagana"
+                          onChange={userLocation122}
+                        />
+                        Telagana
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="Bangalore"
+                          onChange={userLocation122}
+                        />
+                        Bangalore
+                      </label>
+                    </li>
+
+                    <div class="homebutton1">
+                      <button class="subbutton1" onClick={filterJobsByLocation}>
+                        Search
+                      </button>
+                    </div>
+                  </ul>
+                </div>
               </li>
 
-              <li class="col-md-3 col-lg nav-item">
+              {/* <li class="col-md-3 col-lg nav-item">
                 <div>
                   <button
                     class="dropdown-toggle location21"
@@ -484,6 +604,86 @@ function BrowserJobs() {
                         20-25 LPA
                       </a>
                     </li>
+                  </ul>
+                </div>
+              </li> */}
+              <li class="col-md-3 col-lg nav-item">
+                <div>
+                  <button
+                    class="dropdown-toggle location21"
+                    data-bs-toggle="dropdown"
+                    id="experienceDropdown"
+                  >
+                    Salary
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="9-4 LPA"
+                          onChange={userSalary122}
+                        />
+                        9-4 LPA
+                      </label>
+                    </li>
+
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="10-15 LPA"
+                          onChange={userSalary122}
+                        />
+                        10-15 LPA
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="12-16 LPA"
+                          onChange={userSalary122}
+                        />
+                        12-16 LPA
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="13-15 LPA"
+                          onChange={userSalary122}
+                        />
+                        13-15 LPA
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="15-20 LPA"
+                          onChange={userSalary122}
+                        />
+                        15-20 LPA
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="20-25 LPA"
+                          onChange={userSalary122}
+                        />
+                        20-25 LPA
+                      </label>
+                    </li>
+
+                    <div class="homebutton1">
+                      <button class="subbutton1" onClick={filterJobsBySalary}>
+                        Search
+                      </button>
+                    </div>
                   </ul>
                 </div>
               </li>
@@ -681,10 +881,10 @@ function BrowserJobs() {
           theme="colored"
         />
         {blogslist.length > 0 ? (
-          <>
+          <div>
             {" "}
             <div></div>
-          </>
+          </div>
         ) : (
           <div>
             <img

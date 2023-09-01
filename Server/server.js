@@ -50,6 +50,8 @@ app.post("/register", middleware, async (req, res) => {
         emailE1,
       });
 
+      
+
       newUser.save(); //saving mongodb collections
       return res.send("user Created Successfully");
     }
