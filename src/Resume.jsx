@@ -771,8 +771,10 @@ function ResumeDetails() {
                 </div>
                 <div className="content12 mx-2">
                   <h4 class="resumeh5">B.Siva Koteswara Rao</h4>
-                  <p>Software Developer <br /><span className="text-primary" >at Perfex Technologies</span></p>
-                  
+                  <p>
+                    Software Developer <br />
+                    <span className="text-primary">at Perfex Technologies</span>
+                  </p>
                 </div>
               </div>
               <div class="p-2">
@@ -801,16 +803,14 @@ function ResumeDetails() {
                 <p class="spa85">Your profile updated</p>
                 <span class="spa82 p-1 px-4">89%</span>
                 <span class="spa83 mx-3">Add 3 missing details</span>
-                <p class="spa84 ">Profile last updated -25feb,2023</p>
+                <p class="spa84 ">Profile last updated -16 feb,2023</p>
               </div>
             </div>
-            <div class="mt-2 ">
+            <div class="mt-3 ">
               <a href="#Resume">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">Resume</button>
               </a>
               <a href="#ResumeHeadline">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Resume Headline
                 </button>
@@ -821,43 +821,36 @@ function ResumeDetails() {
                 </button>
               </a>
               <a href="#KeySkills">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Key skills
                 </button>
               </a>
               <a href="#Employment">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Employment
                 </button>
               </a>
               <a href="#Education">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Education
                 </button>
               </a>
               <a href="#Projects">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Projects
                 </button>
               </a>
               <a href="#Accomplishment">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Accomplishment
                 </button>
               </a>
               <a href="#DesiredcareerProfile">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Desired career Profile
                 </button>
               </a>
               <a href="#Personaldetails">
-                {" "}
                 <button class="w-100 p-2 mt-2 resumebtn shadow">
                   Personal Details
                 </button>
