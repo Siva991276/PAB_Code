@@ -282,6 +282,7 @@ function Registration() {
                   value={email}
                 />
                 <br />
+                {/* //siva */}
 
                 <label className="heading2">Password</label>
                 <br />
