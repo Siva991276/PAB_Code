@@ -579,3 +579,9 @@ ul {
     margin-left: 20px;
     margin-top: 20px;
 }
+.b21{
+      opacity: 0.4;
+}
+.error{
+    color: red;
+}

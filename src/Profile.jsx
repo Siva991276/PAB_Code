@@ -81,7 +81,8 @@ function ProfileCode() {
     if (!nameError && !mobileNumberError && name && mobileNumber) {
       // Perform your submit logic here
       setErrorMessage("Form submitted successfully");
-    } else {
+    }
+       else {
       setErrorMessage("Form submission failed. Please check errors.");
     }
 

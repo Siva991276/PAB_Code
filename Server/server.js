@@ -128,7 +128,7 @@ app.post("/login", async (req, res) => {
 });
 
 // get all developers data
-app.get("/alldevelopers", middleware, async (req, res) => {
+app.get("/alldevelopers", async (req, res) => {
   const alldevelopers = await userData.find({});
 
   return res.json(alldevelopers);

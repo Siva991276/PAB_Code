@@ -1,24 +1,59 @@
 import "./Registration.css";
 import logo2 from "../src/All Images/side-image.avif";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios, { Axios } from "axios";
 import logo from "../src/All Images/pab bottom-logo (1).jpg";
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 function Registration() {
-  const [Typesection, settype] = useState("applicant");
-
+  const [Typesection, setSelectedType] = useState("applicant");
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [confirmpassword, setconfirmpassword] = useState("");
   const [phone, setphone] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
 
   let navigate = useNavigate();
   const [data, setdata] = useState([]);
+
+  const validateInputs = () => {
+    let isValid = true;
+
+    if (!name.match(/^[a-zA-Z\s]*$/)) {
+      setNameError("Name should contain only letters and spaces");
+      isValid = false;
+    } else {
+      setNameError("");
+    }
+
+    if (!phone.match(/^[6789]\d{9}$/)) {
+      setPhoneError("Phone number should start with 6, 7, 8, or 9 and have 10 digits");
+      isValid = false;
+    } else {
+      setPhoneError("");
+    }
+
+    if (password.length < 6 || password.length > 8) {
+      setPasswordError("Password should be 6 to 8 characters long");
+      isValid = false;
+    } else {
+      setPasswordError("");
+    }
+
+    if (password !== confirmpassword) {
+      setConfirmPasswordError("Passwords do not match");
+      isValid = false;
+    } else {
+      setConfirmPasswordError("");
+    }
+
+    return isValid;
+  };
 
   console.log(name);
 
@@ -33,24 +68,68 @@ function Registration() {
 
   console.log(usersData);
 
+  
+
+  // const onSubmitForm = (e) => {
+  //   e.preventDefault();
+  //   if (
+  //     Typesection &&
+  //     name &&
+  //     email &&
+  //     phone &&
+  //     password &&
+  //     confirmpassword !== ""
+  //   ) {
+  //     axios
+  //       .post("http://localhost:4005/RegistrationDetails", usersData)
+  //       .then((response) => {
+  //         setdata(response.data);
+
+  //         console.log(response.data);
+  //         if (response.status === 200) {
+  //           toast.success("Registration Successfull", {
+  //             position: "top-right",
+  //             autoClose: 1000,
+  //             hideProgressBar: false,
+  //             closeOnClick: true,
+  //             pauseOnHover: true,
+  //             draggable: true,
+  //             progress: undefined,
+  //             theme: "colored",
+  //           });
+
+  //           setTimeout(function () {
+  //             navigate("/LoginPage");
+  //           }, 3000);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.log(error.message);
+  //       });
+  //   } else {
+  //     toast.warning("Enter the Required Details");
+  //   }
+  // };
   const onSubmitForm = (e) => {
     e.preventDefault();
-    if (
-      Typesection &&
-      name &&
-      email &&
-      phone &&
-      password &&
-      confirmpassword !== ""
-    ) {
+
+    if (validateInputs()) {
+      const usersData = {
+        Typesection: Typesection,
+        name: name,
+        email: email,
+        contactNumber: phone,
+        password: password,
+        originalPassword: confirmpassword,
+      };
+      
+
       axios
         .post("http://localhost:4005/RegistrationDetails", usersData)
         .then((response) => {
-          setdata(response.data);
-
           console.log(response.data);
           if (response.status === 200) {
-            toast.success("Registration Successfull", {
+            toast.success("Registration Successful", {
               position: "top-right",
               autoClose: 1000,
               hideProgressBar: false,
@@ -70,21 +149,31 @@ function Registration() {
           console.log(error.message);
         });
     } else {
-      toast.warning("Enter the Required Details");
+      toast.warning("Enter valid details");
     }
   };
 
   console.log(Typesection);
+  const [buttonOpacity, setButtonOpacity] = useState({
+    jobSeekers: 1,
+    recruiters: 0.4,
+  });
+  const handleTypeChange = (e) => {
+    const type = e.target.value;
+    setSelectedType(type);
+
+    if (type === "applicant") {
+      setButtonOpacity({ jobSeekers: 1, recruiters: 0.4 });
+    } else if (type === "recruiter") {
+      setButtonOpacity({ jobSeekers: 0.4, recruiters: 1 });
+    }
+  };
 
   return (
     <div>
       <nav class="navbar navbar-expand-sm">
         <div class="container">
           <img src={logo} alt="logo" width="200px" />
-           
-            
-          
-           
         </div>
       </nav>
       <div class=" card container maincontent text-start">
@@ -100,7 +189,7 @@ function Registration() {
                   {" "}
                   <a href="">
                     {" "}
-                    <button type="button" class="b2">
+                    <button type="button" class="b21">
                       {" "}
                       Login
                     </button>
@@ -108,28 +197,42 @@ function Registration() {
                 </Link>
                 <button type="button" class="b2" id="Jobbtn">
                   Sign Up
-                  <input type="radio" name="type" id="" className="mx-2" />
+                  {/* <input type="radio" name="type" id="" className="mx-2" /> */}
+                  <i class="fa-solid fa-circle-check mx-2 circle-12"></i>
                 </button>
               </div>
-              <div class="d-flex flex-row">
-                <button type="button" class="b2" id="Jobbtn">
+
+              <div className="d-flex flex-row">
+                <button
+                  type="button"
+                  className="b2"
+                  id="Jobbtn"
+                  style={{ opacity: buttonOpacity.jobSeekers }}
+                >
                   Job Seekers
                   <input
                     type="radio"
                     name="type"
                     value="applicant"
-                    onChange={(e) => settype(e.target.value)}
+                    onChange={handleTypeChange}
                     className="mx-2"
+                    checked={Typesection === "applicant"}
                   />
                 </button>
-                <button type="button" class="b2" id="Jobbtn">
+                <button
+                  type="button"
+                  className="b2"
+                  id="Jobbtn"
+                  style={{ opacity: buttonOpacity.recruiters }}
+                >
                   Recruiters
                   <input
                     type="radio"
                     name="type"
                     value="recruiter"
-                    onChange={(e) => settype(e.target.value)}
+                    onChange={handleTypeChange}
                     className="mx-2"
+                    checked={Typesection === "recruiter"}
                   />
                 </button>
               </div>
@@ -166,6 +269,7 @@ function Registration() {
                   onChange={(e) => setname(e.target.value)}
                   value={name}
                 />
+                 <span className="error">{nameError}</span>
                 <br />
 
                 <label className="heading2">Email ID</label>
@@ -188,6 +292,7 @@ function Registration() {
                   onChange={(e) => setpassword(e.target.value)}
                   value={password}
                 />
+                 <span className="error">{passwordError}</span>
                 <br />
 
                 <label className="heading2">Confirm Password</label>
@@ -199,6 +304,7 @@ function Registration() {
                   onChange={(e) => setconfirmpassword(e.target.value)}
                   value={confirmpassword}
                 />
+                <span className="error">{confirmPasswordError}</span>
                 <br />
 
                 <label className="heading2">Mobile Number</label>
@@ -214,6 +320,7 @@ function Registration() {
                   onChange={(e) => setphone(e.target.value)}
                   value={phone}
                 />
+                <span className="error">{phoneError}</span>
                 <br />
 
                 <p>
@@ -240,18 +347,18 @@ function Registration() {
           <div class="col-12 col-md-4 remove">
             <img src={logo2} alt="pic" class="image2" />
             <p class="para4">
-              <i class="fa-solid fa-circle-check" style={{ color: "blue" }}></i>{" "}
-              Build your profile and let recruiters find you
+              <i class="fa-solid fa-circle-check"></i> Build your profile and
+              let recruiters find you
             </p>
 
             <p class="para4">
-              <i class="fa-solid fa-circle-check" style={{ color: "blue" }}></i>
+              <i class="fa-solid fa-circle-check"></i>
               Get job posting delivered right to your email
             </p>
 
             <p class="para4">
-              <i class="fa-solid fa-circle-check" style={{ color: "blue" }}></i>{" "}
-              Find a job and grow your career
+              <i class="fa-solid fa-circle-check"></i> Find a job and grow your
+              career
             </p>
           </div>
         </div>
