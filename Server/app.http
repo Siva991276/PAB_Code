@@ -10,7 +10,7 @@ token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI
     "State": "Ap", 
     "Currentlocation":"kadapa", 
     "mobile": "9654785478", 
-    "emailE1": "krishna@gmail.com"
+    "emailE1": "krishna123@gmail.com"
      
 }
 ###
@@ -158,8 +158,8 @@ Content-Type: application/json
 
 {
     "Typesection":"recruiter",
-    "name":"suneel",
-    "email":"suneel121@gmail.com",
+    "name":"vamsikk",
+    "email":"vamsikk1211@gmail.com",
     "contactNumber":"9652854785",
     "password":"123",
     "originalPassword":"123"   
@@ -170,7 +170,7 @@ Content-Type: application/json
 
 
 {
-      "email":"sivakoti@gmail.com",
+      "email":"vamsikk1211@gmail.com",
        "password":"123"
 }
 ###

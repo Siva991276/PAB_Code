@@ -54,7 +54,7 @@ function Home() {
               </li>
               <li class="nav-item logosymbol">
                 <Link to = "/ProfileCode"><a href="">
-                  {" "}
+                
                   <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
                 </a></Link>
               </li>

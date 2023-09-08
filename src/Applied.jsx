@@ -169,7 +169,14 @@ function AppliedJobs() {
                   </a>
                 </div>
               ) : (
-                <p>Please log in</p>
+                <a href="/LoginPage">
+                <button
+                   
+                  class="p-2 mb-1 profilebutton "
+                >
+                  Logout
+                </button>
+              </a>
               )}
             </div>
           </div>

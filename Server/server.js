@@ -30,100 +30,155 @@ app.get("/", (req, res) => {
 });
 
 // Register API
-app.post("/register", middleware, async (req, res) => {
-  try {
-    const { fullname, radioSection, State, Currentlocation, mobile, emailE1 } =
-      req.body;
-    //checking user whether it is exits or not
-    const isUserExist = await userData.findOne({ emailE1: emailE1 });
+// app.post("/register", middleware, async (req, res) => {
+//   try {
+//     const { fullname, radioSection, State, Currentlocation, mobile, emailE1 } =
+//       req.body;
+//     //checking user whether it is exits or not
+//     const isUserExist = await userData.findOne({ emailE1: emailE1 });
 
-    if (isUserExist) {
-      return res.send("User Already Registered");
-    } else {
-      //generating encrypted password for user
-      let newUser = new userData({
-        fullname,
-        radioSection: radioSection,
-        State,
-        Currentlocation,
-        mobile,
-        emailE1,
-      });
+//     if (isUserExist) {
+//       return res.send("User Already Registered");
+//     } else {
+//       //generating encrypted password for user
+//       let newUser = new userData({
+//         fullname,
+//         radioSection: radioSection,
+//         State,
+//         Currentlocation,
+//         mobile,
+//         emailE1,
+//       });
 
       
 
-      newUser.save(); //saving mongodb collections
-      return res.send("user Created Successfully");
+//       newUser.save(); //saving mongodb collections
+//       return res.send("user Created Successfully");
+//     }
+//   } catch (e) {
+//     console.log(e.message);
+//     res.send("Inernal server error");
+//   }
+// });
+
+app.post("/register", middleware,async (req, res) => {
+  console.log(req.body)
+  // res.send("hello db")
+  try {
+    const user = await userData.findOne({ emailE1: req.body.emailE1 })   // mongo db condition
+    // console.log(user)
+    if (!user) {  // or if(user === undefined)
+      // user not found excutes below code
+      const newUser = {
+        "fullname": req.body.fullname,
+        "radioSection": req.body.radioSection,
+        "State": req.body.State,
+        "Currentlocation": req.body.Currentlocation,
+        "mobile": req.body.mobile,
+        "emailE1": req.body.emailE1
+
+      };
+      const userDetails = await userData.create(newUser)   //  POSTING TO COLLECTION OR MODEL
+      console.log(userDetails)
+
+      res.status(200).send("user created successfully")
+    } else {
+      // if user mail id is founded send below response
+      res.status(400).json("user already registered")
     }
   } catch (e) {
-    console.log(e.message);
-    res.send("Inernal server error");
+    console.log(e.message)
+    return res.status(500).json("message: e.message")
   }
-});
+})
+
+ 
 
 //Registration Details
 app.post("/RegistrationDetails", async (req, res) => {
+  console.log(req.body)
+  // res.send("hello db")
   try {
-    const {
-      Typesection,
-      name,
-      email,
-      contactNumber,
-      password,
-      originalPassword,
-    } = req.body;
-    const isUserExist = await userData.findOne({ email: email });
-    if (isUserExist) {
-      return res.send("User Already Registered");
-    }
-    if (password !== originalPassword) {
-      return res.send("password not matched");
-    }
-    const Hashedpassword = await bcrypt.hash(password, 10);
-    let newUser = new userData({
-      Typesection,
-      name,
-      email,
-      contactNumber,
-      password: Hashedpassword,
-      originalPassword: Hashedpassword,
-    });
+    const user = await userData.findOne({ email: req.body.email })   // mongo db condition
+    // console.log(user)
+    if (!user) {  // or if(user === undefined)
+      // user not found excutes below code
+      const newUser = {
+        "Typesection": req.body.Typesection,
+        "name": req.body.name,
+        "email": req.body.email,
+        "contactNumber": req.body.contactNumber,
+        "password": req.body.password,
+        "originalPassword": req.body.originalPassword
 
-    newUser.save(); //saving mongodb collections
-    return res.send("user Created Successfully");
+      };
+      const userDetails = await userData.create(newUser)   //  POSTING TO COLLECTION OR MODEL
+      console.log(userDetails)
+
+      res.status(200).send("user created successfully")
+    } else {
+      // if user mail id is founded send below response
+      res.status(400).json("user already registered")
+    }
   } catch (e) {
-    console.log(e.message);
-    res.send("Inernal server error");
+    console.log(e.message)
+    return res.status(500).json("message: e.message")
   }
-});
+})
 //login
+// app.post("/login", async (req, res) => {
+//   const { email, password} = req.body;
+//   const isUserExist = await userData.findOne({ email });
+
+//   if (isUserExist) {
+//     const isPasswordMatched = await bcrypt.compare(
+//       password,
+//       isUserExist.password
+//     ); //compare two password
+//     if (isPasswordMatched) {
+//       let payload = {
+//         user: isUserExist.id,
+//       };
+//       jwt.sign(
+//         payload,
+//         "jwtpassword",
+//         { expiresIn: 360000000 },
+//         (err, token) => {
+//           if (err) throw err;
+//           return res.json({ token }); // this token generated by jwt
+//         }
+//       );
+//     } else {
+//       return res.send("password not matched");
+//     }
+//   } else {
+//     res.send("User Not Found");
+//   }
+// });
 app.post("/login", async (req, res) => {
-  const { email: email, password: password } = req.body;
-  const isUserExist = await userData.findOne({ email });
+  const { email, password } = req.body;
+  const isUserExist = await userData.findOne({ email,password });
 
   if (isUserExist) {
-    const isPasswordMatched = await bcrypt.compare(
-      password,
-      isUserExist.password
-    ); //compare two password
-    if (isPasswordMatched) {
+
+    if(password === isUserExist.password)
+    {
       let payload = {
         user: isUserExist.id,
       };
       jwt.sign(
         payload,
         "jwtpassword",
-        { expiresIn: 360000000 },
+        { expiresIn: 36000000 },
         (err, token) => {
           if (err) throw err;
-          return res.json({ token }); // this token generated by jwt
+          return res.json({ token });
         }
       );
-    } else {
-      return res.send("password not matched");
     }
-  } else {
-    res.send("User Not Found");
+    else {
+      return res.send("password not matched");
+    } 
   }
 });
 

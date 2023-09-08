@@ -18,26 +18,93 @@ function LoginPage() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
-  console.log(email);
+  const isValidEmail = (email) => {
+    // A simple email validation regex
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
+  console.log(email);
   const usersData = {
     email: email,
-
     password: password,
   };
   console.log(usersData);
 
+  // const onSubmitBtn = (e) => {
+  //   e.preventDefault();
+  //   if (email && validateInputs() && password !== "") {
+  //     axios
+  //       .post("http://localhost:4005/login", usersData)
+  //       .then((response) => {
+  //         if (response.status === 200) {
+  //           let jwtToken = response.data.token;
+  //           localStorage.setItem("token", jwtToken);
+
+  //           toast.success("open Home Page", {
+  //             position: "top-right",
+  //             autoClose: 5000,
+  //             hideProgressBar: false,
+  //             closeOnClick: true,
+  //             pauseOnHover: true,
+  //             draggable: true,
+  //             progress: undefined,
+  //             theme: "colored",
+  //           });
+
+  //           setTimeout(function () {
+  //             navigate("/Home");
+  //           }, 3000);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //                   toast.error("Enter The Correct mail", {
+  //                     position: "top-right",
+  //                     autoClose: 1000,
+  //                     hideProgressBar: false,
+  //                     closeOnClick: true,
+  //                     pauseOnHover: true,
+  //                     draggable: true,
+  //                     progress: undefined,
+  //                     theme: "colored",
+  //                   });
+
+  //                   console.log(error.message);
+  //       });
+  //   } else {
+  //     toast.warning("Enter the Required Details");
+  //   }
+  // };
+
+
   const onSubmitBtn = (e) => {
     e.preventDefault();
+
     if (email && password !== "") {
+      if (!isValidEmail(email , password)) {
+        toast.error("Enter a valid email address", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        return;
+      }
+
+     
+      const userData = { email, password };
+
       axios
-        .post("http://localhost:4005/login", usersData)
+        .post("http://localhost:4005/login", userData)
         .then((response) => {
           if (response.status === 200) {
             let jwtToken = response.data.token;
             localStorage.setItem("token", jwtToken);
 
-            toast.success("open Home Page", {
+            toast.success("Successfully logged in!", {
               position: "top-right",
               autoClose: 5000,
               hideProgressBar: false,
@@ -48,28 +115,171 @@ function LoginPage() {
               theme: "colored",
             });
 
+         
             setTimeout(function () {
               navigate("/Home");
             }, 3000);
           }
         })
         .catch((error) => {
-          console.log(error.response.data);
-          window.alert(error.response.data);
+          if (error.response) {
+            if (error.response.status === 401) {
+              if (error.response.data.message === "Email not found") {
+                toast.error("Email not found. Please check your email.", {
+                  position: "top-right",
+                  autoClose: 1000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "colored",
+                });
+              } else if (error.response.data.message === "Incorrect password") {
+                toast.error("Incorrect password. Please check your password.", {
+                  position: "top-right",
+                  autoClose: 1000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "colored",
+                });
+              }
+            } else {
+              toast.error("An error occurred on the server. Please try again later.", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+              });
+            }
+          } else {
+            toast.error("An error occurred. Please check your network connection and try again.", {
+              position: "top-right",
+              autoClose: 1000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            });
+            console.error(error);
+          }
         });
     } else {
       toast.warning("Enter the Required Details");
     }
+  };
+
+
+
+  // const onSubmitBtn = (e) => {
+  //   e.preventDefault();
+
+  //   if (email && password !== "") {
+  //     if (!isValidEmail(email)) {
+  //       toast.error("Enter a valid email address", {
+  //         position: "top-right",
+  //         autoClose: 1000,
+  //         hideProgressBar: false,
+  //         closeOnClick: true,
+  //         pauseOnHover: true,
+  //         draggable: true,
+  //         progress: undefined,
+  //         theme: "colored",
+  //       });
+  //       return;
+  //     }
+
+  //     // Data to send to the server
+  //     const userData = { email, password };
+
+  //     axios
+  //       .post("http://localhost:4005/login", userData)
+  //       .then((response) => {
+  //         if (response.status === 200) {
+  //           // Check the response data to determine success or error
+  //           if (response.data.emailExists && response.data.passwordCorrect) {
+  //             // Both email and password are correct
+  //             let jwtToken = response.data.token;
+  //             localStorage.setItem("token", jwtToken);
+
+  //             toast.success("Successfully logged in!", {
+  //               position: "top-right",
+  //               autoClose: 5000,
+  //               hideProgressBar: false,
+  //               closeOnClick: true,
+  //               pauseOnHover: true,
+  //               draggable: true,
+  //               progress: undefined,
+  //               theme: "colored",
+  //             });
+
+  //             // Navigate to the Home page after successful login
+  //             setTimeout(function () {
+  //               navigate("/Home");
+  //             }, 3000);
+  //           } else if (!response.data.emailExists) {
+  //             // Email does not exist
+  //             toast.error("Email not found. Please check your email.", {
+  //               position: "top-right",
+  //               autoClose: 1000,
+  //               hideProgressBar: false,
+  //               closeOnClick: true,
+  //               pauseOnHover: true,
+  //               draggable: true,
+  //               progress: undefined,
+  //               theme: "colored",
+  //             });
+  //           } else {
+  //             // Password is incorrect
+  //             toast.error("Incorrect password. Please check your password.", {
+  //               position: "top-right",
+  //               autoClose: 1000,
+  //               hideProgressBar: false,
+  //               closeOnClick: true,
+  //               pauseOnHover: true,
+  //               draggable: true,
+  //               progress: undefined,
+  //               theme: "colored",
+  //             });
+  //           }
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         toast.error("An error occurred. Please check your network connection and try again.", {
+  //           position: "top-right",
+  //           autoClose: 1000,
+  //           hideProgressBar: false,
+  //           closeOnClick: true,
+  //           pauseOnHover: true,
+  //           draggable: true,
+  //           progress: undefined,
+  //           theme: "colored",
+  //         });
+  //         console.error(error);
+  //       });
+  //   } else {
+  //     toast.warning("Enter the Required Details");
+  //   }
+  // };
+  const [loginpassword, setloginpassword] = useState(false);
+
+  const ShowcomfirmPassword = () => {
+    setloginpassword(!loginpassword);
   };
   return (
     <div>
       <nav class="navbar navbar-expand-sm">
         <div class="container">
           <img src={logo} alt="logo" width="200px" />
-           
-            
-          
-           
         </div>
       </nav>
       <div className="container5">
@@ -109,7 +319,7 @@ function LoginPage() {
                   />
                   <br />
 
-                  <label className="heading123">Password</label>
+                  {/* <label className="heading123">Password</label>
                   <br />
                   <input
                     type="password"
@@ -117,26 +327,48 @@ function LoginPage() {
                     placeholder="  Enter your Password"
                     onChange={(e) => setpassword(e.target.value)}
                     value={password}
-                  />
+                  /> */}
+                  <div className="input-with-icon">
+                    <label className="heading123">Password</label>
+                    <br />
+                    <div className="">
+                      <input
+                        type={loginpassword ? "text" : "password"}
+                        className="p10912"
+                        style={{ border: "1px solid #c9bed7" }}
+                        placeholder="   Minimum 6 characters, starting capital, symbol, and number"
+                        onChange={(e) => setpassword(e.target.value)}
+                        value={password}
+                      />
+                      <i
+                        class="fa-regular fa-eye icon1"
+                        onClick={ShowcomfirmPassword}
+                      ></i>
+                    </div>
+                  </div>
                   <br />
 
-                  <button class="Registerbtn">Login</button>
-                  <h6 class="text-center " style={{color: "blue"}}>Login via OTP</h6>
-                  <span class="logingoogle">
-                  <button class="loginbutton2 shadow w-50">
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVDA2e7vaSAfhljLBVppf2X0b0OuAxTQZqjYZcemxu6Umeik13cJI3HYISVRfEz9SMQA&usqp=CAU"
-                      alt=""
-                      class="googleimg"
-                    />
-                    Sign in with Google
+                  <button class="Registerbtn11" type="submit">
+                    Login
                   </button>
-                </span>
+                  <button
+                    class="text-center loginvia "
+                    style={{ color: "blue", border: "none" }}
+                  >
+                    Login via OTP
+                  </button>
+                  <br />
+                  <span class="logingoogle">
+                    <button class="loginbutton2 shadow w-50">
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVDA2e7vaSAfhljLBVppf2X0b0OuAxTQZqjYZcemxu6Umeik13cJI3HYISVRfEz9SMQA&usqp=CAU"
+                        alt=""
+                        class="googleimg"
+                      />
+                      Sign in with Google
+                    </button>
+                  </span>
                 </form>
-                 
-                 
-              
-                
               </div>
               <a href="">
                 <button class="Register shadow  d-md-none">
