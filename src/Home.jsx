@@ -28,14 +28,15 @@ function Home() {
                 </a>
               </li>
               <li class="nav-item">
-                
-                  <a class="nav-link dropdown-toggle navstyle"href="/BrowserJobs">
-                    Browse Jobs
-                  </a>
-                 
+                <a
+                  class="nav-link dropdown-toggle navstyle"
+                  href="/BrowserJobs"
+                >
+                  Browse Jobs
+                </a>
               </li>
               <li class="nav-item">
-                 <a class="nav-link dropdown-toggle navstyle" href="/jobs">
+                <a class="nav-link dropdown-toggle navstyle" href="/jobs">
                   Jobs
                 </a>
               </li>
@@ -45,18 +46,114 @@ function Home() {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link dropdown-toggle navstyle" href="/PaymentMethod ">
+                <a
+                  class="nav-link dropdown-toggle navstyle"
+                  href="/PaymentMethod "
+                >
                   payments
                 </a>
               </li>
               <li class="nav-item logosymbol">
                 <i class="fa-solid fa-bell bellicon"></i>
               </li>
-              <li class="nav-item logosymbol">
+              {/* <li class="nav-item logosymbol">
                 <Link to = "/ProfileCode"><a href="">
                 
                   <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
                 </a></Link>
+              </li> */}
+              <li class="col-md-3 col-lg nav-item">
+                <div>
+                  <button
+                    class="dropdown-toggle location21"
+                    data-bs-toggle="dropdown"
+                    id="experienceDropdown"
+                  >
+                    Experience
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="2-3years"
+                          
+                        />
+                        2-3years
+                      </label>
+                    </li>
+
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="3 years"
+                          
+                        />
+                        3 years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="4 years"
+                          
+                        />
+                        4 years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="4-5years"
+                          
+                        />
+                        4-5years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="5 years"
+                          
+                        />
+                        5 years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="6-7years"
+                          
+                        />
+                        6-7years
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input
+                          type="checkbox"
+                          value="15-16 years"
+                           
+                        />
+                        15-16 years
+                      </label>
+                    </li>
+
+                    <div class="homebutton1">
+                      <button
+                        class="subbutton1"
+                        
+                      >
+                        Search
+                      </button>
+                    </div>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
@@ -326,7 +423,7 @@ function Home() {
                       className="text-start pt-2 "
                       style={({ fontSize: "18px" }, { fontWeight: "700" })}
                     >
-                      FMCG&Retail {" "}
+                      FMCG&Retail{" "}
                     </p>
                     <p
                       className="text-start par21"
@@ -373,7 +470,7 @@ function Home() {
                       className="text-start pt-2 "
                       style={({ fontSize: "18px" }, { fontWeight: "700" })}
                     >
-                      Healthcare 
+                      Healthcare
                     </p>
                     <p
                       className="text-start par21"
@@ -553,7 +650,7 @@ function Home() {
                   <h3 class="indus">Browse Jobs By Designation</h3>
                 </div>
                 <div class="row">
-                  <div class="col-md p-1 m-1" >
+                  <div class="col-md p-1 m-1">
                     <button class="custom-btn21   w-100 p-2 m-1">
                       {" "}
                       ABAP Consultant
@@ -610,31 +707,31 @@ function Home() {
                 <div class="row">
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                    HR Assistant
+                      HR Assistant
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                    IndustrialEngineer
+                      IndustrialEngineer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                    java Developer
+                      java Developer
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                    FinanceManager
+                      FinanceManager
                     </button>
                   </div>
                   <div class="col-md p-1 m-1">
                     <button class="custom-btn21 btn-10 w-100 p-2 m-1">
-                    Java Developer
+                      Java Developer
                     </button>
                   </div>
                 </div>
-                 
+
                 <div class="row  m-2">
                   <div class="col-8"></div>
                   <div class="col-4 ">
