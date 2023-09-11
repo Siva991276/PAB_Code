@@ -202,9 +202,10 @@ input[type=text]:focus {
     float: right;
 }
 
-.book {
-    color: silver;
+.book11{
+    color: rgb(41, 15, 236);
 }
+ 
 
 .Show {
     border-right: 1px sold black;
@@ -213,7 +214,10 @@ input[type=text]:focus {
     color: #4805a0;
     
 }
-
+.fa-bookmark.book11:hover {
+    color: red;
+  }
+  
 .now-item {
     background-color: #4805a0;
     color: #fff;

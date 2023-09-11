@@ -5,7 +5,19 @@ import Footer from "./Footer";
 import "./home.css";
 import logo from "../src/All Images/pab bottom-logo (1).jpg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 function Home() {
+
+  const [isHovered, setIsHovered] = useState(false);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    document.getElementById("experienceDropdown").style.marginRight = "20%";
+    
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div className="">
       <nav class="navbar navbar-expand-sm">
@@ -53,108 +65,79 @@ function Home() {
                   payments
                 </a>
               </li>
-              <li class="nav-item logosymbol">
-                <i class="fa-solid fa-bell bellicon"></i>
+              <li class="nav-item logosymbol ">
+                <i class="fa-solid fa-bell bellicon11"></i>
               </li>
               {/* <li class="nav-item logosymbol">
                 <Link to = "/ProfileCode"><a href="">
                 
-                  <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
+                  <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon11 mt-1 "></i>
                 </a></Link>
               </li> */}
               <li class="col-md-3 col-lg nav-item">
                 <div>
-                  <button
-                    class="dropdown-toggle location21"
-                    data-bs-toggle="dropdown"
-                    id="experienceDropdown"
-                  >
-                    Experience
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="2-3years"
-                          
-                        />
-                        2-3years
-                      </label>
-                    </li>
-
-                    <li>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="3 years"
-                          
-                        />
-                        3 years
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="4 years"
-                          
-                        />
-                        4 years
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="4-5years"
-                          
-                        />
-                        4-5years
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="5 years"
-                          
-                        />
-                        5 years
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="6-7years"
-                          
-                        />
-                        6-7years
-                      </label>
-                    </li>
-                    <li>
-                      <label>
-                        <input
-                          type="checkbox"
-                          value="15-16 years"
-                           
-                        />
-                        15-16 years
-                      </label>
-                    </li>
-
-                    <div class="homebutton1">
-                      <button
-                        class="subbutton1"
-                        
-                      >
-                        Search
-                      </button>
-                    </div>
-                  </ul>
+                   
+                  <div
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                     >
+                      
+                    <i
+                      className="fa-solid fa-circle-user dropdown-toggle bellicon11 nav-item logosymbol"
+                      id="experienceDropdown"
+                    ></i>
+                    {isHovered && (
+                      <div class="card col-md-2 dropdown-menu">
+                        <a href="">
+                          <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
+                            Candidate Profile
+                          </button>
+                        </a>
+                        <a href="/ResumeDetails">
+                          <button class="p-2 mb-1 profilebutton  ">
+                            Resume
+                          </button>
+                        </a>
+                        <Link to="/AppliedJobs">
+                          {" "}
+                          <a href="">
+                            <button class="p-2 mb-1 profilebutton  ">
+                              Applied Jobs
+                            </button>
+                          </a>
+                        </Link>
+                        <Link to="/JobAlert">
+                          {" "}
+                          <a href="">
+                            <button class="p-2 mb-1 profilebutton ">
+                              Job Alerts
+                            </button>
+                          </a>
+                        </Link>
+                        <a href="/SaveJobs">
+                          <button class="p-2 mb-1 profilebutton  ">
+                            Saved Jobs
+                          </button>
+                        </a>
+                        <a href="/ChangePassword">
+                          <button class="p-2 mb-1 profilebutton  ">
+                            Change Password
+                          </button>
+                        </a>
+                        <a href="/LoginPage">
+                          <button class="p-2 mb-1 profilebutton ">
+                            Log Out
+                          </button>
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </li>
+
+
+              
+              
             </ul>
           </div>
         </div>

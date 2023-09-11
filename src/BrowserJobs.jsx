@@ -17,6 +17,7 @@ function BrowserJobs() {
   const [selectedblog, setselectedblog] = useState("");
   const [userState, setuserState] = useState("");
   const [userlocation, setUserLocation] = useState("");
+
   // const [usereperience, setusereperience] = useState("");
   // const [userlocation1, setuserlocation1] = useState("");
   // const [usersalary, setusersalary] = useState("");
@@ -53,6 +54,10 @@ function BrowserJobs() {
 
   const handleApply = async (blog) => {
     try {
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
       const {
         companynameE2,
         contactnumberE2,
@@ -76,12 +81,50 @@ function BrowserJobs() {
         roleE2,
         no_of_applicationsE2,
         ImageE2,
-      });
+      },{headers});
       toast.success("Data stored successfully");
     } catch (error) {
       console.error(error);
     }
   };
+
+  const SaveJobsApply = async (blog) => {
+    try {
+
+      const headers = {
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+      };
+      const {
+        companynameE2,
+        contactnumberE2,
+        emailE2,
+        stateE2,
+        countryE2,
+        experienceE2,
+        salaryE2,
+        roleE2,
+        no_of_applicationsE2,
+        ImageE2,
+      } = blog;
+      await axios.post("http://localhost:4005/SaveJobsNow", {
+        companynameE2,
+        contactnumberE2,
+        emailE2,
+        stateE2,
+        countryE2,
+        experienceE2,
+        salaryE2,
+        roleE2,
+        no_of_applicationsE2,
+        ImageE2,
+      },{headers});
+      toast.success("Data stored successfully");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
 
   const onclickblogdetails = async (blogid) => {
     const selectedJobDetails = blogslist.find((each) => each._id === blogid);
@@ -172,7 +215,9 @@ function BrowserJobs() {
     if (es.target.checked) {
       setSelectedSalary([...selectedSalary, es.target.value]);
     } else {
-      setSelectedSalary(selectedSalary.filter((sal) => sal !== es.target.value));
+      setSelectedSalary(
+        selectedSalary.filter((sal) => sal !== es.target.value)
+      );
     }
   };
 
@@ -244,14 +289,14 @@ function BrowserJobs() {
                 </a>
               </li>
               <li class="nav-item logosymbol">
-                <i class="fa-solid fa-bell bellicon"></i>
+                <i class="fa-solid fa-bell bellicon11 mx-2"></i>
               </li>
               <li class="nav-item logosymbol">
                 <Link to="/ProfileCode">
                   {" "}
                   <a href="">
                     {" "}
-                    <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
+                    <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon11"></i>
                   </a>
                 </Link>
               </li>
@@ -474,7 +519,7 @@ function BrowserJobs() {
                     data-bs-toggle="dropdown"
                     id="experienceDropdown"
                   >
-                   Location
+                    Location
                   </button>
                   <ul class="dropdown-menu">
                     <li>
@@ -975,9 +1020,18 @@ function BrowserJobs() {
                                   {selectedblog.salaryE2}
                                   <span class="bookmark">
                                     <i
-                                      class="fa-solid fa-bookmark book"
+                                      class="fa-solid fa-bookmark book11"
                                       id="bookItem"
+                                      
+                                      
+                                      onClick={() => SaveJobsApply(selectedblog)}
                                     ></i>
+                                    {/* <i
+                                      className="fa-solid fa-bookmark book11"
+                                      id="bookItem"
+                                     
+                                      onClick={handleIconClick}
+                                    ></i> */}
                                   </span>
                                 </p>
                                 <p class="m-0">

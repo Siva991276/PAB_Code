@@ -323,9 +323,7 @@ function Registration() {
                       <i
                         class="fa-regular fa-eye icon"
                         onClick={ShowPassword}
-                      >
-                         
-                         
+                      >   
                       </i>
                     </div>
                     {passwordError && <h6 className="error">{passwordError}</h6>}

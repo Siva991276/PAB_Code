@@ -25,6 +25,18 @@ function ProfileCode() {
   const [Currentlocation, setCurrentlocation] = useState("");
   const [mobile, setmobile] = useState("");
   const [emailE1, setemail] = useState("");
+  const [isHovered, setIsHovered] = useState(false);
+
+
+   
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+    document.getElementById("experienceDropdown").style.marginRight = "20%";
+    
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   const [data, setdata] = useState([]);
   console.log(fullname);
@@ -250,23 +262,13 @@ function ProfileCode() {
   };
 
   console.log(radioSection);
-
   return (
     <div>
       <nav class="navbar navbar-expand-sm navbar-dark shadow mb-3 mt-2 ">
         <div class="container">
           <img src={logo} alt="" width="200px" />
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapsibleNavbar"
-            style={{ backgroundColor: "black" }}
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav mt-4" style={{ marginLeft: "auto" }}>
+            <ul class="navbar-nav mt-4" style={{ marginLeft: "180px" }}>
               <li class="nav-item ">
                 <a
                   class="nav-link line1"
@@ -315,13 +317,73 @@ function ProfileCode() {
               <li class="nav-item">
                 <i class="fa-solid fa-bell bellicon"></i>
               </li>
-              <li class="nav-item">
-                <a href="">
-                  <i
-                    class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"
-                    style={{ color: "Blue" }}
-                  ></i>
-                </a>
+
+              <li class="col-md-3 col-lg nav-item">
+                <div>
+                  {/* <i class="" data-bs-toggle="dropdown" id="experienceDropdown">
+                    <li class="nav-item logosymbol">
+                      <Link to="">
+                        <a href="">
+                          <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon11"></i>
+                        </a>
+                      </Link>
+                    </li>
+                  </i> */}
+                  <div
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                     >
+                    <i
+                      className="fa-solid fa-circle-user dropdown-toggle bellicon11 nav-item logosymbol"
+                      id="experienceDropdown"
+                    ></i>
+                    {isHovered && (
+                      <div class="card col-md-2 dropdown-menu">
+                        <a href="">
+                          <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
+                            Candidate Profile
+                          </button>
+                        </a>
+                        <a href="/ResumeDetails">
+                          <button class="p-2 mb-1 profilebutton  ">
+                            Resume
+                          </button>
+                        </a>
+                        <Link to="/AppliedJobs">
+                          {" "}
+                          <a href="">
+                            <button class="p-2 mb-1 profilebutton  ">
+                              Applied Jobs
+                            </button>
+                          </a>
+                        </Link>
+                        <Link to="/JobAlert">
+                          {" "}
+                          <a href="">
+                            <button class="p-2 mb-1 profilebutton ">
+                              Job Alerts
+                            </button>
+                          </a>
+                        </Link>
+                        <a href="/SaveJobs">
+                          <button class="p-2 mb-1 profilebutton  ">
+                            Saved Jobs
+                          </button>
+                        </a>
+                        <a href="/ChangePassword">
+                          <button class="p-2 mb-1 profilebutton  ">
+                            Change Password
+                          </button>
+                        </a>
+                        <a href="/LoginPage">
+                          <button class="p-2 mb-1 profilebutton ">
+                            Log Out
+                          </button>
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -384,13 +446,8 @@ function ProfileCode() {
                 </div>
               ) : (
                 <a href="/LoginPage">
-                <button
-                  
-                  class="p-2 mb-1 profilebutton "
-                >
-                  Logout
-                </button>
-              </a>
+                  <button class="p-2 mb-1 profilebutton ">Logout</button>
+                </a>
               )}
             </div>
           </div>
@@ -791,6 +848,7 @@ function ProfileCode() {
               </form>
             </div>
           </div>
+          
         </div>
       </div>
       <Footer />

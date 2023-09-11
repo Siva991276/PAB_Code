@@ -7,9 +7,8 @@ const middleware = require("./Middlware");
 const userData = require("./Model/userData");
 const BrowseData = require("./Model/browswedata");
 const ApplyNow = require("./Model/ApplyNow");
+const SaveJobsNow = require("./Model/SaveJobs");
 
- 
- 
 const app = express();
 const port = 4005;
 
@@ -28,6 +27,8 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Welcome to developer hubs server");
 });
+
+
 
 // Register API
 // app.post("/register", middleware, async (req, res) => {
@@ -50,8 +51,6 @@ app.get("/", (req, res) => {
 //         emailE1,
 //       });
 
-      
-
 //       newUser.save(); //saving mongodb collections
 //       return res.send("user Created Successfully");
 //     }
@@ -61,70 +60,68 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-app.post("/register", middleware,async (req, res) => {
-  console.log(req.body)
+app.post("/register", middleware, async (req, res) => {
+  console.log(req.body);
   // res.send("hello db")
   try {
-    const user = await userData.findOne({ emailE1: req.body.emailE1 })   // mongo db condition
+    const user = await userData.findOne({ emailE1: req.body.emailE1 }); // mongo db condition
     // console.log(user)
-    if (!user) {  // or if(user === undefined)
+    if (!user) {
+      // or if(user === undefined)
       // user not found excutes below code
       const newUser = {
-        "fullname": req.body.fullname,
-        "radioSection": req.body.radioSection,
-        "State": req.body.State,
-        "Currentlocation": req.body.Currentlocation,
-        "mobile": req.body.mobile,
-        "emailE1": req.body.emailE1
-
+        fullname: req.body.fullname,
+        radioSection: req.body.radioSection,
+        State: req.body.State,
+        Currentlocation: req.body.Currentlocation,
+        mobile: req.body.mobile,
+        emailE1: req.body.emailE1,
       };
-      const userDetails = await userData.create(newUser)   //  POSTING TO COLLECTION OR MODEL
-      console.log(userDetails)
+      const userDetails = await userData.create(newUser); //  POSTING TO COLLECTION OR MODEL
+      console.log(userDetails);
 
-      res.status(200).send("user created successfully")
+      res.status(200).send("user created successfully");
     } else {
       // if user mail id is founded send below response
-      res.status(400).json("user already registered")
+      res.status(400).json("user already registered");
     }
   } catch (e) {
-    console.log(e.message)
-    return res.status(500).json("message: e.message")
+    console.log(e.message);
+    return res.status(500).json("message: e.message");
   }
-})
-
- 
+});
 
 //Registration Details
 app.post("/RegistrationDetails", async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   // res.send("hello db")
   try {
-    const user = await userData.findOne({ email: req.body.email })   // mongo db condition
+    const user = await userData.findOne({ email: req.body.email }); // mongo db condition
     // console.log(user)
-    if (!user) {  // or if(user === undefined)
+    if (!user) {
+      // or if(user === undefined)
       // user not found excutes below code
       const newUser = {
-        "Typesection": req.body.Typesection,
-        "name": req.body.name,
-        "email": req.body.email,
-        "contactNumber": req.body.contactNumber,
-        "password": req.body.password,
-        "originalPassword": req.body.originalPassword
-
+        Typesection: req.body.Typesection,
+        name: req.body.name,
+        email: req.body.email,
+        contactNumber: req.body.contactNumber,
+        password: req.body.password,
+        originalPassword: req.body.originalPassword,
       };
-      const userDetails = await userData.create(newUser)   //  POSTING TO COLLECTION OR MODEL
-      console.log(userDetails)
+      const userDetails = await userData.create(newUser); //  POSTING TO COLLECTION OR MODEL
+      console.log(userDetails);
 
-      res.status(200).send("user created successfully")
+      res.status(200).send("user created successfully");
     } else {
       // if user mail id is founded send below response
-      res.status(400).json("user already registered")
+      res.status(400).json("user already registered");
     }
   } catch (e) {
-    console.log(e.message)
-    return res.status(500).json("message: e.message")
+    console.log(e.message);
+    return res.status(500).json("message: e.message");
   }
-})
+});
 //login
 // app.post("/login", async (req, res) => {
 //   const { email, password} = req.body;
@@ -157,12 +154,10 @@ app.post("/RegistrationDetails", async (req, res) => {
 // });
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  const isUserExist = await userData.findOne({ email,password });
+  const isUserExist = await userData.findOne({ email, password });
 
   if (isUserExist) {
-
-    if(password === isUserExist.password)
-    {
+    if (password === isUserExist.password) {
       let payload = {
         user: isUserExist.id,
       };
@@ -175,15 +170,14 @@ app.post("/login", async (req, res) => {
           return res.json({ token });
         }
       );
-    }
-    else {
+    } else {
       return res.send("password not matched");
-    } 
+    }
   }
 });
 
 // get all developers data
-app.get("/alldevelopers", async (req, res) => {
+app.get("/alldevelopers",middleware, async (req, res) => {
   const alldevelopers = await userData.find({});
 
   return res.json(alldevelopers);
@@ -490,7 +484,7 @@ app.post("/browsejobs123", middleware, async (req, res) => {
   }
 });
 //Applynow button
-app.post("/ApplyNow", async (req, res) => {
+app.post("/ApplyNow", middleware, async (req, res) => {
   try {
     const {
       companynameE2,
@@ -530,18 +524,60 @@ app.post("/ApplyNow", async (req, res) => {
   }
 });
 
+app.post("/SaveJobsNow", middleware, async (req, res) => {
+  try {
+    const {
+      companynameE2,
+      contactnumberE2,
+      emailE2,
+      stateE2,
+      countryE2,
+      experienceE2,
+      salaryE2,
+      roleE2,
+      no_of_applicationsE2,
+      ImageE2,
+    } = req.body;
+    let newUser2 = new SaveJobsNow({
+      companynameE2: companynameE2,
+      contactnumberE2: contactnumberE2,
+      emailE2: emailE2,
+      stateE2: stateE2,
+      countryE2: countryE2,
+      experienceE2: experienceE2,
+      salaryE2: salaryE2,
+      roleE2: roleE2,
+      no_of_applicationsE2: no_of_applicationsE2,
+      ImageE2: ImageE2,
+    });
+
+    const isUserExist = await SaveJobsNow.findOne({ emailE2: emailE2 });
+    if (isUserExist) {
+      return res.send("user already registered");
+    }
+
+    newUser2.save(); //saving to mongodb collections
+    res.send("user created succesfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("internal server error");
+  }
+});
+
 app.get("/allusers", async (req, res) => {
   const allusers = await BrowseData.find({});
   res.status(200).send(allusers);
 });
 
-
-app.get("/ApplyNowData", async (req, res) => {
+app.get("/ApplyNowData", middleware, async (req, res) => {
   const Apply = await ApplyNow.find({});
   res.status(200).send(Apply);
 });
 
-
+app.get("/SaveJobData", middleware, async (req, res) => {
+  const Apply = await SaveJobsNow.find({});
+  res.status(200).send(Apply);
+});
 
 app.listen(port, () => {
   console.log(`Server running at ${port}`);

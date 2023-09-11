@@ -8,8 +8,6 @@ import { useEffect } from "react";
 import axios from "axios";
 import image from "./All Images/sivapic.jpg";
 
-
-
 function AppliedJobs() {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
@@ -136,7 +134,9 @@ function AppliedJobs() {
               <Link to="/AppliedJobs">
                 {" "}
                 <a href="">
-                  <button class="p-2 mb-1 profilebutton bg-primary ">Applied Jobs</button>
+                  <button class="p-2 mb-1 profilebutton bg-primary ">
+                    Applied Jobs
+                  </button>
                 </a>
               </Link>
               <Link to="/JobAlert">
@@ -170,13 +170,8 @@ function AppliedJobs() {
                 </div>
               ) : (
                 <a href="/LoginPage">
-                <button
-                   
-                  class="p-2 mb-1 profilebutton "
-                >
-                  Logout
-                </button>
-              </a>
+                  <button class="p-2 mb-1 profilebutton ">Logout</button>
+                </a>
               )}
             </div>
           </div>

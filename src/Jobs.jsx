@@ -74,14 +74,14 @@ function Jobs() {
                 </a>
               </li>
               <li class="nav-item logosymbol">
-                <i class="fa-solid fa-bell bellicon"></i>
+                <i class="fa-solid fa-bell bellicon11 mx-2"></i>
               </li>
               <li class="nav-item logosymbol">
                 <Link to="/ProfileCode">
                   {" "}
                   <a href="">
                     {" "}
-                    <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"></i>
+                    <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon11"></i>
                   </a>
                 </Link>
               </li>
