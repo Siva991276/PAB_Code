@@ -155,26 +155,7 @@ app.post("/RegistrationDetails", async (req, res) => {
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   
-  // const isUserExist = await userData.findOne({ email, password });
-
-  // if (isUserExist) {
-  //   if (password === isUserExist.password) {
-  //     let payload = {
-  //       user: isUserExist.id,
-  //     };
-  //     jwt.sign(
-  //       payload,
-  //       "jwtpassword",
-  //       { expiresIn: 36000000 },
-  //       (err, token) => {
-  //         if (err) throw err;
-  //         return res.json({ token });
-  //       }
-  //     );
-  //   } else {
-  //     return res.send("password not matched");
-  //   }
-  // }
+   
   try {
     const user = await userData.findOne({ email });
     if (!user) {
