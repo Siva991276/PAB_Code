@@ -33,7 +33,7 @@ function Home() {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav logostyle">
+            <ul class="navbar-nav logostyle" style={{ marginLeft: "130px" }}>
               <li class="nav-item">
                 <a class="nav-link navstyle1 " href="">
                   Home
@@ -68,28 +68,28 @@ function Home() {
               <li class="nav-item logosymbol ">
                 <i class="fa-solid fa-bell bellicon11"></i>
               </li>
-              {/* <li class="nav-item logosymbol">
+              <li class="nav-item logosymbol">
                 <Link to = "/ProfileCode"><a href="">
                 
                   <i class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon11 mt-1 "></i>
                 </a></Link>
-              </li> */}
-              <li class="col-md-3 col-lg nav-item">
+              </li>
+              {/* <li class="col-md-3 col-lg nav-item">
                 <div>
                    
                   <div
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                      >
-                      
+                     <Link to = "/ProfileCode"> 
                     <i
                       className="fa-solid fa-circle-user dropdown-toggle bellicon11 nav-item logosymbol"
                       id="experienceDropdown"
-                    ></i>
+                    ></i> </Link>
                     {isHovered && (
                       <div class="card col-md-2 dropdown-menu">
                         <a href="">
-                          <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
+                          <button class="p-2 mb-1 profilebutton h-25 text-black">
                             Candidate Profile
                           </button>
                         </a>
@@ -133,7 +133,7 @@ function Home() {
                     )}
                   </div>
                 </div>
-              </li>
+              </li> */}
 
 
               

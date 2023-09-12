@@ -154,25 +154,48 @@ app.post("/RegistrationDetails", async (req, res) => {
 // });
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  const isUserExist = await userData.findOne({ email, password });
+  
+  // const isUserExist = await userData.findOne({ email, password });
 
-  if (isUserExist) {
-    if (password === isUserExist.password) {
-      let payload = {
-        user: isUserExist.id,
-      };
-      jwt.sign(
-        payload,
-        "jwtpassword",
-        { expiresIn: 36000000 },
-        (err, token) => {
-          if (err) throw err;
-          return res.json({ token });
-        }
-      );
-    } else {
-      return res.send("password not matched");
+  // if (isUserExist) {
+  //   if (password === isUserExist.password) {
+  //     let payload = {
+  //       user: isUserExist.id,
+  //     };
+  //     jwt.sign(
+  //       payload,
+  //       "jwtpassword",
+  //       { expiresIn: 36000000 },
+  //       (err, token) => {
+  //         if (err) throw err;
+  //         return res.json({ token });
+  //       }
+  //     );
+  //   } else {
+  //     return res.send("password not matched");
+  //   }
+  // }
+  try {
+    const user = await userData.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: 'Email not found' });
     }
+    if (password !== user.password) {
+      return res.status(401).json({ message: 'Incorrect password' });
+    }
+    const payload = {
+      user: user.id,
+    };
+    jwt.sign(payload, 'jwtpassword', { expiresIn: 36000000 }, (err, token) => {
+      if (err) {
+        throw err;
+      }
+
+      res.json({ token });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'An error occurred on the server. Please try again later.' });
   }
 });
 

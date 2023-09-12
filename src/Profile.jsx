@@ -340,7 +340,7 @@ function ProfileCode() {
                     {isHovered && (
                       <div class="card col-md-2 dropdown-menu">
                         <a href="">
-                          <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
+                          <button class="p-2 mb-1 profilebutton h-25 text-dark">
                             Candidate Profile
                           </button>
                         </a>

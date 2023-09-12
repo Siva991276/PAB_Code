@@ -93,8 +93,6 @@ function LoginPage() {
         });
         return;
       }
-
-     
       const userData = { email, password };
 
       axios
@@ -127,7 +125,7 @@ function LoginPage() {
               if (error.response.data.message === "Email not found") {
                 toast.error("Email not found. Please check your email.", {
                   position: "top-right",
-                  autoClose: 1000,
+                  autoClose: 5000,
                   hideProgressBar: false,
                   closeOnClick: true,
                   pauseOnHover: true,
@@ -138,7 +136,7 @@ function LoginPage() {
               } else if (error.response.data.message === "Incorrect password") {
                 toast.error("Incorrect password. Please check your password.", {
                   position: "top-right",
-                  autoClose: 1000,
+                  autoClose: 5000,
                   hideProgressBar: false,
                   closeOnClick: true,
                   pauseOnHover: true,
@@ -150,7 +148,7 @@ function LoginPage() {
             } else {
               toast.error("An error occurred on the server. Please try again later.", {
                 position: "top-right",
-                autoClose: 1000,
+                autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -162,7 +160,7 @@ function LoginPage() {
           } else {
             toast.error("An error occurred. Please check your network connection and try again.", {
               position: "top-right",
-              autoClose: 1000,
+              autoClose: 5000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,

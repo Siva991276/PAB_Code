@@ -267,7 +267,7 @@ function JobCompanyDetails() {
               selectCompany.map((location,index)=>(
                 <div className="" key={index}>
                   <h2>{location}</h2>
-                  <button onClick={handleClick}>Filter Array</button>
+                  <button onClick={handleClick} className="bg-secondary text-white">Filter Array</button>
 
                 </div>
               ))
