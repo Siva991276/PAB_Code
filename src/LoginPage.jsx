@@ -309,8 +309,9 @@ function LoginPage() {
                   <label className="heading123">Email ID</label>
                   <br />
                   <input
-                    type="email"
+                    type="text"
                     className="p1"
+                    style={{border : "1px solid #c9bed7"}}
                     placeholder="  Enter your Email ID"
                     onChange={(e) => setemail(e.target.value)}
                     value={email}
