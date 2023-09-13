@@ -53,11 +53,45 @@ function BrowserJobs() {
   };
 
   const handleApply = async (blog) => {
+    // try {
+    //   const headers = {
+    //     token:
+    //       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+    //   };
+    //   const {
+    //     companynameE2,
+    //     contactnumberE2,
+    //     emailE2,
+    //     stateE2,
+    //     countryE2,
+    //     experienceE2,
+    //     salaryE2,
+    //     roleE2,
+    //     no_of_applicationsE2,
+    //     ImageE2,
+    //   } = blog;
+    //   await axios.post("http://localhost:4005/ApplyNow", {
+    //     companynameE2,
+    //     contactnumberE2,
+    //     emailE2,
+    //     stateE2,
+    //     countryE2,
+    //     experienceE2,
+    //     salaryE2,
+    //     roleE2,
+    //     no_of_applicationsE2,
+    //     ImageE2,
+    //   },{headers});
+    //   toast.success("Data stored successfully");
+    // } catch (error) {
+    //   console.error(error);
+    // }
     try {
       const headers = {
         token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk", // Replace with your actual auth token
       };
+  
       const {
         companynameE2,
         contactnumberE2,
@@ -70,7 +104,8 @@ function BrowserJobs() {
         no_of_applicationsE2,
         ImageE2,
       } = blog;
-      await axios.post("http://localhost:4005/ApplyNow", {
+  
+      const response = await axios.post("http://localhost:4005/ApplyNow", {
         companynameE2,
         contactnumberE2,
         emailE2,
@@ -81,20 +116,101 @@ function BrowserJobs() {
         roleE2,
         no_of_applicationsE2,
         ImageE2,
-      },{headers});
-      toast.success("Data stored successfully");
+      }, { headers });
+  
+      if (response.status === 201) {
+        // User created successfully
+        toast.success("User created successfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else if (response.status === 400 && response.data.message === "User already exists") {
+        // User already exists
+        toast.error("User with the same email already exists", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else {
+        // Internal server error or other errors
+        toast.error("An error occurred. Please try again later.", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
     } catch (error) {
       console.error(error);
+      toast.error("User with the same email already exists.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
 
   const SaveJobsApply = async (blog) => {
-    try {
+    // try {
 
+    //   const headers = {
+    //     token:
+    //       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+    //   };
+    //   const {
+    //     companynameE2,
+    //     contactnumberE2,
+    //     emailE2,
+    //     stateE2,
+    //     countryE2,
+    //     experienceE2,
+    //     salaryE2,
+    //     roleE2,
+    //     no_of_applicationsE2,
+    //     ImageE2,
+    //   } = blog;
+    //   await axios.post("http://localhost:4005/SaveJobsNow", {
+    //     companynameE2,
+    //     contactnumberE2,
+    //     emailE2,
+    //     stateE2,
+    //     countryE2,
+    //     experienceE2,
+    //     salaryE2,
+    //     roleE2,
+    //     no_of_applicationsE2,
+    //     ImageE2,
+    //   },{headers});
+    //   toast.success("Data stored successfully");
+    // } catch (error) {
+    //   console.error(error);
+    // }
+    try {
       const headers = {
         token:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk", // Replace with your actual auth token
       };
+  
       const {
         companynameE2,
         contactnumberE2,
@@ -107,7 +223,8 @@ function BrowserJobs() {
         no_of_applicationsE2,
         ImageE2,
       } = blog;
-      await axios.post("http://localhost:4005/SaveJobsNow", {
+  
+      const response = await axios.post("http://localhost:4005/SaveJobsNow", {
         companynameE2,
         contactnumberE2,
         emailE2,
@@ -118,12 +235,60 @@ function BrowserJobs() {
         roleE2,
         no_of_applicationsE2,
         ImageE2,
-      },{headers});
-      toast.success("Data stored successfully");
+      }, { headers });
+  
+      if (response.status === 201) {
+        // User created successfully
+        toast.success("User created successfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else if (response.status === 400 && response.data.message === "User already exists") {
+        // User already exists
+        toast.error("User with the same email already exists", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      } else {
+        // Internal server error or other errors
+        toast.error("An error occurred. Please try again later.", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+      }
     } catch (error) {
       console.error(error);
+      toast.error("User with the same email already exists.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
+  
   
 
   const onclickblogdetails = async (blogid) => {

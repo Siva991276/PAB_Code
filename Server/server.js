@@ -507,6 +507,45 @@ app.post("/browsejobs123", middleware, async (req, res) => {
   }
 });
 //Applynow button
+// app.post("/ApplyNow", middleware, async (req, res) => {
+//   try {
+//     const {
+//       companynameE2,
+//       contactnumberE2,
+//       emailE2,
+//       stateE2,
+//       countryE2,
+//       experienceE2,
+//       salaryE2,
+//       roleE2,
+//       no_of_applicationsE2,
+//       ImageE2,
+//     } = req.body;
+//     let newUser1 = new ApplyNow({
+//       companynameE2: companynameE2,
+//       contactnumberE2: contactnumberE2,
+//       emailE2: emailE2,
+//       stateE2: stateE2,
+//       countryE2: countryE2,
+//       experienceE2: experienceE2,
+//       salaryE2: salaryE2,
+//       roleE2: roleE2,
+//       no_of_applicationsE2: no_of_applicationsE2,
+//       ImageE2: ImageE2,
+//     });
+
+//     const isUserExist = await ApplyNow.findOne({ emailE2: emailE2 });
+//     if (isUserExist) {
+//       return res.send("user already registered");
+//     }
+
+//     newUser1.save(); //saving to mongodb collections
+//     res.send("user created succesfully");
+//   } catch (e) {
+//     console.log(e.message);
+//     res.send("internal server error");
+//   }
+// });
 app.post("/ApplyNow", middleware, async (req, res) => {
   try {
     const {
@@ -521,6 +560,14 @@ app.post("/ApplyNow", middleware, async (req, res) => {
       no_of_applicationsE2,
       ImageE2,
     } = req.body;
+
+    // Check if the user with the same email already exists in your database
+    const isUserExist = await ApplyNow.findOne({ emailE2: emailE2 });
+    if (isUserExist) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    // If the user doesn't exist, create a new user
     let newUser1 = new ApplyNow({
       companynameE2: companynameE2,
       contactnumberE2: contactnumberE2,
@@ -534,18 +581,54 @@ app.post("/ApplyNow", middleware, async (req, res) => {
       ImageE2: ImageE2,
     });
 
-    const isUserExist = await ApplyNow.findOne({ emailE2: emailE2 });
-    if (isUserExist) {
-      return res.send("user already registered");
-    }
+    newUser1.save(); // Save the new user to your MongoDB collection
 
-    newUser1.save(); //saving to mongodb collections
-    res.send("user created succesfully");
+    res.status(201).json({ message: "User created successfully" });
   } catch (e) {
-    console.log(e.message);
-    res.send("internal server error");
+    console.error(e.message);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
+//SaveJobData
+// app.post("/SaveJobsNow", middleware, async (req, res) => {
+//   try {
+//     const {
+//       companynameE2,
+//       contactnumberE2,
+//       emailE2,
+//       stateE2,
+//       countryE2,
+//       experienceE2,
+//       salaryE2,
+//       roleE2,
+//       no_of_applicationsE2,
+//       ImageE2,
+//     } = req.body;
+//     let newUser2 = new SaveJobsNow({
+//       companynameE2: companynameE2,
+//       contactnumberE2: contactnumberE2,
+//       emailE2: emailE2,
+//       stateE2: stateE2,
+//       countryE2: countryE2,
+//       experienceE2: experienceE2,
+//       salaryE2: salaryE2,
+//       roleE2: roleE2,
+//       no_of_applicationsE2: no_of_applicationsE2,
+//       ImageE2: ImageE2,
+//     });
+
+//     const isUserExist = await SaveJobsNow.findOne({ emailE2: emailE2 });
+//     if (isUserExist) {
+//       return res.send("user already registered");
+//     }
+
+//     newUser2.save(); //saving to mongodb collections
+//     res.send("user created succesfully");
+//   } catch (e) {
+//     console.log(e.message);
+//     res.send("internal server error");
+//   }
+// });
 
 app.post("/SaveJobsNow", middleware, async (req, res) => {
   try {
@@ -561,6 +644,14 @@ app.post("/SaveJobsNow", middleware, async (req, res) => {
       no_of_applicationsE2,
       ImageE2,
     } = req.body;
+
+    // Check if the user with the same email already exists in your database
+    const isUserExist = await SaveJobsNow.findOne({ emailE2: emailE2 });
+    if (isUserExist) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    // If the user doesn't exist, create a new user
     let newUser2 = new SaveJobsNow({
       companynameE2: companynameE2,
       contactnumberE2: contactnumberE2,
@@ -574,16 +665,12 @@ app.post("/SaveJobsNow", middleware, async (req, res) => {
       ImageE2: ImageE2,
     });
 
-    const isUserExist = await SaveJobsNow.findOne({ emailE2: emailE2 });
-    if (isUserExist) {
-      return res.send("user already registered");
-    }
+    newUser2.save(); // Save the new user to your MongoDB collection
 
-    newUser2.save(); //saving to mongodb collections
-    res.send("user created succesfully");
+    res.status(201).json({ message: "User created successfully" });
   } catch (e) {
-    console.log(e.message);
-    res.send("internal server error");
+    console.error(e.message);
+    res.status(500).json({ message: "Internal server error" });
   }
 });
 

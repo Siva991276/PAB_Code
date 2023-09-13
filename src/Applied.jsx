@@ -299,6 +299,7 @@ function AppliedJobs() {
                                     <span class="bookmark">
                                       <i
                                         class="fa-solid fa-bookmark book"
+                                        style={{color : "green"}}
                                         id="bookItem"
                                       ></i>
                                     </span>

@@ -320,7 +320,7 @@ function SaveJobs() {
               </div> */}
 
               {blogslist.map((blog) => (
-                <div class="container">
+                <div class="container mb-3">
                   <div class="row">
                     <div
                       className="text-start  col-md-12"
@@ -371,6 +371,7 @@ function SaveJobs() {
                                     <span class="bookmark">
                                       <i
                                         class="fa-solid fa-bookmark book"
+                                        style={{color : "green"}}
                                         id="bookItem"
                                       ></i>
                                     </span>
@@ -426,6 +427,7 @@ function SaveJobs() {
                   </div>
                 </div>
               ))}
+           
             </div>
           </div>
         </div>
