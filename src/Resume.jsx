@@ -724,7 +724,7 @@ function ResumeDetails() {
               <li class="nav-item">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="payment.html"
+                  href="/PaymentMethod"
                   style={{ color: "black" }}
                 >
                   payments

@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./Footer";
 
 function LoginPage() {
   let navigate = useNavigate();
@@ -75,12 +76,11 @@ function LoginPage() {
   //   }
   // };
 
-
   const onSubmitBtn = (e) => {
     e.preventDefault();
 
     if (email && password !== "") {
-      if (!isValidEmail(email , password)) {
+      if (!isValidEmail(email, password)) {
         toast.error("Enter a valid email address", {
           position: "top-right",
           autoClose: 1000,
@@ -113,7 +113,6 @@ function LoginPage() {
               theme: "colored",
             });
 
-         
             setTimeout(function () {
               navigate("/Home");
             }, 3000);
@@ -146,7 +145,24 @@ function LoginPage() {
                 });
               }
             } else {
-              toast.error("An error occurred on the server. Please try again later.", {
+              toast.error(
+                "An error occurred on the server. Please try again later.",
+                {
+                  position: "top-right",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "colored",
+                }
+              );
+            }
+          } else {
+            toast.error(
+              "An error occurred. Please check your network connection and try again.",
+              {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -155,19 +171,8 @@ function LoginPage() {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-              });
-            }
-          } else {
-            toast.error("An error occurred. Please check your network connection and try again.", {
-              position: "top-right",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            });
+              }
+            );
             console.error(error);
           }
         });
@@ -175,8 +180,6 @@ function LoginPage() {
       toast.warning("Enter the Required Details");
     }
   };
-
-
 
   // const onSubmitBtn = (e) => {
   //   e.preventDefault();
@@ -275,50 +278,52 @@ function LoginPage() {
   };
   return (
     <div>
-      <nav class="navbar navbar-expand-sm">
-        <div class="container">
-          <img src={logo} alt="logo" width="200px" />
-        </div>
-      </nav>
-      <div className="container5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="card shadow logincard1 ">
-                <div class="loginheader">
-                  <h2 class="loginheader1">Login</h2>
-                  <p class="loginpara">
-                    It only takes a couple of minutes to get started!
-                  </p>
-                </div>
-                <ToastContainer
-                  position="top-right"
-                  autoClose={5000}
-                  hideProgressBar={false}
-                  newestOnTop={false}
-                  closeOnClick
-                  rtl={false}
-                  pauseOnFocusLoss
-                  draggable
-                  pauseOnHover
-                  theme="light"
-                />
-                {/* Same as */}
-                <ToastContainer />
-                <form className="forms2" onSubmit={onSubmitBtn}>
-                  <label className="heading123">Email ID</label>
-                  <br />
-                  <input
-                    type="text"
-                    className="p1"
-                    style={{border : "1px solid #c9bed7"}}
-                    placeholder="  Enter your Email ID"
-                    onChange={(e) => setemail(e.target.value)}
-                    value={email}
-                  />
-                  <br />
+      <div className="container">
+        <div className="row">
+          <nav class="navbar navbar-expand-sm ">
+            <div class="container">
+              <img src={logo} alt="logo" width="200px" />
+            </div>
+          </nav>
+          <div className="container5">
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <div class="card shadow logincard1 ">
+                    <div class="loginheader">
+                      <h2 class="loginheader1">Login</h2>
+                      <p class="loginpara">
+                        It only takes a couple of minutes to get started!
+                      </p>
+                    </div>
+                    <ToastContainer
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                    />
+                    {/* Same as */}
+                    <ToastContainer />
+                    <form className="forms2" onSubmit={onSubmitBtn}>
+                      <label className="heading123">Email ID</label>
+                      <br />
+                      <input
+                        type="text"
+                        className="p1"
+                        style={{ border: "1px solid #c9bed7" }}
+                        placeholder="  Enter your Email ID"
+                        onChange={(e) => setemail(e.target.value)}
+                        value={email}
+                      />
+                      <br />
 
-                  {/* <label className="heading123">Password</label>
+                      {/* <label className="heading123">Password</label>
                   <br />
                   <input
                     type="password"
@@ -327,91 +332,101 @@ function LoginPage() {
                     onChange={(e) => setpassword(e.target.value)}
                     value={password}
                   /> */}
-                  <div className="input-with-icon">
-                    <label className="heading123">Password</label>
-                    <br />
-                    <div className="">
-                      <input
-                        type={loginpassword ? "text" : "password"}
-                        className="p10912"
-                        style={{ border: "1px solid #c9bed7" }}
-                        placeholder="   Minimum 6 characters, starting capital, symbol, and number"
-                        onChange={(e) => setpassword(e.target.value)}
-                        value={password}
-                      />
-                      <i
-                        class="fa-regular fa-eye icon1"
-                        onClick={ShowcomfirmPassword}
-                      ></i>
-                    </div>
+                      <div className="input-with-icon">
+                        <label className="heading123">Password</label>
+                        <br />
+                        <div className="">
+                          <input
+                            type={loginpassword ? "text" : "password"}
+                            className="p10912"
+                            style={{ border: "1px solid #c9bed7" }}
+                            placeholder="   Minimum 6 characters, starting capital, symbol, and number"
+                            onChange={(e) => setpassword(e.target.value)}
+                            value={password}
+                          />
+                          <i
+                            class="fa-regular fa-eye icon1"
+                            onClick={ShowcomfirmPassword}
+                          ></i>
+                        </div>
+                      </div>
+                      <span className="forgetpassword1">Forgot password?</span>
+                      <button class="Registerbtn11" type="submit">
+                        Login
+                      </button>
+                      <button
+                        class="text-center loginvia "
+                        style={{ color: "blue", border: "none" }}
+                      >
+                        Login via OTP
+                      </button>
+                      <br />
+                      <span class="logingoogle">
+                        <button class="loginbutton2 shadow w-50">
+                          <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVDA2e7vaSAfhljLBVppf2X0b0OuAxTQZqjYZcemxu6Umeik13cJI3HYISVRfEz9SMQA&usqp=CAU"
+                            alt=""
+                            class="googleimg"
+                          />
+                          Sign in with Google
+                        </button>
+                      </span>
+                    </form>
                   </div>
-                  <br />
-
-                  <button class="Registerbtn11" type="submit">
-                    Login
-                  </button>
-                  <button
-                    class="text-center loginvia "
-                    style={{ color: "blue", border: "none" }}
-                  >
-                    Login via OTP
-                  </button>
-                  <br />
-                  <span class="logingoogle">
-                    <button class="loginbutton2 shadow w-50">
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVDA2e7vaSAfhljLBVppf2X0b0OuAxTQZqjYZcemxu6Umeik13cJI3HYISVRfEz9SMQA&usqp=CAU"
-                        alt=""
-                        class="googleimg"
-                      />
-                      Sign in with Google
+                  <a href="">
+                    <button class="Register shadow  d-md-none">
+                      Register for free
                     </button>
-                  </span>
-                </form>
+                  </a>
+                </div>
+
+                <div class="col-12 col-md-1"></div>
+
+                <div class="col-12 col-md-4 d-none d-md-block">
+                  <div class="card shadow logincard2">
+                    <h2 class="pabjobheading">New to pabjobs?</h2>
+                    <img
+                      src="https://static.vecteezy.com/system/resources/thumbnails/003/689/228/small/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="loginspan1 col-md-10 w-100 text-start">
+                    <i class="fa-solid fa-circle-check janlogin text-center"></i>{" "}
+                    <span class="loginspan">
+                      Build your profile and let recruitrs find you
+                    </span>{" "}
+                    <br />
+                    <i class="fa-solid fa-circle-check janlogin"></i>{" "}
+                    <span class="loginspan">
+                      Get job posting delivered right to your email
+                    </span>{" "}
+                    <br />
+                    <i class="fa-solid fa-circle-check janlogin"></i>{" "}
+                    <span class="loginspan">
+                      Find a job and grow your career
+                    </span>
+                    <br />
+                    <i class="fa-solid fa-circle-check janlogin"></i>{" "}
+                    <span class="loginspan">
+                      Find a job and grow your career
+                    </span>
+                  </div>
+
+                  <Link to="/">
+                    {" "}
+                    <a href="">
+                      <button class="Register shadow ">
+                        Register for free
+                      </button>
+                    </a>{" "}
+                  </Link>
+                </div>
               </div>
-              <a href="">
-                <button class="Register shadow  d-md-none">
-                  Register for free
-                </button>
-              </a>
             </div>
-
-            <div class="col-12 col-md-1"></div>
-
-            <div class="col-12 col-md-4 d-none d-md-block">
-              <div class="card shadow logincard2">
-                <h2 class="pabjobheading">New to pabjobs?</h2>
-                <img
-                  src="https://static.vecteezy.com/system/resources/thumbnails/003/689/228/small/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="loginspan1 col-md-10 w-100 text-start">
-                <i class="fa-solid fa-circle-check janlogin text-center"></i>{" "}
-                <span class="loginspan">
-                  Build your profile and let recruitrs find you
-                </span>{" "}
-                <br />
-                <i class="fa-solid fa-circle-check janlogin"></i>{" "}
-                <span class="loginspan">
-                  Get job posting delivered right to your email
-                </span>{" "}
-                <br />
-                <i class="fa-solid fa-circle-check janlogin"></i>{" "}
-                <span class="loginspan">Find a job and grow your career</span>
-                <br />
-                <i class="fa-solid fa-circle-check janlogin"></i>{" "}
-                <span class="loginspan">Find a job and grow your career</span>
-              </div>
-
-              <Link to="/">
-                {" "}
-                <a href="">
-                  <button class="Register shadow ">Register for free</button>
-                </a>{" "}
-              </Link>
-            </div>
+            
           </div>
+          <Footer />
+          
         </div>
       </div>
     </div>

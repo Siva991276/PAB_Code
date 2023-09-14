@@ -22,20 +22,14 @@ import JobSkillsDetails from "./JobSkillsDetails";
 import PaymentMethod from "./PaymentMethod";
 import PracticeSection from "./Practice";
 import OwnWebsite from "./OwnWebsite";
+import ForgotPassword from "./ForgotPassword";
 // import MyPlayer from "./Practice";
  
 
 
-function App() {
-
-   
+function App() { 
   return (
     <div className="App">
-      {/* <MyPlayer /> */}
-
-  
-     
-      
       <Routes>
         {/* <Route exact path='/' element={<Home />} />
         <Route exact path='/About' element={<About />} />
@@ -57,6 +51,7 @@ function App() {
         <Route exact path="/JobDesignationDetails" element={<JobDesignationDetails />} />
         <Route exact path="/JobSkillsDetails" element={<JobSkillsDetails />} />
        <Route exact path="/PaymentMethod" element = {<PaymentMethod />} />
+      < Route export path = "/ForgotPassword" element = {<ForgotPassword />}/>
 
         <Route exact
           path="/JobCompanyDetails"

@@ -515,6 +515,7 @@ ul {
 
 .container5 {
     background-color: #f8f2f8;
+    
 }
 
 .container6 {
@@ -641,4 +642,71 @@ ul {
     border: 1px solid#c9bed7;
     margin-left: 10px;
     height: 39px;
+}
+.forgetpassword1{
+    margin-left: 62%;
+    color: #230d42;
+    font-size: 13px;
+}
+/* forgotpassword */
+.logoiq{
+    width: 15%;
+    margin-left: 15%;
+}
+.bg-container122{
+    background-color:#f8f2f8 ;
+}
+.card-container121{
+    height: 60vh;
+    width:45%;
+    margin: 90px;
+    border-radius: 26px;
+    margin-left: 15%;
+}
+.forgotheading{
+    font-size: 26px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.forgotspan{
+    font-size: 13px;
+    color: #533181;    
+}
+.numberinput1{
+    width: 75px;
+    margin-right: 5px;
+    border-radius: 10px;
+    height: 6vh;
+}
+.numberinput112{
+    width: 74%;
+   
+    border-radius: 10px;
+    height: 6vh;
+}
+.forgotpass12{
+    font-size: 13px;
+    color:#48069f ;
+}
+.forgotsubmit1{
+    background-color: #261043;
+    color: white;
+    border-radius: 10px;
+    width: 90%;
+    height: 6vh;
+    box-shadow: none;
+}
+.forgotsubmit{
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    background-color: none;
+    font-size: 12px;
+    text-align: left;
+    width: 30%;
+    margin-left: 34%;
+    height: 3vh;
+}
+.forgetor{
+    margin-left: 40%;
 }
