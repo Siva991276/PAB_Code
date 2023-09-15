@@ -27,12 +27,22 @@ function ProfileCode() {
   const [emailE1, setemail] = useState("");
   const [isHovered, setIsHovered] = useState(false);
 
+  const [image, setImage] = useState(null);
 
-   
+  const handleImageChange = (e) => {
+    const selectedImage = e.target.files[0];
+
+   document.getElementById ("imageInput").style.display = "none";
+
+    if (selectedImage) {
+      // You can perform additional checks on the selected image here if needed
+      setImage(URL.createObjectURL(selectedImage));
+    }
+  };
+
   const handleMouseEnter = () => {
     setIsHovered(true);
     document.getElementById("experienceDropdown").style.marginRight = "20%";
-    
   };
   const handleMouseLeave = () => {
     setIsHovered(false);
@@ -332,7 +342,7 @@ function ProfileCode() {
                   <div
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                     >
+                  >
                     <i
                       className="fa-solid fa-circle-user dropdown-toggle bellicon11 nav-item logosymbol"
                       id="experienceDropdown"
@@ -399,7 +409,25 @@ function ProfileCode() {
                 class=" fa-sharp fa-solid fa-circle-user profileicon mb-4 mt-3"
                 style={{ fontSize: "200px" }}
               ></i> */}
-              <img src={image} alt="" className="images123" />
+              {/* <img src={image} alt="" className="images123" /> */}
+              <div className="user-profile">
+               
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  id="imageInput"
+                   
+                />
+                
+                {image && (
+                  <img
+                    src={image}
+                    alt="User Profile"
+                    className="rounded-circle w-100"
+                  />
+                )}
+              </div>
 
               <a href="">
                 <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
@@ -848,7 +876,6 @@ function ProfileCode() {
               </form>
             </div>
           </div>
-          
         </div>
       </div>
       <Footer />
