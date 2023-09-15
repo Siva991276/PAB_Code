@@ -371,7 +371,7 @@ function Registration() {
                   <select style={{ marginLeft: "10px" }}>
                     <option>+91</option>
                     <option>+86</option>
-                    <option>+1</option>
+                    <option>+51</option>
                     <option>+44</option>
                     <option>+61</option>
                   </select>

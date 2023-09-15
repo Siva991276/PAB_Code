@@ -546,7 +546,7 @@ app.post("/browsejobs123", middleware, async (req, res) => {
 //     res.send("internal server error");
 //   }
 // });
-app.post("/ApplyNow", middleware, async (req, res) => {
+app.post("/ApplyNow", async (req, res) => {
   try {
     const {
       companynameE2,

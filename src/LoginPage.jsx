@@ -350,7 +350,8 @@ function LoginPage() {
                           ></i>
                         </div>
                       </div>
-                      <span className="forgetpassword1">Forgot password?</span>
+                      
+                    <a href="/ForgotPassword" style={{textDecoration : "none"}}><span className="forgetpassword1">Forgot password?</span></a>
                       <button class="Registerbtn11" type="submit">
                         Login
                       </button>

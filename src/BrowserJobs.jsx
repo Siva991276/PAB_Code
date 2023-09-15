@@ -53,39 +53,6 @@ function BrowserJobs() {
   };
 
   const handleApply = async (blog) => {
-    // try {
-    //   const headers = {
-    //     token:
-    //       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk",
-    //   };
-    //   const {
-    //     companynameE2,
-    //     contactnumberE2,
-    //     emailE2,
-    //     stateE2,
-    //     countryE2,
-    //     experienceE2,
-    //     salaryE2,
-    //     roleE2,
-    //     no_of_applicationsE2,
-    //     ImageE2,
-    //   } = blog;
-    //   await axios.post("http://localhost:4005/ApplyNow", {
-    //     companynameE2,
-    //     contactnumberE2,
-    //     emailE2,
-    //     stateE2,
-    //     countryE2,
-    //     experienceE2,
-    //     salaryE2,
-    //     roleE2,
-    //     no_of_applicationsE2,
-    //     ImageE2,
-    //   },{headers});
-    //   toast.success("Data stored successfully");
-    // } catch (error) {
-    //   console.error(error);
-    // }
     try {
       const headers = {
         token:

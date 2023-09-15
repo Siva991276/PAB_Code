@@ -32,9 +32,17 @@ function ForgotPassword() {
                         <button className="forgotsubmit1">Submit</button>
                         <button className="forgotsubmit">Login Via Email </button> 
                         
-                        <span className="forgetor">(or)</span>
-                        <button className="forgotsubmit1"> <img src="" alt="" />Sign in with Google</button>
-
+                        <span className=" forgetor">(or)</span>
+                        <span class="logingoogle">
+                        <button class=" forgotsubmit12 shadow ">
+                          <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVDA2e7vaSAfhljLBVppf2X0b0OuAxTQZqjYZcemxu6Umeik13cJI3HYISVRfEz9SMQA&usqp=CAU"
+                            alt=""
+                            class="googleimg"
+                          />
+                          Sign in with Google
+                        </button>
+                      </span>
                         
                          
                         
