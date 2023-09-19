@@ -56,7 +56,7 @@ function Registration() {
     //   setPasswordError("");
     // }
     if (
-      !/^(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%^&*])[A-Za-z\d@#$!%^&*]{6,8}$/.test(
+      !/^(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%^&*])[A-Za-z\d@#$!%^&*]{6,20}$/.test(
         password
       )
     ) {
@@ -323,10 +323,11 @@ function Registration() {
                       <i
                         class="fa-regular fa-eye icon"
                         onClick={ShowPassword}
-                      >   
-                      </i>
+                      ></i>
                     </div>
-                    {passwordError && <h6 className="error">{passwordError}</h6>}
+                    {passwordError && (
+                      <h6 className="error">{passwordError}</h6>
+                    )}
                   </div>
 
                   {/* <label className="heading2">Confirm Password</label>
@@ -349,7 +350,7 @@ function Registration() {
                         className={`p109  ${
                           passwordError ? "error-border" : ""
                         }`}
-                         style={{border : "1px solid #c9bed7"}}
+                        style={{ border: "1px solid #c9bed7" }}
                         placeholder="     Minimum 6 characters, starting capital, symbol, and number"
                         onChange={(e) => setconfirmpassword(e.target.value)}
                         value={confirmpassword}
@@ -357,9 +358,7 @@ function Registration() {
                       <i
                         class="fa-regular fa-eye icon"
                         onClick={ShowcomfirmPassword}
-                      >
-                        
-                      </i>
+                      ></i>
                     </div>
                     {passwordError && (
                       <h6 className="error">{confirmPasswordError}</h6>

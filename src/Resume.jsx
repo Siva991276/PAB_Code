@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import "./Resume.css";
 
-import axios, { Axios } from "axios";
+import axios from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -42,6 +42,8 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data);
+
   //profileSummary
   const [profileSummary, setprofileSummary] = useState("");
 
@@ -87,6 +89,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+   console.log(data1);
   // Skills Profile
   const [KeySkills, setKeySkills] = useState("");
 
@@ -130,6 +133,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data2);
   //Employee Details
   const [TotalExperience, setTotalExperience] = useState("");
   const [CurrentCTC, setCurrentCTC] = useState("");
@@ -196,6 +200,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data3);
   //Eduction Details
   const [Degree, setDegree] = useState("");
   const [University, setUniversity] = useState("");
@@ -243,6 +248,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data4);
 
   //Project Details
   const [ProjectTitle, setProjectTitle] = useState("");
@@ -291,6 +297,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data5);
   //Work Sample
   const [WorkSample, setWorkSample] = useState("");
 
@@ -334,6 +341,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data6);
 
   //Research Details
   const [ResearchTitle, setResearchTitle] = useState("");
@@ -381,6 +389,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data7);
   //Presentation Details
   const [PresentationTittle, setPresentationTittle] = useState("");
   const [Speaker, setSpeaker] = useState("");
@@ -429,6 +438,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data8);
   //Patent
   const [Patent, setPatent] = useState("");
 
@@ -471,6 +481,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data9);
   //CertificationDetails
   const [CertificationName, setCertificationName] = useState("");
   const [Organization, setOrganization] = useState("");
@@ -521,6 +532,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data01);
   //Desired career Profile
   const [DesireIndustry, setDesireIndustry] = useState("");
   const [Preferedlocation, setPreferedlocation] = useState("");
@@ -582,6 +594,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data02);
   //Personal Details
   const [DateOfBirth, setDateOfBirth] = useState("");
   const [MaritalStatus, setMaritalStatus] = useState("");
@@ -644,6 +657,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
+  console.log(data03);
 
   const [selectedFile, setSelectedFile] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -715,7 +729,7 @@ function ResumeDetails() {
               <li class="nav-item">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
+                  href="/services"
                   style={{ color: "black" }}
                 >
                   services
