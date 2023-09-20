@@ -89,7 +89,7 @@ function ResumeDetails() {
       toast.warning("Enter the Required Details");
     }
   };
-   console.log(data1);
+  console.log(data1);
   // Skills Profile
   const [KeySkills, setKeySkills] = useState("");
 
@@ -784,7 +784,7 @@ function ResumeDetails() {
                   </Link>
                 </div>
                 <div className="content12 mx-2">
-                  <h4 class="resumeh5">B.Siva Koteswara Rao</h4>
+                  <h4 class="resumeh5">B.SIVA KOTESWARA RAO</h4>
                   <p>
                     Software Developer <br />
                     <span className="text-primary">at Perfex Technologies</span>

@@ -9,7 +9,7 @@ import axios, { Axios } from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import image from "./All Images/sivapic.jpg";
+import image111 from "../src/All Images/sivapic.jpg"
 
 function ProfileCode() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -409,7 +409,7 @@ function ProfileCode() {
                 class=" fa-sharp fa-solid fa-circle-user profileicon mb-4 mt-3"
                 style={{ fontSize: "200px" }}
               ></i> */}
-              {/* <img src={image} alt="" className="images123" /> */}
+             
               <div className="user-profile">
                
                 <input
@@ -417,7 +417,6 @@ function ProfileCode() {
                   accept="image/*"
                   onChange={handleImageChange}
                   id="imageInput"
-                   
                 />
                 
                 {image && (
@@ -425,10 +424,11 @@ function ProfileCode() {
                     src={image}
                     alt="User Profile"
                     className="rounded-circle w-100"
+                  
                   />
                 )}
               </div>
-
+                
               <a href="">
                 <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
                   Candidate Profile

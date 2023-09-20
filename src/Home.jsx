@@ -515,13 +515,13 @@ function Home() {
           <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-9 images2">
-              <div class="container skills m-1">
+              <div class="container skills1 m-1">
                 <div class="row d-flex flex-row">
                   <div class="col-md-3 " style={{ marginRight: "30px" }}>
                     <img
                       className="mt-2"
                       src="https://media.istockphoto.com/id/1222623990/vector/online-psychotherapy-concept-female-psychotherapist-helping-patient-by-video-call-through.jpg?s=1024x1024&w=is&k=20&c=jwf2Jqvdj7qcoSC4_nxpSYpe0_drUmCODDDf7p-DTx0="
-                      class="w-75 mt-3"
+                      class="w-100 mt-2"
                     />
                   </div>
                   <div class="col-md-8 d-flex flex-column">
@@ -737,7 +737,7 @@ function Home() {
           <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-10 images2">
-              <div class="container skills m-1">
+              <div class="container skills1 m-1">
                 <div class="row d-flex flex-row">
                   <div class="col-md-3 " style={{ marginRight: "30px" }}>
                     <img

@@ -8,6 +8,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 function BrowserJobs() {
   const [selectedExperiences, setSelectedExperiences] = useState([]);
@@ -21,6 +22,28 @@ function BrowserJobs() {
   // const [usereperience, setusereperience] = useState("");
   // const [userlocation1, setuserlocation1] = useState("");
   // const [usersalary, setusersalary] = useState("");
+
+  const [selectedCardIndexes, setSelectedCardIndexes] = useState([]);
+
+  // ...
+
+  const toggleCardSelection = (index) => {
+    // Clone the selectedCardIndexes array to avoid mutating state directly
+    const updatedSelectedCardIndexes = [...selectedCardIndexes];
+
+    // Check if the card is already selected
+    const selectedIndex = updatedSelectedCardIndexes.indexOf(index);
+
+    if (selectedIndex === -1) {
+      // If it's not selected, add it to the list and set its color
+      updatedSelectedCardIndexes.push(index);
+    } else {
+      // If it's already selected, remove it from the list
+      updatedSelectedCardIndexes.splice(selectedIndex, 1);
+    }
+
+    setSelectedCardIndexes(updatedSelectedCardIndexes);
+  };
 
   const { state } = useLocation();
   console.log("siva", state);
@@ -58,7 +81,7 @@ function BrowserJobs() {
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk", // Replace with your actual auth token
       };
-  
+
       const {
         companynameE2,
         contactnumberE2,
@@ -71,20 +94,24 @@ function BrowserJobs() {
         no_of_applicationsE2,
         ImageE2,
       } = blog;
-  
-      const response = await axios.post("http://localhost:4005/ApplyNow", {
-        companynameE2,
-        contactnumberE2,
-        emailE2,
-        stateE2,
-        countryE2,
-        experienceE2,
-        salaryE2,
-        roleE2,
-        no_of_applicationsE2,
-        ImageE2,
-      }, { headers });
-  
+
+      const response = await axios.post(
+        "http://localhost:4005/ApplyNow",
+        {
+          companynameE2,
+          contactnumberE2,
+          emailE2,
+          stateE2,
+          countryE2,
+          experienceE2,
+          salaryE2,
+          roleE2,
+          no_of_applicationsE2,
+          ImageE2,
+        },
+        { headers }
+      );
+
       if (response.status === 201) {
         // User created successfully
         toast.success("User created successfully", {
@@ -97,7 +124,10 @@ function BrowserJobs() {
           progress: undefined,
           theme: "colored",
         });
-      } else if (response.status === 400 && response.data.message === "User already exists") {
+      } else if (
+        response.status === 400 &&
+        response.data.message === "User already exists"
+      ) {
         // User already exists
         toast.error("User with the same email already exists", {
           position: "top-right",
@@ -177,7 +207,7 @@ function BrowserJobs() {
         token:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk", // Replace with your actual auth token
       };
-  
+
       const {
         companynameE2,
         contactnumberE2,
@@ -190,20 +220,24 @@ function BrowserJobs() {
         no_of_applicationsE2,
         ImageE2,
       } = blog;
-  
-      const response = await axios.post("http://localhost:4005/SaveJobsNow", {
-        companynameE2,
-        contactnumberE2,
-        emailE2,
-        stateE2,
-        countryE2,
-        experienceE2,
-        salaryE2,
-        roleE2,
-        no_of_applicationsE2,
-        ImageE2,
-      }, { headers });
-  
+
+      const response = await axios.post(
+        "http://localhost:4005/SaveJobsNow",
+        {
+          companynameE2,
+          contactnumberE2,
+          emailE2,
+          stateE2,
+          countryE2,
+          experienceE2,
+          salaryE2,
+          roleE2,
+          no_of_applicationsE2,
+          ImageE2,
+        },
+        { headers }
+      );
+
       if (response.status === 201) {
         // User created successfully
         toast.success("User created successfully", {
@@ -216,7 +250,10 @@ function BrowserJobs() {
           progress: undefined,
           theme: "colored",
         });
-      } else if (response.status === 400 && response.data.message === "User already exists") {
+      } else if (
+        response.status === 400 &&
+        response.data.message === "User already exists"
+      ) {
         // User already exists
         toast.error("User with the same email already exists", {
           position: "top-right",
@@ -255,8 +292,6 @@ function BrowserJobs() {
       });
     }
   };
-  
-  
 
   const onclickblogdetails = async (blogid) => {
     const selectedJobDetails = blogslist.find((each) => each._id === blogid);
@@ -1150,13 +1185,25 @@ function BrowserJobs() {
                                   style={{ fontSize: "20px" }}
                                 >
                                   {selectedblog.salaryE2}
-                                  <span class="bookmark">
+
+                                  <div
+                                   
+                                    key={selectedblog}
+                                    className={`bookmark ${
+                                      selectedCardIndexes.includes(selectedblog)
+                                        ? "selected12"
+                                        : ""
+                                    }`}
+                                    onClick={() =>
+                                      toggleCardSelection(selectedblog)
+                                    }
+                                  >
                                     <i
                                       class="fa-solid fa-bookmark book11"
                                       id="bookItem"
-                                      
-                                      
-                                      onClick={() => SaveJobsApply(selectedblog)}
+                                      onClick={() =>
+                                        SaveJobsApply(selectedblog)
+                                      }
                                     ></i>
                                     {/* <i
                                       className="fa-solid fa-bookmark book11"
@@ -1164,7 +1211,7 @@ function BrowserJobs() {
                                      
                                       onClick={handleIconClick}
                                     ></i> */}
-                                  </span>
+                                  </div>
                                 </p>
                                 <p class="m-0">
                                   <i class="fa-solid fa-location-dot"></i>{" "}

@@ -534,22 +534,7 @@ color: #2c0264;
   .custom-btn:hover{
     background-color: gray;
   }
-  
-
  
-
-    
-  
-    
-  
-  
-  
-  
-  
-  
-  
-
-
 .nav-item{
     list-style: none;
      
@@ -1504,6 +1489,18 @@ input[type=text]:focus {
   /* Show the card items when the profile icon is hovered over */
   .card-items.show {
     display: block;
+  }
+  .imageshide123{
+    width: "200px";
+    height: "200px";
+    background-color: "#eee";
+    display: "flex";
+    justify-content: "center";
+    align-items: "center";
+    cursor: "pointer";
+  }
+  .input12321{
+    display: none;
   }
   
  
