@@ -8,6 +8,7 @@ const userData = require("./Model/userData");
 const BrowseData = require("./Model/browswedata");
 const ApplyNow = require("./Model/ApplyNow");
 const SaveJobsNow = require("./Model/SaveJobs");
+const changepassword = require("./Model/ChangePassword");
 
 const app = express();
 const port = 4005;
@@ -27,8 +28,6 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Welcome to developer hubs server");
 });
-
-
 
 // Register API
 // app.post("/register", middleware, async (req, res) => {
@@ -154,7 +153,7 @@ app.post("/RegistrationDetails", async (req, res) => {
 // });
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  
+
   // const isUserExist = await userData.findOne({ email, password });
 
   // if (isUserExist) {
@@ -178,15 +177,15 @@ app.post("/login", async (req, res) => {
   try {
     const user = await userData.findOne({ email });
     if (!user) {
-      return res.status(401).json({ message: 'Email not found' });
+      return res.status(401).json({ message: "Email not found" });
     }
     if (password !== user.password) {
-      return res.status(401).json({ message: 'Incorrect password' });
+      return res.status(401).json({ message: "Incorrect password" });
     }
     const payload = {
       user: user.id,
     };
-    jwt.sign(payload, 'jwtpassword', { expiresIn: 36000000 }, (err, token) => {
+    jwt.sign(payload, "jwtpassword", { expiresIn: 36000000 }, (err, token) => {
       if (err) {
         throw err;
       }
@@ -195,12 +194,16 @@ app.post("/login", async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'An error occurred on the server. Please try again later.' });
+    res
+      .status(500)
+      .json({
+        message: "An error occurred on the server. Please try again later.",
+      });
   }
 });
 
 // get all developers data
-app.get("/alldevelopers",middleware, async (req, res) => {
+app.get("/alldevelopers", middleware, async (req, res) => {
   const alldevelopers = await userData.find({});
 
   return res.json(alldevelopers);
@@ -688,6 +691,38 @@ app.get("/ApplyNowData", middleware, async (req, res) => {
 app.get("/SaveJobData", middleware, async (req, res) => {
   const Apply = await SaveJobsNow.find({});
   res.status(200).send(Apply);
+});
+//change Password
+// app.post("/api/changePassword", (req, res) => {
+//   const { oldPassword, newPassword } = req.body;
+//   if (newPassword === userData.password) {
+//     res.status(400).json("New passwords do not match");
+//     return;
+//   } else if (oldPassword !== userData.password) {
+//     userData.password = newPassword;
+//     res.status(200).json("Password changed successfully");
+//   } else {
+//     res.status(401).json("Old password is incorrect");
+//   }
+//   console.log(oldPassword);
+//   console.log(newPassword);
+// });
+app.post("/api/changePassword", (req, res) => {
+  const { oldPassword, newPassword } = req.body;
+
+  // Check if the old password is correct
+  if (oldPassword !== userData.password) {
+    return res.status(401).json({ message: "Old password is incorrect" });
+  }
+
+  // Check if the new password is the same as the old password
+  if (newPassword === oldPassword) {
+    return res.status(400).json({ message: "New password can't be the same as the old password" });
+  }
+
+  // Update the password only if old password is correct
+  userData.password = newPassword;
+  return res.status(200).json({ message: "Password changed successfully" });
 });
 
 app.listen(port, () => {

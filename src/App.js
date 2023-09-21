@@ -23,6 +23,7 @@ import PaymentMethod from "./PaymentMethod";
 import PracticeSection from "./Practice";
 import OwnWebsite from "./OwnWebsite";
 import ForgotPassword from "./ForgotPassword";
+import GetData from "./Practice123";
 // import MyPlayer from "./Practice";
  
 
@@ -52,6 +53,7 @@ function App() {
         <Route exact path="/JobSkillsDetails" element={<JobSkillsDetails />} />
        <Route exact path="/PaymentMethod" element = {<PaymentMethod />} />
       < Route export path = "/ForgotPassword" element = {<ForgotPassword />}/>
+      < Route export path = "/GetData" element = {<GetData />}/>
 
         <Route exact
           path="/JobCompanyDetails"

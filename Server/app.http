@@ -235,3 +235,11 @@ token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI
 ###
 GET http://localhost:4005/SaveJobData
 token :eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk
+###
+POST http://localhost:4005/api/changePassword
+Content-Type: application/json
+
+{
+"    oldPassword":"Chan@12311",
+    "newPassword":"Chan@12311"
+}
