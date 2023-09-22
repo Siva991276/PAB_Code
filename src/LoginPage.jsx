@@ -350,8 +350,15 @@ function LoginPage() {
                           ></i>
                         </div>
                       </div>
-                      
-                    <a href="/ForgotPassword" style={{textDecoration : "none"}}><span className="forgetpassword1">Forgot password?</span></a>
+
+                      <a
+                        href="/ForgotPassword"
+                        style={{ textDecoration: "none" }}
+                      >
+                        <span className="forgetpassword1">
+                          Forgot password?
+                        </span>
+                      </a>
                       <button class="Registerbtn11" type="submit">
                         Login
                       </button>
@@ -392,25 +399,24 @@ function LoginPage() {
                     />
                   </div>
                   <div class="loginspan1 col-md-10 w-100 text-start">
-                    <i class="fa-solid fa-circle-check janlogin text-center"></i>{" "}
-                    <span class="loginspan">
-                      Build your profile and let recruitrs find you
-                    </span>{" "}
-                    <br />
-                    <i class="fa-solid fa-circle-check janlogin"></i>{" "}
-                    <span class="loginspan">
+                    <p class="para4 mx-4 mt-2 w-100">
+                      <i class="fa-solid fa-circle-check icon1232"></i> Build
+                      your profile and let recruiters find you
+                    </p>
+
+                    <p class="para4 mx-4 w-100">
+                      <i class="fa-solid fa-circle-check icon1232"></i>
                       Get job posting delivered right to your email
-                    </span>{" "}
-                    <br />
-                    <i class="fa-solid fa-circle-check janlogin"></i>{" "}
-                    <span class="loginspan">
-                      Find a job and grow your career
-                    </span>
-                    <br />
-                    <i class="fa-solid fa-circle-check janlogin"></i>{" "}
-                    <span class="loginspan">
-                      Find a job and grow your career
-                    </span>
+                    </p>
+
+                    <p class="para4 mx-4 w-100">
+                      <i class="fa-solid fa-circle-check icon1232"></i> Find a
+                      job and grow your career
+                    </p>
+                    <p class="para4 mx-4 w-100">
+                      <i class="fa-solid fa-circle-check icon1232"></i> Find a
+                      job and grow your career
+                    </p>
                   </div>
 
                   <Link to="/">
@@ -424,10 +430,8 @@ function LoginPage() {
                 </div>
               </div>
             </div>
-            
           </div>
           <Footer />
-          
         </div>
       </div>
     </div>

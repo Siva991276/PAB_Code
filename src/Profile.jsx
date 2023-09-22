@@ -278,7 +278,7 @@ function ProfileCode() {
         <div class="container">
           <img src={logo} alt="" width="200px" />
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav mt-4" style={{ marginLeft: "180px" }}>
+            <ul class="navbar-nav mt-4" style={{ marginLeft: "130px" }}>
               <li class="nav-item ">
                 <a
                   class="nav-link line1"
@@ -479,7 +479,7 @@ function ProfileCode() {
               )}
             </div>
           </div>
-          <div class="col-md-8 text-start">
+          <div class="col-md-9 text-start">
             <div class="card p-3">
               <ToastContainer
                 position="top-right"
@@ -877,8 +877,9 @@ function ProfileCode() {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
+      
     </div>
   );
 }

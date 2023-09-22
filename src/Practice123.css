@@ -42,7 +42,13 @@ body {
     .post-container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        gap: 1rem;
     }
     
+}
+.button123{
+    border: 2px solid black;
+    width: 80px;
+    margin: 30px;
+    background-color: aliceblue;
 }

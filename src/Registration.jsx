@@ -443,17 +443,17 @@ function Registration() {
                 </div>
               )}
 
-              <p class="para4 mx-2 mt-3">
+              <p class="para4 mx-4 mt-4 w-100">
                 <i class="fa-solid fa-circle-check icon1232"></i> Build your
                 profile and let recruiters find you
               </p>
 
-              <p class="para4 mx-2">
+              <p class="para4 mx-4 w-100">
                 <i class="fa-solid fa-circle-check icon1232"></i>
                 Get job posting delivered right to your email
               </p>
 
-              <p class="para4 mx-2">
+              <p class="para4 mx-4 w-100">
                 <i class="fa-solid fa-circle-check icon1232"></i> Find a job and
                 grow your career
               </p>

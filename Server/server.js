@@ -707,21 +707,50 @@ app.get("/SaveJobData", middleware, async (req, res) => {
 //   console.log(oldPassword);
 //   console.log(newPassword);
 // });
+// app.post("/api/changePassword", (req, res) => {
+//   const { oldPassword, newPassword } = req.body;
+
+//   // Check if the old password is correct
+//   if (oldPassword !== userData.password) {
+//     return res.status(401).json({ message: "Old password is incorrect" });
+//   }
+
+//   // Check if the new password is the same as the old password
+//   if (newPassword === oldPassword) {
+//     return res.status(400).json({ message: "New password can't be the same as the old password" });
+//   }
+
+//   // Update the password only if old password is correct
+//   userData.password = newPassword;
+//   return res.status(200).json({ message: "Password changed successfully" });
+// });
+
+// app.post("/api/changePassword", (req, res) => {
+//   const { oldPassword, newPassword } = req.body;
+
+//   // Check if the old password is correct
+//   if (oldPassword === userData.password) {
+//     return res.status(401).json({ message: "Old password is incorrect" });
+//   }   
+
+//   // Check if the new password is the same as the old password
+//   if (newPassword !== oldPassword) {
+//     return res.status(400).json({ message: "New password can't be the same as the old password" });
+//   }
+
+//   // Update the password only if old password is correct
+//   userData.password = newPassword;
+//   return res.status(200).json({ message: "Password changed successfully" });
+// });
 app.post("/api/changePassword", (req, res) => {
   const { oldPassword, newPassword } = req.body;
-
-  // Check if the old password is correct
   if (oldPassword !== userData.password) {
     return res.status(401).json({ message: "Old password is incorrect" });
-  }
-
-  // Check if the new password is the same as the old password
-  if (newPassword === oldPassword) {
+  }   
+   if (newPassword === oldPassword) {
     return res.status(400).json({ message: "New password can't be the same as the old password" });
   }
-
-  // Update the password only if old password is correct
-  userData.password = newPassword;
+   userData.password = newPassword;
   return res.status(200).json({ message: "Password changed successfully" });
 });
 
