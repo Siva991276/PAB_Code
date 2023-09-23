@@ -24,6 +24,7 @@ import PracticeSection from "./Practice";
 import OwnWebsite from "./OwnWebsite";
 import ForgotPassword from "./ForgotPassword";
 import GetData from "./Practice123";
+import TodosList from "./FinalTodosList";
 // import MyPlayer from "./Practice";
  
 
@@ -54,6 +55,7 @@ function App() {
        <Route exact path="/PaymentMethod" element = {<PaymentMethod />} />
       < Route export path = "/ForgotPassword" element = {<ForgotPassword />}/>
       < Route export path = "/GetData" element = {<GetData />}/>
+      < Route export path="/TodosList" element = {<TodosList />}/>
 
         <Route exact
           path="/JobCompanyDetails"

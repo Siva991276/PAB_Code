@@ -214,13 +214,13 @@ function Registration() {
                     {" "}
                     <a href="">
                       {" "}
-                      <button type="button" class="b21">
+                      <button type="button" class="b21 button32123 ">
                         {" "}
                         Login
                       </button>
                     </a>
                   </Link>
-                  <button type="button" class="b2" id="Jobbtn">
+                  <button type="button" class="b2 button32123 " id="Jobbtn">
                     Sign Up
                     {/* <input type="radio" name="type" id="" className="mx-2" /> */}
                     <i class="fa-solid fa-circle-check mx-2 icon1232"></i>
@@ -230,7 +230,7 @@ function Registration() {
                 <div className="d-flex flex-row ">
                   <button
                     type="button"
-                    className="b2"
+                    className="b2 button32123 "
                     id="Jobbtn"
                     style={{ opacity: buttonOpacity.jobSeekers }}
                   >
@@ -246,7 +246,7 @@ function Registration() {
                   </button>
                   <button
                     type="button"
-                    className="b2"
+                    className="b2 button32123 "
                     id="Jobbtn"
                     style={{ opacity: buttonOpacity.recruiters }}
                   >

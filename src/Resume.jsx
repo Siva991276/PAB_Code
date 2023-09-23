@@ -751,7 +751,7 @@ function ResumeDetails() {
                 <a href="profile.html">
                   <i
                     class=" fa-sharp fa-solid fa-circle-user dropdown-toggle bellicon"
-                    style={{ color: "Blue" }}
+                    style={{ color: "black" }}
                   ></i>
                 </a>
               </li>
