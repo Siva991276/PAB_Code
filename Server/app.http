@@ -240,6 +240,6 @@ POST http://localhost:4005/api/changePassword
 Content-Type: application/json
 
 {
-        "oldPassword":"123",
-        "newPassword":"Suneel@12311"
+        "oldPassword":"Suneel@123",
+        "newPassword":"Suneel@123"
 }

@@ -904,8 +904,9 @@ function ResumeDetails() {
                   <h5>Resume Headline</h5>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
-                      {" "}
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       <i
                         type="button"
                         class="material-symbols-outlined"
@@ -992,7 +993,9 @@ function ResumeDetails() {
                   <h5>Profile Summary</h5>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -1079,7 +1082,9 @@ function ResumeDetails() {
                   <h5>Key Skills</h5>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -1168,7 +1173,7 @@ function ResumeDetails() {
                 </div>
                 <hr />
                 <div class="resumegroup  ">
-                  <button class="btnresume p-2 px-3 m-1 ">Photoshop</button>
+                  <button class="btnresume shadow p-2 px-3 m-1 ">Photoshop</button>
                   <button class="btnresume1 shadow p-2 px-3 m-1">
                     aftereffects
                   </button>
@@ -1207,27 +1212,29 @@ function ResumeDetails() {
                 </div>
                 <hr />
                 <div class="d-flex flex-row">
-                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                  <div style={{ borderRight: "1px solid gray" }} class="">
                     <h6 class="resumeh6">Software Developer</h6>
                     <p>PerfexTechnologies </p>
-                    <p>Fulltime|May 2022 to present (1 year 3 months) </p>
+                    <p className="mx-2">Fulltime|May 2022 to present (1 year 3 months) </p>
                     <p>1 Month Notice Period</p>
                   </div>
-                  <div style={{ marginLeft: "auto" }} class="m-2 mx-5">
+                  <div style={{ marginLeft: "auto" }} class="m-2">
                     {/* <b class="resumeh7 ">+ Add Employment</b> */}
-                    <div style={{ marginLeft: "auto" }}>
+                    <div>
                       {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                      <button className="model1">
-                        {" "}
+                      <button
+                        style={{ border: "none", backgroundColor: "white" }}
+                        className="mx-2"
+                      >
                         <i
                           type="button"
-                          class="material-symbols-outlined text-start"
+                          class="material-symbols-outlined mx-3 mt-4"
                           data-bs-toggle="modal"
                           data-bs-target="#myModal23"
                         >
                           edit_square
                         </i>
-                        <b class="resumeh7 row">+Add</b>
+                        <b class="resumeh7 row mx-3">+Add</b>
                       </button>
                       <ToastContainer
                         position="top-right"
@@ -1258,7 +1265,7 @@ function ResumeDetails() {
                             {/* <!-- Modal body --> */}
                             <div class="modal-body">
                               <form action="" onSubmit={onSubmitFormEmployee}>
-                                <div className="d-flex flex-row">
+                                <div className="row">
                                   <div className="col-12 col-md-6">
                                     <label>Total Experience</label>
                                     <input
@@ -1287,7 +1294,7 @@ function ResumeDetails() {
                                   </div>
                                 </div>
 
-                                <div className="d-flex flex-row mt-3">
+                                <div className="row mt-3">
                                   <div className="col-12 col-md-6">
                                     <label>Your Designation</label>
                                     <select
@@ -1406,7 +1413,7 @@ function ResumeDetails() {
                                   />{" "}
                                   Yes
                                 </div>
-                                <div className="d-flex flex-row mt-3">
+                                <div className="row mt-3">
                                   <div className="col-12 col-md-6">
                                     <label>Started Working From</label>
                                     <input
@@ -1475,25 +1482,27 @@ function ResumeDetails() {
                 </div>
                 <hr />
                 <div class="d-flex flex-row">
-                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
-                    <p>Add class x | ADD class XII | Add graduation/Diploma</p>
-                    <p>Add masters/Post graduation | Add doctorate/PhD</p>
+                  <div style={{ borderRight: "1px solid gray" }} class="">
+                    <p className="mx-1">Add class x | ADD class XII | Add graduation/Diploma</p>
+                    <p className="mx-2">Add masters/Post graduation | Add doctorate/PhD</p>
                   </div>
-                  <div style={{ marginLeft: "auto" }} class="m-2 mx-5">
+                  <div style={{ marginLeft: "auto" }} class="m-2">
                     {/* <b class="resumeh7 ">+ Add Employment</b> */}
                     <div style={{ marginLeft: "auto" }}>
                       {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                      <button className="model1">
-                        {" "}
+                      <button
+                        style={{ border: "none", backgroundColor: "white" }}
+                        className="mx-2"
+                      >
                         <i
                           type="button"
-                          class="material-symbols-outlined text-start"
+                          class="material-symbols-outlined  mt-4"
                           data-bs-toggle="modal"
                           data-bs-target="#myModal22"
                         >
                           edit_square
                         </i>
-                        <b class="resumeh7 row">+Add</b>
+                        <b class="resumeh7 row mx-3">+Add</b>
                       </button>
                       <ToastContainer
                         position="top-right"
@@ -1589,7 +1598,9 @@ function ResumeDetails() {
                     {/* <b class="resumeh7 ">+ Add Employment</b> */}
                     <div style={{ marginLeft: "auto" }}>
                       {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                      <button className="model1">
+                      <button
+                        style={{ border: "none", backgroundColor: "white" }}
+                      >
                         {" "}
                         <i
                           type="button"
@@ -1773,7 +1784,9 @@ function ResumeDetails() {
                   </div>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -1849,7 +1862,9 @@ function ResumeDetails() {
                   </div>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -1953,7 +1968,9 @@ function ResumeDetails() {
                   </div>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -2057,7 +2074,9 @@ function ResumeDetails() {
                   </div>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -2138,7 +2157,9 @@ function ResumeDetails() {
                   </div>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -2241,7 +2262,9 @@ function ResumeDetails() {
                   <h5>Desired career Profile</h5>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -2284,7 +2307,7 @@ function ResumeDetails() {
                               action=""
                               onSubmit={onSubmitFormcareerProfileDetails}
                             >
-                              <div className="d-flex flex-row">
+                              <div className="row">
                                 <div className=" col-12 col-md-6">
                                   <label>Desire Industry</label>
                                   <input
@@ -2312,7 +2335,7 @@ function ResumeDetails() {
                                   />
                                 </div>
                               </div>
-                              <div className="d-flex flex-row mt-3">
+                              <div className="row mt-3">
                                 <div className=" col-12 col-md-6">
                                   <label>designation</label>
                                   <input
@@ -2340,7 +2363,7 @@ function ResumeDetails() {
                                   />
                                 </div>
                               </div>
-                              <div className="d-flex flex-row mt-3">
+                              <div className="row mt-3">
                                 <div className=" col-12 col-md-6">
                                   <label>Desired to shift</label>
                                   <input
@@ -2389,7 +2412,7 @@ function ResumeDetails() {
 
                 <hr />
                 <div class="d-flex flex-row">
-                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                  <div style={{ borderRight: "1px solid gray" }} class="px-1">
                     <h6 class="resumeh6">Desire Industry</h6>
                     <p>IT services & conslting</p>
                     <h6 class="resumeh6">designation</h6>
@@ -2414,7 +2437,9 @@ function ResumeDetails() {
                   <h5>Personal Details</h5>
                   <div style={{ marginLeft: "auto" }}>
                     {/* <i class="fa-solid fa-pen-to-square iconedit"></i> */}
-                    <button className="model1">
+                    <button
+                      style={{ border: "none", backgroundColor: "white" }}
+                    >
                       {" "}
                       <i
                         type="button"
@@ -2457,7 +2482,7 @@ function ResumeDetails() {
                               action=""
                               onSubmit={onSubmitFormpersonalDetails}
                             >
-                              <div className="d-flex flex-row">
+                              <div className="row">
                                 <div className=" col-12 col-md-6">
                                   <label>Date Of Birth :</label>
                                   <input
@@ -2485,9 +2510,9 @@ function ResumeDetails() {
                                   />
                                 </div>
                               </div>
-                              <div className="d-flex flex-row mt-3">
+                              <div className="row">
                                 <div className=" col-12 col-md-6">
-                                  <label>Age :</label>
+                                  <label>Enter The Age :</label>
                                   <input
                                     type="text"
                                     className="etotal "
@@ -2511,7 +2536,7 @@ function ResumeDetails() {
                                   />
                                 </div>
                               </div>
-                              <div className="d-flex flex-row mt-3">
+                              <div className="row ">
                                 <div className=" col-12 col-md-6">
                                   <label>Gender :</label>
                                   <input
@@ -2556,7 +2581,7 @@ function ResumeDetails() {
 
                 <hr />
                 <div class="d-flex flex-row">
-                  <div style={{ borderRight: "1px solid gray" }} class="px-5">
+                  <div style={{ borderRight: "1px solid gray" }} class="px-1">
                     <h6 class="resumeh6">Date Of Birth</h6>
                     <p>06 December 1994</p>
                     <h6 class="resumeh6">Age</h6>
@@ -2569,12 +2594,12 @@ function ResumeDetails() {
                     <h6 class="resumeh6">Marital Status</h6>
                     <p>Single</p>
                     <h6 class="resumeh6">Languages</h6>
-                    <p>Telugu,Hindi,English</p>
+                    <p>Telugu,English</p>
                     <h6 class="resumeh6">Address</h6>
                     <p>
                       201,plot 82,laxminagar colony,filmnaga
                       <br />
-                      hyderabad,telangana-500008
+                      hyderabad,TN-500008
                     </p>
                   </div>
                 </div>

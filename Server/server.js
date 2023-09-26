@@ -10,6 +10,8 @@ const ApplyNow = require("./Model/ApplyNow");
 const SaveJobsNow = require("./Model/SaveJobs");
 const changepassword = require("./Model/ChangePassword");
 
+const bodyParser = require("body-parser");
+
 const app = express();
 const port = 4005;
 
@@ -18,10 +20,14 @@ const mogoURL =
 
 app.use(express.json());
 app.use(cors({ origin: "*" }));
+app.use(bodyParser.json());
 
 //initalizing mongodb to node
 mongoose
-  .connect(mogoURL)
+  .connect(mogoURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("DB Connected"))
   .catch((e) => console.log(e.message));
 
@@ -194,11 +200,9 @@ app.post("/login", async (req, res) => {
     });
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({
-        message: "An error occurred on the server. Please try again later.",
-      });
+    res.status(500).json({
+      message: "An error occurred on the server. Please try again later.",
+    });
   }
 });
 
@@ -731,7 +735,7 @@ app.get("/SaveJobData", middleware, async (req, res) => {
 //   // Check if the old password is correct
 //   if (oldPassword === userData.password) {
 //     return res.status(401).json({ message: "Old password is incorrect" });
-//   }   
+//   }
 
 //   // Check if the new password is the same as the old password
 //   if (newPassword !== oldPassword) {
@@ -742,16 +746,37 @@ app.get("/SaveJobData", middleware, async (req, res) => {
 //   userData.password = newPassword;
 //   return res.status(200).json({ message: "Password changed successfully" });
 // });
-app.post("/api/changePassword", (req, res) => {
+// app.post("/api/changePassword", (req, res) => {
+//   const { oldPassword, newPassword } = req.body;
+//   if (oldPassword !== userData.password) {
+//     return res.status(401).json({ message: "Old password is incorrect" });
+//   }
+//    if (newPassword === oldPassword) {
+//     return res.status(400).json({ message: "New password can't be the same as the old password" });
+//   }
+//    userData.password = newPassword;
+//   return res.status(200).json({ message: "Password changed successfully" });
+// });
+
+app.post("/api/changePassword", async (req, res) => {
   const { oldPassword, newPassword } = req.body;
-  if (oldPassword !== userData.password) {
-    return res.status(401).json({ message: "Old password is incorrect" });
-  }   
-   if (newPassword === oldPassword) {
-    return res.status(400).json({ message: "New password can't be the same as the old password" });
+  try {
+    if (oldPassword!==userData.password) {
+      return res.status(401).json({ message: "Old password is incorrect" });
+    }
+    if (newPassword === oldPassword) {
+      return res.status(400).json({
+        message: "New password can't be the same as the old password",
+      });
+    }
+    userData.password = newPassword;
+    await userData.save();
+
+    return res.status(200).json({ message: "Password changed successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Internal server error" });
   }
-   userData.password = newPassword;
-  return res.status(200).json({ message: "Password changed successfully" });
 });
 
 app.listen(port, () => {

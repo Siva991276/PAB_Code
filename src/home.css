@@ -52,6 +52,8 @@
   background-color: rgb(239, 234, 234);
   border: none;
   border-radius: 10px;
+  padding: 15px;
+  margin: 7px;
 
 }
 
@@ -60,7 +62,7 @@
   
 
 }
-container9
+ 
 
 .btngroup1 {
   margin-top: 20px;
@@ -80,7 +82,7 @@ container9
   color: #2c0264;
   font-weight: bold;
   text-align: start;
-  margin-left: 80px;
+  margin-left: 15%;
 }
 
 .imgbutton {
@@ -89,9 +91,9 @@ container9
   border-radius: 10px;
 }
 
-.container10 {
-  background-color: rgb(239, 234, 234);
-
+.container101 {
+  background-color:white;
+  box-shadow: 5px 5px 5px 3px whitesmoke;
 }
 
 .searchlocate {
@@ -108,10 +110,11 @@ container9
 }
 
 .btn1:hover {
-  background-color: white;
+  background-color: rgb(238, 228, 228);
   color: black;
 
 }
+ 
 
 .imgbutton:hover {
   background-color: rgb(186, 182, 182);
@@ -305,11 +308,11 @@ form-control
   margin-left: 270px;
 }
 
-.jobCard {
+.jobCard1 {
   border-radius: 10px;
   background-color: white;
-  width: 150px;
-  box-shadow: 1px 1px 4px gray;
+  box-shadow: 5px 5px 5px 2px gray;
+  border: none;
 }
 
 .jobCard:hover {
@@ -365,27 +368,22 @@ form-control
 
 .skills1 {
   background-color: #3f2859;
+  margin: 0;
+  padding: 0;
+}
+.image111{
+  display: block;
+  /* margin: 0;
+  padding: 0; */
 }
 
 .skills2 {
   background-color: #7009f5;
-  align-items: center;
+  /* align-items: center; */
   border-radius: 5px;
 }
-.btn-32{
-  font-size: 14px;
-  border: none;
-  border-radius: 2px;
-  width: 120px;
-  /* width: 90px; */
-  height: 30px;
-  background-color: yellow;
-  margin-left: 0px;
-}
-.contact-page{
-  margin-left: 140px;
-
-}
+ 
+ 
 .nav-link{
  text-decoration-line: none;
 }
@@ -401,6 +399,7 @@ form-control
 .skillPara {
   color: white;
   font-size: 15px;
+  width: 62%;
 }
 
 .contact {
