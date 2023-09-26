@@ -1,25 +1,8 @@
 import React, { useState } from "react";
-import "./FinalTodosList.css"
-
- 
+import "./FinalTodosList.css";
 
 function TodosList() {
-
-    const tempList = [
-        {
-            text: "Welcome",
-            id: "1",
-        },
-        {
-            text: "Hello World",
-            id: "2",
-        },
-        {
-            text: "Hello World",
-            id: "3",
-        },
-    ]
-    const [list, setList] = useState ([]);
+  const [list, setList] = useState([]);
   const [message, setMessage] = useState({
     text: "",
     id: "",
@@ -29,6 +12,26 @@ function TodosList() {
       ...message,
       text: e.target.value,
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newTodo = {
+      text: message.text,
+      id: new Date().getTime().toString(),
+    };
+    setList([...list, newTodo]);
+    setMessage({
+      text: "",
+      id: "",
+    });
+  };
+
+  const handleDelete = (id) => {
+    let newTods = list.filter((eachItem) => {
+      return eachItem.id !== id;
+    });
+    setList(newTods);
   };
   return (
     <div>
@@ -43,8 +46,29 @@ function TodosList() {
           value={message.text}
           onChange={changeMessage}
         />
-        <button className="addbtn121">Add</button>
+        <button onClick={handleSubmit} className="addbtn121">
+          add
+        </button>
       </form>
+      <hr />
+      <ul>
+        {list.map((eachItem) => {
+          const { text, id } = eachItem;
+
+          return (
+            <li key={id}>
+              <b className="mx-3">{text}</b>
+              <button className="mx-2 p-1 mt-2 bg-primary">edit</button>
+              <button
+                className="p-1 bg-danger"
+                onClick={() => handleDelete(id)}
+              >
+                delete
+              </button>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

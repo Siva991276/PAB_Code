@@ -7,6 +7,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 function Registration() {
   const [Typesection, setSelectedType] = useState("applicant");
   const [name, setname] = useState("");
@@ -172,13 +173,13 @@ function Registration() {
 
   return (
     <div>
-      <nav class="navbar navbar-expand-sm">
+      {/* <nav class="navbar navbar-expand-sm">
         <div class="container">
           <div className="col-md-1"></div>
           <img src={logo} alt="logo" width="200px" />
 
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <div className="col-md-7"></div>
+            <div className="col-12 col-sm-12 col-md-7 "></div>
             <ul class="navbar-nav logostyle12">
               <li class="nav-item ">
                 <a
@@ -196,41 +197,95 @@ function Registration() {
             </ul>
           </div>
         </div>
+      </nav> */}
+      <nav class="navbar navbar-expand-sm">
+        <div class="container">
+          <img src={logo} alt="logo" width="200px" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar"
+            style={{ backgroundcolor: "black" }}
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav logostyle1">
+              <li class="nav-item">
+                <a
+                  class="nav-link dropdown-toggle navstyle"
+                  href="/BrowserJobs"
+                >
+                  Browse Jobs
+                </a>
+              </li>
+              <li class="nav-item">
+                {" "}
+                <a class="nav-link dropdown-toggle navstyle" href="/Jobs">
+                  Jobs
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
       <div className="container">
         <div class=" card container maincontent text-start">
           <div class="row">
-            <div class="d-flex flex-row col-12 col-md-7">
+            <div class="d-flex flex-row col-12 col-sm-12 col-md-6">
               <div
-                class=" card  mx-5 my-3 mb-5"
+                class=" card  mx-2 my-3 mb-5 col-12"
                 style={{ borderRadius: "20px" }}
               >
-                <h2 class="heading1">Create an account</h2>
+                <h2 class="heading1 col-12 col-sm-12">Create an account</h2>
                 <p class="para2">
                   It only takes a couple of minutes to get started!
                 </p>
-                <div class="d-flex flex-row">
-                  <Link to="/LoginPage">
-                    {" "}
-                    <a href="">
+                {/* <div class="d-flex flex-row">
+                    <Link to="/LoginPage">
                       {" "}
-                      <button type="button" class="b21 button32123 ">
+                      <a href="">
                         {" "}
-                        Login
-                      </button>
+                        <button type="button" class="b21 button32123  ">
+                          {" "}
+                          Login
+                        </button>
+                      </a>
+                    </Link>
+                    <button type="button" class="b2 button32123 " id="Jobbtn">
+                      Sign Up
+                      <i class="fa-solid fa-circle-check mx-2 icon1232"></i>
+                    </button>
+                  </div> */}
+
+                <div className="d-flex flex-row ">
+                  <button
+                    type="button"
+                    className="b21 button32123 mx-4"
+                    id="Jobbtn"
+                  >
+                    <a
+                      href="/LoginPage"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      Login
                     </a>
-                  </Link>
-                  <button type="button" class="b2 button32123 " id="Jobbtn">
+                  </button>
+                  <button
+                    type="button"
+                    className="b2 button32123 mx-0"
+                    id="Jobbtn"
+                  >
                     Sign Up
-                    {/* <input type="radio" name="type" id="" className="mx-2" /> */}
-                    <i class="fa-solid fa-circle-check mx-2 icon1232"></i>
+                    <input type="radio" checked className="mx-2" />
                   </button>
                 </div>
 
                 <div className="d-flex flex-row ">
                   <button
                     type="button"
-                    className="b2 button32123 "
+                    className="b2 button32123 mx-4 "
                     id="Jobbtn"
                     style={{ opacity: buttonOpacity.jobSeekers }}
                   >
@@ -316,7 +371,7 @@ function Registration() {
                           passwordError ? "error-border" : ""
                         }`}
                         style={{ border: "1px solid #c9bed7" }}
-                        placeholder="     Minimum 6 characters, starting capital, symbol, and number"
+                        placeholder="     Enter Password"
                         onChange={(e) => setpassword(e.target.value)}
                         value={password}
                       />
@@ -332,14 +387,14 @@ function Registration() {
 
                   {/* <label className="heading2">Confirm Password</label>
 
-                  <input
-                    type="password"
-                    className="p1"
-                    placeholder="    Enter your  Confirm Password"
-                    onChange={(e) => setconfirmpassword(e.target.value)}
-                    value={confirmpassword}
-                  />
-                  <h6 className="error">{confirmPasswordError}</h6> */}
+                    <input
+                      type="password"
+                      className="p1"
+                      placeholder="    Enter your  Confirm Password"
+                      onChange={(e) => setconfirmpassword(e.target.value)}
+                      value={confirmpassword}
+                    />
+                    <h6 className="error">{confirmPasswordError}</h6> */}
 
                   <div className="input-with-icon">
                     <label className="heading2">Confirm Password</label>
@@ -351,7 +406,7 @@ function Registration() {
                           passwordError ? "error-border" : ""
                         }`}
                         style={{ border: "1px solid #c9bed7" }}
-                        placeholder="     Minimum 6 characters, starting capital, symbol, and number"
+                        placeholder="     Enter Password"
                         onChange={(e) => setconfirmpassword(e.target.value)}
                         value={confirmpassword}
                       />
@@ -367,7 +422,13 @@ function Registration() {
 
                   <label className="heading2">Mobile Number</label>
                   <br />
-                  <select style={{ marginLeft: "10px" }}>
+                  <select
+                    style={{
+                      marginLeft: "10px",
+                      padding: "4px",
+                      borderRadius: "10px",
+                    }}
+                  >
                     <option>+91</option>
                     <option>+86</option>
                     <option>+51</option>
@@ -375,18 +436,20 @@ function Registration() {
                     <option>+61</option>
                   </select>
                   {/* <input
-                    type="text"
-                    className="pp1"
-                    placeholder="  Enter your Mobile Number"
-                    style={{ border: "1px solid#c9bed7" }}
-                    onChange={(e) => setphone(e.target.value)}
-                    value={phone}
-                  />
+                      type="text"
+                      className="pp1"
+                      placeholder="  Enter your Mobile Number"
+                      style={{ border: "1px solid#c9bed7" }}
+                      onChange={(e) => setphone(e.target.value)}
+                      value={phone}
+                    />
 
-                  <h6 className="error">{phoneError}</h6> */}
+                    <h6 className="error">{phoneError}</h6> */}
                   <input
                     type="text"
-                    className={`pp1 ${phone.length > 10 ? "error-border" : ""}`}
+                    className={`pp1 mt-2 ${
+                      phone.length > 10 ? "error-border" : ""
+                    }`}
                     placeholder="  Enter your Mobile Number"
                     style={{ border: "1px solid#c9bed7" }}
                     onChange={(e) => setphone(e.target.value)}
@@ -413,13 +476,13 @@ function Registration() {
                 </form>
 
                 <div>
-                  <p class="para1  d-md-none">
+                  <p class="para1  d-md-none mx-3">
                     Already Registration? <span class="span1">Login</span> here
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 mt-4">
               {/* <img src={logo2} alt="pic" class="image2"  /> */}
               {Typesection === "applicant" ? (
                 <div>
@@ -443,17 +506,17 @@ function Registration() {
                 </div>
               )}
 
-              <p class="para4 mx-4 mt-4 w-100">
+              <p class="para4 mx-3 mt-4 w-100">
                 <i class="fa-solid fa-circle-check icon1232"></i> Build your
                 profile and let recruiters find you
               </p>
 
-              <p class="para4 mx-4 w-100">
+              <p class="para4 mx-3 w-100">
                 <i class="fa-solid fa-circle-check icon1232"></i>
                 Get job posting delivered right to your email
               </p>
 
-              <p class="para4 mx-4 w-100">
+              <p class="para4 mx-3 w-100">
                 <i class="fa-solid fa-circle-check icon1232"></i> Find a job and
                 grow your career
               </p>

@@ -363,14 +363,14 @@ function LoginPage() {
                         Login
                       </button>
                       <button
-                        class="text-center loginvia "
-                        style={{ color: "blue", border: "none" }}
+                        class="text-center loginvia mt-3"
+                        style={{ color: "blue", border: "none",backgroundColor: "white" }}
                       >
                         Login via OTP
                       </button>
                       <br />
                       <span class="logingoogle">
-                        <button class="loginbutton2 shadow w-50">
+                        <button class="loginbutton2 shadow w-50 mt-3 mb-5">
                           <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzVDA2e7vaSAfhljLBVppf2X0b0OuAxTQZqjYZcemxu6Umeik13cJI3HYISVRfEz9SMQA&usqp=CAU"
                             alt=""
@@ -422,7 +422,7 @@ function LoginPage() {
                   <Link to="/">
                     {" "}
                     <a href="">
-                      <button class="Register shadow ">
+                      <button class="Register shadow mb-5">
                         Register for free
                       </button>
                     </a>{" "}

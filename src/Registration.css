@@ -51,7 +51,7 @@
 
 .heading1 {
     font-weight: bold;
-    margin-left: 130px;
+    margin-left: 24%;
     font-size: 30px;
     margin-top: 20px;
 }
@@ -59,7 +59,7 @@
 .para2 {
     color: #2c0264;
     font-weight: bold;
-    margin-left: 100px;
+    margin-left: 13%;
 
 }
 
@@ -180,7 +180,7 @@
     width: 70%;
     height: 40vh;
     background-size: cover;
-    margin-left: 70px;
+    margin-left: 10%;
     margin-top: 50px;
     border-radius: 20px;
 }
@@ -612,8 +612,52 @@ ul {
     left: 400px; /* Adjust the left position as needed */
     transform: translateY(-50%);
     font-size: 14px;
+    /* display: none; */
     
   }
+  @media screen and (max-width :330px) {
+    .icon{
+        position: absolute;
+        top: 53px;
+        left: 180px; /* Adjust the left position as needed */
+        transform: translateY(-50%);
+        font-size: 14px;
+        /* font-weight: bold; */
+        display: block;
+    }
+   
+    .button32123 {
+        font-size: 12px;
+        font-weight: 500;
+        padding: 5px;
+        margin: 10px;
+        width: 230px;
+        background-color: #fdfeff;
+        cursor: pointer;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+            -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+        margin-left: 5px;
+    
+    
+    }
+    
+    
+  }
+  @media screen and (min-width :1440px) {
+    .icon{
+        position: absolute;
+        top: 53px;
+        left: 180px; /* Adjust the left position as needed */
+        transform: translateY(-50%);
+        font-size: 14px;
+        font-weight: bold;
+        display: block;
+    }
+    
+  }
+  
   .p1091{
     font-size: 15px;
     text-align: left;
@@ -629,6 +673,7 @@ ul {
     left: 480px; /* Adjust the left position as needed */
     transform: translateY(-50%);
     font-size: 15px;
+    
   }
 .p10912{
     font-size: 15px;
