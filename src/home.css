@@ -564,3 +564,45 @@ form-control
   color: black;
 }
  
+
+/* Recruiter css */
+
+.navstyle2{
+margin-top: 10px;
+}
+.bg-recruiter{
+  background-color:white;
+
+}
+.profilebutton12{
+  background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px grey;
+    width: 100%;
+    margin-top: 2px;
+}
+.profilebutton121{
+  background-color: #f8f2fb;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px grey;
+  width: 100%;
+  color: #62418d;
+  font-weight: bold;
+}
+
+.date-input-container {
+  margin-bottom: 20px;
+}
+
+/* Style the label if needed */
+.date-input-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style the custom date input */
+.custom-date-input::placeholder {
+  color: rgb(226, 225, 225); /* Adjust the color as needed */
+}

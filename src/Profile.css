@@ -773,9 +773,12 @@ color: #2c0264;
     border-radius: 10px;
   }
   .profilebutton1{
-    background-color: rgb(19, 19, 66);
+    background-color: #2c0264;
     color: white;
     border-radius: 10px;
+     /* width: 42%; */
+     font-size: 14px;
+     padding: 8px;
   }
 
 
@@ -1502,7 +1505,7 @@ input[type=text]:focus {
   .input12321{
     display: none;
   }
-  
- 
 
+ 
+ 
  

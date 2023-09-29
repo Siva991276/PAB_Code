@@ -235,7 +235,7 @@ function Registration() {
           <div class="row">
             <div class="d-flex flex-row col-12 col-sm-12 col-md-6">
               <div
-                class=" card  mx-2 my-3 mb-5 col-12"
+                class=" card  m-0 my-3 mb-5 col-12"
                 style={{ borderRadius: "20px" }}
               >
                 <h2 class="heading1 col-12 col-sm-12">Create an account</h2>

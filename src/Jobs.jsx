@@ -90,7 +90,7 @@ function Jobs() {
         </div>
       </nav>
 
-      <div class="container8">
+      {/* <div class="container8">
         <div class="row">
           <div class="col-12">
             <h6 class="homepara1 mt-4">
@@ -111,13 +111,60 @@ function Jobs() {
             <button class="subbutton1">Search</button>
           </div>
         </div>
-      </div>
+      </div> */}
 
+<div class="container8">
+        <div class="row">
+          <div class="col-12">
+          <h6 class="homepara1 mt-4">
+              Home <i class="fa-solid fa-greater-than"></i>Jobs
+            </h6>
+          </div>
+          <div class="col-12 homebutton">
+            <div class="text-center align-items-center justify-content-center d-flex row m-2">
+              <div class="d-flex p-1 align-items-center seacrhMainContainer m-2 col-md-4">
+                <div class="">
+                  <i class="fa-solid fa-magnifying-glass p-2"></i>
+                  <input
+                    type="text"
+                    placeholder="Job title skills or company"
+                    class=" p-1 searchBox "
+                    style={{ fontWeight: "bold" }}
+                  />
+                </div>
+                <div>
+                  <i class="fa-solid fa-sort-down p-2 "></i>
+                </div>
+              </div>
+              <div class="d-flex p-1 align-items-center seacrhMainContainer m-2 col-md-4">
+                <div class="">
+                  <i class="fa-solid fa-location-dot p-3"></i>
+                  <input
+                    type="text"
+                    placeholder="City, Province or region "
+                    class=" p-1 searchBox "
+                    style={{ fontWeight: "bold" }}
+                  />
+                </div>
+                <div>
+                  <i class="fa-solid fa-sort-down p-2 "></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="homebutton1 mb-3">
+            <button class="subbutton1">Search</button>
+         
+          </div>
+        
+        </div>
+      </div>
       {/* //Container3 */}
-      <div class="thirdContainer d-flex   p-4">
-        <div class="col-2"></div>
-        <div class=" d-flex  parent-container">
-          <div class="fixed-container d-flex flex-column p-3 col-3 categoryBtnContainer">
+     
+      <div class="thirdContainer row p-4">
+        <div class=" col-12 row parent-container">
+        <div className="col-12 col-md-2"></div>
+          <div class="fixed-container d-flex flex-column p-3 col-12 col-md-3 categoryBtnContainer">
             <button class=" categoryButton m-1 ">All Jobs</button>
             <Link to="/JobLocationDetails">
               <button class="categoryBtn m-1"> Jobs By location</button>

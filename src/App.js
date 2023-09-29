@@ -25,6 +25,7 @@ import OwnWebsite from "./OwnWebsite";
 import ForgotPassword from "./ForgotPassword";
 import GetData from "./Practice123";
 import TodosList from "./FinalTodosList";
+import ReCompanyProfile from "./Re-Company-Profile";
 // import MyPlayer from "./Practice";
  
 
@@ -56,6 +57,7 @@ function App() {
       < Route export path = "/ForgotPassword" element = {<ForgotPassword />}/>
       < Route export path = "/GetData" element = {<GetData />}/>
       < Route export path="/TodosList" element = {<TodosList />}/>
+      < Route export path="/ReCompanyProfile" element = {<ReCompanyProfile />}/>
 
         <Route exact
           path="/JobCompanyDetails"

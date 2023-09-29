@@ -684,8 +684,8 @@ function ResumeDetails() {
     }
   };
   return (
-    <div>
-      <nav class="navbar navbar-expand-sm navbar-dark shadow mb-3 mt-2 ">
+    <div className="bg-images1">
+      <nav class="navbar navbar-expand-sm navbar-dark shadow mb-3 mt-2 bg-white ">
         <div class="container">
           <img src={logo} alt="" width="200px" />
           <button
@@ -760,9 +760,10 @@ function ResumeDetails() {
         </div>
       </nav>
       {/* card-sections */}
+      
       <div class="container">
         <div class="row">
-          <div class="col-md-4 text-start">
+          <div class=" col-12 col-md-4 text-start">
             <div class="card p-2">
               {/* <div class="d-flex flex-row py-2">
                 <div>

@@ -9,7 +9,7 @@ import axios, { Axios } from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import image111 from "../src/All Images/sivapic.jpg"
+import image111 from "../src/All Images/sivapic.jpg";
 
 function ProfileCode() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -32,7 +32,7 @@ function ProfileCode() {
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
 
-   document.getElementById ("imageInput").style.display = "none";
+    document.getElementById("imageInput").style.display = "none";
 
     if (selectedImage) {
       // You can perform additional checks on the selected image here if needed
@@ -409,26 +409,24 @@ function ProfileCode() {
                 class=" fa-sharp fa-solid fa-circle-user profileicon mb-4 mt-3"
                 style={{ fontSize: "200px" }}
               ></i> */}
-             
+
               <div className="user-profile">
-               
                 <input
                   type="file"
                   accept="image/*"
                   onChange={handleImageChange}
                   id="imageInput"
                 />
-                
+
                 {image && (
                   <img
                     src={image}
                     alt="User Profile"
                     className="rounded-circle w-100"
-                  
                   />
                 )}
               </div>
-                
+
               <a href="">
                 <button class="p-2 mb-1 bg-primary profilebutton h-25 text-white">
                   Candidate Profile
@@ -498,18 +496,22 @@ function ProfileCode() {
                 <hr />
 
                 <div>
-                  <label className="profilename mb-1">Name:</label>
-                  <input
-                    type="text"
-                    placeholder="Enter your full name"
-                    className="form-control w-75 mb-2 m-0  "
-                    // value={name}
-                    // onChange={handleNameChange}
-                    style={{ border: "1px solid black" }}
-                    onChange={(e) => setfullname(e.target.value)}
-                    value={fullname}
-                  />
-                  {nameError && <span className="error mes">{nameError}</span>}
+                  <div className="col-md-5">
+                    <label className="profilename mb-1">Name:</label>
+                    <input
+                      type="text"
+                      placeholder="Enter your full name"
+                      className="form-control w-100 p-2 m-0"
+                      // value={name}
+                      // onChange={handleNameChange}
+                      style={{ border: "1px solid black" }}
+                      onChange={(e) => setfullname(e.target.value)}
+                      value={fullname}
+                    />
+                    {nameError && (
+                      <span className="error mes">{nameError}</span>
+                    )}
+                  </div>
                 </div>
                 <div>
                   <p class="profileh5">Experience</p>
@@ -533,7 +535,7 @@ function ProfileCode() {
                   </label>
                 </div>
 
-                <div class="d-flex flex-row">
+                <div class="row">
                   <div class="col-md-4">
                     <label for="" class="profileh5 mb-1">
                       State
@@ -806,7 +808,7 @@ function ProfileCode() {
                     />
                   </div>
                 </div>
-                <div class="d-flex flex-row">
+                <div class="row">
                   <div class="col-md-4">
                     <div>
                       <label className="profileh5 mb-1">Mobile Number:</label>
@@ -870,16 +872,17 @@ function ProfileCode() {
                 </div>
 
                 {/* <h5 className="message-code">{error}</h5> */}
-                <button type="submit" className="w-25 mt-4 p-2 profilebutton1">
-                  Update Details
-                </button>
+                <div className="col-12 col-md-4">
+                  <button type="submit" className=" mt-4 profilebutton1">
+                    Update Details
+                  </button>
+                </div>
               </form>
             </div>
           </div>
         </div>
         <Footer />
       </div>
-      
     </div>
   );
 }
