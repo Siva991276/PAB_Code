@@ -26,6 +26,10 @@ import ForgotPassword from "./ForgotPassword";
 import GetData from "./Practice123";
 import TodosList from "./FinalTodosList";
 import ReCompanyProfile from "./Re-Company-Profile";
+import RePostJob from "./Re-Post-Job";
+import ReChangePassword from "./Re-Change-pas";
+import ReDashBoard from "./Re-Dashboard";
+import Profile11 from "./Practice123profile";
 // import MyPlayer from "./Practice";
  
 
@@ -58,6 +62,14 @@ function App() {
       < Route export path = "/GetData" element = {<GetData />}/>
       < Route export path="/TodosList" element = {<TodosList />}/>
       < Route export path="/ReCompanyProfile" element = {<ReCompanyProfile />}/>
+      < Route export path="/RePostJob" element = {<RePostJob />}/>
+      < Route export path="/ReChangePassword" element = {<ReChangePassword />}/>
+      < Route export path="/ReDashBoard" element = {<ReDashBoard />}/>
+      < Route export path="/Profile11" element = {<Profile11 />}/>
+
+
+
+
 
         <Route exact
           path="/JobCompanyDetails"

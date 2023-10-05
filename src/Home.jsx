@@ -884,32 +884,31 @@ function Home() {
           <div class="row">
             <div className="col-12 col-md-2"></div>
             <div class="col-12 col-md-9">
-              <div class="row skills2">
-                <div className="col-12 col-md-5">
-                <div className="row">
-                  <div>
-                    <p class=" m-2 text-white">
-                      Find better & faster jobs with pab jobs service Call :
-                      1800 833 9448 Now!{" "}
-                    </p>
-                  </div>
-                  <div>
+              <div class="skills2">
+                <div className="col-12">
+                  <div className=" d-flex flex-row">
                     <div>
-                      <input
-                        type="text"
-                        placeholder="Enter Your Mobile Number"
-                        class="w-100 pt-1 mt-2"
-                      />
+                      <p class=" m-3 text-white text-para">
+                        Find better & faster jobs with pab jobs service Call :
+                        1800 833 9448 Now!
+                      </p>
+                    </div>
+                    <div>
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="Enter Your Mobile Number"
+                          class="w-100 pt-1 mt-1"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <button class=" mx-1 mt-2 w-100 bg-warning">
+                        Get call back
+                      </button>
                     </div>
                   </div>
-                  <div>
-                    <button class="p-1 btn-32 m-2 bg-warning">
-                      Get call back
-                    </button>
-                  </div>
                 </div>
-                </div>
-                
               </div>
             </div>
             <div class="col-md-2"></div>

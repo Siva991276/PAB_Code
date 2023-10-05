@@ -69,7 +69,10 @@ function Jobs() {
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link dropdown-toggle navstyle" href="/PaymentMethod">
+                <a
+                  class="nav-link dropdown-toggle navstyle"
+                  href="/PaymentMethod"
+                >
                   payments
                 </a>
               </li>
@@ -113,10 +116,10 @@ function Jobs() {
         </div>
       </div> */}
 
-<div class="container8">
+      <div class="container8">
         <div class="row">
           <div class="col-12">
-          <h6 class="homepara1 mt-4">
+            <h6 class="homepara1 mt-4">
               Home <i class="fa-solid fa-greater-than"></i>Jobs
             </h6>
           </div>
@@ -154,16 +157,14 @@ function Jobs() {
           </div>
           <div class="homebutton1 mb-3">
             <button class="subbutton1">Search</button>
-         
           </div>
-        
         </div>
       </div>
       {/* //Container3 */}
-     
+
       <div class="thirdContainer row p-4">
-        <div class=" col-12 row parent-container">
-        <div className="col-12 col-md-2"></div>
+        <div class=" col-12 row parent-container1">
+          <div className="col-12 col-md-1"></div>
           <div class="fixed-container d-flex flex-column p-3 col-12 col-md-3 categoryBtnContainer">
             <button class=" categoryButton m-1 ">All Jobs</button>
             <Link to="/JobLocationDetails">
@@ -173,13 +174,22 @@ function Jobs() {
               {" "}
               <button class="categoryBtn m-1"> Jobs By Company</button>{" "}
             </Link>
-           <Link to = "/JobCategoryDetails"> <button class="categoryBtn m-1"> Jobs By Category</button></Link>
-           <Link to = "/JobDesignationDetails"> <button class="categoryBtn m-1"> Jobs By Designation</button></Link>
-          <Link to = "/JobSkillsDetails"> <button class="categoryBtn m-1"> Jobs By Skills</button></Link> 
+            <Link to="/JobCategoryDetails">
+              {" "}
+              <button class="categoryBtn m-1"> Jobs By Category</button>
+            </Link>
+            <Link to="/JobDesignationDetails">
+              {" "}
+              <button class="categoryBtn m-1"> Jobs By Designation</button>
+            </Link>
+            <Link to="/JobSkillsDetails">
+              {" "}
+              <button class="categoryBtn m-1"> Jobs By Skills</button>
+            </Link>
           </div>
 
           <div class="col-md-8 p-4 allJobsContainer">
-            <div class="d-flex flex row ">
+            <div class="row  mt-3">
               <div class="">
                 <h6 class="indus">Jobs By Locations</h6>
               </div>
