@@ -30,6 +30,7 @@ import RePostJob from "./Re-Post-Job";
 import ReChangePassword from "./Re-Change-pas";
 import ReDashBoard from "./Re-Dashboard";
 import Profile11 from "./Practice123profile";
+import ReBuyServices from "./Re-Buy-Services";
 // import MyPlayer from "./Practice";
  
 
@@ -66,6 +67,7 @@ function App() {
       < Route export path="/ReChangePassword" element = {<ReChangePassword />}/>
       < Route export path="/ReDashBoard" element = {<ReDashBoard />}/>
       < Route export path="/Profile11" element = {<Profile11 />}/>
+      < Route export path="/ReBuyServices" element = {<ReBuyServices />}/>
 
 
 
