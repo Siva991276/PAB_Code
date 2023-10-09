@@ -675,6 +675,7 @@ margin-top: 10px;
 
 .bannersection {
   background-color: #efe7f9;
+  
 
 }
 
@@ -696,26 +697,14 @@ margin-top: 10px;
   font-size: 14px;
 }
 
-.content1 {
-  background-color: rgb(238, 226, 246);
  
-
-
-
-}
 
 .card1 {
   background-color: white;
-
-
-
-
 }
 
 .card2 {
   background-color: white;
-
-
 }
 
 .heading-page {
@@ -753,30 +742,30 @@ margin-top: 10px;
  
 
 .button31 {
-  margin-left: 32%;
-  margin-top: 20px;
-  width: 30%;
+  
+ 
   background-color: white;
-  padding: 10px;
-  border-color: rgb(2, 2, 16);
-  border-radius: 10px;
+  border: 1px solid #61428a;
+  border-radius: 5px;
   font-weight: bold;
 }
 
 .months {
-  font-weight: bold;
+  font-weight: 500;
   color: black;
+  font-size: 7px;
 }
-
+ 
 .amounts {
-  font-weight: bold;
+  font-weight: 900;
+  font-size: 12px;
+  
 }
 
 
 .parag1 {
-  font-size: 13px;
-  text-align: center;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 800;
  
    
  
@@ -819,7 +808,7 @@ margin-top: 10px;
 }
 
 .para31 {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -1046,4 +1035,27 @@ margin-top: 10px;
 .para411{
   font-size: 8px;
   font-weight:700
+}
+.months1{
+  font-weight: 900;
+  font-size: 14px;
+ 
+ 
+}
+.underline{
+ font-size: 30px;
+   color: lightgrey;
+}
+.content1{
+  height: 100vh;
+}
+.monthplan1{
+  color: #533181;
+  font-weight: 900;
+}
+.rupee2{
+  font-weight: 900;
+}
+.mlimit{
+  font-weight: 900;
 }

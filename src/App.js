@@ -31,11 +31,11 @@ import ReChangePassword from "./Re-Change-pas";
 import ReDashBoard from "./Re-Dashboard";
 import Profile11 from "./Practice123profile";
 import ReBuyServices from "./Re-Buy-Services";
+import ReJobPosting from "./Re-Job-Posting";
+import ReComboProducts from "./Re-Combo-Products";
 // import MyPlayer from "./Practice";
- 
 
-
-function App() { 
+function App() {
   return (
     <div className="App">
       <Routes>
@@ -51,29 +51,36 @@ function App() {
         <Route exact path="/AppliedJobs" element={<AppliedJobs />} />
         <Route exact path="/JobAlert" element={<JobAlert />} />
         <Route exact path="/PracticeSection" element={<PracticeSection />} />
-      <Route exact path="/OwnWebsite" element ={<OwnWebsite />} />
-        
+        <Route exact path="/OwnWebsite" element={<OwnWebsite />} />
+
         <Route exact path="/SaveJobs" element={<SaveJobs />} />
         <Route exact path="/ChangePassword" element={<ChangePassword />} />
-        <Route exact path="/JobCategoryDetails" element={<JobCategoryDetails />} />
-        <Route exact path="/JobDesignationDetails" element={<JobDesignationDetails />} />
+        <Route
+          exact
+          path="/JobCategoryDetails"
+          element={<JobCategoryDetails />}
+        />
+        <Route
+          exact
+          path="/JobDesignationDetails"
+          element={<JobDesignationDetails />}
+        />
         <Route exact path="/JobSkillsDetails" element={<JobSkillsDetails />} />
-       <Route exact path="/PaymentMethod" element = {<PaymentMethod />} />
-      < Route export path = "/ForgotPassword" element = {<ForgotPassword />}/>
-      < Route export path = "/GetData" element = {<GetData />}/>
-      < Route export path="/TodosList" element = {<TodosList />}/>
-      < Route export path="/ReCompanyProfile" element = {<ReCompanyProfile />}/>
-      < Route export path="/RePostJob" element = {<RePostJob />}/>
-      < Route export path="/ReChangePassword" element = {<ReChangePassword />}/>
-      < Route export path="/ReDashBoard" element = {<ReDashBoard />}/>
-      < Route export path="/Profile11" element = {<Profile11 />}/>
-      < Route export path="/ReBuyServices" element = {<ReBuyServices />}/>
+        <Route exact path="/PaymentMethod" element={<PaymentMethod />} />
+        <Route export path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route export path="/GetData" element={<GetData />} />
+        <Route export path="/TodosList" element={<TodosList />} />
+        <Route export path="/ReCompanyProfile" element={<ReCompanyProfile />} />
+        <Route export path="/RePostJob" element={<RePostJob />} />
+        <Route export path="/ReChangePassword" element={<ReChangePassword />} />
+        <Route export path="/ReDashBoard" element={<ReDashBoard />} />
+        <Route export path="/Profile11" element={<Profile11 />} />
+        <Route export path="/ReBuyServices" element={<ReBuyServices />} />
+        <Route export path="/ReJobPosting" element={<ReJobPosting />} />
+        <Route export path="/ReComboProducts" element={<ReComboProducts />} />
 
-
-
-
-
-        <Route exact
+        <Route
+          exact
           path="/JobCompanyDetails"
           element={<JobCompanyDetails />}
         />

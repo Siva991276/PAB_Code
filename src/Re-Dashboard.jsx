@@ -26,7 +26,11 @@ function ReDashBoard() {
                   style={{ marginLeft: "130px" }}
                 >
                   <li class="nav-item">
-                    <a class="nav-link navstyle2 text-primary " href="">
+                    <a
+                      class="nav-link navstyle2   "
+                      href=""
+                      style={{ color: "#462177" }}
+                    >
                       Dashboard
                     </a>
                   </li>
@@ -187,8 +191,8 @@ function ReDashBoard() {
                             </div>
                           </div>
                         </div>
-                      </div> */}   
-                      {/* responsive */}
+                      </div> */}
+                    {/* responsive */}
                     <div class="row">
                       <div class="card card123 col-12 col-md-2 mx-4 shadow">
                         <div class="d-flex flex-row">

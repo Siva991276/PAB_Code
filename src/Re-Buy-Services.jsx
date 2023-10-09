@@ -36,7 +36,11 @@ function ReBuyServices() {
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link navstyle2 text-primary" href="">
+                    <a
+                      class="nav-link navstyle2 "
+                      href=""
+                      style={{ color: "#462177" }}
+                    >
                       Buy Services
                     </a>
                   </li>
@@ -55,26 +59,29 @@ function ReBuyServices() {
           </nav>
 
           <div class="bannersection p-4">
-            <div class="">
+            <div class="text-start">
               <a href="">
                 <button class="buttons21 col-12 col-md-2 mx-2">
                   Data Base
                 </button>
               </a>
-              <a href="">
-                <button class="buttons1 col-12 col-md-2 mx-2">
+              <a href="./ReJobPosting">
+                <button class="buttons1 col-12 col-md-2  mx-2">
                   Job Posting
                 </button>
               </a>
-              <a href="">
-                <button class="buttons1 col-12 col-md-2 mx-2">
+              <a href="./ReComboProducts">
+                <button class="buttons1 col-12 col-md-2 mx-2  ">
                   Combo Products
                 </button>
               </a>
             </div>
           </div>
 
-          <div class=" content1">
+          <div
+            class="card content11"
+            style={{ backgroundColor: "#fbf7fd", border: "none" }}
+          >
             <div class="row mx-5 p-2">
               <div class="card col-12 col-md-5 mt-3">
                 <div className="card">
@@ -104,149 +111,214 @@ function ReBuyServices() {
                   </div>
                 </div>
                 <hr className="mt-0" />
-                <div className="row">
-                  <div className="col-12 col-md-1 mx-2 "></div>
-                  <div className=" card col-12 col-md-9 shadow ">
-                    <div className="d-flex flex-row">
-                      <div
-                        class="col-12 col-md-4 mt-3 mx-4"
-                        style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                      >
-                        <p class="months1">1 Monthly</p>
-                      </div>
-                      <div class="col-12 col-md-3 mt-3">
-                        <p class="amounts">4999+</p>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">1 Monthly </p>
+                          </div>
+                        </div>
+
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">4999+</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* <div class="d-flex flex-row card col-12 col-md-9 text-center shadow">
-                  <div
-                    class="col-12 col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months1">1 Monthly</p>
-                  </div>
-                  <div class=" col-12 col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
-                  </div>
-                </div> */}
-                <div class="d-flex flex-row card w-75 text-center mx-5 mt-2 shadow">
-                  <div
-                    class="col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months">1 Monthly</p>
-                  </div>
-                  <div class="col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
+                <div className="container mt-1">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">3 Monthly </p>
+                          </div>
+                        </div>
+
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">1299+</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex flex-row card w-75 text-center mx-5 mt-2 shadow">
-                  <div
-                    class="col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months">1 Monthly</p>
-                  </div>
-                  <div class="col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
-                  </div>
-                </div>
-                <div class="d-flex flex-row card w-75 text-center mx-5 mt-2 shadow">
-                  <div
-                    class="col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months">1 Monthly</p>
-                  </div>
-                  <div class="col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
+                <div className="container mt-1">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">6 Monthly </p>
+                          </div>
+                        </div>
+
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">1299+</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <button class="button31">Buy Now</button>
+                <div className="container mt-1">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">9 Monthly </p>
+                          </div>
+                        </div>
+
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">3899+</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-12 mt-2 mb-4">
+                  <button class="button31 col-12 col-md-4 p-2 ">Buy Now</button>
+                </div>
               </div>
               {/* <!-- 2nd --> */}
-
-              {/* <div class="card1 col-12 col-md-5 mx-2 mt-3">
-                <div class="">
-                  <div class="heading-page d-flex flex-row">
-                    <h2 class="Monthly1">Monthly</h2>
-                    <h2 class="Daily1">Daily</h2>
+              <div className="col-12 col-md-1"></div>
+              <div class="card col-12 col-md-5 mt-3">
+                <div className="card">
+                  <div class="heading-page row p-2">
+                    <h2 class="Monthly1 col-12 col-md-4 mx-2">Monthly</h2>
+                    <div className="col-12 col-md-3"></div>
+                    <h2 class="Daily1 col-12 col-md-4 ">Daily</h2>
                   </div>
                 </div>
-                <div class="d-flex flex-row content4 mt-3 ">
-                  <div class="content2">
-                    <p class="para21">
-                      2000 Excel Downloads
-                      <span>1000 Profile Views</span>
+
+                <div class="row mt-3 ">
+                  <div class="content21 col-12 col-md-6">
+                    <p class="para21 text-start mx-2">
+                      4000 Excel Downloads <br />
+                      <span>2000 Profile Views</span>
+                      <br />
+                      <span>250SMS</span>
+                    </p>
+                  </div>
+                  <div class="content2  col-12 col-md-6">
+                    <p class="para21 text-start px-2 ">
+                      500 Excel Downloads <br />
+                      <span>300 Profile Views</span>
+                      <br />
                       <span>100SMS</span>
                     </p>
                   </div>
-                  <div class="content2">
-                    <p class="para212">
-                      250 Excel Downloads
-                      <span>150 Profile Views</span>
-                      <span>30SMS</span>
-                    </p>
-                  </div>
                 </div>
-                <hr />
+                <hr className="mt-0" />
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">1 Monthly </p>
+                          </div>
+                        </div>
 
-                <div class="d-flex flex-row card w-75 text-center mx-5 shadow">
-                  <div
-                    class="col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months">1 Monthly</p>
-                  </div>
-                  <div class="col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">8999+</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex flex-row card w-75 text-center mx-5 mt-2 shadow">
-                  <div
-                    class="col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months">1 Monthly</p>
-                  </div>
-                  <div class="col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
-                  </div>
-                </div>
-                <div class="d-flex flex-row card w-75 text-center mx-5 mt-2 shadow">
-                  <div
-                    class="col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months">1 Monthly</p>
-                  </div>
-                  <div class="col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
+
+                <div className="container mt-1">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">4 Monthly </p>
+                          </div>
+                        </div>
+
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">9299+</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="d-flex flex-row card w-75 text-center mx-5 mt-2 shadow">
-                  <div
-                    class="col-md-6 mt-3"
-                    style={{ borderRight: "1px solid rgb(211, 207, 207)" }}
-                  >
-                    <p class="months">1 Monthly</p>
-                  </div>
-                  <div class="col-md-6 mt-3">
-                    <p class="px-5 amounts">4999+</p>
+                <div className="container mt-1">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">6 Monthly </p>
+                          </div>
+                        </div>
+
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">5299+</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <button class="button31">Buy Now</button>
-              </div> */}
+                <div className="container mt-1">
+                  <div className="row">
+                    <div className="col-12 col-md-2 "></div>
+                    <div className=" card col-12 col-md-8 shadow ">
+                      <div className="row">
+                        <div class="col-12 col-md-5">
+                          <div>
+                            <p class="months1 mt-3">7 Monthly </p>
+                          </div>
+                        </div>
+
+                        <div className="col-12 col-md-1 underline">|</div>
+                        <div class="col-12 col-md-4 mt-3">
+                          <p class="amounts px-2">6899+</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-12 col-md-12 mt-2 mb-4">
+                  <button class="button31 col-12 col-md-4 p-2 ">Buy Now</button>
+                </div>
+              </div>
             </div>
-            <p class="parag1">
-              Note:Select the month that you need and click on buy option Taxes
-              are excluded in the above Plans
-            </p>
+
+            <div className="row">
+              <div className="row col-12 col-md-12">
+                <div className="col-12 col-md-3 mx-4"></div>
+                <p class="parag1 col-12 col-md-5 mt-3">
+                  Note:Select the month that you need and click on buy option
+                  Taxes are excluded in the above Plans
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );
