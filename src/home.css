@@ -1059,3 +1059,50 @@ margin-top: 10px;
 .mlimit{
   font-weight: 900;
 }
+.hide-text121{
+  color: lightgrey;
+}
+.morefilter{
+  font-size: 12px;
+  background-color: white;
+  border: 0.1px solid  #61428a;
+  color: rgb(177, 172, 172);
+  border-radius: 5px;
+  
+}
+.paramessage123{
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.Excelbut{
+  background-color: #2c0264;
+  color: white;
+  border-radius: 5px;
+}
+.buttonyeat{
+  margin-top: 70px;
+}
+.yearbtn11{
+  background-color: #f8f2fb;
+  border: 1px solid #61428a;
+  border-radius: 5px;
+}
+.resultpage111{
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #61428a;
+}
+.contentbgcard{
+  background-color: #fbf7fd;
+  border: none;
+}
+.cardheading11{
+  font-size: 12px;
+  font-weight: 600;
+}
+.profilename123{
+  color: black;
+  font-weight: 900;
+  font-size: 15px;
+}

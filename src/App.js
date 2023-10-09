@@ -33,6 +33,7 @@ import Profile11 from "./Practice123profile";
 import ReBuyServices from "./Re-Buy-Services";
 import ReJobPosting from "./Re-Job-Posting";
 import ReComboProducts from "./Re-Combo-Products";
+import ReSearchCandidates from "./Re-Search-Candidates";
 // import MyPlayer from "./Practice";
 
 function App() {
@@ -78,6 +79,11 @@ function App() {
         <Route export path="/ReBuyServices" element={<ReBuyServices />} />
         <Route export path="/ReJobPosting" element={<ReJobPosting />} />
         <Route export path="/ReComboProducts" element={<ReComboProducts />} />
+        <Route
+          export
+          path="/ReSearchCandidates"
+          element={<ReSearchCandidates />}
+        />
 
         <Route
           exact

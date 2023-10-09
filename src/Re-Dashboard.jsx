@@ -23,7 +23,7 @@ function ReDashBoard() {
               <div class="collapse navbar-collapse mx-4" id="collapsibleNavbar">
                 <ul
                   class="navbar-nav logostyle"
-                  style={{ marginLeft: "130px" }}
+                
                 >
                   <li class="nav-item">
                     <a
@@ -35,12 +35,12 @@ function ReDashBoard() {
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link  navstyle2" href="">
+                    <a class="nav-link  navstyle2" href="ReSearchCandidates">
                       Search Candidates
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link navstyle2" href="/ReBuyServices">
+                    <a class="nav-link navstyle2" href="./ReBuyServices">
                       Buy Services
                     </a>
                   </li>
