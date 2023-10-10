@@ -138,8 +138,8 @@ function ReSearchCandidates() {
           <div className="card col-12 col-md-12 mt-4 contentbgcard">
             <div className="container">
               <div className="row">
-                <div className="col-12 col-md-1 mx-3"></div>
-                <div className="card col-12 col-md-3 m-3">
+                <div className="col-12 col-md-1 mx-4"></div>
+                <div className="card col-12 col-md-2 mt-4">
                   <div className="d-flex flex-row">
                     <span
                       class="material-symbols-outlined m-1 "
@@ -149,29 +149,748 @@ function ReSearchCandidates() {
                     </span>
                     <p className="m-2 cardheading11">Export data to excel</p>
                   </div>
-                  <i
-                    class=" fa-sharp fa-solid fa-circle-user profileicon mb-4 mt-3"
-                    style={{ fontSize: "90px", Color: "#f8f1f1" }}
-                  ></i>
-                   <span className="profilename123">Sashi Kumar</span>
+
+                  <p
+                    class=" fa-sharp fa-solid fa-circle-user profileicon"
+                    style={{ fontSize: "80px", Color: "#f8f1f1" }}
+                  ></p>
+                  <span className="profilename123">Sashi Kumar</span>
+                  <hr style={{ color: "a6a6aa" }} />
+
+                  <div className="col-12 col-md-4 d-flex flex-row ">
+                    <button className="emailbtn123 p-1 m-1">Email</button>
+                    <button className="emailbtn123 p-1 m-1">Contact</button>
+                    <button className="emailbtn123 p-1 m-1">SMS</button>
+                  </div>
                 </div>
-                <div className=" card col-12 col-md-6 m-3">
-                  <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Voluptatum ducimus, ullam reprehenderit earum ab, obcaecati
-                    qui vitae recusandae eligendi similique laborum sed,
-                    accusantium dolorem ea deserunt nemo? Vitae cum aperiam
-                    perferendis quibusdam quam exercitationem, earum pariatur
-                    autem ipsa fugit, accusantium sunt adipisci? Accusantium
-                    architecto in ipsam, magnam nobis sunt? Laboriosam.
-                  </p>
+
+                <div className="card col-12 col-md-7 m-4">
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Key Skills
+                        <p className="skilldis">
+                          Photoshop, Aftereffects, Adobe XD, Premire Pro,
+                          Blender, Illustrator....More
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Experience
+                        <p className="skilldis">3 years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Designation
+                        <p className="skilldis">UI & UX Designer</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Desired Industry
+                        <p className="skilldis">IT Software</p>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Highest Graduation
+                        <p className="skilldis">
+                          Bachelor of Arts in Graphic Design
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Employment Type
+                        <p className="skilldis">Full Time, Permanent</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Department
+                        <p className="skilldis">UX, Design & Architecture</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Prefered Shift
+                        <p className="skilldis">Day/Night</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row ">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Current Location
+                        <p className="skilldis">Hyderabad</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Prefered Location
+                        <p className="skilldis">Hyderabad, Pune,</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Expected CTC
+                        <p className="skilldis">5,00,000 - 8,00,000</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Age
+                        <p className="skilldis">--Years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Gender
+                        <p className="skilldis">Male</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Marital Status
+                        <p className="skilldis">Single</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Date Of Birth
+                        <p className="skilldis">06 December 1969</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Address
+                        <p className="skilldis">
+                          201, Plot 69, Laxmi Nagar,Filmnagar, Hyderabad.
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Languages Known
+                        <p className="skilldis">Telugu, Hindi, English</p>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-12 col-md-1"></div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-1 mx-4"></div>
+                <div className="card col-12 col-md-2 mt-4">
+                  <div className="d-flex flex-row">
+                    <span
+                      class="material-symbols-outlined m-1 "
+                      style={{ color: "lightgray" }}
+                    >
+                      check_box_outline_blank
+                    </span>
+                    <p className="m-2 cardheading11">Export data to excel</p>
+                  </div>
+
+                  <p
+                    class=" fa-sharp fa-solid fa-circle-user profileicon"
+                    style={{ fontSize: "80px", Color: "#f8f1f1" }}
+                  ></p>
+                  <span className="profilename123">Sashi Kumar</span>
+                  <hr style={{ color: "a6a6aa" }} />
+
+                  <div className="col-12 col-md-4 d-flex flex-row ">
+                    <button className="emailbtn123 p-1 m-1">Email</button>
+                    <button className="emailbtn123 p-1 m-1">Contact</button>
+                    <button className="emailbtn123 p-1 m-1">SMS</button>
+                  </div>
+                </div>
+
+                <div className="card col-12 col-md-7 m-4">
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Key Skills
+                        <p className="skilldis">
+                          Photoshop, Aftereffects, Adobe XD, Premire Pro,
+                          Blender, Illustrator....More
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Experience
+                        <p className="skilldis">3 years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Designation
+                        <p className="skilldis">UI & UX Designer</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Desired Industry
+                        <p className="skilldis">IT Software</p>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Highest Graduation
+                        <p className="skilldis">
+                          Bachelor of Arts in Graphic Design
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Employment Type
+                        <p className="skilldis">Full Time, Permanent</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Department
+                        <p className="skilldis">UX, Design & Architecture</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Prefered Shift
+                        <p className="skilldis">Day/Night</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row ">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Current Location
+                        <p className="skilldis">Hyderabad</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Prefered Location
+                        <p className="skilldis">Hyderabad, Pune,</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Expected CTC
+                        <p className="skilldis">5,00,000 - 8,00,000</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Age
+                        <p className="skilldis">--Years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Gender
+                        <p className="skilldis">Male</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Marital Status
+                        <p className="skilldis">Single</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Date Of Birth
+                        <p className="skilldis">06 December 1969</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Address
+                        <p className="skilldis">
+                          201, Plot 69, Laxmi Nagar,Filmnagar, Hyderabad.
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Languages Known
+                        <p className="skilldis">Telugu, Hindi, English</p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-1 mx-4"></div>
+                <div className="card col-12 col-md-2 mt-4">
+                  <div className="d-flex flex-row">
+                    <span
+                      class="material-symbols-outlined m-1 "
+                      style={{ color: "lightgray" }}
+                    >
+                      check_box_outline_blank
+                    </span>
+                    <p className="m-2 cardheading11">Export data to excel</p>
+                  </div>
+
+                  <p
+                    class=" fa-sharp fa-solid fa-circle-user profileicon"
+                    style={{ fontSize: "80px", Color: "#f8f1f1" }}
+                  ></p>
+                  <span className="profilename123">Sashi Kumar</span>
+                  <hr style={{ color: "a6a6aa" }} />
+
+                  <div className="col-12 col-md-4 d-flex flex-row ">
+                    <button className="emailbtn123 p-1 m-1">Email</button>
+                    <button className="emailbtn123 p-1 m-1">Contact</button>
+                    <button className="emailbtn123 p-1 m-1">SMS</button>
+                  </div>
+                </div>
+
+                <div className="card col-12 col-md-7 m-4">
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Key Skills
+                        <p className="skilldis">
+                          Photoshop, Aftereffects, Adobe XD, Premire Pro,
+                          Blender, Illustrator....More
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Experience
+                        <p className="skilldis">3 years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Designation
+                        <p className="skilldis">UI & UX Designer</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Desired Industry
+                        <p className="skilldis">IT Software</p>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Highest Graduation
+                        <p className="skilldis">
+                          Bachelor of Arts in Graphic Design
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Employment Type
+                        <p className="skilldis">Full Time, Permanent</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Department
+                        <p className="skilldis">UX, Design & Architecture</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Prefered Shift
+                        <p className="skilldis">Day/Night</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row ">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Current Location
+                        <p className="skilldis">Hyderabad</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Prefered Location
+                        <p className="skilldis">Hyderabad, Pune,</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Expected CTC
+                        <p className="skilldis">5,00,000 - 8,00,000</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Age
+                        <p className="skilldis">--Years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Gender
+                        <p className="skilldis">Male</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Marital Status
+                        <p className="skilldis">Single</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Date Of Birth
+                        <p className="skilldis">06 December 1969</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Address
+                        <p className="skilldis">
+                          201, Plot 69, Laxmi Nagar,Filmnagar, Hyderabad.
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Languages Known
+                        <p className="skilldis">Telugu, Hindi, English</p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-1 mx-4"></div>
+                <div className="card col-12 col-md-2 mt-4">
+                  <div className="d-flex flex-row">
+                    <span
+                      class="material-symbols-outlined m-1 "
+                      style={{ color: "lightgray" }}
+                    >
+                      check_box_outline_blank
+                    </span>
+                    <p className="m-2 cardheading11">Export data to excel</p>
+                  </div>
+
+                  <p
+                    class=" fa-sharp fa-solid fa-circle-user profileicon"
+                    style={{ fontSize: "80px", Color: "#f8f1f1" }}
+                  ></p>
+                  <span className="profilename123">Sashi Kumar</span>
+                  <hr style={{ color: "a6a6aa" }} />
+
+                  <div className="col-12 col-md-4 d-flex flex-row ">
+                    <button className="emailbtn123 p-1 m-1">Email</button>
+                    <button className="emailbtn123 p-1 m-1">Contact</button>
+                    <button className="emailbtn123 p-1 m-1">SMS</button>
+                  </div>
+                </div>
+
+                <div className="card col-12 col-md-7 m-4">
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Key Skills
+                        <p className="skilldis">
+                          Photoshop, Aftereffects, Adobe XD, Premire Pro,
+                          Blender, Illustrator....More
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Experience
+                        <p className="skilldis">3 years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Designation
+                        <p className="skilldis">UI & UX Designer</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Desired Industry
+                        <p className="skilldis">IT Software</p>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Highest Graduation
+                        <p className="skilldis">
+                          Bachelor of Arts in Graphic Design
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Employment Type
+                        <p className="skilldis">Full Time, Permanent</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Department
+                        <p className="skilldis">UX, Design & Architecture</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Prefered Shift
+                        <p className="skilldis">Day/Night</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row ">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Current Location
+                        <p className="skilldis">Hyderabad</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Prefered Location
+                        <p className="skilldis">Hyderabad, Pune,</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Expected CTC
+                        <p className="skilldis">5,00,000 - 8,00,000</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Age
+                        <p className="skilldis">--Years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Gender
+                        <p className="skilldis">Male</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Marital Status
+                        <p className="skilldis">Single</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Date Of Birth
+                        <p className="skilldis">06 December 1969</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Address
+                        <p className="skilldis">
+                          201, Plot 69, Laxmi Nagar,Filmnagar, Hyderabad.
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Languages Known
+                        <p className="skilldis">Telugu, Hindi, English</p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-md-1 mx-4"></div>
+                <div className="card col-12 col-md-2 mt-4">
+                  <div className="d-flex flex-row">
+                    <span
+                      class="material-symbols-outlined m-1 "
+                      style={{ color: "lightgray" }}
+                    >
+                      check_box_outline_blank
+                    </span>
+                    <p className="m-2 cardheading11">Export data to excel</p>
+                  </div>
+
+                  <p
+                    class=" fa-sharp fa-solid fa-circle-user profileicon"
+                    style={{ fontSize: "80px", Color: "#f8f1f1" }}
+                  ></p>
+                  <span className="profilename123">Sashi Kumar</span>
+                  <hr style={{ color: "a6a6aa" }} />
+
+                  <div className="col-12 col-md-4 d-flex flex-row ">
+                    <button className="emailbtn123 p-1 m-1">Email</button>
+                    <button className="emailbtn123 p-1 m-1">Contact</button>
+                    <button className="emailbtn123 p-1 m-1">SMS</button>
+                  </div>
+                </div>
+
+                <div className="card col-12 col-md-7 m-4">
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Key Skills
+                        <p className="skilldis">
+                          Photoshop, Aftereffects, Adobe XD, Premire Pro,
+                          Blender, Illustrator....More
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Experience
+                        <p className="skilldis">3 years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Designation
+                        <p className="skilldis">UI & UX Designer</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Desired Industry
+                        <p className="skilldis">IT Software</p>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Highest Graduation
+                        <p className="skilldis">
+                          Bachelor of Arts in Graphic Design
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Employment Type
+                        <p className="skilldis">Full Time, Permanent</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Department
+                        <p className="skilldis">UX, Design & Architecture</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-2 text-start">
+                      <p className="skillpara">
+                        Prefered Shift
+                        <p className="skilldis">Day/Night</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row ">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Current Location
+                        <p className="skilldis">Hyderabad</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Prefered Location
+                        <p className="skilldis">Hyderabad, Pune,</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Expected CTC
+                        <p className="skilldis">5,00,000 - 8,00,000</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Age
+                        <p className="skilldis">--Years</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Gender
+                        <p className="skilldis">Male</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Marital Status
+                        <p className="skilldis">Single</p>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12 col-md-4 text-start">
+                      <p className="skillpara">
+                        Date Of Birth
+                        <p className="skilldis">06 December 1969</p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start ">
+                      <p className="skillpara">
+                        Address
+                        <p className="skilldis">
+                          201, Plot 69, Laxmi Nagar,Filmnagar, Hyderabad.
+                        </p>
+                      </p>
+                    </div>
+                    <div className="col-12 col-md-3 text-start">
+                      <p className="skillpara">
+                        Languages Known
+                        <p className="skilldis">Telugu, Hindi, English</p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );

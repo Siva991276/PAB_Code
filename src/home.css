@@ -1098,11 +1098,31 @@ margin-top: 10px;
   border: none;
 }
 .cardheading11{
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 8px;
+  font-weight: 900;
+ 
 }
 .profilename123{
   color: black;
   font-weight: 900;
   font-size: 15px;
 }
+.emailbtn123{
+  background-color: #ece8f1;
+  border-radius: 5px;
+
+  border: none;
+}
+.skillpara{
+  font-size: 7px;
+  font-weight: 980;
+ 
+}
+.skilldis{
+  color: rgb(176, 173, 173);
+  font-size: 8px;
+  font-weight: 600;
+ 
+}
+ 
+ 
