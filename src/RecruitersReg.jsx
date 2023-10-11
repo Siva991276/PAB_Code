@@ -8,8 +8,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function Registration() {
-  const [Typesection, setSelectedType] = useState("applicant");
+function RecruitersReg() {
+  const [Typesection, setSelectedType] = useState("recruiter");
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -105,7 +105,7 @@ function Registration() {
       };
 
       axios
-        .post("http://localhost:4005/RegistrationDetails", usersData)
+        .post("http://localhost:4005/RecruitersRegistration", usersData)
         .then((response) => {
           console.log(response.data);
           if (response.status === 200) {
@@ -121,7 +121,7 @@ function Registration() {
             });
 
             setTimeout(function () {
-              navigate("/LoginPage");
+              navigate("/LoginRecruiters");
             }, 3000);
           }
         })
@@ -287,35 +287,35 @@ function Registration() {
                     type="button"
                     className="b2 button32123 mx-4 "
                     id="Jobbtn"
-                    style={{ opacity: buttonOpacity.jobSeekers }}
-                  >
-                    Job Seekers
-                    <input
-                      type="radio"
-                      name="type"
-                      value="applicant"
-                      onChange={handleTypeChange}
-                      className="mx-2"
-                      checked={Typesection === "applicant"}
-                    />
-                  </button>
-                  <button
-                    type="button"
-                    className="b2 button32123 "
-                    id="Jobbtn"
                     style={{ opacity: buttonOpacity.recruiters }}
                   >
-                    Recruiters
-                    <Link to="/RecruitersReg">
+                    Job Seekers
+                    <Link to="/">
                       <input
                         type="radio"
                         name="type"
-                        value="recruiter"
+                        value="applicant"
                         onChange={handleTypeChange}
                         className="mx-2"
                         checked={Typesection === ""}
                       />
                     </Link>
+                  </button>
+                  <button
+                    type="button"
+                    className="b2 button32123 "
+                    id="Jobbtn"
+                    style={{ opacity: buttonOpacity.jobSeekers }}
+                  >
+                    Recruiters
+                    <input
+                      type="radio"
+                      name="type"
+                      value="recruiter"
+                      onChange={handleTypeChange}
+                      className="mx-2"
+                      checked={Typesection === "recruiter"}
+                    />
                   </button>
                 </div>
                 <ToastContainer
@@ -530,4 +530,4 @@ function Registration() {
     </div>
   );
 }
-export default Registration;
+export default RecruitersReg;

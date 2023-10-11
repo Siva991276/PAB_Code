@@ -165,12 +165,34 @@ Content-Type: application/json
     "originalPassword":"123"   
 }
 ###
+POST http://localhost:4005/RecruitersRegistration
+Content-Type: application/json
+
+
+{
+    "Typesection":"recruiter",
+    "name":"vamsikk",
+    "email":"1111@gmail.com",
+    "contactNumber":"9652854785",
+    "password":"123",
+    "originalPassword":"123"   
+}
+###
 POST http://localhost:4005/login
 Content-Type: application/json
 
 
 {
       "email":"vamsikk1211@gmail.com",
+       "password":"123"
+}
+###
+POST http://localhost:4005/loginRecruiters
+Content-Type: application/json
+
+
+{
+      "email":"1111@gmail.com",
        "password":"123"
 }
 ###
@@ -243,3 +265,6 @@ Content-Type: application/json
         "oldPassword":"Suneel@123",
         "newPassword":"Suneel@123"
 }
+###
+GET http://localhost:4005/allRecruitersData
+token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjRkZGFiYjYwYmUzZWI4NzI5MzM4OGM1IiwiaWF0IjoxNjkyMjQ5MDMyLCJleHAiOjIwNTIyNDkwMzJ9.ow8crNAYgumZNwjGdGxUciJwMXeULHHHKXHWMGmS8zk

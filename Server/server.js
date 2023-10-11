@@ -8,7 +8,8 @@ const userData = require("./Model/userData");
 const BrowseData = require("./Model/browswedata");
 const ApplyNow = require("./Model/ApplyNow");
 const SaveJobsNow = require("./Model/SaveJobs");
-const changepassword = require("./Model/ChangePassword");
+// const changepassword = require("./Model/ChangePassword");
+const RecruitersData = require("./Model/RecruitersData");
 
 const bodyParser = require("body-parser");
 
@@ -127,6 +128,44 @@ app.post("/RegistrationDetails", async (req, res) => {
     return res.status(500).json("message: e.message");
   }
 });
+
+//Registration Details
+app.post("/RecruitersRegistration", async (req, res) => {
+  console.log(req.body);
+  // res.send("hello db")
+  try {
+    const user = await RecruitersData.findOne({ email: req.body.email }); // mongo db condition
+    // console.log(user)
+    if (!user) {
+      // or if(user === undefined)
+      // user not found excutes below code
+      const newUser = {
+        Typesection: req.body.Typesection,
+        name: req.body.name,
+        email: req.body.email,
+        contactNumber: req.body.contactNumber,
+        password: req.body.password,
+        originalPassword: req.body.originalPassword,
+      };
+      const RecruitersDetails = await RecruitersData.create(newUser); //  POSTING TO COLLECTION OR MODEL
+      console.log(RecruitersDetails);
+
+      res.status(200).send("user created successfully");
+    } else {
+      // if user mail id is founded send below response
+      res.status(400).json("user already registered");
+    }
+  } catch (e) {
+    console.log(e.message);
+    return res.status(500).json("message: e.message");
+  }
+});
+
+//Get All Recruiters Data
+app.get("/allRecruitersData", middleware, async (req, res) => {
+  const allRecruitersData = await RecruitersData.find({});
+  return res.json(allRecruitersData);
+});
 //login
 // app.post("/login", async (req, res) => {
 //   const { email, password} = req.body;
@@ -182,6 +221,55 @@ app.post("/login", async (req, res) => {
   // }
   try {
     const user = await userData.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ message: "Email not found" });
+    }
+    if (password !== user.password) {
+      return res.status(401).json({ message: "Incorrect password" });
+    }
+    const payload = {
+      user: user.id,
+    };
+    jwt.sign(payload, "jwtpassword", { expiresIn: 36000000 }, (err, token) => {
+      if (err) {
+        throw err;
+      }
+
+      res.json({ token });
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: "An error occurred on the server. Please try again later.",
+    });
+  }
+});
+//Recruiters Login Page
+app.post("/loginRecruiters", async (req, res) => {
+  const { email, password } = req.body;
+
+  // const isUserExist = await userData.findOne({ email, password });
+
+  // if (isUserExist) {
+  //   if (password === isUserExist.password) {
+  //     let payload = {
+  //       user: isUserExist.id,
+  //     };
+  //     jwt.sign(
+  //       payload,
+  //       "jwtpassword",
+  //       { expiresIn: 36000000 },
+  //       (err, token) => {
+  //         if (err) throw err;
+  //         return res.json({ token });
+  //       }
+  //     );
+  //   } else {
+  //     return res.send("password not matched");
+  //   }
+  // }
+  try {
+    const user = await RecruitersData.findOne({ email });
     if (!user) {
       return res.status(401).json({ message: "Email not found" });
     }
@@ -761,7 +849,7 @@ app.get("/SaveJobData", middleware, async (req, res) => {
 app.post("/api/changePassword", async (req, res) => {
   const { oldPassword, newPassword } = req.body;
   try {
-    if (oldPassword!==userData.password) {
+    if (oldPassword !== userData.password) {
       return res.status(401).json({ message: "Old password is incorrect" });
     }
     if (newPassword === oldPassword) {

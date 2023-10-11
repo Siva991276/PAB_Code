@@ -21,10 +21,7 @@ function ReDashBoard() {
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse mx-4" id="collapsibleNavbar">
-                <ul
-                  class="navbar-nav logostyle"
-                
-                >
+                <ul class="navbar-nav logostyle">
                   <li class="nav-item">
                     <a
                       class="nav-link navstyle2   "
@@ -75,17 +72,17 @@ function ReDashBoard() {
                   </h3>
 
                   <div class="mb-5">
-                    <a href="./BuyServices.html">
+                    <a href="">
                       <button class="buttons21 col-12 col-md-3 mx-2">
                         Data Base
                       </button>
                     </a>
-                    <a href="./Job-Posting.html">
+                    <a href="">
                       <button class="buttons1 col-12 col-md-3 mx-2">
                         Job Posting
                       </button>
                     </a>
-                    <a href="./Combo-Products.html">
+                    <a href="">
                       <button class="buttons1 col-12 col-md-4 mx-2">
                         Combo Products
                       </button>
@@ -266,7 +263,7 @@ function ReDashBoard() {
                         </div>
                       </div>
                     </div>
-                    <p class="parag1 mt-2">
+                    <p class="parag1 mt-2 text-center">
                       All the values updating since last month
                     </p>
                     <div>
@@ -347,7 +344,7 @@ function ReDashBoard() {
                         </div>
                       </div>
                     </div>
-                    <p class="parag1 mt-2">
+                    <p class="parag1 mt-2 text-center">
                       All the values updating since last month
                     </p>
                     <hr class="m-3" />

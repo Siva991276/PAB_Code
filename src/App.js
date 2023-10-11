@@ -34,6 +34,8 @@ import ReBuyServices from "./Re-Buy-Services";
 import ReJobPosting from "./Re-Job-Posting";
 import ReComboProducts from "./Re-Combo-Products";
 import ReSearchCandidates from "./Re-Search-Candidates";
+import RecruitersReg from "./RecruitersReg";
+import LoginRecruiters from "./LoginRecruiters";
 // import MyPlayer from "./Practice";
 
 function App() {
@@ -79,6 +81,8 @@ function App() {
         <Route export path="/ReBuyServices" element={<ReBuyServices />} />
         <Route export path="/ReJobPosting" element={<ReJobPosting />} />
         <Route export path="/ReComboProducts" element={<ReComboProducts />} />
+        <Route export path="/RecruitersReg" element={<RecruitersReg />} />
+        <Route export path="/LoginRecruiters" element={<LoginRecruiters />} />
         <Route
           export
           path="/ReSearchCandidates"
