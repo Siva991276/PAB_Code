@@ -10,6 +10,7 @@ const ApplyNow = require("./Model/ApplyNow");
 const SaveJobsNow = require("./Model/SaveJobs");
 // const changepassword = require("./Model/ChangePassword");
 const RecruitersData = require("./Model/RecruitersData");
+const PostAJobData = require("./Model/PostaJob");
 
 const bodyParser = require("body-parser");
 
@@ -130,25 +131,43 @@ app.post("/RegistrationDetails", async (req, res) => {
 });
 
 //Registration Details
-app.post("/RecruitersRegistration", async (req, res) => {
+app.post("/Recruitersjobposting1", async (req, res) => {
   console.log(req.body);
   // res.send("hello db")
   try {
-    const user = await RecruitersData.findOne({ email: req.body.email }); // mongo db condition
+    const user = await PostAJobData.findOne({ email: req.body.email }); // mongo db condition
     // console.log(user)
     if (!user) {
+      const {
+        Typesection,
+        name,
+        email,
+        contactNumber,
+        password,
+        originalPassword,
+      } = req.body;
       // or if(user === undefined)
       // user not found excutes below code
-      const newUser = {
-        Typesection: req.body.Typesection,
-        name: req.body.name,
-        email: req.body.email,
-        contactNumber: req.body.contactNumber,
-        password: req.body.password,
-        originalPassword: req.body.originalPassword,
-      };
-      const RecruitersDetails = await RecruitersData.create(newUser); //  POSTING TO COLLECTION OR MODEL
-      console.log(RecruitersDetails);
+      // const Rejobposting = {
+      //   Typesection: req.body.Typesection,
+      //   name: req.body.name,
+      //   email: req.body.email,
+      //   contactNumber: req.body.contactNumber,
+      //   password: req.body.password,
+      //   originalPassword: req.body.originalPassword,
+      // };
+      let Rejobposting = new PostAJobData({
+        Typesection,
+        name,
+        email,
+        contactNumber,
+        password,
+        originalPassword,
+      });
+
+      Rejobposting.save();
+      //  POSTING TO COLLECTION OR MODEL
+      console.log(Rejobposting);
 
       res.status(200).send("user created successfully");
     } else {
@@ -865,6 +884,51 @@ app.post("/api/changePassword", async (req, res) => {
     console.error(error);
     return res.status(500).json({ message: "Internal server error" });
   }
+});
+////////////////////////Recruiters backend Data//////////////////////////
+
+app.post("/Recruitersjobposting", middleware, async (req, res) => {
+  try {
+    const {
+      jobtitle,
+      positionavailable,
+      jobtype,
+      jobexperience,
+      maxsalaryperannum,
+      techinicalskill,
+      region,
+      joblocation,
+      jobdeadling,
+      youreducation,
+      jobdiscriptionA1,
+    } = req.body;
+
+    let Rejobposting = new PostAJobData({
+      jobtitle,
+      positionavailable,
+      jobtype,
+      jobexperience,
+      maxsalaryperannum,
+      techinicalskill,
+      region,
+      joblocation,
+      jobdeadling,
+      youreducation,
+      jobdiscriptionA1,
+    });
+
+    Rejobposting.save(); //saving mongodb collections
+    return res.send("user Created Successfully");
+  } catch (e) {
+    console.log(e.message);
+    res.send("Inernal server error");
+  }
+});
+
+ 
+app.get("/PostData", middleware, async (req, res) => {
+  const Apply = await PostAJobData.find({});
+  res.status(200).send(Apply);
 });
 
 app.listen(port, () => {

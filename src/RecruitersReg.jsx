@@ -95,7 +95,7 @@ function RecruitersReg() {
     e.preventDefault();
 
     if (validateInputs()) {
-      const usersData = {
+      const usersData1 = {
         Typesection: Typesection,
         name: name,
         email: email,
@@ -105,7 +105,7 @@ function RecruitersReg() {
       };
 
       axios
-        .post("http://localhost:4005/RecruitersRegistration", usersData)
+        .post("http://localhost:4005/Recruitersjobposting1", usersData1)
         .then((response) => {
           console.log(response.data);
           if (response.status === 200) {
