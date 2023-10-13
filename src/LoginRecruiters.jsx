@@ -114,7 +114,7 @@ function LoginRecruiters() {
             });
 
             setTimeout(function () {
-              navigate("/ReCompanyProfile");
+              navigate("/RePostJob");
             }, 3000);
           }
         })

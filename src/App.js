@@ -36,6 +36,7 @@ import ReComboProducts from "./Re-Combo-Products";
 import ReSearchCandidates from "./Re-Search-Candidates";
 import RecruitersReg from "./RecruitersReg";
 import LoginRecruiters from "./LoginRecruiters";
+import TodsListFinal from "./TodsListFinal";
 // import MyPlayer from "./Practice";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         <Route exact path="/JobAlert" element={<JobAlert />} />
         <Route exact path="/PracticeSection" element={<PracticeSection />} />
         <Route exact path="/OwnWebsite" element={<OwnWebsite />} />
+        <Route exact path="/TodsListFinal" element={<TodsListFinal />} />
 
         <Route exact path="/SaveJobs" element={<SaveJobs />} />
         <Route exact path="/ChangePassword" element={<ChangePassword />} />

@@ -11,7 +11,6 @@ function RePostJob() {
   const [selectedColor3, setSelectedColor3] = useState("lightgray");
   const [selectedColor4, setSelectedColor4] = useState("lightgray");
   const [selectedColor5, setSelectedColor5] = useState("lightgray");
-  const [selectedColor6, setSelectedColor6] = useState("lightgray");
 
   const updateSelectedOptionColor = (event) => {
     const selectedOption = event.target.options[event.target.selectedIndex];
@@ -36,10 +35,6 @@ function RePostJob() {
   const updateSelectedOptionColor5 = (event) => {
     const selectedOption5 = event.target.options[event.target.selectedIndex];
     setSelectedColor5(selectedOption5.style.color);
-  };
-  const updateSelectedOptionColor6 = (event) => {
-    const selectedOption6 = event.target.options[event.target.selectedIndex];
-    setSelectedColor6(selectedOption6.style.color);
   };
 
   return (
@@ -218,10 +213,13 @@ function RePostJob() {
                             Enter job type
                           </option>
                           <option value="IT" style={{ color: "black" }}>
-                            IT
+                            Full Time
                           </option>
                           <option value="Finance" style={{ color: "black" }}>
-                            Finance
+                            Part Time
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            Freelancer
                           </option>
                         </select>
                       </div>
@@ -245,10 +243,19 @@ function RePostJob() {
                             Select experience
                           </option>
                           <option value="IT" style={{ color: "black" }}>
-                            IT
+                            0-2 Years
                           </option>
                           <option value="Finance" style={{ color: "black" }}>
-                            Finance
+                            2-5 Years
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            5-10 Years
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            10-15 Years
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            15+ Years
                           </option>
                         </select>
                       </div>
@@ -274,10 +281,31 @@ function RePostJob() {
                             Enter job type
                           </option>
                           <option value="IT" style={{ color: "black" }}>
-                            IT
+                            0-3 LPA
                           </option>
                           <option value="Finance" style={{ color: "black" }}>
-                            Finance
+                            3-5 LPA
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            5-7 LPA
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            7-10 LPA
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            10-15 LPA
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            15-20 LPA
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            20-35 LPA
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            35-50 LPA
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            50+ LPA
                           </option>
                         </select>
                       </div>
@@ -301,10 +329,22 @@ function RePostJob() {
                             Select experience
                           </option>
                           <option value="IT" style={{ color: "black" }}>
-                            IT
+                            Java
                           </option>
                           <option value="Finance" style={{ color: "black" }}>
-                            Finance
+                            Oracle
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            SAP
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            .NET
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            PHP
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            SQL
                           </option>
                         </select>
                       </div>
@@ -330,10 +370,7 @@ function RePostJob() {
                             Select your region
                           </option>
                           <option value="IT" style={{ color: "black" }}>
-                            IT
-                          </option>
-                          <option value="Finance" style={{ color: "black" }}>
-                            Finance
+                            India
                           </option>
                         </select>
                       </div>
@@ -357,10 +394,19 @@ function RePostJob() {
                             Press Enter to add cities
                           </option>
                           <option value="IT" style={{ color: "black" }}>
-                            IT
+                            Nodia
                           </option>
                           <option value="Finance" style={{ color: "black" }}>
-                            Finance
+                            Bangalore
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            Hyderabad
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            Chennai
+                          </option>
+                          <option value="Finance" style={{ color: "black" }}>
+                            Visakhapatnam
                           </option>
                         </select>
                       </div>
@@ -385,7 +431,7 @@ function RePostJob() {
                           Education
                         </label>
                         <br />
-                        <select
+                        {/* <select
                           id="jobTypeSelect"
                           className="form-control1 w-100 p-2 profileselect m-0"
                           style={{
@@ -404,7 +450,18 @@ function RePostJob() {
                           <option value="Finance" style={{ color: "black" }}>
                             Finance
                           </option>
-                        </select>
+                        </select> */}
+                        <input
+                          type="text"
+                          name=""
+                          id=""
+                          placeholder="Education required"
+                          class="form-control w-100 p-2 profileselect m-0"
+                          style={{
+                            fontWeight: "bold",
+                            border: "1px solid #61428a",
+                          }}
+                        />
                       </div>
                     </div>
 
