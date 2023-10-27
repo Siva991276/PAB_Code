@@ -145,6 +145,17 @@ app.post("/Recruitersjobposting1", async (req, res) => {
         contactNumber,
         password,
         originalPassword,
+        jobtitle,
+        positionavailable,
+        jobtype,
+        jobexperience,
+        maxsalaryperannum,
+        techinicalskill,
+        region,
+        joblocation,
+        jobdeadling,
+        youreducation,
+        jobdiscriptionA1,
       } = req.body;
       // or if(user === undefined)
       // user not found excutes below code
@@ -163,6 +174,17 @@ app.post("/Recruitersjobposting1", async (req, res) => {
         contactNumber,
         password,
         originalPassword,
+        jobtitle,
+        positionavailable,
+        jobtype,
+        jobexperience,
+        maxsalaryperannum,
+        techinicalskill,
+        region,
+        joblocation,
+        jobdeadling,
+        youreducation,
+        jobdiscriptionA1,
       });
 
       Rejobposting.save();
@@ -887,45 +909,44 @@ app.post("/api/changePassword", async (req, res) => {
 });
 ////////////////////////Recruiters backend Data//////////////////////////
 
-app.post("/Recruitersjobposting", middleware, async (req, res) => {
-  try {
-    const {
-      jobtitle,
-      positionavailable,
-      jobtype,
-      jobexperience,
-      maxsalaryperannum,
-      techinicalskill,
-      region,
-      joblocation,
-      jobdeadling,
-      youreducation,
-      jobdiscriptionA1,
-    } = req.body;
+// app.post("/Recruitersjobposting", middleware, async (req, res) => {
+//   try {
+//     const {
+//       jobtitle,
+//       positionavailable,
+//       jobtype,
+//       jobexperience,
+//       maxsalaryperannum,
+//       techinicalskill,
+//       region,
+//       joblocation,
+//       jobdeadling,
+//       youreducation,
+//       jobdiscriptionA1,
+//     } = req.body;
 
-    let Rejobposting = new PostAJobData({
-      jobtitle,
-      positionavailable,
-      jobtype,
-      jobexperience,
-      maxsalaryperannum,
-      techinicalskill,
-      region,
-      joblocation,
-      jobdeadling,
-      youreducation,
-      jobdiscriptionA1,
-    });
+//     let Rejobposting = new PostAJobData({
+//       jobtitle,
+//       positionavailable,
+//       jobtype,
+//       jobexperience,
+//       maxsalaryperannum,
+//       techinicalskill,
+//       region,
+//       joblocation,
+//       jobdeadling,
+//       youreducation,
+//       jobdiscriptionA1,
+//     });
 
-    Rejobposting.save(); //saving mongodb collections
-    return res.send("user Created Successfully");
-  } catch (e) {
-    console.log(e.message);
-    res.send("Inernal server error");
-  }
-});
+//     Rejobposting.save(); //saving mongodb collections
+//     return res.send("user Created Successfully");
+//   } catch (e) {
+//     console.log(e.message);
+//     res.send("Inernal server error");
+//   }
+// });
 
- 
 app.get("/PostData", middleware, async (req, res) => {
   const Apply = await PostAJobData.find({});
   res.status(200).send(Apply);

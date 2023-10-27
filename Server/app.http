@@ -158,25 +158,35 @@ Content-Type: application/json
 
 {
     "Typesection":"recruiter",
-    "name":"kia",
-    "email":"pppp@gmail.com",
+    "name":"Lenova",
+    "email":"lenova123@gmail.com",
     "contactNumber":"9652854785",
     "password":"Kia@1234",
-    "originalPassword":"Kia@1234"   
+    "originalPassword":"Kia@1234", "jobtitle":"Developer",
+     "positionavailable":"21",
+     "jobtype":"Backend Developer",
+     "jobexperience":"6-7 years",
+     "maxsalaryperannum":"4-8 L",
+     "techinicalskill":"Java",
+     "region":"India",
+     "joblocation":"Guntur",
+     "jobdeadling":"10-10-2024",
+     "youreducation":"M-Tech",
+     "jobdiscriptionA1":"Tata Consultancy Services is an IT services, consulting and business solutions organization that partners with many of the world's largest businesses in their transformation journeys. TCS offers a consulting-led, Cognitive powered, integrated portfolio of IT, Business & Technology Services, and engineering."
 }
-###
-POST http://localhost:4005/RecruitersRegistration
-Content-Type: application/json
+# ###
+# POST http://localhost:4005/RecruitersRegistration
+# Content-Type: application/json
 
 
-{
-    "Typesection":"recruiter",
-    "name":"vamsikk",
-    "email":"1111@gmail.com",
-    "contactNumber":"9652854785",
-    "password":"123",
-    "originalPassword":"123"   
-}
+# {
+#     "Typesection":"recruiter",
+#     "name":"vamsikk",
+#     "email":"1111@gmail.com",
+#     "contactNumber":"9652854785",
+#     "password":"123",
+#     "originalPassword":"123"   
+# }
 ###
 POST http://localhost:4005/login
 Content-Type: application/json
